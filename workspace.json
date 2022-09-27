@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "file-walk": "packages/file-walk",
     "validate": "packages/validate"
   }
 }
