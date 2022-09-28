@@ -1,6 +1,10 @@
 
 # NxAudiobook
 
+## TODO
+
+- [ ] Migrate a functioning version of validate-audiobook/walk
+
 ## Operation
 
 ```bash
