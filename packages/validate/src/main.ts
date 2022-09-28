@@ -23,17 +23,25 @@ async function main() {
   // clean the root path by removing trailing slash
   const rootPath = unverifiedRootPath.replace(/\/$/, '');
 
-  {
-    const startMs = +new Date();
-    const directories = await getDirectories(rootPath);
-    console.error(
-      `Got ${directories.length} directories in`,
-      formatElapsed(startMs)
-    );
-  }
-  {
+  const startMs = +new Date();
+  const directories = await getDirectories(rootPath);
+  console.error(
+    `Got ${directories.length} directories in`,
+    formatElapsed(startMs)
+  );
+  if (directories.length === 0) {
+    // fake false!
     const startMs = +new Date();
     const allFiles = await getFiles(rootPath, { recurse: true });
     console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
+    // verifyExtensionsAllAccountedFor(allFiles)
   }
+  // rewriteHint('export const db = {');
+  // per directory validation
+  // for (const directoryPath of directories) {
+  //   const bookData = await classifyDirectory(directoryPath);
+  //   validateDirectory(directoryPath, bookData);
+  //   rewriteDirectory(directoryPath, bookData);
+  // }
+  // rewriteHint('}');
 }
