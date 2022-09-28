@@ -4,6 +4,7 @@
 ## TODO
 
 - [ ] Migrate a functioning version of validate-audiobook/walk
+- [ ] Add tests to metadata
 
 ## Operation
 
