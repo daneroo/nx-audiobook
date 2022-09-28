@@ -2,11 +2,18 @@
 
 # NxAudiobook
 
-This project was generated using [Nx](https://nx.dev).
+## Operation
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
-
-🔎 **Smart, Fast and Extensible Build System**
+```bash
+# contiguously build a target
+nx build validate --configuration production --watch
+# run an app
+npx nx serve validate --configuration=production --inspect false
+# build all, and watch
+nx run-many --target=build --all=true --watch
+# watch unit test for a library
+npx nx test file-walk --watch
+```
 
 ## Adding capabilities to your workspace
 

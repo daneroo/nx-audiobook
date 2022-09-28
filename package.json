@@ -2,7 +2,11 @@
   "name": "nx-audiobook",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "npm run lint && npm run unit",
+    "unit": "nx run-many --target=test --all=true",
+    "lint": "nx run-many --target=lint --all=true"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/cli": "14.7.17",
@@ -15,6 +19,7 @@
     "@nrwl/workspace": "14.7.17",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
+    "@types/yargs": "^17.0.13",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "~8.15.0",
