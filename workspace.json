@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "file-walk": "packages/file-walk",
+    "time": "packages/time",
     "validate": "packages/validate"
   }
 }

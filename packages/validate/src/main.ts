@@ -1,13 +1,13 @@
 import yargs from 'yargs';
-import { getDirectories } from '@nx-audiobook/file-walk';
-import { hideBin } from 'yargs/helpers';
+import { getDirectories, getFiles } from '@nx-audiobook/file-walk';
+import { formatElapsed } from '@nx-audiobook/time';
 
 const defaultRootPath = '/Volumes/Space/archive/media/audiobooks';
 
 main();
 
 async function main() {
-  const argv = await yargs(hideBin(process.argv))
+  const argv = await yargs(process.argv.slice(2))
     .option('rootPath', {
       alias: 'r',
       type: 'string',
@@ -23,21 +23,17 @@ async function main() {
   // clean the root path by removing trailing slash
   const rootPath = unverifiedRootPath.replace(/\/$/, '');
 
-  const startMs = +new Date();
-  const directories = await getDirectories(rootPath);
-  console.error(
-    `Got ${directories.length} directories in`,
-    formatElapsed(startMs)
-  );
-}
-
-/**
- * Formats the time since the startMs to a string
- * @param {number} startMs - reference start time in milliseconds
- * @returns {string} Return the formatted string
- */
-
-export function formatElapsed(startMs) {
-  const elapsedSeconds = ((+new Date() - startMs) / 1000).toFixed(3);
-  return elapsedSeconds + 's';
+  {
+    const startMs = +new Date();
+    const directories = await getDirectories(rootPath);
+    console.error(
+      `Got ${directories.length} directories in`,
+      formatElapsed(startMs)
+    );
+  }
+  {
+    const startMs = +new Date();
+    const allFiles = await getFiles(rootPath, { recurse: true });
+    console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
+  }
 }

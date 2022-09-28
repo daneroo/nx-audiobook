@@ -1,6 +1,7 @@
 import { walk } from '@root/walk';
 
-export async function getDirectories(rootPath) {
+// Returns all subdirectories of rootPath, recursively, including rootPath itself
+export async function getDirectories(rootPath: string): Promise<string[]> {
   const directories = [];
   await walk(rootPath, async (err, pathname, dirent) => {
     if (err) {
@@ -15,9 +16,12 @@ export async function getDirectories(rootPath) {
   return directories;
 }
 
-// return all files from rootPath
-// if recurse is false, only get files in rootPath, not subdirectories
-export async function getFiles(rootPath, options = { recurse: false }) {
+// Returns all files from rootPath
+// if options.recurse is false, only get files in rootPath, not subdirectories
+export async function getFiles(
+  rootPath: string,
+  options: { recurse: boolean } = { recurse: false }
+): Promise<string[]> {
   const pathnames = [];
   await walk(rootPath, async (err, pathname, dirent) => {
     if (err) {
@@ -26,7 +30,7 @@ export async function getFiles(rootPath, options = { recurse: false }) {
       return;
     }
     if (dirent.isDirectory()) {
-      // We recurse into subdirectories when
+      // We recurse into subdirectories when either
       // - recurse parameter is true
       // - we are at the root
       return options?.recurse || rootPath === pathname;

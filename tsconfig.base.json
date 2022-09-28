@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-audiobook/file-walk": ["packages/file-walk/src/index.ts"]
+      "@nx-audiobook/file-walk": ["packages/file-walk/src/index.ts"],
+      "@nx-audiobook/time": ["packages/time/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

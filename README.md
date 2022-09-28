@@ -1,5 +1,4 @@
 
-
 # NxAudiobook
 
 ## Operation
@@ -7,12 +6,18 @@
 ```bash
 # contiguously build a target
 nx build validate --configuration production --watch
-# run an app
+
+# continuously run an app
 npx nx serve validate --configuration=production --inspect false
+
 # build all, and watch
 nx run-many --target=build --all=true --watch
+
 # watch unit test for a library
 npx nx test file-walk --watch
+
+# generate a new library
+nx generate @nrwl/js:library new-library
 ```
 
 ## Adding capabilities to your workspace
@@ -56,7 +61,7 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 ## Development server
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `nx serve my-app` for a dev server. Navigate to <http://localhost:4200/>. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -86,13 +91,9 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
 
-
-
 ## ☁ Nx Cloud
 
 ### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
 
 Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
 
