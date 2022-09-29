@@ -1,3 +1,5 @@
+import { Advice } from './types';
+
 import {
   filterAudioFileExtensions,
   // filterNonAudioFileExtensions,
@@ -5,12 +7,6 @@ import {
   // filterNonAudioFilenames,
 } from './filters';
 
-type Advice = {
-  ok: boolean;
-  level: 'error' | 'warn' | 'info';
-  message: string;
-  extra: Record<string, string | number | boolean | string[]>;
-};
 // for filenames in a set (typically a directory),
 // verify that all extensions (and some known filenames are accounted for)
 // simply console.error the unaccounted for files files.
