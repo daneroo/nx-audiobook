@@ -1,5 +1,7 @@
 import * as path from 'node:path';
 
+// TODO(daneroo): abstract away these extensions and filenames
+
 // Filter for known audio filename extensions
 // returns true if the file extension is known to be audio
 export function filterAudioFileExtensions(filePath) {

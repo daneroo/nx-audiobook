@@ -1,6 +1,7 @@
 import yargs from 'yargs';
 import { getDirectories, getFiles } from '@nx-audiobook/file-walk';
 import { formatElapsed } from '@nx-audiobook/time';
+import { validateFilesAllAccountedFor } from '@nx-audiobook/validators';
 
 const defaultRootPath = '/Volumes/Space/archive/media/audiobooks';
 
@@ -22,6 +23,7 @@ async function main() {
   const { rootPath: unverifiedRootPath } = argv;
   // clean the root path by removing trailing slash
   const rootPath = unverifiedRootPath.replace(/\/$/, '');
+  console.error('=-=- Validate:', { rootPath });
 
   const startMs = +new Date();
   const directories = await getDirectories(rootPath);
@@ -29,12 +31,12 @@ async function main() {
     `Got ${directories.length} directories in`,
     formatElapsed(startMs)
   );
-  if (directories.length === 0) {
-    // fake false!
+  {
     const startMs = +new Date();
     const allFiles = await getFiles(rootPath, { recurse: true });
     console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
-    // verifyExtensionsAllAccountedFor(allFiles)
+    const advice = validateFilesAllAccountedFor(allFiles);
+    console.error('advice', advice);
   }
   // rewriteHint('export const db = {');
   // per directory validation

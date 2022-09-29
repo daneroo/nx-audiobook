@@ -9,11 +9,18 @@
 ## Operation
 
 ```bash
-# contiguously build a target
-nx build validate --configuration production --watch
+# run an app, once
+npx nx serve validate --configuration=production --inspect false --no-watch
 
 # continuously run an app
 npx nx serve validate --configuration=production --inspect false
+
+# build app, run from dist
+npx nx build validate --configuration=production
+node dist/packages/validate/main.js --help
+
+# contiguously build a target
+nx build validate --configuration production --watch
 
 # build all, and watch
 nx run-many --target=build --all=true --watch
