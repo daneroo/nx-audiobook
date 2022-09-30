@@ -40,10 +40,19 @@ async function main() {
   }
   // rewriteHint('export const db = {');
   // per directory validation
-  // for (const directoryPath of directories) {
-  //   const bookData = await classifyDirectory(directoryPath);
-  //   validateDirectory(directoryPath, bookData);
-  //   rewriteDirectory(directoryPath, bookData);
-  // }
+  for (const directoryPath of directories) {
+    // const bookData = await classifyDirectory(directoryPath);
+    await classifyDirectory(directoryPath);
+    // validateDirectory(directoryPath, bookData);
+    // rewriteDirectory(directoryPath, bookData);
+  }
   // rewriteHint('}');
+}
+
+// Eventually export a data structure for the directory
+//  return a data structure or Advice/Validation?
+async function classifyDirectory(directoryPath) {
+  const filenames = await getFiles(directoryPath);
+  const advice = validateFilesAllAccountedFor(filenames);
+  show(directoryPath.substring(39), [advice]);
 }
