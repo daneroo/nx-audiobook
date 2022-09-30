@@ -1,5 +1,5 @@
+import * as colors from 'colors/safe';
 import { Advice } from './types';
-// import * as chalk from 'chalk';
 
 export function show(title: string, advice: Advice[]) {
   const ok = advice.every((a) => a.ok);
@@ -10,7 +10,9 @@ export function show(title: string, advice: Advice[]) {
   }
 }
 
-function checkMark(ok: boolean) {
+export function checkMark(ok: boolean, withColor = true) {
+  if (withColor) {
+    return ok ? colors.green('✔') : colors.red('✕');
+  }
   return ok ? '✔' : '✕';
-  // return ok ? chalk.green('✔') : chalk.red('✕');
 }
