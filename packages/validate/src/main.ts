@@ -35,8 +35,8 @@ async function main() {
     const startMs = +new Date();
     const allFiles = await getFiles(rootPath, { recurse: true });
     console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
-    const advice = validateFilesAllAccountedFor(allFiles);
-    show('Global', [advice]);
+    const validation = validateFilesAllAccountedFor(allFiles);
+    show('Global', [validation]);
   }
   // rewriteHint('export const db = {');
   // per directory validation
@@ -50,9 +50,9 @@ async function main() {
 }
 
 // Eventually export a data structure for the directory
-//  return a data structure or Advice/Validation?
+//  return a data structure or Validation?
 async function classifyDirectory(directoryPath) {
   const filenames = await getFiles(directoryPath);
-  const advice = validateFilesAllAccountedFor(filenames);
-  show(directoryPath.substring(39), [advice]);
+  const validation = validateFilesAllAccountedFor(filenames);
+  show(directoryPath.substring(39), [validation]);
 }

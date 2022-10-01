@@ -1,10 +1,10 @@
 import * as colors from 'colors/safe';
-import { Advice } from './types';
+import { Validation } from './types';
 
-export function show(title: string, advice: Advice[]) {
-  const ok = advice.every((a) => a.ok);
+export function show(title: string, validation: Validation[]) {
+  const ok = validation.every((a) => a.ok);
   console.log(`${checkMark(ok)} ${title}`);
-  for (const a of advice) {
+  for (const a of validation) {
     const { ok, level, message, extra } = a;
     console[level](`  ${checkMark(ok)}: ${message}`, extra);
   }

@@ -1,4 +1,4 @@
-export type Advice = {
+export type Validation = {
   ok: boolean;
   level: 'error' | 'warn' | 'info';
   message: string;

@@ -1,4 +1,4 @@
-import { Advice } from './types';
+import { Validation } from './types';
 
 import {
   filterAudioFileExtensions,
@@ -10,7 +10,7 @@ import {
 // for filenames in a set (typically a directory),
 // verify that all extensions (and some known filenames are accounted for)
 // simply console.error the unaccounted for files files.
-export function validateFilesAllAccountedFor(filenames: string[]): Advice {
+export function validateFilesAllAccountedFor(filenames: string[]): Validation {
   const excludedFilenames = filenames.filter(filterNonAudioExtensionsOrNames);
   const audioFiles = filenames.filter(filterAudioFileExtensions);
   const unclassified = filenames.filter((filePath) => {
@@ -26,11 +26,11 @@ export function validateFilesAllAccountedFor(filenames: string[]): Advice {
     unclassified: unclassified,
   };
 
-  const advice: Advice = {
+  const validation: Validation = {
     ok,
     level: ok ? 'info' : 'warn',
     message: ok ? 'All accounted for' : 'Have unclassified files',
     extra,
   };
-  return advice;
+  return validation;
 }
