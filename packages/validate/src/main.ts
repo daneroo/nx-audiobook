@@ -69,5 +69,5 @@ async function classifyDirectory(directoryPath) {
 async function validateDirectory(audiobook: AudioBook) {
   const { directoryPath, files } = audiobook;
   const validation = validateFilesAllAccountedFor(files);
-  show(directoryPath.substring(39), [validation]);
+  show(directoryPath.substring(39) || '<root>', [validation]);
 }
