@@ -19,7 +19,7 @@ describe('validateFilesAllAccountedFor', () => {
       ok: true,
       level: 'info',
       message: 'All accounted for',
-      extra: { total: 0, excluded: 0, audio: 0, unclassified: [] },
+      extra: { total: 0, ignored: 0, audio: 0, unclassified: [] },
     });
   });
   it('validate 2 audio file list', () => {
@@ -31,7 +31,7 @@ describe('validateFilesAllAccountedFor', () => {
       ok: true,
       level: 'info',
       message: 'All accounted for',
-      extra: { total: 2, excluded: 0, audio: 2, unclassified: [] },
+      extra: { total: 2, ignored: 0, audio: 2, unclassified: [] },
     });
   });
   it('validate 2 audio file list with 2 known-name files', () => {
@@ -48,7 +48,7 @@ describe('validateFilesAllAccountedFor', () => {
       ok: true,
       level: 'info',
       message: 'All accounted for',
-      extra: { total: 4, excluded: 2, audio: 2, unclassified: [] },
+      extra: { total: 4, ignored: 2, audio: 2, unclassified: [] },
     });
   });
 
@@ -65,7 +65,7 @@ describe('validateFilesAllAccountedFor', () => {
       message: 'Have unclassified files',
       extra: {
         total: 3,
-        excluded: 0,
+        ignored: 0,
         audio: 2,
         unclassified: ['/path/README'],
       },
@@ -81,7 +81,7 @@ describe('validateFilesAllAccountedFor', () => {
       message: 'Have unclassified files',
       extra: {
         total: 1,
-        excluded: 0,
+        ignored: 0,
         audio: 0,
         unclassified: ['/path/file.unknown'],
       },
