@@ -1,4 +1,17 @@
 import { validateFilesAllAccountedFor } from './validators';
+import { File } from '@nx-audiobook/file-walk';
+import { resolve, basename, extname } from 'node:path';
+
+// utility
+function fileFromPath(filePath: string): File {
+  return {
+    path: filePath,
+    basename: basename(filePath),
+    extension: extname(filePath),
+    size: 0,
+    mtime: new Date(0),
+  };
+}
 
 describe('validateFilesAllAccountedFor', () => {
   it('validate empty file list', () => {
@@ -11,7 +24,9 @@ describe('validateFilesAllAccountedFor', () => {
   });
   it('validate 2 audio file list', () => {
     expect(
-      validateFilesAllAccountedFor(['/path/file1.mp3', '/path/file1.mp3'])
+      validateFilesAllAccountedFor(
+        ['/path/file1.mp3', '/path/file1.mp3'].map(fileFromPath)
+      )
     ).toEqual({
       ok: true,
       level: 'info',
@@ -21,12 +36,14 @@ describe('validateFilesAllAccountedFor', () => {
   });
   it('validate 2 audio file list with 2 known-name files', () => {
     expect(
-      validateFilesAllAccountedFor([
-        '/path/file1.mp3',
-        '/path/file1.mp3',
-        '/path/.DS_Store',
-        '/path/MD5SUM',
-      ])
+      validateFilesAllAccountedFor(
+        [
+          '/path/file1.mp3',
+          '/path/file1.mp3',
+          '/path/.DS_Store',
+          '/path/MD5SUM',
+        ].map(fileFromPath)
+      )
     ).toEqual({
       ok: true,
       level: 'info',
@@ -37,11 +54,9 @@ describe('validateFilesAllAccountedFor', () => {
 
   it('reject unknown file name (no extension)', () => {
     expect(
-      validateFilesAllAccountedFor([
-        '/path/file1.mp3',
-        '/path/file1.mp3',
-        '/path/README',
-      ])
+      validateFilesAllAccountedFor(
+        ['/path/file1.mp3', '/path/file1.mp3', '/path/README'].map(fileFromPath)
+      )
     ).toEqual({
       ok: false,
       level: 'warn',
@@ -56,7 +71,9 @@ describe('validateFilesAllAccountedFor', () => {
   });
 
   it('reject an unknown file extension', () => {
-    expect(validateFilesAllAccountedFor(['/path/file.unknown'])).toEqual({
+    expect(
+      validateFilesAllAccountedFor(['/path/file.unknown'].map(fileFromPath))
+    ).toEqual({
       ok: false,
       level: 'warn',
       message: 'Have unclassified files',

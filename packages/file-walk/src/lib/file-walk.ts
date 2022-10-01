@@ -1,4 +1,6 @@
 import { walk } from '@root/walk';
+import { basename, extname } from 'node:path';
+import { promises as fs } from 'node:fs';
 
 // Returns all subdirectories of rootPath, recursively, including rootPath itself
 export async function getDirectories(rootPath: string): Promise<string[]> {
@@ -16,13 +18,22 @@ export async function getDirectories(rootPath: string): Promise<string[]> {
   return directories;
 }
 
-// Returns all files from rootPath
+export type File = {
+  path: string;
+  basename: string;
+  extension: string;
+  size: number;
+  mtime: Date;
+};
+
+// Returns all files (as File Objects) from rootPath
 // if options.recurse is false, only get files in rootPath, not subdirectories
+// if options.stat is false, only get path extension and name, not size or mtime
 export async function getFiles(
   rootPath: string,
-  options: { recurse: boolean } = { recurse: false }
-): Promise<string[]> {
-  const pathnames = [];
+  options: { recurse: boolean; stat: boolean } = { recurse: false, stat: false }
+): Promise<File[]> {
+  const files: File[] = [];
   await walk(rootPath, async (err, pathname, dirent) => {
     if (err) {
       // throw an error to stop walking (or return to ignore and keep going)
@@ -35,11 +46,21 @@ export async function getFiles(
       // - we are at the root
       return options?.recurse || rootPath === pathname;
     } else if (dirent.isFile()) {
-      pathnames.push(pathname);
+      const { size, mtime } = options?.stat
+        ? await fs.stat(pathname)
+        : { size: 0, mtime: new Date(0) };
+      const file: File = {
+        path: pathname,
+        basename: basename(pathname),
+        extension: extname(pathname),
+        size,
+        mtime,
+      };
+      files.push(file);
     } else {
       // dirent.isSymbolicLink(), etc...
       // console.error('  skipping', dirent.name)
     }
   });
-  return pathnames;
+  return files;
 }

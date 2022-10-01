@@ -33,8 +33,9 @@ async function main() {
   );
   {
     const startMs = +new Date();
-    const allFiles = await getFiles(rootPath, { recurse: true });
+    const allFiles = await getFiles(rootPath, { recurse: true, stat: false });
     console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
+
     const validation = validateFilesAllAccountedFor(allFiles);
     show('Global', [validation]);
   }

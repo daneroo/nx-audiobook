@@ -1,5 +1,16 @@
-import { getDirectories, getFiles } from './file-walk';
-import { resolve } from 'node:path';
+import { getDirectories, getFiles, File } from './file-walk';
+import { resolve, basename, extname } from 'node:path';
+
+// utility
+function fileFromPath(filePath: string): File {
+  return {
+    path: filePath,
+    basename: basename(filePath),
+    extension: extname(filePath),
+    size: 0,
+    mtime: new Date(0),
+  };
+}
 
 describe('getDirectories smoke test', () => {
   it('should read this directory and not have children', async () => {
@@ -17,6 +28,6 @@ describe('getFiles smoke test', () => {
   it('should read this directory and find this file', async () => {
     const selfDir = resolve(__dirname, '.');
     const thisDirFiles = await getFiles(selfDir);
-    expect(thisDirFiles).toContain(__filename);
+    expect(thisDirFiles.map((f) => f.path)).toContain(__filename);
   });
 });
