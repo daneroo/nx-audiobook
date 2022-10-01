@@ -6,12 +6,12 @@ import {
   filterNonAudioExtensionsOrNames,
   // filterNonAudioFilenames,
 } from './filters';
-import { File } from '@nx-audiobook/file-walk';
+import { FileInfo } from '@nx-audiobook/file-walk';
 
 // for filenames in a set (typically a directory),
 // verify that all extensions (and some known filenames are accounted for)
 // simply console.error the unaccounted for files files.
-export function validateFilesAllAccountedFor(files: File[]): Validation {
+export function validateFilesAllAccountedFor(files: FileInfo[]): Validation {
   const filenames = files.map((file) => file.path);
   const excludedFilenames = filenames.filter(filterNonAudioExtensionsOrNames);
   const audioFiles = filenames.filter(filterAudioFileExtensions);

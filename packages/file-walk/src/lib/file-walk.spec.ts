@@ -1,8 +1,8 @@
-import { getDirectories, getFiles, File } from './file-walk';
+import { getDirectories, getFiles, FileInfo } from './file-walk';
 import { resolve, basename, extname } from 'node:path';
 
 // utility
-function fileFromPath(filePath: string): File {
+function fileInfoFromPath(filePath: string): FileInfo {
   return {
     path: filePath,
     basename: basename(filePath),

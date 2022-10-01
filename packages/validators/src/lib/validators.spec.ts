@@ -1,9 +1,9 @@
 import { validateFilesAllAccountedFor } from './validators';
-import { File } from '@nx-audiobook/file-walk';
-import { resolve, basename, extname } from 'node:path';
+import { FileInfo } from '@nx-audiobook/file-walk';
+import { basename, extname } from 'node:path';
 
 // utility
-function fileFromPath(filePath: string): File {
+function fileInfoFromPath(filePath: string): FileInfo {
   return {
     path: filePath,
     basename: basename(filePath),
@@ -25,7 +25,7 @@ describe('validateFilesAllAccountedFor', () => {
   it('validate 2 audio file list', () => {
     expect(
       validateFilesAllAccountedFor(
-        ['/path/file1.mp3', '/path/file1.mp3'].map(fileFromPath)
+        ['/path/file1.mp3', '/path/file1.mp3'].map(fileInfoFromPath)
       )
     ).toEqual({
       ok: true,
@@ -42,7 +42,7 @@ describe('validateFilesAllAccountedFor', () => {
           '/path/file1.mp3',
           '/path/.DS_Store',
           '/path/MD5SUM',
-        ].map(fileFromPath)
+        ].map(fileInfoFromPath)
       )
     ).toEqual({
       ok: true,
@@ -55,7 +55,9 @@ describe('validateFilesAllAccountedFor', () => {
   it('reject unknown file name (no extension)', () => {
     expect(
       validateFilesAllAccountedFor(
-        ['/path/file1.mp3', '/path/file1.mp3', '/path/README'].map(fileFromPath)
+        ['/path/file1.mp3', '/path/file1.mp3', '/path/README'].map(
+          fileInfoFromPath
+        )
       )
     ).toEqual({
       ok: false,
@@ -72,7 +74,7 @@ describe('validateFilesAllAccountedFor', () => {
 
   it('reject an unknown file extension', () => {
     expect(
-      validateFilesAllAccountedFor(['/path/file.unknown'].map(fileFromPath))
+      validateFilesAllAccountedFor(['/path/file.unknown'].map(fileInfoFromPath))
     ).toEqual({
       ok: false,
       level: 'warn',

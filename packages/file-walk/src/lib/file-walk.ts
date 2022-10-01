@@ -18,7 +18,7 @@ export async function getDirectories(rootPath: string): Promise<string[]> {
   return directories;
 }
 
-export type File = {
+export type FileInfo = {
   path: string;
   basename: string;
   extension: string;
@@ -32,8 +32,8 @@ export type File = {
 export async function getFiles(
   rootPath: string,
   options: { recurse: boolean; stat: boolean } = { recurse: false, stat: false }
-): Promise<File[]> {
-  const files: File[] = [];
+): Promise<FileInfo[]> {
+  const files: FileInfo[] = [];
   await walk(rootPath, async (err, pathname, dirent) => {
     if (err) {
       // throw an error to stop walking (or return to ignore and keep going)
@@ -49,7 +49,7 @@ export async function getFiles(
       const { size, mtime } = options?.stat
         ? await fs.stat(pathname)
         : { size: 0, mtime: new Date(0) };
-      const file: File = {
+      const file: FileInfo = {
         path: pathname,
         basename: basename(pathname),
         extension: extname(pathname),
