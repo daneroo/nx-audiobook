@@ -1,5 +1,5 @@
 import yargs from 'yargs';
-import { getDirectories, getFiles } from '@nx-audiobook/file-walk';
+import { FileInfo, getDirectories, getFiles } from '@nx-audiobook/file-walk';
 import { formatElapsed } from '@nx-audiobook/time';
 import { show, validateFilesAllAccountedFor } from '@nx-audiobook/validators';
 
@@ -39,21 +39,35 @@ async function main() {
     const validation = validateFilesAllAccountedFor(allFiles);
     show('Global', [validation]);
   }
+
   // rewriteHint('export const db = {');
   // per directory validation
   for (const directoryPath of directories) {
-    // const bookData = await classifyDirectory(directoryPath);
-    await classifyDirectory(directoryPath);
-    // validateDirectory(directoryPath, bookData);
+    const audiobook = await classifyDirectory(directoryPath);
+    validateDirectory(audiobook);
     // rewriteDirectory(directoryPath, bookData);
   }
   // rewriteHint('}');
 }
 
+// Maybe not the best name...
+type AudioBook = {
+  directoryPath: string;
+  files: FileInfo[];
+};
+
 // Eventually export a data structure for the directory
 //  return a data structure or Validation?
 async function classifyDirectory(directoryPath) {
-  const filenames = await getFiles(directoryPath);
-  const validation = validateFilesAllAccountedFor(filenames);
+  const audiobook: AudioBook = {
+    directoryPath,
+    files: await getFiles(directoryPath),
+  };
+  return audiobook;
+}
+
+async function validateDirectory(audiobook: AudioBook) {
+  const { directoryPath, files } = audiobook;
+  const validation = validateFilesAllAccountedFor(files);
   show(directoryPath.substring(39), [validation]);
 }
