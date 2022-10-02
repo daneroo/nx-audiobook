@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@nx-audiobook/file-walk": ["packages/file-walk/src/index.ts"],
-      "@nx-audiobook/metadata": ["packages/metadata/src/index.ts"],
       "@nx-audiobook/time": ["packages/time/src/index.ts"],
       "@nx-audiobook/validators": ["packages/validators/src/index.ts"]
     }

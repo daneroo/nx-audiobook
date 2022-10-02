@@ -3,7 +3,6 @@
   "version": 2,
   "projects": {
     "file-walk": "packages/file-walk",
-    "metadata": "packages/metadata",
     "time": "packages/time",
     "validate": "packages/validate",
     "validators": "packages/validators"
