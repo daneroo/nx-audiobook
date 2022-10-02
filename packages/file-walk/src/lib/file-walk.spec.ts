@@ -17,10 +17,11 @@ describe('getDirectories smoke test', () => {
     const selfDir = resolve(__dirname, '.');
     expect(await getDirectories(selfDir)).toEqual([__dirname]);
   });
-  it("should read this directory's parent and only have itself and lib as a child", async () => {
+  it("should read this directory's parent and find the parent and this directory", async () => {
     // assumes that lib ()
     const parentDir = resolve(__dirname, '..');
-    expect(await getDirectories(parentDir)).toEqual([parentDir, __dirname]);
+    expect(await getDirectories(parentDir)).toContain(parentDir);
+    expect(await getDirectories(parentDir)).toContain(__dirname);
   });
 });
 
