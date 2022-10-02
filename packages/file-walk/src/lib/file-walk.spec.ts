@@ -1,16 +1,5 @@
 import { getDirectories, getFiles, FileInfo } from './file-walk';
-import { resolve, basename, extname } from 'node:path';
-
-// utility
-function fileInfoFromPath(filePath: string): FileInfo {
-  return {
-    path: filePath,
-    basename: basename(filePath),
-    extension: extname(filePath),
-    size: 0,
-    mtime: new Date(0),
-  };
-}
+import { resolve } from 'node:path';
 
 describe('getDirectories smoke test', () => {
   it('should read this directory and not have children', async () => {
