@@ -54,6 +54,14 @@ async function main() {
 type AudioBook = {
   directoryPath: string;
   files: FileInfo[];
+  metadata: AudioBookMetadata[];
+};
+
+type AudioBookMetadata = {
+  path: string;
+  author: string;
+  title: string;
+  duration: number;
 };
 
 // Eventually export a data structure for the directory
@@ -62,6 +70,7 @@ async function classifyDirectory(directoryPath) {
   const audiobook: AudioBook = {
     directoryPath,
     files: await getFiles(directoryPath),
+    metadata: [],
   };
   return audiobook;
 }

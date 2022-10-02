@@ -16,8 +16,8 @@ import { FileInfo } from '@nx-audiobook/file-walk';
 //  ignored (known, non-audio) file extensions: e.g. ['.jpeg', '.jpg', '.JPG', '.gif', '.png', '.pdf', '.cue', '.epub', '.txt', '.nfo', '.mobi', '.m3u', '.rtf']
 //  ignored (known, non-audio) filenames: e.g. ['.DS_Store', 'MD5SUM']
 
-const audioExtensions = ['.mp3', '.m4b', '.m4a'];
-const ignoredExtensions = [
+export const audioExtensions = ['.mp3', '.m4b', '.m4a'];
+export const ignoredExtensions = [
   '.jpeg',
   '.jpg',
   '.JPG',
@@ -27,39 +27,38 @@ const ignoredExtensions = [
   '.cue',
   '.epub',
   '.txt',
-  // '.nfo',
+  '.nfo',
   '.mobi',
   '.m3u',
   '.rtf',
 ];
-const ignoredFilenames = ['.DS_Store', 'MD5SUM'];
+export const ignoredFilenames = ['.DS_Store', 'MD5SUM'];
+
+export function isAudioFile(fileInfo: FileInfo) {
+  return audioExtensions.includes(fileInfo.extension);
+}
+
+export function isIgnored(fileInfo: FileInfo) {
+  return (
+    ignoredFilenames.includes(fileInfo.basename) ||
+    ignoredExtensions.includes(fileInfo.extension)
+  );
+}
 
 export function validateFilesAllAccountedFor(files: FileInfo[]): Validation {
   const filenames = files.map((file) => file.path);
 
   // count ignored files
-  const ignored = files.filter((fileInfo) => {
-    return (
-      ignoredFilenames.includes(fileInfo.basename) ||
-      ignoredExtensions.includes(fileInfo.extension)
-    );
-  }).length;
+  const ignored = files.filter(isIgnored).length;
 
   // count audio files
-  const audio = files.filter((fileInfo) =>
-    audioExtensions.includes(fileInfo.extension)
-  ).length;
-  // filenames.filter(filterAudioFileExtensions);
+  const audio = files.filter(isAudioFile).length;
 
   // the actual list of unaccounted for files (not audio , not ignored (ext or basename))
   const unaccounted = files
     .filter((fileInfo) => {
       // *not* (audio or  ignored (ext or basename))
-      return !(
-        audioExtensions.includes(fileInfo.extension) ||
-        ignoredFilenames.includes(fileInfo.basename) ||
-        ignoredExtensions.includes(fileInfo.extension)
-      );
+      return !(isAudioFile(fileInfo) || isIgnored(fileInfo));
     })
     // now extract the path
     .map((fileInfo) => fileInfo.path);
