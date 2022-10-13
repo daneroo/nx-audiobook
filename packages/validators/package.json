@@ -21,6 +21,6 @@
     "license": "ISC",
     "dependencies": {
         "@nx-audiobook/file-walk": "workspace:*",
-        "colors": "^1.4.0"
+        "chalk": "^5.1.2"
     }
 }

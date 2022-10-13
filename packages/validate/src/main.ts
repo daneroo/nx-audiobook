@@ -1,13 +1,21 @@
-import yargs from 'yargs';
+import yargs from 'yargs/yargs';
+
 import { FileInfo, getDirectories, getFiles } from '@nx-audiobook/file-walk';
 import { formatElapsed } from '@nx-audiobook/time';
-import { show, validateFilesAllAccountedFor } from '@nx-audiobook/validators';
+import {
+  show,
+  validateFilesAllAccountedFor,
+  Validation,
+} from '@nx-audiobook/validators';
 
 const defaultRootPath = '/Volumes/Space/archive/media/audiobooks';
 
-main();
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
 
-async function main() {
+async function main(): Promise<void> {
   const argv = await yargs(process.argv.slice(2))
     .option('rootPath', {
       alias: 'r',
@@ -36,7 +44,9 @@ async function main() {
     const allFiles = await getFiles(rootPath, { recurse: true, stat: false });
     console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     const validation = validateFilesAllAccountedFor(allFiles);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     show('Global', [validation]);
   }
 
@@ -51,22 +61,22 @@ async function main() {
 }
 
 // Maybe not the best name...
-type AudioBook = {
+interface AudioBook {
   directoryPath: string;
   files: FileInfo[];
   metadata: AudioBookMetadata[];
-};
+}
 
-type AudioBookMetadata = {
+interface AudioBookMetadata {
   path: string;
   author: string;
   title: string;
   duration: number;
-};
+}
 
 // Eventually export a data structure for the directory
 //  return a data structure or Validation?
-async function classifyDirectory(directoryPath) {
+async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
   const audiobook: AudioBook = {
     directoryPath,
     files: await getFiles(directoryPath),
@@ -75,8 +85,12 @@ async function classifyDirectory(directoryPath) {
   return audiobook;
 }
 
-async function validateDirectory(audiobook: AudioBook) {
+function validateDirectory(audiobook: AudioBook): void {
   const { directoryPath, files } = audiobook;
-  const validation = validateFilesAllAccountedFor(files);
-  show(directoryPath.substring(39) || '<root>', [validation]);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  const validation: Validation = validateFilesAllAccountedFor(files);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  show(directoryPath.length === 0 ? directoryPath.substring(39) : '<root>', [
+    validation,
+  ]);
 }

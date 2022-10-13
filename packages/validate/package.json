@@ -30,8 +30,7 @@
         "@nx-audiobook/file-walk": "workspace:*",
         "@nx-audiobook/time": "workspace:*",
         "@nx-audiobook/validators": "workspace:*",
-        "@root/walk": "^1.1.0",
-        "chalk": "^5.1.0",
+        "music-metadata": "^8.1.0",
         "yargs": "^17.6.0"
     },
     "devDependencies": {

@@ -1,4 +1,4 @@
-import * as colors from 'colors/safe';
+import chalk from 'chalk';
 
 import type { Validation } from './types';
 
@@ -13,7 +13,7 @@ export function show(title: string, validation: Validation[]): void {
 
 export function checkMark(ok: boolean, withColor = true): string {
   if (withColor) {
-    return ok ? colors.green('✔') : colors.red('✕');
+    return ok ? chalk.green('✔') : chalk.red('✕');
   }
   return ok ? '✔' : '✕';
 }
