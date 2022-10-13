@@ -89,8 +89,6 @@ function validateDirectory(audiobook: AudioBook): void {
   const { directoryPath, files } = audiobook;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const validation: Validation = validateFilesAllAccountedFor(files);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  show(directoryPath.length === 0 ? directoryPath.substring(39) : '<root>', [
-    validation,
-  ]);
+  const shortPath = directoryPath.substring(39);
+  show(shortPath.length === 0 ? '<root>' : shortPath, [validation]);
 }
