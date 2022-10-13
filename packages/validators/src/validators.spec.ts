@@ -1,7 +1,7 @@
-import { describe, expect, it } from 'vitest';
-import { validateFilesAllAccountedFor } from './validators';
-import type { FileInfo } from '@nx-audiobook/file-walk';
-import { basename, extname } from 'node:path';
+import { describe, expect, it } from 'vitest'
+import { validateFilesAllAccountedFor } from './validators'
+import type { FileInfo } from '@nx-audiobook/file-walk'
+import { basename, extname } from 'node:path'
 
 // utility
 function fileInfoFromPath(filePath: string): FileInfo {
@@ -11,7 +11,7 @@ function fileInfoFromPath(filePath: string): FileInfo {
     extension: extname(filePath),
     size: 0,
     mtime: new Date(0),
-  };
+  }
 }
 
 describe('validateFilesAllAccountedFor', () => {
@@ -21,8 +21,8 @@ describe('validateFilesAllAccountedFor', () => {
       level: 'info',
       message: 'All accounted for',
       extra: { total: 0, ignored: 0, audio: 0, unaccounted: [] },
-    });
-  });
+    })
+  })
   it('validate 2 audio file list', () => {
     expect(
       validateFilesAllAccountedFor(
@@ -33,8 +33,8 @@ describe('validateFilesAllAccountedFor', () => {
       level: 'info',
       message: 'All accounted for',
       extra: { total: 2, ignored: 0, audio: 2, unaccounted: [] },
-    });
-  });
+    })
+  })
   it('validate 2 audio file list with 2 known-name files', () => {
     expect(
       validateFilesAllAccountedFor(
@@ -50,8 +50,8 @@ describe('validateFilesAllAccountedFor', () => {
       level: 'info',
       message: 'All accounted for',
       extra: { total: 4, ignored: 2, audio: 2, unaccounted: [] },
-    });
-  });
+    })
+  })
 
   it('reject unknown file name (no extension)', () => {
     expect(
@@ -70,8 +70,8 @@ describe('validateFilesAllAccountedFor', () => {
         audio: 2,
         unaccounted: ['/path/README'],
       },
-    });
-  });
+    })
+  })
 
   it('reject an unknown file extension', () => {
     expect(
@@ -86,6 +86,6 @@ describe('validateFilesAllAccountedFor', () => {
         audio: 0,
         unaccounted: ['/path/file.unknown'],
       },
-    });
-  });
-});
+    })
+  })
+})

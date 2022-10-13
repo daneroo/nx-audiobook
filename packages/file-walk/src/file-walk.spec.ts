@@ -1,24 +1,24 @@
-import { describe, expect, it } from 'vitest';
-import { getDirectories, getFiles } from './file-walk';
-import { resolve } from 'node:path';
+import { describe, expect, it } from 'vitest'
+import { getDirectories, getFiles } from './file-walk'
+import { resolve } from 'node:path'
 
 describe('getDirectories smoke test', () => {
   it('should read this directory and not have children', async () => {
-    const selfDir = resolve(__dirname, '.');
-    expect(await getDirectories(selfDir)).toEqual([__dirname]);
-  });
+    const selfDir = resolve(__dirname, '.')
+    expect(await getDirectories(selfDir)).toEqual([__dirname])
+  })
   it("should read this directory's parent and find the parent and this directory", async () => {
     // assumes that lib ()
-    const parentDir = resolve(__dirname, '..');
-    expect(await getDirectories(parentDir)).toContain(parentDir);
-    expect(await getDirectories(parentDir)).toContain(__dirname);
-  });
-});
+    const parentDir = resolve(__dirname, '..')
+    expect(await getDirectories(parentDir)).toContain(parentDir)
+    expect(await getDirectories(parentDir)).toContain(__dirname)
+  })
+})
 
 describe('getFiles smoke test', () => {
   it('should read this directory and find this file', async () => {
-    const selfDir = resolve(__dirname, '.');
-    const thisDirFiles = await getFiles(selfDir);
-    expect(thisDirFiles.map((f) => f.path)).toContain(__filename);
-  });
-});
+    const selfDir = resolve(__dirname, '.')
+    const thisDirFiles = await getFiles(selfDir)
+    expect(thisDirFiles.map((f) => f.path)).toContain(__filename)
+  })
+})

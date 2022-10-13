@@ -1,16 +1,16 @@
-import { describe, expect, test } from 'vitest';
-import chalk from 'chalk';
-import { checkMark } from './show';
+import { describe, expect, test } from 'vitest'
+import chalk from 'chalk'
+import { checkMark } from './show'
 
 describe('checkMark - no color', () => {
   test.each([
     [true, '✔'],
     [false, '✕'],
   ])('%# checkMark %p: %p', (bool, expected) => {
-    const withColor = false;
-    expect(checkMark(bool, withColor)).toBe(expected);
-  });
-});
+    const withColor = false
+    expect(checkMark(bool, withColor)).toBe(expected)
+  })
+})
 
 describe('checkMark - with color', () => {
   test.each([
@@ -19,10 +19,10 @@ describe('checkMark - with color', () => {
   ])('%# checkMark %p: %p', (bool, expected) => {
     // skip this test if chalk has disabled color
     if (chalk.level > 0) {
-      const withColor = true;
-      const checkMarkWithColor: string = checkMark(bool, withColor);
-      const asArray = Array.from(Buffer.from(checkMarkWithColor));
-      expect(asArray).toStrictEqual(expected);
+      const withColor = true
+      const checkMarkWithColor: string = checkMark(bool, withColor)
+      const asArray = Array.from(Buffer.from(checkMarkWithColor))
+      expect(asArray).toStrictEqual(expected)
     }
-  });
-});
+  })
+})

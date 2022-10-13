@@ -1,19 +1,19 @@
-import yargs from 'yargs/yargs';
+import yargs from 'yargs/yargs'
 
-import { FileInfo, getDirectories, getFiles } from '@nx-audiobook/file-walk';
-import { formatElapsed } from '@nx-audiobook/time';
+import { FileInfo, getDirectories, getFiles } from '@nx-audiobook/file-walk'
+import { formatElapsed } from '@nx-audiobook/time'
 import {
   show,
   validateFilesAllAccountedFor,
   Validation,
-} from '@nx-audiobook/validators';
+} from '@nx-audiobook/validators'
 
-const defaultRootPath = '/Volumes/Space/archive/media/audiobooks';
+const defaultRootPath = '/Volumes/Space/archive/media/audiobooks'
 
 main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+  console.error(error)
+  process.exit(1)
+})
 
 async function main(): Promise<void> {
   const argv = await yargs(process.argv.slice(2))
@@ -25,36 +25,36 @@ async function main(): Promise<void> {
       describe: 'Path of the root directory to search from',
     })
     .help()
-    .parseAsync();
+    .parseAsync()
 
   // destructure arguments
-  const { rootPath: unverifiedRootPath } = argv;
+  const { rootPath: unverifiedRootPath } = argv
   // clean the root path by removing trailing slash
-  const rootPath = unverifiedRootPath.replace(/\/$/, '');
-  console.error('=-=- Validate:', { rootPath });
+  const rootPath = unverifiedRootPath.replace(/\/$/, '')
+  console.error('=-=- Validate:', { rootPath })
 
-  const startMs = +new Date();
-  const directories = await getDirectories(rootPath);
+  const startMs = +new Date()
+  const directories = await getDirectories(rootPath)
   console.error(
     `Got ${directories.length} directories in`,
     formatElapsed(startMs)
-  );
+  )
   {
-    const startMs = +new Date();
-    const allFiles = await getFiles(rootPath, { recurse: true, stat: false });
-    console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs));
+    const startMs = +new Date()
+    const allFiles = await getFiles(rootPath, { recurse: true, stat: false })
+    console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs))
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-    const validation = validateFilesAllAccountedFor(allFiles);
+    const validation = validateFilesAllAccountedFor(allFiles)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    show('Global', [validation]);
+    show('Global', [validation])
   }
 
   // rewriteHint('export const db = {');
   // per directory validation
   for (const directoryPath of directories) {
-    const audiobook = await classifyDirectory(directoryPath);
-    validateDirectory(audiobook);
+    const audiobook = await classifyDirectory(directoryPath)
+    validateDirectory(audiobook)
     // rewriteDirectory(directoryPath, bookData);
   }
   // rewriteHint('}');
@@ -62,16 +62,16 @@ async function main(): Promise<void> {
 
 // Maybe not the best name...
 interface AudioBook {
-  directoryPath: string;
-  files: FileInfo[];
-  metadata: AudioBookMetadata[];
+  directoryPath: string
+  files: FileInfo[]
+  metadata: AudioBookMetadata[]
 }
 
 interface AudioBookMetadata {
-  path: string;
-  author: string;
-  title: string;
-  duration: number;
+  path: string
+  author: string
+  title: string
+  duration: number
 }
 
 // Eventually export a data structure for the directory
@@ -81,14 +81,14 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
     directoryPath,
     files: await getFiles(directoryPath),
     metadata: [],
-  };
-  return audiobook;
+  }
+  return audiobook
 }
 
 function validateDirectory(audiobook: AudioBook): void {
-  const { directoryPath, files } = audiobook;
+  const { directoryPath, files } = audiobook
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-  const validation: Validation = validateFilesAllAccountedFor(files);
-  const shortPath = directoryPath.substring(39);
-  show(shortPath.length === 0 ? '<root>' : shortPath, [validation]);
+  const validation: Validation = validateFilesAllAccountedFor(files)
+  const shortPath = directoryPath.substring(39)
+  show(shortPath.length === 0 ? '<root>' : shortPath, [validation])
 }
