@@ -7,6 +7,9 @@
   - [ ] nx for orchestrating
 - [ ] Migrate a functioning version of validate-audiobook/walk
 - [ ] Add tests to metadata
+- Alternatives
+  - [ ] chalk -> [kolorist](https://github.com/marvinhagemeister/kolorist)
+  - [ ] yargs -> [minimist](https://github.com/minimistjs/minimist)
 
 ## Operation
 

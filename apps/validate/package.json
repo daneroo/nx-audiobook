@@ -3,25 +3,20 @@
     "version": "1.0.0",
     "description": "validate audiobook metadata",
     "type": "module",
-    "module": "./dist/main.js",
-    "types": "./dist/main.d.ts",
-    "exports": {
-        ".": "./dist/main.js"
-    },
+    "main": "index.js",
     "files": [
         "dist",
-        "!dist/.tsbuildinfo",
-        "bin"
+        "!dist/.tsbuildinfo"
     ],
     "bin": {
-        "cli-in-anger": "./bin/command.js"
+        "audiobook": "index.js"
     },
     "scripts": {
         "lint": "eslint .",
         "test": "vitest run",
         "coverage": "vitest run --coverage",
-        "build": "pnpm tsc --build .",
-        "start": "node dist/main.js",
+        "build": "unbuild",
+        "start": "node dist/index.mjs",
         "pkgNotWorking": "pnpm build && pnpm dlx pkg . -o bin/app -t node16-linux-x64,node16-macos-x64,node16-win-x64"
     },
     "author": "Daniel Lauzon",
