@@ -1,5 +1,5 @@
 {
-    "name": "@nx-audiobook/time",
+    "name": "@nx-audiobook/file-walk",
     "version": "1.0.0",
     "description": "Filesystem traversal",
     "type": "module",
@@ -19,5 +19,7 @@
         "build": "pnpm tsc --build ."
     },
     "license": "ISC",
-    "dependencies": {}
+    "dependencies": {
+        "@root/walk": "^1.1.0"
+    }
 }

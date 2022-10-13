@@ -1,5 +1,5 @@
 {
-    "name": "@nx-audiobook/time",
+    "name": "@nx-audiobook/validators",
     "version": "1.0.0",
     "description": "Filesystem traversal",
     "type": "module",
@@ -19,5 +19,8 @@
         "build": "pnpm tsc --build ."
     },
     "license": "ISC",
-    "dependencies": {}
+    "dependencies": {
+        "@nx-audiobook/file-walk": "workspace:*",
+        "colors": "^1.4.0"
+    }
 }

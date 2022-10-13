@@ -1,17 +1,17 @@
 // import { parseFile } from 'music-metadata';
-import { FileInfo } from '@nx-audiobook/file-walk';
+import type { FileInfo } from '@nx-audiobook/file-walk';
 import { isAudioFile } from '@nx-audiobook/validators';
 
 export function metadata(): string {
   return 'metadata';
 }
 
-export type AudioBookMetadata = {
+export interface AudioBookMetadata {
   path: string;
   author?: string;
   title?: string;
   duration?: number;
-};
+}
 
 // get metadata for a single audio file
 export async function getMetadataForSingleFile(
@@ -29,8 +29,8 @@ export async function getMetadataForSingleFile(
     // const metadata = await parseFile(fileInfo.path, options);
     return {
       path: fileInfo.path,
-      author: '', //metadata.common.artist,
-      title: '', //metadata.common.album,
+      author: '', // metadata.common.artist,
+      title: '', // metadata.common.album,
     };
   } catch (error) {
     console.error(`Error parsing metadata for ${fileInfo.path}`);

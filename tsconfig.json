@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true, // (C)
+    "sourceMap": true,
+    // below are all part of node16-strictest-esm
+    // "strict": true,
+    // "module": "ESNext",
+    // "target": "ESNext",
+    // "esModuleInterop": true,
+    // "forceConsistentCasingInFileNames": true,
+    // "skipLibCheck": true,
+    // "moduleResolution": "NodeNext",
+    "paths": {
+      "@nx-audiobook/validate": ["./apps/validate"],
+      "@nx-audiobook/file-walk": ["./packages/file-walk"],
+      "@nx-audiobook/validators": ["./packages/validators"],
+      "@nx-audiobook/time": ["./packages/time"]
+    }
+  }
+}
