@@ -39,19 +39,18 @@ async function main(): Promise<void> {
     `Got ${directories.length} directories in`,
     formatElapsed(startMs)
   )
+  // 1- Global validation
   {
     const startMs = +new Date()
     const allFiles = await getFiles(rootPath, { recurse: true, stat: false })
     console.error(`Got ${allFiles.length} files in`, formatElapsed(startMs))
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     const validation = validateFilesAllAccountedFor(allFiles)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     show('Global', [validation])
   }
 
   // rewriteHint('export const db = {');
-  // per directory validation
+  // 2- Per directory validation
   for (const directoryPath of directories) {
     const audiobook = await classifyDirectory(directoryPath)
     validateDirectory(audiobook)
@@ -61,6 +60,9 @@ async function main(): Promise<void> {
 }
 
 // Maybe not the best name...
+// Describe an Audiobook:
+// - The files in the directory
+// - The metadata in each of those files
 interface AudioBook {
   directoryPath: string
   files: FileInfo[]
@@ -87,7 +89,6 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
 function validateDirectory(audiobook: AudioBook): void {
   const { directoryPath, files } = audiobook
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const validation: Validation = validateFilesAllAccountedFor(files)
   const shortPath = directoryPath.substring(39)
   show(shortPath.length === 0 ? '<root>' : shortPath, [validation])
