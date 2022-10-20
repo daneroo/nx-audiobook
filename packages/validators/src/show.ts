@@ -1,13 +1,29 @@
 import chalk from 'chalk'
 
 import type { Validation } from './types'
-
-export function show(title: string, validation: Validation[]): void {
+interface ShowOptions {
+  alwaysTitle: boolean
+  onlyFailures: boolean
+}
+export function show(
+  title: string,
+  validation: Validation[],
+  options: ShowOptions = {
+    alwaysTitle: true,
+    onlyFailures: false,
+  }
+): void {
+  const { alwaysTitle, onlyFailures } = options
   const ok = validation.every((a) => a.ok)
-  console.log(`${checkMark(ok)} ${title}`)
-  for (const a of validation) {
-    const { ok, level, message, extra } = a
-    console[level](`  ${checkMark(ok)}: ${message}`, extra)
+
+  if (alwaysTitle || !ok) {
+    console.log(`${checkMark(ok)} ${title}`)
+  }
+  for (const v of validation) {
+    const { ok, level, message, extra } = v
+    if (onlyFailures && !ok) {
+      console[level](`  ${checkMark(ok)}: ${message}`, extra)
+    }
   }
 }
 
