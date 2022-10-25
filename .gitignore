@@ -3,3 +3,5 @@ node_modules/
 dist/
 # coverage (which is global as per vitest being run from root?)
 coverage/
+# cache directory - volatile
+/cache/

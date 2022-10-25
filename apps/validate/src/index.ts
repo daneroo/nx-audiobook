@@ -9,7 +9,10 @@ import {
   Validation,
 } from '@nx-audiobook/validators'
 
-import { AudioBookMetadata, getMetadataForSingleFile } from './app/metadata'
+import {
+  AudioBookMetadata,
+  getMetadataForSingleFile,
+} from './app/metadata/metadata'
 import { db as hints } from './app/hints/db'
 import type { Hint, AuthorTitleHintReason } from './app/hints/types'
 
@@ -45,6 +48,8 @@ async function main(): Promise<void> {
     formatElapsed(startMs)
   )
   // 1- Global validation
+  // - still needed for validateFilesAllAccountedFor,
+  // because AudioBook returned from classifyDirectory does not have the full list of files (just audio files)
   {
     const startMs = +new Date()
     const allFiles = await getFiles(rootPath, { recurse: true, stat: false })
@@ -67,7 +72,7 @@ async function main(): Promise<void> {
 
   // 3- rewrite hints
   // eslint-disable-next-line no-lone-blocks
-  if (+new Date() < 0) {
+  if (+new Date() > 0) {
     // rewriteHint('export const db = {');
     const newHints: Hint[] = []
     for (const directoryPath of directories) {
