@@ -6,6 +6,7 @@ Pnpm monorepo with nx for orchestration.
 ## TODO
 
 - [ ] Migrate a functioning version of validate-audiobook/walk
+- [ ] Generic Caching - getMeta/searchAudible
 - [ ] Add tests to metadata
 - [ ] CI/CD
 

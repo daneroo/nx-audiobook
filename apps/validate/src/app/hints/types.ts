@@ -1,4 +1,4 @@
-type AuthorTitleHintReason = 'hint' | 'unique' | 'multiple'
+export type AuthorTitleHintReason = 'hint' | 'unique' | 'multiple'
 
 export interface Hint {
   // [key: string]: string | [string, AuthorTitleHintReason] | string[]

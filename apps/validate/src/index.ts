@@ -9,7 +9,9 @@ import {
   Validation,
 } from '@nx-audiobook/validators'
 
-import { AudioMetadata, getMetadataForSingleFile } from './app/metadata'
+import { AudioBookMetadata, getMetadataForSingleFile } from './app/metadata'
+import { db as hints } from './app/hints/db'
+import type { Hint, AuthorTitleHintReason } from './app/hints/types'
 
 const defaultRootPath = '/Volumes/Space/archive/media/audiobooks'
 
@@ -52,28 +54,65 @@ async function main(): Promise<void> {
     show('Global - all files accounted for', [validation])
   }
 
-  // rewriteHint('export const db = {');
   // 2- Per directory validation
   for (const directoryPath of directories) {
     const audiobook = await classifyDirectory(directoryPath)
     const validations = validateDirectory(audiobook)
     const shortPath = directoryPath.substring(39)
     show(shortPath.length === 0 ? '<root>' : shortPath, validations, {
-      alwaysTitle: false,
-      onlyFailures: true,
+      alwaysTitle: true,
+      onlyFailures: false,
     })
-
-    // rewriteDirectory(directoryPath, bookData);
   }
-  // rewriteHint('}');
+
+  // 3- rewrite hints
+  // eslint-disable-next-line no-lone-blocks
+  if (+new Date() < 0) {
+    // rewriteHint('export const db = {');
+    const newHints: Hint[] = []
+    for (const directoryPath of directories) {
+      const audiobook = await classifyDirectory(directoryPath)
+      if (audiobook.audioFiles.length === 0) {
+        newHints.push({
+          skip: 'no audio files',
+        })
+      }
+
+      const { author, title } = audiobook.metadata
+      const authors = dedupArray(
+        audiobook.audioFiles.map((file) => file.metadata.author)
+      )
+      const authorHintReason: AuthorTitleHintReason =
+        authors.length === 1 && authors[0] === author ? 'unique' : 'hint'
+      const titles = dedupArray(
+        audiobook.audioFiles.map((file) => file.metadata.title)
+      )
+      const titleHintReason: AuthorTitleHintReason =
+        titles.length === 1 && titles[0] === title ? 'unique' : 'hint'
+      const hint: Hint = {
+        author: [author, authorHintReason],
+        title: [title, titleHintReason],
+      }
+      // pass on hint.skip
+      const oldHintSkip = hints[directoryPath]?.skip
+      if (oldHintSkip !== undefined) {
+        hint.skip = oldHintSkip
+      }
+      newHints.push(hint)
+
+      // rewriteDirectory(directoryPath, bookData);
+    }
+    console.log(JSON.stringify(newHints, null, 2))
+    // rewriteHint('}');
+  }
 }
 
 // The metadata for an audio file or an entire audiobook
 
 // FileInfo and AudioMetadata for one file
 interface AudioFile {
-  info: FileInfo
-  metadata: AudioMetadata
+  fileInfo: FileInfo
+  metadata: AudioBookMetadata
 }
 // Describe an Audiobook:
 // - The files in the directory
@@ -81,11 +120,11 @@ interface AudioFile {
 interface AudioBook {
   directoryPath: string
   audioFiles: AudioFile[]
-  metadata: AudioMetadata
+  metadata: AudioBookMetadata
 }
 
-// Eventually export a data structure for the directory
-//  return a data structure or Validation?
+// Audiobook represents the data for a Directory
+// - the audio files in the directory
 async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
   const fileInfos = await getFiles(directoryPath, {
     recurse: false,
@@ -94,30 +133,44 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
   // - filter out non-audio files
   // - lookup metadata for each file
+  // Parallel - is faster than sequential - 6.625 s ±  0.586 s (No cache: 77.888 s ±  1.136 s)
   const audioFiles = await Promise.all(
-    fileInfos.filter(isAudioFile).map(AugmentFileInfo)
+    fileInfos.filter(isAudioFile).map(augmentFileInfo)
   )
+  // Sequential - is slower than parallel - 4.608 s ±  0.093 s (No cache: 97.116 s ±  7.710 s)
+  // const audioFiles: AudioFile[] = []
+  // for (const fileInfo of fileInfos.filter(isAudioFile)) {
+  //   audioFiles.push(await augmentFileInfo(fileInfo))
+  // }
+
+  // aggregates the AudioBookMetadata for the entire directories' audioFiles
+  // adn overrides with hints for author and title, if present.
+  const duration = audioFiles.reduce(
+    (sum, file) => sum + file.metadata.duration,
+    0
+  )
+  // set author, title from hints
+  const hint = hints[directoryPath]
+  const author = hint?.author?.[0] ?? ''
+  const title = hint?.title?.[0] ?? ''
+
   const audiobook: AudioBook = {
     directoryPath,
     audioFiles,
-    metadata: {
-      author: '',
-      title: '',
-      duration: 0,
-    },
+    metadata: { author, title, duration },
   }
   return audiobook
 }
 
-async function AugmentFileInfo(info: FileInfo): Promise<AudioFile> {
-  const metadata = await getMetadataForSingleFile(info)
-  return { info, metadata }
+async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
+  const metadata = await getMetadataForSingleFile(fileInfo)
+  return { fileInfo, metadata }
 }
 
 function validateDirectory(audiobook: AudioBook): Validation[] {
   const { audioFiles } = audiobook
   const validations: Validation[] = [
-    validateFilesAllAccountedFor(audioFiles.map((file) => file.info)),
+    validateFilesAllAccountedFor(audioFiles.map((file) => file.fileInfo)),
     validateUniqueAuthorTitle(audiobook),
   ]
   return validations
@@ -125,6 +178,26 @@ function validateDirectory(audiobook: AudioBook): Validation[] {
 
 function validateUniqueAuthorTitle(audiobook: AudioBook): Validation {
   const { audioFiles } = audiobook
+  const hint = hints[audiobook.directoryPath]
+  // hints[directoryPath]?.author?.[0] ?? '',
+  const skip = hint?.skip
+  if (skip === 'no audio files') {
+    return {
+      ok: true,
+      message: 'validateUniqueAuthorTitle',
+      level: 'info',
+      extra: { skip },
+    }
+  }
+
+  // if there is a non-empty author and title (from hints)
+  // then this is valid
+  const v = validateAuthorTitleHint(audiobook)
+  if (v.ok) {
+    return v
+  }
+
+  // otherwise, check that all the files have the same author and title
   const authors = dedupArray(audioFiles.map((file) => file.metadata.author))
   const titles = dedupArray(audioFiles.map((file) => file.metadata.title))
   const ok =
@@ -135,7 +208,7 @@ function validateUniqueAuthorTitle(audiobook: AudioBook): Validation {
   return {
     ok,
     message: 'validateUniqueAuthorTitle',
-    level: 'warn',
+    level: ok ? 'info' : 'warn',
     extra: { authors, titles },
   }
 }
@@ -144,6 +217,20 @@ function validateUniqueAuthorTitle(audiobook: AudioBook): Validation {
 function dedupArray<T>(ary: T[]): T[] {
   const dedup = [...new Set(ary)]
   return dedup
+}
+
+function validateAuthorTitleHint(audiobook: AudioBook): Validation {
+  const { metadata } = audiobook
+  // these were set from the hints, in classifyDirectory
+  // const hint = hints[directoryPath]
+  const { author, title } = metadata
+  const ok = author !== '' && title !== ''
+  return {
+    ok,
+    message: 'validateAuthorTitleHint',
+    level: ok ? 'info' : 'error',
+    extra: { author, title },
+  }
 }
 
 // async function sleep(ms: number): Promise<void> {

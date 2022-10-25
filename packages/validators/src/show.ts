@@ -7,21 +7,21 @@ interface ShowOptions {
 }
 export function show(
   title: string,
-  validation: Validation[],
+  validations: Validation[],
   options: ShowOptions = {
     alwaysTitle: true,
     onlyFailures: false,
   }
 ): void {
   const { alwaysTitle, onlyFailures } = options
-  const ok = validation.every((a) => a.ok)
+  const ok = validations.every((a) => a.ok)
 
   if (alwaysTitle || !ok) {
     console.log(`${checkMark(ok)} ${title}`)
   }
-  for (const v of validation) {
+  for (const v of validations) {
     const { ok, level, message, extra } = v
-    if (onlyFailures && !ok) {
+    if (!onlyFailures || !ok) {
       console[level](`  ${checkMark(ok)}: ${message}`, extra)
     }
   }

@@ -3844,6 +3844,14 @@ export const db: Record<string, Hint> = {
       '0241510678: ✓ Δ:22s - 16h35m0s -  Doom / Niall Ferguson / n: Niall Ferguson',
     ],
   },
+  '/Volumes/Space/archive/media/audiobooks/Nick Bostrom - Superintelligence': {
+    author: ['Nick Bostrom', 'unique'],
+    title: ['Superintelligence (Unabridged)', 'unique'],
+    '// duration': '14h17m8s',
+    asins: [
+      'B00LPMD72K: ✓ Δ:8s - 14h17m0s -  Superintelligence / Nick Bostrom / n: Napoleon Ryan',
+    ],
+  },
   '/Volumes/Space/archive/media/audiobooks/Nicole Perlroth - This Is How They Tell Me the World Ends':
     {
       author: ['Nicole Perlroth', 'unique'],
@@ -4058,6 +4066,14 @@ export const db: Record<string, Hint> = {
       '1782835563: ✓ Δ:4m18s - 16h9m0s -  Mastery / Robert Greene / n: Fred Sanders',
       '0593452127: ✗ Δ:3h15m18s - 12h58m0s -  The Daily Laws / Robert Greene / n: Fred Sanders,Robert Greene',
       '1782839267: ✗ Δ:3h15m18s - 12h58m0s -  The Daily Laws / Robert Greene / n: Fred Sanders,Robert Greene',
+    ],
+  },
+  '/Volumes/Space/archive/media/audiobooks/Roger Penrose - Cycles of Time': {
+    author: ['Roger Penrose', 'unique'],
+    title: ['Cycles of Time', 'unique'],
+    '// duration': '7h22m55s',
+    asins: [
+      'B004V9ZVP0: ✓ Δ:55s - 7h22m0s -  Cycles of Time / Roger Penrose / n: Bruce Mann',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Roger Penrose - The Emperors New Mind':
