@@ -1,12 +1,7 @@
 import { parseFile } from 'music-metadata'
 import type { FileInfo } from '@nx-audiobook/file-walk'
 import { cachedFetchResult } from '../cache/cache'
-
-export interface AudioBookMetadata {
-  author: string
-  title: string
-  duration: number
-}
+import type { AudioBookMetadata } from './types'
 
 interface MetaOptions {
   duration: boolean
@@ -30,7 +25,7 @@ export async function getMetadataForSingleFile(
       fileInfo,
       options,
     },
-    'metadata'
+    'music-metadata'
   )
 }
 
@@ -40,12 +35,16 @@ export async function fetchResult(args: FetchArgs): Promise<AudioBookMetadata> {
   try {
     // DO NOT REUSE options object; it gets polluted! {...options} is a workaround
     const metadata = await parseFile(fileInfo.path, { ...options })
+    // special case: duration can be NaN, which would turn into null after JSON.stringify|parse
+    const duration = isNaN(metadata.format.duration ?? 0)
+      ? 0
+      : metadata.format.duration ?? 0
     return {
       author: metadata.common.artist ?? '',
       title: metadata.common.album ?? '',
-      duration: metadata.format.duration ?? 0,
+      duration,
     }
   } catch (error) {
-    throw new Error(`Error parsing metadata for ${fileInfo.path}`)
+    throw new Error(`music-metadata error: ${fileInfo.path}`)
   }
 }

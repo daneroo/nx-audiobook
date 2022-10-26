@@ -4,7 +4,7 @@ import * as path from 'node:path'
 import { getFiles } from '@nx-audiobook/file-walk'
 import { isAudioFile } from '@nx-audiobook/validators'
 import type { AudioBookMetadata } from './types'
-import { getMetadataForSingleFile, fetchResult } from './music-metadata'
+import { ffprobe, fetchResult } from './ffprobe'
 
 const assetBaseDirectory = path.resolve(
   __dirname,
@@ -13,6 +13,7 @@ const assetBaseDirectory = path.resolve(
   'audio'
 )
 
+// Copies from music metadata spec
 describe('audio assets', () => {
   it('should find assets directory', async () => {
     expect(
@@ -66,7 +67,7 @@ describe('happy path', () => {
 
     const metas: AudioBookMetadata[] = []
     for (const fileInfo of fileInfos.filter(isAudioFile)) {
-      metas.push(await getMetadataForSingleFile(fileInfo))
+      metas.push(await ffprobe(fileInfo))
     }
     expect(metas).toMatchSnapshot()
   })
@@ -78,15 +79,7 @@ describe('happy path', () => {
 
     const metas: AudioBookMetadata[] = []
     for (const fileInfo of fileInfos.filter(isAudioFile)) {
-      metas.push(
-        await fetchResult({
-          fileInfo,
-          options: {
-            duration: false,
-            includeChapters: false,
-          },
-        })
-      )
+      metas.push(await fetchResult(fileInfo))
     }
     expect(metas).toMatchSnapshot()
   })

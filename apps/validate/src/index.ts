@@ -11,7 +11,8 @@ import {
 import {
   AudioBookMetadata,
   getMetadataForSingleFile,
-} from './app/metadata/music-metadata'
+  ffprobe,
+} from './app/metadata/main'
 import { searchAudible, sortAudibleBooks } from './app/audible/search'
 import { db as hints } from './app/hints/db'
 import type { Hint, AuthorTitleHintReason } from './app/hints/types'
@@ -72,7 +73,7 @@ async function main(): Promise<void> {
 
   // 3- rewrite hints
   // eslint-disable-next-line no-lone-blocks
-  if (+new Date() > 0) {
+  if (+new Date() < 0) {
     // rewriteHint('export const db = {');
     const newHints: Record<string, Hint> = {}
     for (const directoryPath of directories) {
@@ -218,6 +219,11 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
 async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
   const metadata = await getMetadataForSingleFile(fileInfo)
+  if (metadata.duration === 0) {
+    // resolve duration===0 with ffprobe
+    const ffMetadata = await ffprobe(fileInfo)
+    metadata.duration = ffMetadata.duration
+  }
   return { fileInfo, metadata }
 }
 
