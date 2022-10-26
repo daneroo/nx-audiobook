@@ -8,7 +8,7 @@ import {
   AudioBookMetadata,
   getMetadataForSingleFile,
   fetchResult,
-} from './metadata'
+} from './music-metadata'
 
 const assetBaseDirectory = path.resolve(
   __dirname,

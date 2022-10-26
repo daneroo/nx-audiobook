@@ -11,7 +11,7 @@ import {
 import {
   AudioBookMetadata,
   getMetadataForSingleFile,
-} from './app/metadata/metadata'
+} from './app/metadata/music-metadata'
 import { searchAudible, sortAudibleBooks } from './app/audible/search'
 import { db as hints } from './app/hints/db'
 import type { Hint, AuthorTitleHintReason } from './app/hints/types'
