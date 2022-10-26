@@ -66,13 +66,13 @@ async function main(): Promise<void> {
     const shortPath = directoryPath.substring(39)
     show(shortPath.length === 0 ? '<root>' : shortPath, validations, {
       alwaysTitle: true,
-      onlyFailures: false,
+      onlyFailures: true,
     })
   }
 
   // 3- rewrite hints
   // eslint-disable-next-line no-lone-blocks
-  if (+new Date() > 0) {
+  if (+new Date() < 0) {
     // rewriteHint('export const db = {');
     const newHints: Hint[] = []
     for (const directoryPath of directories) {
@@ -138,11 +138,12 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
   // - filter out non-audio files
   // - lookup metadata for each file
-  // Parallel - is faster than sequential - 6.625 s ±  0.586 s (No cache: 77.888 s ±  1.136 s)
+
+  // Parallel - is faster than sequential - 3.797s ±  0.409s  (No cache: 77.888s ±  1.136s)
   const audioFiles = await Promise.all(
     fileInfos.filter(isAudioFile).map(augmentFileInfo)
   )
-  // Sequential - is slower than parallel - 4.608 s ±  0.093 s (No cache: 97.116 s ±  7.710 s)
+  // Sequential - is slower than parallel - 7.975s ±  0.991s (No cache: 97.116s ±  7.710s)
   // const audioFiles: AudioFile[] = []
   // for (const fileInfo of fileInfos.filter(isAudioFile)) {
   //   audioFiles.push(await augmentFileInfo(fileInfo))
@@ -237,7 +238,3 @@ function validateAuthorTitleHint(audiobook: AudioBook): Validation {
     extra: { author, title },
   }
 }
-
-// async function sleep(ms: number): Promise<void> {
-//   return await new Promise((resolve) => setTimeout(resolve, ms))
-// }

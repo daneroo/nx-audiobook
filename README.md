@@ -5,9 +5,9 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
-- [ ] Migrate a functioning version of validate-audiobook/walk
-- [ ] Generic Caching - getMeta/searchAudible
-- [ ] Add tests to metadata
+- [ ] test sortAudible
+- [ ] split audible, metadata (music/ffprobe)
+- [ ] Node18 & native fetch (remove node-fetch)
 - [ ] CI/CD
 
 ## Operation
@@ -17,6 +17,7 @@ Pnpm monorepo with nx for orchestration.
 pnpm lint
 pnpm test
 pnpm build
+pnpm build && pnpm start
 
 # cd apps/validate
 pnpm run dev # run's the cli in dev mode (i.e. with vite-node)

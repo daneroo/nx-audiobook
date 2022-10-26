@@ -4,7 +4,11 @@ import * as path from 'node:path'
 import { getFiles } from '@nx-audiobook/file-walk'
 import { isAudioFile } from '@nx-audiobook/validators'
 
-import { AudioBookMetadata, getMetadataForSingleFile } from './metadata'
+import {
+  AudioBookMetadata,
+  getMetadataForSingleFile,
+  fetchResult,
+} from './metadata'
 
 const assetBaseDirectory = path.resolve(
   __dirname,
@@ -38,7 +42,10 @@ describe('audio assets', () => {
   })
 })
 
-const cacheBaseDirectory = path.join(__dirname, 'testcache')
+// This adds the proper type for process.env.CACHE_BASE_DIRECTORY, so we can use the dot notation and delete operator
+declare let process: { env: { CACHE_BASE_DIRECTORY?: string } }
+
+const cacheBaseDirectory = path.join(__dirname, 'test_cache')
 beforeEach(async () => {
   try {
     await fs.rm(cacheBaseDirectory, { recursive: true })
@@ -61,26 +68,30 @@ describe('happy path', () => {
     ).filter(isAudioFile)
     expect(fileInfos).toHaveLength(2)
 
-    // run the test twice, second time will hit the cache
-    for (let iteration = 0; iteration < 2; iteration++) {
-      const metas: AudioBookMetadata[] = []
-      for (const fileInfo of fileInfos.filter(isAudioFile)) {
-        metas.push(await getMetadataForSingleFile(fileInfo))
-      }
-      expect(metas).toMatchInlineSnapshot(`
-      [
-        {
-          "author": "Jon Kabat-Zinn, American Public Media",
-          "duration": 44.85224489795918,
-          "title": "Speaking of Faith from American Public Media",
-        },
-        {
-          "author": "Robert Frost",
-          "duration": 76.19918367346939,
-          "title": "Poem of the Day from Poetry Foundation.org",
-        },
-      ]
-    `)
+    const metas: AudioBookMetadata[] = []
+    for (const fileInfo of fileInfos.filter(isAudioFile)) {
+      metas.push(await getMetadataForSingleFile(fileInfo))
     }
+    expect(metas).toMatchSnapshot()
+  })
+  it('should find audio file metadata (no cache)', async () => {
+    const fileInfos = (
+      await getFiles(assetBaseDirectory, { recurse: true, stat: true })
+    ).filter(isAudioFile)
+    expect(fileInfos).toHaveLength(2)
+
+    const metas: AudioBookMetadata[] = []
+    for (const fileInfo of fileInfos.filter(isAudioFile)) {
+      metas.push(
+        await fetchResult({
+          fileInfo,
+          options: {
+            duration: false,
+            includeChapters: false,
+          },
+        })
+      )
+    }
+    expect(metas).toMatchSnapshot()
   })
 })

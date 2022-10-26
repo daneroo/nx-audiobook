@@ -1,0 +1,127 @@
+// Vitest Snapshot v1
+
+exports[`happy path > should find Barry Lopez/Of Wolves and Men (No Cache) 1`] = `
+[
+  {
+    "asin": "B09R38688P",
+    "authors": [
+      "Barry Lopez",
+    ],
+    "duration": 38880,
+    "narrators": [
+      "Matt Godfrey",
+    ],
+    "series": "Scribner Classics",
+    "seriesPosition": "2",
+    "title": "Of Wolves and Men",
+  },
+]
+`;
+
+exports[`happy path > should find Barry Lopez/Of Wolves and Men 1`] = `
+[
+  {
+    "asin": "B09R38688P",
+    "authors": [
+      "Barry Lopez",
+    ],
+    "duration": 38880,
+    "narrators": [
+      "Matt Godfrey",
+    ],
+    "series": "Scribner Classics",
+    "seriesPosition": "2",
+    "title": "Of Wolves and Men",
+  },
+]
+`;
+
+exports[`happy path > should find Barry Lopez/Of Wolves and Men 2`] = `
+[
+  {
+    "asin": "B09R38688P",
+    "authors": [
+      "Barry Lopez",
+    ],
+    "duration": 38880,
+    "narrators": [
+      "Matt Godfrey",
+    ],
+    "series": "Scribner Classics",
+    "seriesPosition": "2",
+    "title": "Of Wolves and Men",
+  },
+]
+`;
+
+exports[`happy path > should find Nick Bostrom/Superintelligence 1`] = `
+[
+  {
+    "asin": "B00LPMD72K",
+    "authors": [
+      "Nick Bostrom",
+    ],
+    "duration": 51420,
+    "narrators": [
+      "Napoleon Ryan",
+    ],
+    "series": "",
+    "seriesPosition": "",
+    "title": "Superintelligence",
+  },
+]
+`;
+
+exports[`happy path > should find Nick Bostrom/Superintelligence 2`] = `
+[
+  {
+    "asin": "B00LPMD72K",
+    "authors": [
+      "Nick Bostrom",
+    ],
+    "duration": 51420,
+    "narrators": [
+      "Napoleon Ryan",
+    ],
+    "series": "",
+    "seriesPosition": "",
+    "title": "Superintelligence",
+  },
+]
+`;
+
+exports[`happy path > should find a search result 1`] = `
+[
+  {
+    "asin": "B00LPMD72K",
+    "authors": [
+      "Nick Bostrom",
+    ],
+    "duration": 51420,
+    "narrators": [
+      "Napoleon Ryan",
+    ],
+    "series": "",
+    "seriesPosition": "",
+    "title": "Superintelligence",
+  },
+]
+`;
+
+exports[`happy path > should find a search result 2`] = `
+[
+  {
+    "asin": "B00LPMD72K",
+    "authors": [
+      "Nick Bostrom",
+    ],
+    "duration": 51420,
+    "narrators": [
+      "Napoleon Ryan",
+    ],
+    "series": "",
+    "seriesPosition": "",
+    "title": "Superintelligence",
+  },
+]
+`;

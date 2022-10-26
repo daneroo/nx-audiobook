@@ -1,0 +1,31 @@
+// Vitest Snapshot v1
+
+exports[`happy path > should find audio file metadata (no cache) 1`] = `
+[
+  {
+    "author": "Jon Kabat-Zinn, American Public Media",
+    "duration": 44.85224489795918,
+    "title": "Speaking of Faith from American Public Media",
+  },
+  {
+    "author": "Robert Frost",
+    "duration": 76.19918367346939,
+    "title": "Poem of the Day from Poetry Foundation.org",
+  },
+]
+`;
+
+exports[`happy path > should find audio file metadata 1`] = `
+[
+  {
+    "author": "Jon Kabat-Zinn, American Public Media",
+    "duration": 44.85224489795918,
+    "title": "Speaking of Faith from American Public Media",
+  },
+  {
+    "author": "Robert Frost",
+    "duration": 76.19918367346939,
+    "title": "Poem of the Day from Poetry Foundation.org",
+  },
+]
+`;

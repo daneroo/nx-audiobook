@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatElapsed } from './time'
+import { formatElapsed } from './format'
 
 describe('formatElapsed', () => {
   it('should format a zero duration', () => {
