@@ -1,18 +1,18 @@
 import yargs from 'yargs/yargs'
 
 import { FileInfo, getDirectories, getFiles } from '@nx-audiobook/file-walk'
-import { formatElapsed } from '@nx-audiobook/time'
+import { formatElapsed, durationToHMS } from '@nx-audiobook/time'
 import {
   isAudioFile,
   show,
   validateFilesAllAccountedFor,
   Validation,
 } from '@nx-audiobook/validators'
-
 import {
   AudioBookMetadata,
   getMetadataForSingleFile,
 } from './app/metadata/metadata'
+import { searchAudible, sortAudibleBooks } from './app/audible/search'
 import { db as hints } from './app/hints/db'
 import type { Hint, AuthorTitleHintReason } from './app/hints/types'
 
@@ -65,50 +65,99 @@ async function main(): Promise<void> {
     const validations = validateDirectory(audiobook)
     const shortPath = directoryPath.substring(39)
     show(shortPath.length === 0 ? '<root>' : shortPath, validations, {
-      alwaysTitle: true,
+      alwaysTitle: false,
       onlyFailures: true,
     })
   }
 
   // 3- rewrite hints
   // eslint-disable-next-line no-lone-blocks
-  if (+new Date() < 0) {
+  if (+new Date() > 0) {
     // rewriteHint('export const db = {');
-    const newHints: Hint[] = []
+    const newHints: Record<string, Hint> = {}
     for (const directoryPath of directories) {
       const audiobook = await classifyDirectory(directoryPath)
       if (audiobook.audioFiles.length === 0) {
-        newHints.push({
+        newHints[directoryPath] = {
           skip: 'no audio files',
-        })
-      }
+        }
+        continue
+      } else {
+        // audiobook.audioFiles.length > 0
+        const { author, title, duration } = audiobook.metadata
+        const authors = dedupArray(
+          audiobook.audioFiles.map((file) => file.metadata.author)
+        )
+        const authorHintReason: AuthorTitleHintReason =
+          authors.length === 1 && authors[0] === author ? 'unique' : 'hint'
+        const titles = dedupArray(
+          audiobook.audioFiles.map((file) => file.metadata.title)
+        )
+        const titleHintReason: AuthorTitleHintReason =
+          titles.length === 1 && titles[0] === title ? 'unique' : 'hint'
 
-      const { author, title } = audiobook.metadata
-      const authors = dedupArray(
-        audiobook.audioFiles.map((file) => file.metadata.author)
-      )
-      const authorHintReason: AuthorTitleHintReason =
-        authors.length === 1 && authors[0] === author ? 'unique' : 'hint'
-      const titles = dedupArray(
-        audiobook.audioFiles.map((file) => file.metadata.title)
-      )
-      const titleHintReason: AuthorTitleHintReason =
-        titles.length === 1 && titles[0] === title ? 'unique' : 'hint'
-      const hint: Hint = {
-        author: [author, authorHintReason],
-        title: [title, titleHintReason],
+        const hint: Hint = {
+          author: [author, authorHintReason],
+          title: [title, titleHintReason],
+          '// duration': durationToHMS(duration),
+        }
+        // pass on hint.skip
+        const oldHintSkip = hints[directoryPath]?.skip
+        if (oldHintSkip !== undefined) {
+          hint.skip = oldHintSkip
+        }
+
+        // asin section - if not skipped
+        if (hint.skip === undefined) {
+          const asins = await getAsins(duration, author, title)
+          hint.asins = asins
+        }
+
+        newHints[directoryPath] = hint
       }
-      // pass on hint.skip
-      const oldHintSkip = hints[directoryPath]?.skip
-      if (oldHintSkip !== undefined) {
-        hint.skip = oldHintSkip
-      }
-      newHints.push(hint)
 
       // rewriteDirectory(directoryPath, bookData);
     }
+    console.log(`// cSpell:disable
+    import type { Hint } from './types'
+    export const db: Record<string, Hint> =
+    `)
     console.log(JSON.stringify(newHints, null, 2))
     // rewriteHint('}');
+  }
+
+  async function getAsins(
+    duration: number,
+    author: string,
+    title: string
+  ): Promise<string[]> {
+    const durationMeta = duration // rename to avoid shadowing
+    const audibleBooks = await searchAudible({ author, title })
+    const sortedAudible = sortAudibleBooks(audibleBooks, durationMeta)
+    const deltaThreshold = 5 * 60 // 5 minutes
+    const largeDuration = 1e7
+    const asins = sortedAudible
+      .map((book) => {
+        // this is the duration from the audible result
+        const { duration } = book
+        const delta =
+          duration > 0 ? Math.abs(duration - durationMeta) : largeDuration
+        const check = delta <= deltaThreshold ? '✓' : '✗'
+        return {
+          ...book,
+          delta,
+          check,
+        }
+      })
+      // keep all candidates - no filtering
+      // .filter((candidate) => candidate.delta <= deltaThreshold)
+      .map(
+        ({ title, authors, narrators, duration, asin, delta, check }) =>
+          `${asin}: ${check} Δ:${durationToHMS(delta)} - ${durationToHMS(
+            duration
+          )} -  ${title} / ${authors.join(',')} / n: ${narrators.join(',')}`
+      )
+    return asins
   }
 }
 
@@ -151,9 +200,8 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
   // aggregates the AudioBookMetadata for the entire directories' audioFiles
   // adn overrides with hints for author and title, if present.
-  const duration = audioFiles.reduce(
-    (sum, file) => sum + file.metadata.duration,
-    0
+  const duration = Math.round(
+    audioFiles.reduce((sum, file) => sum + file.metadata.duration, 0)
   )
   // set author, title from hints
   const hint = hints[directoryPath]
