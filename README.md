@@ -6,6 +6,7 @@ Pnpm monorepo with nx for orchestration.
 ## TODO
 
 - [ ] test sortAudible
+- [ ] rewrite hints
 - [ ] split audible, metadata (music/ffprobe)
 - [ ] Node18 & native fetch (remove node-fetch)
 - [ ] CI/CD
@@ -16,6 +17,7 @@ Pnpm monorepo with nx for orchestration.
 # nx run-many --target=XXX
 pnpm lint
 pnpm test
+pnpm run coverage
 pnpm build
 pnpm build && pnpm start
 
