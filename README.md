@@ -7,8 +7,10 @@ Pnpm monorepo with nx for orchestration.
 
 - [ ] test sortAudible
 - [ ] rewrite hints
-- [ ] split audible, metadata (music/ffprobe)
-- [ ] Node18 & native fetch (remove node-fetch)
+- [ ] split into libs audible, metadata (music/ffprobe)
+- [ ] Node18 & native fetch
+  - [ ] remove node-fetch
+  - [ ] "@tsconfig/node18-strictest-esm/tsconfig.json"
 - [ ] CI/CD
 
 ## Operation
