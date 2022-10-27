@@ -6,6 +6,8 @@ Pnpm monorepo with nx for orchestration.
 ## TODO
 
 - [ ] rewrite hints
+- [ ] classifyDirectory:
+  - [ ] parallel vs sequential augmentFileInfo invocation
 - [ ] split into libs audible, metadata (music/ffprobe)
 - [ ] augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
 - [ ] Node18 & native fetch
