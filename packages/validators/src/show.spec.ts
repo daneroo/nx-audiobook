@@ -64,7 +64,8 @@ describe('show - happy path', () => {
         },
       },
     ]
-    show('test-title', validations)
+    const verbosity = 2
+    show('test-title', validations, verbosity)
     expect(logSpy).toHaveBeenCalledWith('✕ test-title')
     expect(infoSpy).toHaveBeenCalledWith('  ✔: All accounted for', {
       audio: 0,
