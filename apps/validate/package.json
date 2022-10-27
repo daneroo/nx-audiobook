@@ -18,7 +18,7 @@
         "build": "unbuild",
         "dev": "vite-node src/index.ts --",
         "start": "./index.js",
-        "pkgNotWorking": "pnpm build && pnpm dlx pkg . -o bin/app -t node16-linux-x64,node16-macos-x64,node16-win-x64"
+        "pkgNotWorking": "pnpm build && pnpm dlx pkg . -o bin/app -t node18-linux-x64,node18-macos-x64,node18-win-x64"
     },
     "author": "Daniel Lauzon",
     "license": "ISC",

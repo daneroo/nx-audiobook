@@ -1,9 +1,9 @@
 {
-  "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true, // (C)
     "sourceMap": true,
-    // below are all part of node16-strictest-esm
+    // below are all part of node18-strictest-esm
     // "strict": true,
     // "module": "ESNext",
     // "target": "ESNext",
