@@ -228,21 +228,23 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
   const metadata = await getMetadataForSingleFile(fileInfo)
 
-  // TODO: Experiment; get both and compare
-  const ffMetadata = await ffprobe(fileInfo)
-  const dd = Math.abs(ffMetadata.duration - metadata.duration)
-
-  if (dd > 300 && metadata.duration > 0) {
-    console.log('duration delta:', {
-      delta: durationToHMS(dd),
-      ff: durationToHMS(ffMetadata.duration),
-      mm: durationToHMS(metadata.duration),
-      '/': fileInfo.path,
-    })
-  }
+  // TODO: Move this to separate app/command; Experiment; get both and compare
+  // This shows the difference between ffprobe and music-metadata duration
+  // const ffMetadata = await ffprobe(fileInfo)
+  // const dd = Math.abs(ffMetadata.duration - metadata.duration)
+  // const durationDeltaThreshhold = 300 // in seconds
+  // if (dd > durationDeltaThreshhold && metadata.duration > 0) {
+  //   console.log('duration delta:', {
+  //     delta: durationToHMS(dd),
+  //     ff: durationToHMS(ffMetadata.duration),
+  //     mm: durationToHMS(metadata.duration),
+  //     '/': fileInfo.path,
+  //   })
+  // }
 
   if (metadata.duration === 0) {
     // resolve duration===0 with ffprobe
+    const ffMetadata = await ffprobe(fileInfo)
     metadata.duration = ffMetadata.duration
   }
   return { fileInfo, metadata }
