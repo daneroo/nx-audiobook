@@ -12,7 +12,7 @@
         "audiobook": "index.js"
     },
     "scripts": {
-        "lint": "eslint .",
+        "lint": "eslint . && tsc --noEmit",
         "test": "vitest run",
         "coverage": "vitest run --coverage",
         "build": "unbuild",

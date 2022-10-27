@@ -65,7 +65,7 @@ interface AudibleProduct {
   title: string
   narrators?: Array<{ name: string }>
   series?: Array<{ title: string; sequence: string }>
-  runtime_length_min: number
+  runtime_length_min?: number
 }
 
 // casts and renames fields for use as an AudibleBook
@@ -81,9 +81,7 @@ function audibleBook(book: AudibleProduct): AudibleBook {
     series: series?.[0]?.title ?? '',
     seriesPosition: series?.[0]?.sequence ?? '',
     narrators: narrators?.map((author) => author.name) ?? [],
-    // this preserves null for duration, but we might want to omit the member altogether
-    duration:
-      runtime_length_min > 0 ? runtime_length_min * 60 : runtime_length_min,
+    duration: runtime_length_min !== undefined ? runtime_length_min * 60 : 0,
   }
 }
 
