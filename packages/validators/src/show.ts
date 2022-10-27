@@ -1,19 +1,12 @@
 import chalk from 'chalk'
 
 import type { Validation } from './types'
-interface ShowOptions {
-  alwaysTitle: boolean
-  onlyFailures: boolean
-}
 export function show(
   title: string,
   validations: Validation[],
-  options: ShowOptions = {
-    alwaysTitle: true,
-    onlyFailures: false,
-  }
+  verbosity = 0
 ): void {
-  const { alwaysTitle, onlyFailures } = options
+  const { alwaysTitle, onlyFailures } = showOptionsFromVerbosity(verbosity)
   const ok = validations.every((a) => a.ok)
 
   if (alwaysTitle || !ok) {
@@ -32,4 +25,20 @@ export function checkMark(ok: boolean, withColor = true): string {
     return ok ? chalk.green('✔') : chalk.red('✕')
   }
   return ok ? '✔' : '✕'
+}
+
+interface ShowOptions {
+  alwaysTitle: boolean
+  onlyFailures: boolean
+}
+
+function showOptionsFromVerbosity(verbosity: number): ShowOptions {
+  switch (verbosity) {
+    case 2:
+      return { alwaysTitle: true, onlyFailures: false }
+    case 1:
+      return { alwaysTitle: true, onlyFailures: true }
+    default:
+      return { alwaysTitle: false, onlyFailures: true }
+  }
 }

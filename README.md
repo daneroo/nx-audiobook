@@ -5,7 +5,6 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
-- [ ] rewrite hints
 - [ ] classifyDirectory:
   - [ ] parallel vs sequential augmentFileInfo invocation
 - [ ] split into libs audible, metadata (music/ffprobe)
@@ -28,7 +27,7 @@ pnpm build && pnpm start
 # cd apps/validate
 pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
 # For now, til we have better cli
-time pnpm run dev; mv newdb.ts src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
+time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
 ```
 
 ## New app or package
