@@ -29,6 +29,11 @@ pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
 
 Take notes when we add the next one. Perhaps add a validator or generator.
 
+## Durations
+
+It turns out that the duration of an audio file (.mp3,.m4b,..) is evaluated the same by music-metadata and ffprobe.
+Further Audible lookup rounds the duration to the nearest minute.
+
 ## References
 
 - Alternatives

@@ -10,7 +10,7 @@
     "test": "nx run-many --target=test",
     "coverage": "vitest run --coverage && open coverage/index.html",
     "build": "nx run-many --target=build",
-    "start": "node apps/validate/index.js -f apps/command/robert-frost-the-road-not-taken.mp3",
+    "start": "node apps/validate/index.js",
     "format:write": "prettier --write \"packages/**/*.ts\" \"apps/**/*.ts\""
   },
   "devDependencies": {
