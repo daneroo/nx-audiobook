@@ -227,10 +227,22 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
 async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
   const metadata = await getMetadataForSingleFile(fileInfo)
-  // TODO get both and compare
+
+  // TODO: Experiment; get both and compare
+  const ffMetadata = await ffprobe(fileInfo)
+  const dd = Math.abs(ffMetadata.duration - metadata.duration)
+
+  if (dd > 300 && metadata.duration > 0) {
+    console.log('duration delta:', {
+      delta: durationToHMS(dd),
+      ff: durationToHMS(ffMetadata.duration),
+      mm: durationToHMS(metadata.duration),
+      '/': fileInfo.path,
+    })
+  }
+
   if (metadata.duration === 0) {
     // resolve duration===0 with ffprobe
-    const ffMetadata = await ffprobe(fileInfo)
     metadata.duration = ffMetadata.duration
   }
   return { fileInfo, metadata }
@@ -313,6 +325,11 @@ function validateDuration(audiobook: AudioBook): Validation {
     ok,
     message: 'validateDuration',
     level: ok ? 'info' : 'warn',
-    extra: { duration },
+    extra: {
+      duration,
+      durations: audioFiles
+        .map((file) => file.metadata.duration)
+        .filter((d) => d > 0),
+    },
   }
 }
