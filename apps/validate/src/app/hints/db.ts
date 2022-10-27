@@ -1353,6 +1353,7 @@ export const db: Record<string, Hint> = {
       title: ['Flashman', 'unique'],
       '// duration': '9h58m15s',
       asins: [
+        'B00TJ1O9W6: ✓ Δ:15s - 9h58m0s -  Flashman / George MacDonald Fraser / n: Colin Mace',
         'B009R6RBEG: ✓ Δ:4m15s - 9h54m0s -  Royal Flash / George MacDonald Fraser / n: David Case',
       ],
     },
@@ -3168,8 +3169,8 @@ export const db: Record<string, Hint> = {
       '// duration': '13h19m21s',
       asins: [
         'B01K5RQ6J6: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
-        'B09JFTZKMF: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
         'B01LBGCRPW: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
+        'B09JFTZKMF: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/N.K. Jemison - The Broken earth Series/N.K. Jemisin - 03 - The Stone Sky3':
