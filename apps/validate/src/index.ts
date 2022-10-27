@@ -16,6 +16,7 @@ import {
 import { searchAudible, sortAudibleBooks } from './app/audible/search'
 import { db as hints } from './app/hints/db'
 import type { Hint, AuthorTitleHintReason } from './app/hints/types'
+import { promises as fs } from 'node:fs'
 
 const defaultRootPath = '/Volumes/Space/archive/media/audiobooks'
 
@@ -73,8 +74,7 @@ async function main(): Promise<void> {
 
   // 3- rewrite hints
   // eslint-disable-next-line no-lone-blocks
-  if (+new Date() < 0) {
-    // rewriteHint('export const db = {');
+  if (+new Date() > 0) {
     const newHints: Record<string, Hint> = {}
     for (const directoryPath of directories) {
       const audiobook = await classifyDirectory(directoryPath)
@@ -102,10 +102,17 @@ async function main(): Promise<void> {
           title: [title, titleHintReason],
           '// duration': durationToHMS(duration),
         }
+
         // pass on hint.skip
         const oldHintSkip = hints[directoryPath]?.skip
         if (oldHintSkip !== undefined) {
           hint.skip = oldHintSkip
+        }
+
+        // special if skip.hint==="multiple authors", overwrite authorHintReason, and add the list of authors in a special comment
+        if (oldHintSkip === 'multiple authors') {
+          hint.author = [author, 'multiple']
+          hint['// multiple authors'] = authors
         }
 
         // asin section - if not skipped
@@ -116,15 +123,14 @@ async function main(): Promise<void> {
 
         newHints[directoryPath] = hint
       }
-
-      // rewriteDirectory(directoryPath, bookData);
     }
-    console.log(`// cSpell:disable
-    import type { Hint } from './types'
-    export const db: Record<string, Hint> =
-    `)
-    console.log(JSON.stringify(newHints, null, 2))
-    // rewriteHint('}');
+    await fs.writeFile(
+      'newdb.ts',
+      `// cSpell:disable
+import type { Hint } from './types'
+export const db: Record<string, Hint> =
+` + JSON.stringify(newHints, null, 2)
+    )
   }
 
   async function getAsins(
@@ -135,7 +141,7 @@ async function main(): Promise<void> {
     const durationMeta = duration // rename to avoid shadowing
     const audibleBooks = await searchAudible({ author, title })
     const sortedAudible = sortAudibleBooks(audibleBooks, durationMeta)
-    const deltaThreshold = 5 * 60 // 5 minutes
+    const deltaThreshold = 15 * 60 // 15 minutes
     const largeDuration = 1e7
     const asins = sortedAudible
       .map((book) => {
@@ -150,8 +156,10 @@ async function main(): Promise<void> {
           check,
         }
       })
-      // keep all candidates - no filtering
-      // .filter((candidate) => candidate.delta <= deltaThreshold)
+      // exact title match only
+      // .filter((candidate) => candidate.title === title)
+      // filter out books that are too far off
+      .filter((candidate) => candidate.delta <= deltaThreshold)
       .map(
         ({ title, authors, narrators, duration, asin, delta, check }) =>
           `${asin}: ${check} Δ:${durationToHMS(delta)} - ${durationToHMS(
@@ -219,6 +227,7 @@ async function classifyDirectory(directoryPath: string): Promise<AudioBook> {
 
 async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
   const metadata = await getMetadataForSingleFile(fileInfo)
+  // TODO get both and compare
   if (metadata.duration === 0) {
     // resolve duration===0 with ffprobe
     const ffMetadata = await ffprobe(fileInfo)
@@ -232,6 +241,7 @@ function validateDirectory(audiobook: AudioBook): Validation[] {
   const validations: Validation[] = [
     validateFilesAllAccountedFor(audioFiles.map((file) => file.fileInfo)),
     validateUniqueAuthorTitle(audiobook),
+    validateDuration(audiobook),
   ]
   return validations
 }
@@ -290,5 +300,19 @@ function validateAuthorTitleHint(audiobook: AudioBook): Validation {
     message: 'validateAuthorTitleHint',
     level: ok ? 'info' : 'error',
     extra: { author, title },
+  }
+}
+
+function validateDuration(audiobook: AudioBook): Validation {
+  const { metadata, audioFiles } = audiobook
+  const { duration } = metadata
+  const ok =
+    audioFiles.length === 0 ||
+    (duration > 0 && audioFiles.every((file) => file.metadata.duration > 0))
+  return {
+    ok,
+    message: 'validateDuration',
+    level: ok ? 'info' : 'warn',
+    extra: { duration },
   }
 }
