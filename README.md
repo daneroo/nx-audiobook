@@ -5,10 +5,9 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
-- [ ] classifyDirectory:
-  - [ ] parallel vs sequential augmentFileInfo invocation
 - [ ] split into libs audible, metadata (music/ffprobe)
-- [ ] augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
+- [ ] command for durations:
+  - augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
 - [ ] Node18 & native fetch
   - [ ] remove node-fetch
   - [ ] "@tsconfig/node18-strictest-esm/tsconfig.json"
