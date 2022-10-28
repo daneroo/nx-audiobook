@@ -5,11 +5,15 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
+- [ ] convert with ffmpeg
+  - mp3,m4b bitrate
+  - chapter options
 - [ ] split into libs audible, metadata (music/ffprobe)
 - [ ] command for durations:
   - augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
-- [ ] CI/CD
+- [x] CI/CD
 - [ ] Node18 & native fetch - remove node-fetch
+  - [ ] consider [unjs fetch](https://github.com/unjs/ohmyfetch)
 
 ## Operation
 
@@ -26,6 +30,13 @@ pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
 # For now, til we have better cli
 time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
 ```
+
+## Nx Cloud
+
+Locally, `NX_CLOUD_ACCESS_TOKEN` is set in the `nx-cloud.env` file.
+On Github, it is set in the repo's Actions secrets.
+
+See [Nx Cloud docs for details](https://nx.dev/nx-cloud/account/access-tokens)
 
 ## New app or package
 

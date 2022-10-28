@@ -11,7 +11,10 @@
     "coverage": "vitest run --coverage && open coverage/index.html",
     "build": "nx run-many --target=build",
     "start": "node apps/validate/index.js",
-    "format:write": "prettier --write \"packages/**/*.ts\" \"apps/**/*.ts\""
+    "format:write": "prettier --write \"packages/**/*.ts\" \"apps/**/*.ts\"",
+    "affected:lint": "pnpm exec nx affected --target=lint --parallel=3",
+    "affected:test": "pnpm exec nx affected --target=test --parallel=3",
+    "affected:build": "pnpm exec nx affected --target=build --parallel=3"
   },
   "devDependencies": {
     "@eslint/create-config": "^0.3.1",

@@ -5,3 +5,5 @@ dist/
 coverage/
 # cache directory - volatile
 /cache/
+# NX_CLOUD_ACCESS_TOKEN
+nx-cloud.env
