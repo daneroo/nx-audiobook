@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v3
-          with:  
-            fetch-depth: 0
-            
+        with:
+          fetch-depth: 0 # Required for `nx affected` to work properly
+
       - name: Setup base and head SHAs required for `nx affected`
         uses: nrwl/nx-set-shas@v3
 
@@ -54,4 +54,3 @@ jobs:
 
       - name: Build
         run: pnpm build
-
