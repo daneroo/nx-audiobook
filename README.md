@@ -12,6 +12,7 @@ Pnpm monorepo with nx for orchestration.
 - [ ] command for durations:
   - augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
 - [x] CI/CD
+  - [ ] Test a PR 
 - [ ] Node18 & native fetch - remove node-fetch
   - [ ] consider [unjs fetch](https://github.com/unjs/ohmyfetch)
 
