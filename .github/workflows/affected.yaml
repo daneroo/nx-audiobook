@@ -1,8 +1,4 @@
-name: CI - lint and unit tests
-
-# TODO
-# - Use nx affected for these tasks
-#   https://nx.dev/recipes/ci/monorepo-ci-github-actions#configuring-ci-using-github-actions-and-nx
+name: CI - lint and unit tests only affected packages
 
 on:
   push:
@@ -17,6 +13,11 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Required for `nx affected` to work properly
+
+      - name: Setup base and head SHAs required for `nx affected`
+        uses: nrwl/nx-set-shas@v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -38,14 +39,9 @@ jobs:
         # --frozen-lockfile should already be default on CI
         run: pnpm install --frozen-lockfile --loglevel error
 
-      - name: Build First # must build first because lint/test will not work
-        run: pnpm build
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Test
-        run: pnpm lint
-
-      - name: Build (Again 8-))
-        run: pnpm build
+      - name: Nx Affected (but build first)
+        run: |
+          pnpm build # must build ALL first because lint/test will not work
+          pnpm affected:lint
+          pnpm affected:test
+          pnpm affected:build
