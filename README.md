@@ -11,8 +11,6 @@ Pnpm monorepo with nx for orchestration.
 - [ ] split into libs audible, metadata (music/ffprobe)
 - [ ] command for durations:
   - augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
-- [x] CI/CD
-  - [ ] Test a PR 
 - [ ] Node18 & native fetch - remove node-fetch
   - [ ] consider [unjs fetch](https://github.com/unjs/ohmyfetch)
 
@@ -30,6 +28,9 @@ pnpm build && pnpm start
 pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
 # For now, til we have better cli
 time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
+
+# Test the github action
+act --secret-file nx-cloud.env -j unit
 ```
 
 ## Nx Cloud
