@@ -1,6 +1,9 @@
 import { describe, expect, test, it, beforeEach } from 'vitest'
 import * as fs from 'node:fs/promises'
 import * as path from 'node:path'
+// until fetch is actually available in node, we need to use node-fetch
+// strangely, it is actually available here (vitest?)
+import fetch from 'node-fetch'
 
 import {
   fetchResult,
@@ -26,6 +29,18 @@ beforeEach(async () => {
       delete process.env.CACHE_BASE_DIRECTORY
     } catch (error) {}
   }
+})
+
+describe("native fetch test for when it's available", () => {
+  test('fetch happy', async () => {
+    const url = 'https://nodejs.org/api/documentation.json'
+    const result = await fetch(url)
+    if (result.ok) {
+      const data = (await result.json()) as { type: string; source: string }
+      expect(data.type).toEqual('module')
+      expect(data.source).toEqual('doc/api/documentation.md')
+    }
+  })
 })
 
 describe('searchAudible - happy path', () => {

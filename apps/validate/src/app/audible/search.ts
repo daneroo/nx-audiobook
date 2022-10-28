@@ -1,3 +1,4 @@
+// until fetch is actually available in node, we need to use node-fetch
 import fetch from 'node-fetch'
 import { sleep } from '@nx-audiobook/time'
 import { cachedFetchResult } from '../cache/cache'
@@ -91,15 +92,13 @@ interface AudibleRawResult {
   response_groups: string[]
   total_results: number
 }
+
 export async function fetchResult(urlHref: string): Promise<AudibleBook[]> {
   // don't overwhelm audible's api server (10/s seems reasonable)
   await sleep(delayForAudibleAPIms)
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
   const response = await fetch(urlHref)
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   const results: AudibleRawResult = (await response.json()) as AudibleRawResult
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
   const books = results.products.map(audibleBook)
 
   return books
