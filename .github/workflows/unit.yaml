@@ -6,7 +6,7 @@ name: CI - lint and unit tests
 
 on:
   push:
-    # branches: [ main ] # default is all branches
+    # branches: [main] # default is all branches
   pull_request:
 
 jobs:
@@ -20,8 +20,8 @@ jobs:
         with:
           fetch-depth: 0 # Required for `nx affected` to work properly
 
-      - name: Setup base and head SHAs required for `nx affected`
-        uses: nrwl/nx-set-shas@v3
+      # - name: Setup base and head SHAs required for `nx affected`
+      #   uses: nrwl/nx-set-shas@v3
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -38,16 +38,20 @@ jobs:
         run: |
           node --version
           pnpm --version
+          echo "${NX_CLOUD_ACCESS_TOKEN}"
 
       - name: install dependencies
         # --frozen-lockfile should already be default on CI
         run: pnpm install --frozen-lockfile
 
-      - name: Nx Affected
-        run: |
-          pnpm affected:lint
-          pnpm affected:test
-          pnpm affected:build
+      # - name: Nx Affected
+      #   run: |
+      #     pnpm affected:lint
+      #     pnpm affected:test
+      #     pnpm affected:build
+
+      - name: Build
+        run: pnpm build
 
       - name: Lint
         run: pnpm lint
