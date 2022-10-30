@@ -15,6 +15,7 @@ export function validateDirectory(
     validateFilesAllAccountedFor(audioFiles.map((file) => file.fileInfo)),
     validateUniqueAuthorTitle(hint, audiobook),
     validateDuration(audiobook),
+    validateCover(audiobook),
   ]
   return validations
 }
@@ -93,6 +94,42 @@ function validateDuration(audiobook: AudioBook): Validation {
               .filter((d) => d > 0),
           }
         : {}),
+    },
+  }
+}
+
+// Check that the cover image exists
+//  as metadata.cover
+//  - from audio files metadata (first file)
+//  - or from cover.jpg in the directory (coverFile)
+function validateCover(audiobook: AudioBook): Validation {
+  const { audioFiles, metadata, coverFile } = audiobook
+  const hasAudioFiles = audioFiles.length > 0
+  // all audio files have the "same" cover
+  const everyOk = audioFiles.every((file) => file.metadata.cover !== undefined)
+
+  // dedup'd format|size of all covers (in each audio file)
+  const formats = dedupArray(
+    audioFiles.map((file) => file.metadata.cover?.format)
+  ).filter((f) => f !== undefined) as string[]
+  const sizes = dedupArray(
+    audioFiles.map((file) => file.metadata.cover?.size)
+  ).filter((f) => f !== undefined) as number[]
+
+  const ok =
+    !hasAudioFiles ||
+    coverFile !== undefined ||
+    (metadata.cover !== undefined && everyOk)
+  return {
+    ok,
+    message: 'validateCover',
+    level: ok ? 'info' : 'warn',
+    extra: {
+      ...(hasAudioFiles && metadata.cover !== undefined
+        ? { ...metadata.cover }
+        : {}),
+      ...(hasAudioFiles && formats.length !== 1 ? { formats } : {}),
+      ...(hasAudioFiles && formats.length !== 1 ? { sizes } : {}),
     },
   }
 }

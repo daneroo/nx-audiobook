@@ -14,4 +14,5 @@ export interface AudioBook {
   directoryPath: string
   audioFiles: AudioFile[]
   metadata: AudioBookMetadata
+  coverFile?: FileInfo
 }

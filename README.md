@@ -8,8 +8,12 @@ Pnpm monorepo with nx for orchestration.
 - [ ] convert with ffmpeg
   - mp3,m4b bitrate
   - chapter options
+- [ ] refactor 
+  - [ ] classifyDirectory (getCover)
+  - [ ] getCoverImage in covert (should take audiobook, and consider coverFile)
+  - move convertPerDirectory from index.ts
 - [ ] split into libs audible, metadata (music/ffprobe)
-- [ ] command for durations:
+- [ ] command for durations (comparisons):
   - augmentFileInfo has the stub of comparing ffprobe,music-metadata durations
 - [ ] Node18 & native fetch - remove node-fetch
   - [ ] consider [unjs fetch](https://github.com/unjs/ohmyfetch)
@@ -26,8 +30,13 @@ pnpm build && pnpm start
 
 # cd apps/validate
 pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
+
 # For now, til we have better cli
+# validate
 time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
+
+# convert
+time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir ./convert
 
 # Test the github action
 act --secret-file nx-cloud.env -j unit

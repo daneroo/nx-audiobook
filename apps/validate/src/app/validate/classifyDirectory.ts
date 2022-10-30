@@ -31,6 +31,14 @@ export async function classifyDirectory(
     }
   }
 
+  // Check for cover File
+  // - could also look for cover.png
+  const coverFile = fileInfos.find(
+    (fileInfo) => fileInfo.basename === 'cover.jpg'
+  )
+  if (coverFile !== undefined) {
+    console.log('coverFile:', coverFile)
+  }
   // aggregates the AudioBookMetadata for the entire directories' audioFiles
   // and overrides with hints for author and title, if present.
   const duration = Math.round(
@@ -40,10 +48,28 @@ export async function classifyDirectory(
   const author = hint?.author?.[0] ?? ''
   const title = hint?.title?.[0] ?? ''
 
+  // Get the cover image from the first audioFile, or cover.{jpg|png}
+  // - Could do a reduce to get the first non-empty metadata cover,
+  //   but we have no occurrence of first file not having a cover, and subsequent files having a cover
+  const cover =
+    audioFiles[0]?.metadata?.cover ??
+    (coverFile !== undefined
+      ? {
+          size: coverFile.size,
+          format: 'image/jpeg',
+        }
+      : undefined)
+
   const audiobook: AudioBook = {
     directoryPath,
     audioFiles,
-    metadata: { author, title, duration },
+    metadata: {
+      author,
+      title,
+      duration,
+      ...(cover === undefined ? {} : { cover }),
+    },
+    ...(coverFile === undefined ? {} : { coverFile }),
   }
   return audiobook
 }
@@ -55,8 +81,8 @@ async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
   // This shows the difference between ffprobe and music-metadata duration
   // const ffMetadata = await ffprobe(fileInfo)
   // const dd = Math.abs(ffMetadata.duration - metadata.duration)
-  // const durationDeltaThreshhold = 300 // in seconds
-  // if (dd > durationDeltaThreshhold && metadata.duration > 0) {
+  // const durationDeltaThreshold = 300 // in seconds
+  // if (dd > durationDeltaThreshold && metadata.duration > 0) {
   //   console.log('duration delta:', {
   //     delta: durationToHMS(dd),
   //     ff: durationToHMS(ffMetadata.duration),
