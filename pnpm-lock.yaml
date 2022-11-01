@@ -55,6 +55,7 @@ importers:
       '@nx-audiobook/validators': workspace:*
       '@types/node-fetch': ^2.6.2
       '@types/yargs': ^17.0.13
+      ffmeta: ^1.0.2
       music-metadata: ^8.1.0
       node-fetch: ^3.2.10
       yargs: ^17.6.0
@@ -62,6 +63,7 @@ importers:
       '@nx-audiobook/file-walk': link:../../packages/file-walk
       '@nx-audiobook/time': link:../../packages/time
       '@nx-audiobook/validators': link:../../packages/validators
+      ffmeta: 1.0.2
       music-metadata: 8.1.0
       node-fetch: 3.2.10
       yargs: 17.6.0
@@ -2179,6 +2181,10 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
+    dev: false
+
+  /ffmeta/1.0.2:
+    resolution: {integrity: sha512-HjVItUgO5b3EhZv4mEX7VCrm0zxltNoXIsn7q1A717T7tHnoCDQYURMJuTtMrVs3KNKPJGMCShYCc3THP5HIOw==}
     dev: false
 
   /figures/3.2.0:

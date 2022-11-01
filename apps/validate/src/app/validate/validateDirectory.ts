@@ -106,30 +106,32 @@ function validateCover(audiobook: AudioBook): Validation {
   const { audioFiles, metadata, coverFile } = audiobook
   const hasAudioFiles = audioFiles.length > 0
   // all audio files have the "same" cover
-  const everyOk = audioFiles.every((file) => file.metadata.cover !== undefined)
+  // const everyOk = audioFiles.every((file) => file.metadata.cover !== undefined)
 
   // dedup'd format|size of all covers (in each audio file)
-  const formats = dedupArray(
-    audioFiles.map((file) => file.metadata.cover?.format)
-  ).filter((f) => f !== undefined) as string[]
-  const sizes = dedupArray(
-    audioFiles.map((file) => file.metadata.cover?.size)
-  ).filter((f) => f !== undefined) as number[]
+  // const formats = dedupArray(
+  //   audioFiles.map((file) => file.metadata.cover?.format)
+  // ).filter((f) => f !== undefined) as string[]
+  // const sizes = dedupArray(
+  //   audioFiles.map((file) => file.metadata.cover?.size)
+  // ).filter((f) => f !== undefined) as number[]
 
+  // !hasAudioFiles -> ok
+  // coverFile defined -> ok
+  // metadata.cover defined && everyOk -> ok
+  const extra = !hasAudioFiles
+    ? { skip: 'no audio files' }
+    : coverFile !== undefined
+    ? { path: coverFile.path }
+    : metadata.cover !== undefined
+    ? { embedded: `${metadata.cover.format} (${metadata.cover.size})` }
+    : { error: 'no cover found' }
   const ok =
-    !hasAudioFiles ||
-    coverFile !== undefined ||
-    (metadata.cover !== undefined && everyOk)
+    !hasAudioFiles || coverFile !== undefined || metadata.cover !== undefined
   return {
     ok,
     message: 'validateCover',
     level: ok ? 'info' : 'warn',
-    extra: {
-      ...(hasAudioFiles && metadata.cover !== undefined
-        ? { ...metadata.cover }
-        : {}),
-      ...(hasAudioFiles && formats.length !== 1 ? { formats } : {}),
-      ...(hasAudioFiles && formats.length !== 1 ? { sizes } : {}),
-    },
+    extra,
   }
 }

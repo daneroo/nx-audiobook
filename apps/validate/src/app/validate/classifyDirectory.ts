@@ -34,11 +34,15 @@ export async function classifyDirectory(
   // Check for cover File
   // - could also look for cover.png
   const coverFile = fileInfos.find(
-    (fileInfo) => fileInfo.basename === 'cover.jpg'
+    // (fileInfo) => fileInfo.basename === 'cover.jpg'
+    (fileInfo) =>
+      ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'].includes(
+        fileInfo.extension.slice(1)
+      )
   )
-  if (coverFile !== undefined) {
-    console.log('coverFile:', coverFile)
-  }
+  // if (coverFile !== undefined) {
+  //   console.log('coverFile:', coverFile.path)
+  // }
   // aggregates the AudioBookMetadata for the entire directories' audioFiles
   // and overrides with hints for author and title, if present.
   const duration = Math.round(

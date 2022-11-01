@@ -26,6 +26,7 @@
         "@nx-audiobook/file-walk": "workspace:*",
         "@nx-audiobook/time": "workspace:*",
         "@nx-audiobook/validators": "workspace:*",
+        "ffmeta": "^1.0.2",
         "music-metadata": "^8.1.0",
         "node-fetch": "^3.2.10",
         "yargs": "^17.6.0"
