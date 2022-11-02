@@ -1,6 +1,5 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
-import * as url from 'url' // for __dirname
 import * as ffmeta from 'ffmeta' // this is just to serialize ffmpeg's metadata in it's custom format
 import type { AudioBook, AudioFile } from '../types'
 import { getCoverImage } from '../metadata/main'
@@ -40,13 +39,15 @@ export async function convertDirectory(
     })
   )
 
-  // write cover.jpg
+  // write cover.{jpg,png,..}
+  let tmpCoverFileName = ''
   if (audioFiles[0] !== undefined) {
     const cover = await getCoverImage(audioFiles[0].fileInfo)
     if (cover !== undefined) {
       // map image/jpeg->jpg, image/png->png
       const suffix = cover.format.replace('image/', '').replace('jpeg', 'jpg')
-      await fs.writeFile(path.join(TMP_DIR, `cover.${suffix}`), cover.data)
+      tmpCoverFileName = `cover.${suffix}`
+      await fs.writeFile(path.join(TMP_DIR, tmpCoverFileName), cover.data)
       const coverFileName = path.join(
         COVER_DIR,
         `${metadata.author} - ${metadata.title}.${suffix}`
@@ -55,7 +56,8 @@ export async function convertDirectory(
     } else if (coverFile !== undefined) {
       // careful fileInfo.extension contains the leading "."
       const suffix = coverFile.extension.slice(1).toLowerCase()
-      await fs.copyFile(coverFile.path, path.join(TMP_DIR, `cover.${suffix}`))
+      tmpCoverFileName = `cover.${suffix}`
+      await fs.copyFile(coverFile.path, path.join(TMP_DIR, tmpCoverFileName))
       const coverFileName = path.join(
         COVER_DIR,
         `${metadata.author} - ${metadata.title}.${suffix}`
@@ -63,9 +65,11 @@ export async function convertDirectory(
       await fs.copyFile(coverFile.path, coverFileName)
     } else {
       await noCover(audiobook, TMP_DIR, COVER_DIR)
+      tmpCoverFileName = `cover.jpg`
     }
   } else {
     await noCover(audiobook, TMP_DIR, COVER_DIR)
+    tmpCoverFileName = `cover.jpg`
   }
 
   const { author, title } = metadata
@@ -91,7 +95,7 @@ export async function convertDirectory(
   console.log({ outputSuffix })
 
   const startMs = +new Date()
-  await convert(TMP_DIR, outputSuffix /*, OUTPUT_DIR, author, title */)
+  await convert(TMP_DIR, outputSuffix, tmpCoverFileName)
   console.error('Converted in', formatElapsed(startMs))
   await move(TMP_DIR, outputSuffix, OUTPUT_DIR, author, title)
   console.info('Removing', TMP_DIR)
@@ -116,7 +120,6 @@ async function noCover(
     'missing-cover.jpg'
   )
   const { metadata } = audiobook
-  console.error('missing cover', { missingCoverFile })
   await fs.copyFile(missingCoverFile, path.join(TMP_DIR, `cover.jpg`))
 
   const coverFileName = path.join(
@@ -150,10 +153,8 @@ async function move(
 // ffprobe -v quiet -print_format json -show_format -show_chapters output.mp3
 async function convert(
   TMP_DIR: string,
-  outputSuffix: string
-  // OUTPUT_DIR: string,
-  // author: string,
-  // title: string
+  outputSuffix: string,
+  tmpCoverFileName: string
 ): Promise<void> {
   // -y is for allowing overwrite of output.mp3
   // -v quiet is for suppressing ffmpeg output
@@ -164,7 +165,7 @@ async function convert(
   // for m4b we need to add -disposition:v:0 attached_pic
   const disposition =
     outputSuffix === 'm4b' ? '-disposition:v:0 attached_pic' : ''
-  const command = `cd "${TMP_DIR}" && ffmpeg -v quiet -y -f concat -safe 0 -i listing.txt -i cover.jpg -i ffmetadata.txt -map 0:0 -map 1:0 -map_metadata 2 -c copy ${disposition} output.${outputSuffix}`
+  const command = `cd "${TMP_DIR}" && ffmpeg -v quiet -y -f concat -safe 0 -i listing.txt -i ${tmpCoverFileName} -i ffmetadata.txt -map 0:0 -map 1:0 -map_metadata 2 -c copy ${disposition} output.${outputSuffix}`
   console.error('convert command\n', command)
 
   try {

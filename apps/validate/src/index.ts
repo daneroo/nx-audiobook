@@ -33,7 +33,7 @@ async function main(): Promise<void> {
       type: 'string',
       nargs: 1,
       describe:
-        'convert audio into destination path: e.g.: --convert ./converted',
+        'convert audio into destination path: e.g.: --convert /Volumes/Space/Reading/convert',
     })
     .count('verbose')
     .alias('v', 'verbose')
