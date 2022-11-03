@@ -81,19 +81,20 @@ function validateDuration(audiobook: AudioBook): Validation {
   const hasAudioFiles = audioFiles.length > 0
   const everyOk = audioFiles.every((file) => file.metadata.duration > 0)
   const ok = !hasAudioFiles || (duration > 0 && everyOk)
+
+  const warnings = dedupArray(
+    audioFiles
+      .map((file) => file.metadata.warning.duration)
+      .filter((w) => w !== undefined)
+  )
+
   return {
     ok,
     message: 'validateDuration',
     level: ok ? 'info' : 'warn',
     extra: {
-      ...(hasAudioFiles ? { duration } : {}),
-      ...(hasAudioFiles && !everyOk
-        ? {
-            durations: audioFiles
-              .map((file) => file.metadata.duration)
-              .filter((d) => d > 0),
-          }
-        : {}),
+      ...(hasAudioFiles ? { duration } : { skip: 'no audio files' }),
+      ...(warnings.length > 0 ? { warnings: warnings.join(',') } : {}),
     },
   }
 }
@@ -105,31 +106,27 @@ function validateDuration(audiobook: AudioBook): Validation {
 function validateCover(audiobook: AudioBook): Validation {
   const { audioFiles, metadata, coverFile } = audiobook
   const hasAudioFiles = audioFiles.length > 0
-  // all audio files have the "same" cover
-  // const everyOk = audioFiles.every((file) => file.metadata.cover !== undefined)
 
-  // dedup'd format|size of all covers (in each audio file)
-  // const formats = dedupArray(
-  //   audioFiles.map((file) => file.metadata.cover?.format)
-  // ).filter((f) => f !== undefined) as string[]
-  // const sizes = dedupArray(
-  //   audioFiles.map((file) => file.metadata.cover?.size)
-  // ).filter((f) => f !== undefined) as number[]
+  // aggregate cover warnings
+  const warnings = dedupArray(
+    audioFiles
+      .map((file) => file.metadata.warning.cover)
+      .filter((w) => w !== undefined)
+  )
 
-  // !hasAudioFiles -> ok
-  // coverFile defined -> ok
-  // metadata.cover defined && everyOk -> ok
-  const extra = !hasAudioFiles
-    ? { skip: 'no audio files' }
-    : coverFile !== undefined
-    ? { path: coverFile.path }
-    : metadata.cover !== undefined
-    ? { embedded: `${metadata.cover.format} (${metadata.cover.size})` }
-    : { error: 'no cover found' }
   const ok =
     !hasAudioFiles || coverFile !== undefined || metadata.cover !== undefined
+  const extra = {
+    ...(!hasAudioFiles ? { skip: 'no audio files' } : {}),
+    ...(coverFile !== undefined ? { path: coverFile.path } : {}),
+    ...(metadata.cover !== undefined
+      ? { embedded: `${metadata.cover.format} (${metadata.cover.size})` }
+      : {}),
+    ...(warnings.length > 0 ? { warnings: warnings.join(',') } : {}),
+    ...(!ok ? { error: 'no cover found' } : {}),
+  }
   return {
-    ok,
+    ok: ok && warnings.length === 0,
     message: 'validateCover',
     level: ok ? 'info' : 'warn',
     extra,

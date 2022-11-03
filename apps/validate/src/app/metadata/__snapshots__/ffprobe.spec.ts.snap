@@ -6,11 +6,13 @@ exports[`happy path > should find audio file metadata (no cache) 1`] = `
     "author": "Jon Kabat-Zinn, American Public Media",
     "duration": 44.852256,
     "title": "Speaking of Faith from American Public Media",
+    "warning": {},
   },
   {
     "author": "Robert Frost",
     "duration": 76.199256,
     "title": "Poem of the Day from Poetry Foundation.org",
+    "warning": {},
   },
 ]
 `;
@@ -21,11 +23,13 @@ exports[`happy path > should find audio file metadata 1`] = `
     "author": "Jon Kabat-Zinn, American Public Media",
     "duration": 44.852256,
     "title": "Speaking of Faith from American Public Media",
+    "warning": {},
   },
   {
     "author": "Robert Frost",
     "duration": 76.199256,
     "title": "Poem of the Day from Poetry Foundation.org",
+    "warning": {},
   },
 ]
 `;

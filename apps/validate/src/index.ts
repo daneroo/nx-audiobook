@@ -106,7 +106,7 @@ async function validatePerDirectory(
     }
   }
   console.info(
-    `=-=- Total books: ${totalBooks} = ${directories.length} directories`
+    `=-=- Total books: ${totalBooks} from ${directories.length} directories`
   )
 }
 

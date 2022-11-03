@@ -1,6 +1,6 @@
 import { FileInfo, getFiles } from '@nx-audiobook/file-walk'
 import { isAudioFile } from '@nx-audiobook/validators'
-import { getMetadataForSingleFile, ffprobe } from '../metadata/main'
+import { getMetadataForSingleFile } from '../metadata/main'
 import type { Hint } from '../hints/types'
 import type { AudioBook, AudioFile } from '../types'
 
@@ -33,12 +33,11 @@ export async function classifyDirectory(
 
   // Check for cover File
   // - could also look for cover.png
-  const coverFile = fileInfos.find(
-    // (fileInfo) => fileInfo.basename === 'cover.jpg'
-    (fileInfo) =>
-      ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'].includes(
-        fileInfo.extension.slice(1)
-      )
+  const coverFile = fileInfos.find((fileInfo) =>
+    // if we re-add png, check returned format below
+    ['jpg', 'jpeg', 'JPG', 'JPEG' /* , 'png', 'PNG' */].includes(
+      fileInfo.extension.slice(1)
+    )
   )
   // if (coverFile !== undefined) {
   //   console.log('coverFile:', coverFile.path)
@@ -60,7 +59,7 @@ export async function classifyDirectory(
     (coverFile !== undefined
       ? {
           size: coverFile.size,
-          format: 'image/jpeg',
+          format: 'image/jpeg', // this could be png
         }
       : undefined)
 
@@ -72,6 +71,12 @@ export async function classifyDirectory(
       title,
       duration,
       ...(cover === undefined ? {} : { cover }),
+      warning: {
+        // TODO(daneroo):these should be aggregated from the audioFiles
+        // - if any audioFile has a warning, then the audiobook has a warning
+        // ...(duration === 0 ? { duration: 'duration is 0' } : {}),
+        // ...(cover === undefined ? { cover: 'no cover' } : {}),
+      },
     },
     ...(coverFile === undefined ? {} : { coverFile }),
   }
@@ -79,25 +84,9 @@ export async function classifyDirectory(
 }
 
 async function augmentFileInfo(fileInfo: FileInfo): Promise<AudioFile> {
+  // getMetadataForSingleFile includes
+  // - a fallback to ffprobe for duration
+  // - a fallback for cover/coverFile
   const metadata = await getMetadataForSingleFile(fileInfo)
-
-  // TODO: Move this to separate app/command; Experiment; get both and compare
-  // This shows the difference between ffprobe and music-metadata duration
-  // const ffMetadata = await ffprobe(fileInfo)
-  // const dd = Math.abs(ffMetadata.duration - metadata.duration)
-  // const durationDeltaThreshold = 300 // in seconds
-  // if (dd > durationDeltaThreshold && metadata.duration > 0) {
-  //   console.log('duration delta:', {
-  //     delta: durationToHMS(dd),
-  //     ff: durationToHMS(ffMetadata.duration),
-  //     mm: durationToHMS(metadata.duration),
-  //     '/': fileInfo.path,
-  //   })
-  // }
-  if (metadata.duration === 0) {
-    // resolve duration===0 with ffprobe
-    const ffMetadata = await ffprobe(fileInfo)
-    metadata.duration = ffMetadata.duration
-  }
   return { fileInfo, metadata }
 }

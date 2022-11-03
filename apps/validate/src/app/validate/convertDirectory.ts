@@ -163,8 +163,10 @@ async function convert(
   // -vn -c:a libmp3lame -b:a 64k : would be for transcoding m4b to mp3
 
   // for m4b we need to add -disposition:v:0 attached_pic
-  const disposition =
-    outputSuffix === 'm4b' ? '-disposition:v:0 attached_pic' : ''
+  // TODO(daneroo): better mp4 detection
+  const disposition = ['m4b', 'm4a'].includes(outputSuffix)
+    ? '-disposition:v:0 attached_pic'
+    : ''
   const command = `cd "${TMP_DIR}" && ffmpeg -v quiet -y -f concat -safe 0 -i listing.txt -i ${tmpCoverFileName} -i ffmetadata.txt -map 0:0 -map 1:0 -map_metadata 2 -c copy ${disposition} output.${outputSuffix}`
   console.error('convert command\n', command)
 

@@ -34,6 +34,7 @@ export async function fetchResult(
       title: metadata.format?.tags?.album ?? '',
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
       duration: Number(metadata.format.duration), // duration is a string, but is it always present?
+      warning: {},
     }
   } catch (error) {
     console.error({ error })

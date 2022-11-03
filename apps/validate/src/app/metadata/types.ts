@@ -3,6 +3,10 @@ export interface AudioBookMetadata {
   title: string
   duration: number
   cover?: CoverImageDescriptor
+  warning: {
+    duration?: string
+    cover?: string
+  }
 }
 
 export interface CoverImageDescriptor {
@@ -14,4 +18,4 @@ export interface CoverImage {
   format: CoverImageFormat
 }
 
-export type CoverImageFormat = 'image/jpeg' | 'image/png' | string
+export type CoverImageFormat = 'image/jpeg' | 'image/png'

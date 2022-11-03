@@ -56,6 +56,7 @@ importers:
       '@types/node-fetch': ^2.6.2
       '@types/yargs': ^17.0.13
       ffmeta: ^1.0.2
+      image-type: ^5.1.0
       music-metadata: ^8.1.0
       node-fetch: ^3.2.10
       yargs: ^17.6.0
@@ -64,6 +65,7 @@ importers:
       '@nx-audiobook/time': link:../../packages/time
       '@nx-audiobook/validators': link:../../packages/validators
       ffmeta: 1.0.2
+      image-type: 5.1.0
       music-metadata: 8.1.0
       node-fetch: 3.2.10
       yargs: 17.6.0
@@ -2201,6 +2203,15 @@ packages:
       flat-cache: 3.0.4
     dev: true
 
+  /file-type/17.1.6:
+    resolution: {integrity: sha512-hlDw5Ev+9e883s0pwUsuuYNu4tD7GgpUnOvykjv1Gya0ZIjuKumthDRua90VUn6/nlRKAjcxLUnHNTIUWwWIiw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      readable-web-to-node-stream: 3.0.2
+      strtok3: 7.0.0
+      token-types: 5.0.1
+    dev: false
+
   /file-type/18.0.0:
     resolution: {integrity: sha512-jjMwFpnW8PKofLE/4ohlhqwDk5k0NC6iy0UHAJFKoY1fQeGMN0GDdLgHQrvCbSpMwbqzoCZhRI5dETCZna5qVA==}
     engines: {node: '>=14.16'}
@@ -2508,6 +2519,13 @@ packages:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
     engines: {node: '>= 4'}
     dev: true
+
+  /image-type/5.1.0:
+    resolution: {integrity: sha512-7oH2RB8IkwOVRfbaG63Xlm5tYPgUy8C0HfeIoE+MQ2zfAf2d5qjyyOEKT8JAR6rcWQQLZAHDdFwdCEWf7gNOmw==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      file-type: 17.1.6
+    dev: false
 
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
