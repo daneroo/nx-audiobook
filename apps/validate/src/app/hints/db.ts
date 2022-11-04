@@ -1552,7 +1552,7 @@ export const db: Record<string, Hint> = {
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/HenryDavidThoreau-Walden': {
-    author: ['thoreau_henry_david', 'unique'],
+    author: ['Henry David Thoreau', 'hint'],
     title: ['Walden', 'unique'],
     '// duration': '14h18m4s',
     asins: [],
@@ -4022,7 +4022,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/TheGreatestScienceFictionStoriesOfThe20thCentury':
     {
-      author: ['', 'multiple'],
+      author: ['Various Authors', 'multiple'],
       title: [
         'The Greatest Science Fiction Stories of the 20th Century',
         'unique',

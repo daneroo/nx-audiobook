@@ -48,9 +48,10 @@ export async function convertDirectory(
       const suffix = cover.format.replace('image/', '').replace('jpeg', 'jpg')
       tmpCoverFileName = `cover.${suffix}`
       await fs.writeFile(path.join(TMP_DIR, tmpCoverFileName), cover.data)
+      const { author, title } = metadata
       const coverFileName = path.join(
         COVER_DIR,
-        `${metadata.author} - ${metadata.title}.${suffix}`
+        `${sanitizeBasename({ author, title })}.${suffix}`
       )
       await fs.writeFile(coverFileName, cover.data)
     } else if (coverFile !== undefined) {
@@ -58,9 +59,10 @@ export async function convertDirectory(
       const suffix = coverFile.extension.slice(1).toLowerCase()
       tmpCoverFileName = `cover.${suffix}`
       await fs.copyFile(coverFile.path, path.join(TMP_DIR, tmpCoverFileName))
+      const { author, title } = metadata
       const coverFileName = path.join(
         COVER_DIR,
-        `${metadata.author} - ${metadata.title}.${suffix}`
+        `${sanitizeBasename({ author, title })}.${suffix}`
       )
       await fs.copyFile(coverFile.path, coverFileName)
     } else {
@@ -122,10 +124,13 @@ async function noCover(
   const { metadata } = audiobook
   await fs.copyFile(missingCoverFile, path.join(TMP_DIR, `cover.jpg`))
 
+  const { author, title } = metadata
+  const suffix = 'jpg'
   const coverFileName = path.join(
     COVER_DIR,
-    `${metadata.author} - ${metadata.title}.jpg`
+    `${sanitizeBasename({ author, title })}.${suffix}`
   )
+
   await fs.copyFile(missingCoverFile, coverFileName)
 }
 
@@ -140,11 +145,29 @@ async function move(
   await fs.mkdir(OUTPUT_DIR, { recursive: true })
 
   const from = path.join(TMP_DIR, `output.${outputSuffix}`)
-  const to = path.join(OUTPUT_DIR, `${author} - ${title}.${outputSuffix}`)
+  const to = path.join(
+    OUTPUT_DIR,
+    `${sanitizeBasename({ author, title })}.${outputSuffix}`
+  )
   console.error(`Renaming to ${to}`)
   await fs.rename(from, to)
 }
 
+// uses ES NFD normalization to separate diacritics from their base characters, and removes them
+// also replaces reserved characters: (/, ?, %, *, :, ;, |, ", <, >) with _
+export function sanitizeBasename({
+  author,
+  title,
+}: {
+  author: string
+  title: string
+}): string {
+  const composed = `${author} - ${title}`
+  return composed
+    .normalize('NFD') // separate diacritics
+    .replace(/[\u0300-\u036f]/g, '') // remove diacritics
+    .replace(/[/\\?%*:;|"<>]/g, '_') // remove reserved characters
+}
 // All in one step!
 // time ffmpeg -v quiet -f concat -safe 0 -i listing.txt -i cover.jpg -i ffmetadata.txt -map_metadata 2 -map 0:0 -map 1:0 -c copy output.mp3
 // re-extract metadata from produced file
