@@ -998,7 +998,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/David Mitchell - The Thousand Autumns of Jacob de Zoet':
     {
-      author: ['Mitchell, David', 'unique'],
+      author: ['David Mitchell', 'hint'],
       title: ['Thousand Autumns of Jacob de Zoet, The', 'unique'],
       '// duration': '18h56m0s',
       asins: [
