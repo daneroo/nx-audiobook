@@ -29,6 +29,9 @@ jobs:
           node-version: '18'
           cache: 'pnpm'
 
+      - name: Setup ffmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v1
+
       - name: Report versions
         run: |
           node --version
