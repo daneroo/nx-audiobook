@@ -6,7 +6,7 @@ export function formatElapsed(startMs: number): string {
 }
 
 /**
- * TODO Consider other options
+ * TODO(daneroo): Consider other options
  * - use String.padStart
  * - consider use in chapters.yml
  * - constant width seconds and minutes (if no leading 0)

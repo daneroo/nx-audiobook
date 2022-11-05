@@ -5,8 +5,7 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
-- [ ] GitHub Action [Setup FFmpeg](https://github.com/marketplace/actions/setup-ffmpeg)
-- [ ] sanitize filenames (accents,'/',etc)
+- minimal front-end for verifying chapters
 - [ ] convert with ffmpeg
   - mp3,m4b bitrate
   - chapter options

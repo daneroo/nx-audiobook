@@ -1,9 +1,5 @@
 name: CI - all packages
 
-# TODO
-# - Use nx affected for these tasks
-#   https://nx.dev/recipes/ci/monorepo-ci-github-actions#configuring-ci-using-github-actions-and-nx
-
 on:
   push:
     # branches: [main] # default is all branches

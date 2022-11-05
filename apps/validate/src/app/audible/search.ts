@@ -70,7 +70,7 @@ interface AudibleProduct {
 }
 
 // casts and renames fields for use as an AudibleBook
-// TODO handle multiple series
+// TODO(daneroo): handle multiple series
 function audibleBook(book: AudibleProduct): AudibleBook {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const { asin, authors, title, narrators, series, runtime_length_min } = book

@@ -153,6 +153,7 @@ async function move(
   await fs.rename(from, to)
 }
 
+// TODO(daneroo): remove {author, title} from the args when refactoring
 // uses ES NFD normalization to separate diacritics from their base characters, and removes them
 // also replaces reserved characters: (/, ?, %, *, :, ;, |, ", <, >) with _
 export function sanitizeBasename({
