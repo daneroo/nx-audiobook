@@ -5,7 +5,7 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
-- minimal front-end for verifying chapters
+- [ ] minimal front-end for verifying chapters
 - [ ] convert with ffmpeg
   - mp3,m4b bitrate
   - chapter options
