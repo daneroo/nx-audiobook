@@ -1,4 +1,4 @@
-name: CI - lint and unit tests
+name: CI - all packages
 
 # TODO
 # - Use nx affected for these tasks

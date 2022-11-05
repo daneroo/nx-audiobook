@@ -1,5 +1,4 @@
-name: CI - lint and unit tests only affected packages
-
+name: CI - affected packages
 on:
   push:
     # branches: [main] # default is all branches
