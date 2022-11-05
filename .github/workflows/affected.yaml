@@ -34,6 +34,8 @@ jobs:
         run: |
           node --version
           pnpm --version
+          echo $(ffmpeg -version|head -2)
+          echo $(ffprobe -version|head -2)
 
       - name: install dependencies
         # --frozen-lockfile should already be default on CI
