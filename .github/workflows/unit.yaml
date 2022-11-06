@@ -39,14 +39,11 @@ jobs:
         # --frozen-lockfile should already be default on CI
         run: pnpm install --frozen-lockfile --loglevel error
 
-      - name: Build First # must build first because lint/test will not work
-        run: pnpm build
+      - name: Test
+        run: pnpm test
 
       - name: Lint
         run: pnpm lint
 
-      - name: Test
-        run: pnpm test
-
-      - name: Build (Again 8-))
+      - name: Build
         run: pnpm build

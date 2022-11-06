@@ -45,7 +45,6 @@ jobs:
 
       - name: Nx Affected (but build first)
         run: |
-          pnpm build # must build ALL first because lint/test will not work
           pnpm affected:lint
           pnpm affected:test
           pnpm affected:build
