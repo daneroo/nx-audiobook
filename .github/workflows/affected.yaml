@@ -45,6 +45,6 @@ jobs:
 
       - name: Nx Affected (but build first)
         run: |
-          pnpm affected:lint
           pnpm affected:test
+          pnpm affected:lint
           pnpm affected:build
