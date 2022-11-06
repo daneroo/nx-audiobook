@@ -24,6 +24,11 @@
       "dependsOn": [
         "^build"
       ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^build"
+      ]
     }
   },
   "affected": {
