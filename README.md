@@ -5,6 +5,7 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
+- [ ] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
 - [ ] minimal front-end for verifying chapters
 - [ ] convert with ffmpeg
   - mp3,m4b bitrate
