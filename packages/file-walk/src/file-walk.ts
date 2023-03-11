@@ -1,4 +1,4 @@
-import { walk, WalkFunc } from '@root/walk'
+import { walk, type WalkFunc } from '@root/walk'
 
 import { basename, extname } from 'node:path'
 import { promises as fs } from 'node:fs'

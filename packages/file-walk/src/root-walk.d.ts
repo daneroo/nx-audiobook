@@ -1,11 +1,11 @@
 declare module '@root/walk' {
-  import { Dirent } from 'node:fs'
+  import type { Dirent } from 'node:fs'
   import { walk } from '@root/walk'
 
   type WalkFunc = (
     err?: Error | null,
     dirname: string,
-    dirent: import('fs').Dirent
+    dirent: Dirent
   ) => Promise<boolean | undefined>
 
   function walk(
@@ -14,5 +14,5 @@ declare module '@root/walk' {
     dirent?: Dirent
   ): Promise<boolean>
 
-  export { walk, WalkFunc }
+  export { walk, type WalkFunc }
 }

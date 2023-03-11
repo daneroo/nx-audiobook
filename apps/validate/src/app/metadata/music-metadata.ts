@@ -1,4 +1,5 @@
-import { parseFile, IPicture } from 'music-metadata'
+import type { IPicture } from 'music-metadata'
+import { parseFile } from 'music-metadata'
 import type { FileInfo } from '@nx-audiobook/file-walk'
 import { cachedFetchResult } from '../cache/cache'
 import type {

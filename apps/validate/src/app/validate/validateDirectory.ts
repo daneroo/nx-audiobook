@@ -1,6 +1,6 @@
 import {
   validateFilesAllAccountedFor,
-  Validation,
+  type Validation,
 } from '@nx-audiobook/validators'
 import type { Hint } from '../hints/types'
 import type { AudioBook } from '../types'

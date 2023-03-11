@@ -5,7 +5,6 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
-- [ ] include `pnpx npm-check-updates` in top package.json and add target to each project
 - [ ] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
 - [ ] minimal front-end for verifying chapters
 - [ ] convert with ffmpeg
@@ -22,6 +21,16 @@ Pnpm monorepo with nx for orchestration.
   - [ ] consider [unjs fetch](https://github.com/unjs/ohmyfetch)
 
 ## Operation
+
+for updates:
+
+```bash
+pnpm update --recursive --interactive
+# Use the --latest option to update the ranges in package.json
+
+# or 
+# pnpx npm-check-updates was also considered
+```
 
 ```bash
 # nx run-many --target=XXX

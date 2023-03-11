@@ -1,4 +1,4 @@
-import { FileInfo, getFiles } from '@nx-audiobook/file-walk'
+import { type FileInfo, getFiles } from '@nx-audiobook/file-walk'
 import { isAudioFile } from '@nx-audiobook/validators'
 import { getMetadataForSingleFile } from '../metadata/main'
 import type { Hint } from '../hints/types'
