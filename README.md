@@ -5,6 +5,7 @@ Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
+- [ ] include `pnpx npm-check-updates` in top package.json and add target to each project
 - [ ] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
 - [ ] minimal front-end for verifying chapters
 - [ ] convert with ffmpeg
