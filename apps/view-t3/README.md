@@ -13,6 +13,9 @@ My first t3 app, to view audiobook stuff
 cd apps
 pnpm create t3-app@latest
 
+# added create .ent from .env.local if not exist on lint target
+# added .eslint.cjs: {root: true} to not load parent dir configs
+
 Next steps:
   cd view-t3
   pnpm install
