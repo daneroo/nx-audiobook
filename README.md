@@ -7,6 +7,8 @@ Pnpm monorepo with nx for orchestration.
 
 - [ ] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
 - [ ] minimal front-end for verifying chapters
+  - [ ] t3-app <https://github.com/t3-oss/create-t3-app>
+    - `pnpm create t3-app@latest`
 - [ ] convert with ffmpeg
   - mp3,m4b bitrate
   - chapter options
