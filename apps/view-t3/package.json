@@ -6,7 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "lint": "next lint",
+    "lint": "[ ! -f .env ] && cp .env.example .env || echo '.env file already exists'; next lint",
     "start": "next start"
   },
   "dependencies": {
