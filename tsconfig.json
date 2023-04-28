@@ -12,6 +12,7 @@
     // "skipLibCheck": true,
     // "moduleResolution": "NodeNext",
     "paths": {
+      "@nx-audiobook/view-t3": ["./apps/view-t3"],
       "@nx-audiobook/validate": ["./apps/validate"],
       "@nx-audiobook/file-walk": ["./packages/file-walk"],
       "@nx-audiobook/validators": ["./packages/validators"],
