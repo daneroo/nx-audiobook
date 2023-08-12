@@ -147,6 +147,15 @@ export const db: Record<string, Hint> = {
         'B004P7VGWU: ✓ Δ:31s - 19h41m0s -  The Prefect / Alastair Reynolds / n: John Lee',
       ],
     },
+  '/Volumes/Space/archive/media/audiobooks/Amanda H. Podany - Weavers, Scribes, and Kings':
+    {
+      author: ['Amanda H. Podany', 'hint'],
+      title: ['Weavers, Scribes, and Kings', 'hint'],
+      '// duration': '18h26m40s',
+      asins: [
+        'B0BYB8XQ1Z: ✓ Δ:40s - 18h26m0s -  Weavers, Scribes, and Kings / Amanda H. Podany / n: Amanda H. Podany',
+      ],
+    },
   '/Volumes/Space/archive/media/audiobooks/Andrew Morton - 17 Carnations': {
     author: ['Andrew Morton', 'unique'],
     title: [
@@ -842,6 +851,12 @@ export const db: Record<string, Hint> = {
       '// duration': '4h13m4s',
       skip: 'not on audible',
     },
+  '/Volumes/Space/archive/media/audiobooks/Cory Doctorow - Red Team Blues': {
+    author: ['Cory Doctorow', 'unique'],
+    title: ['Red Team Blues', 'unique'],
+    '// duration': '7h15m15s',
+    skip: 'not on audible',
+  },
   '/Volumes/Space/archive/media/audiobooks/CoryDoctorow-AttackSurface': {
     author: ['Cory Doctorow', 'hint'],
     title: ['Attack Surface', 'unique'],
@@ -1106,6 +1121,12 @@ export const db: Record<string, Hint> = {
         '197733105X: ✓ Δ:1m0s - 13h29m0s -  Devil Take the Hindmost / Edward Chancellor / n: Nigel Patterson',
       ],
     },
+  '/Volumes/Space/archive/media/audiobooks/Edward Frenkel - Love and Math': {
+    author: ['Edward Frenkel', 'unique'],
+    title: ['Love and Math (Unabridged)', 'unique'],
+    '// duration': '10h10m8s',
+    skip: 'not on audible',
+  },
   '/Volumes/Space/archive/media/audiobooks/Edward Snowden - Permanent Record': {
     author: ['Edward Snowden', 'unique'],
     title: ['Permanent Record', 'unique'],
@@ -1275,7 +1296,6 @@ export const db: Record<string, Hint> = {
         '0241533228: ✓ Δ:9s - 43h6m0s -  The Brothers Karamazov / Fyodor Dostoyevsky,David McDuff - translator / n: Luke Thompson',
       ],
     },
-
   '/Volumes/Space/archive/media/audiobooks/Gabriel Garcia Marquez - Love in the Time of Cholera':
     {
       author: ['Gabriel García Márquez', 'unique'],
@@ -1295,6 +1315,15 @@ export const db: Record<string, Hint> = {
         'B00EF8DG68: ✓ Δ:18s - 14h4m0s -  One Hundred Years of Solitude / Gabriel García Márquez,Gregory Rabassa - translator / n: John Lee',
       ],
     },
+  '/Volumes/Space/archive/media/audiobooks/Galileo Galilei - Dialogue Concerning the Two Chief World Systems':
+    {
+      author: ['Galileo Galilei', 'unique'],
+      title: ['Dialogue Concerning the Two Chief World Systems', 'unique'],
+      '// duration': '21h40m26s',
+      asins: [
+        'B09YKY4KKY: ✓ Δ:1m26s - 21h39m0s -  Dialogue Concerning the Two Chief World Systems / Galileo Galilei,Albert Einstein - foreword,Stillman Drake - preface / n: Brian Keating,Carlo Rovelli,Lucio Piccirillo,Fabiola Gianotti,S. James Gates,Frank Wilczek',
+      ],
+    },
   '/Volumes/Space/archive/media/audiobooks/GaryTaubes-WhyWeGetFat': {
     author: ['Gary Taubes', 'unique'],
     title: ['Why We Get Fat', 'unique'],
@@ -1303,6 +1332,32 @@ export const db: Record<string, Hint> = {
       'B004D5K512: ✓ Δ:2m30s - 7h58m0s -  Why We Get Fat / Gary Taubes / n: Mike Chamberlain',
     ],
   },
+  '/Volumes/Space/archive/media/audiobooks/Gene Wolfe - Latro Series': {
+    skip: 'no audio files',
+  },
+  '/Volumes/Space/archive/media/audiobooks/Gene Wolfe - Latro Series/Gene Wolfe - Latro 01 - Soldier of the Mist':
+    {
+      author: ['Gene Wolfe', 'unique'],
+      title: ['Soldier of the Mist', 'unique'],
+      '// duration': '10h34m16s',
+      asins: [],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Gene Wolfe - Latro Series/Gene Wolfe - Latro 02 - Soldier of Arete':
+    {
+      author: ['Gene Wolfe', 'unique'],
+      title: ['Soldier of Arete', 'unique'],
+      '// duration': '11h5m46s',
+      asins: [],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Gene Wolfe - Latro Series/Gene Wolfe - Latro 03 - Soldier of Sidon':
+    {
+      author: ['Gene Wolfe', 'unique'],
+      title: ['Soldier of Sidon', 'unique'],
+      '// duration': '8h52m11s',
+      asins: [
+        'B09JGSPZ8Y: ✓ Δ:1m11s - 8h51m0s -  Soldier of Sidon / Gene Wolfe / n: Gregory Connors',
+      ],
+    },
   '/Volumes/Space/archive/media/audiobooks/Gene Wolfe - The Book of the New Sun Series':
     {
       skip: 'no audio files',
@@ -1358,6 +1413,15 @@ export const db: Record<string, Hint> = {
       '// duration': '13h52m43s',
       asins: [
         'B07DM7756K: ✓ Δ:43s - 13h52m0s -  The Urth of the New Sun / Gene Wolfe / n: Jonathan Davis',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Geoffrey Chaucer - Canterbury Tales':
+    {
+      author: ['Geoffrey Chaucer', 'hint'],
+      title: ['The Canterbury Tales', 'unique'],
+      '// duration': '22h24m17s',
+      asins: [
+        'B002V1BWX0: ✓ Δ:3m17s - 22h21m0s -  The Canterbury Tales / Geoffrey Chaucer / n: uncredited',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/George MacDonald Fraser - The Flashman Papers':
@@ -3533,6 +3597,15 @@ export const db: Record<string, Hint> = {
         'B07Q2GQMWT: ✓ Δ:1m7s - 11h21m0s -  The Second Kind of Impossible / Paul J. Steinhardt / n: Peter Larkin',
       ],
     },
+  '/Volumes/Space/archive/media/audiobooks/Peter Ackroyd - The Canterbury Tales A Retelling':
+    {
+      author: ['Peter Ackroyd', 'unique'],
+      title: ['The Canterbury Tales: A Retelling', 'hint'],
+      '// duration': '16h55m44s',
+      asins: [
+        'B005ZUHJN6: ✓ Δ:44s - 16h55m0s -  The Canterbury Tales: A Retelling / Peter Ackroyd / n: Keith Moore,Toby Leonard Moore,Colin McPhillamy,John Curless,John Keating,Graeme Malcolm,Davina Porter,Steven Crossley',
+      ],
+    },
   '/Volumes/Space/archive/media/audiobooks/Peter Singer - The Life You Can Save':
     {
       author: ['Peter Singer', 'unique'],
@@ -3982,6 +4055,118 @@ export const db: Record<string, Hint> = {
         'B075FSKP6W: ✓ Δ:44s - 9h31m0s -  Vallista / Steven Brust / n: Bernard Setaro Clark',
       ],
     },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen':
+    {
+      skip: 'no audio files',
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Maps':
+    {
+      skip: 'no audio files',
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 01 Gardens of the Moon':
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ['Gardens of the Moon', 'hint'],
+      '// duration': '26h3m22s',
+      asins: [
+        'B009KSQJ3U: ✓ Δ:22s - 26h3m0s -  Gardens of the Moon / Steven Erikson / n: Ralph Lister',
+        '1473565537: ✓ Δ:1m22s - 26h2m0s -  Gardens of the Moon / Steven Erikson / n: Ralph Lister',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 02 Deadhouse Gates':
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ['Deadhouse Gates', 'hint'],
+      '// duration': '34h5m36s',
+      asins: [
+        'B00BJ5YWLS: ✓ Δ:36s - 34h5m0s -  Deadhouse Gates / Steven Erikson / n: Ralph Lister',
+        '1473554950: ✓ Δ:1m36s - 34h4m0s -  Deadhouse Gates / Steven Erikson / n: Ralph Lister',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 03 Memories of Ice':
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ['Memories of Ice', 'hint'],
+      '// duration': '43h55m17s',
+      asins: [
+        'B00C295FWK: ✓ Δ:17s - 43h55m0s -  Memories of Ice / Steven Erikson / n: Ralph Lister',
+        '1473554969: ✓ Δ:1m17s - 43h54m0s -  Memories of Ice / Steven Erikson / n: Ralph Lister',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 04 House of Chains':
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ['House of Chains', 'hint'],
+      '// duration': '35h5m26s',
+      asins: [
+        'B00GUTGVEE: ✓ Δ:26s - 35h5m0s -  House of Chains / Steven Erikson / n: Michael Page',
+        '1473555159: ✓ Δ:1m26s - 35h4m0s -  House of Chains / Steven Erikson / n: Michael Page',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 05 Midnight Tides':
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ['Midnight Tides', 'hint'],
+      '// duration': '31h4m34s',
+      asins: [
+        'B00I2Y5NIK: ✓ Δ:34s - 31h4m0s -  Midnight Tides / Steven Erikson / n: Michael Page',
+        '1473555167: ✓ Δ:1m34s - 31h3m0s -  Midnight Tides / Steven Erikson / n: Michael Page',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 06 The Bonehunters':
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ['The Bonehunters', 'hint'],
+      '// duration': '42h1m55s',
+      asins: [
+        'B00J7XLAUK: ✓ Δ:55s - 42h1m0s -  The Bonehunters / Steven Erikson / n: Michael Page',
+        '1473555175: ✓ Δ:1m55s - 42h0m0s -  The Bonehunters / Steven Erikson / n: Michael Page',
+      ],
+    },
+  "/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 07 Reaper's Gale":
+    {
+      author: ['Steven Erikson', 'hint'],
+      title: ["Reaper's Gale", 'hint'],
+      '// duration': '43h57m35s',
+      asins: [
+        "B00M4LRBY6: ✓ Δ:35s - 43h57m0s -  Reaper's Gale / Steven Erikson / n: Michael Page",
+        "1473555183: ✓ Δ:1m35s - 43h56m0s -  Reaper's Gale / Steven Erikson / n: Michael Page",
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 08 Toll the Hounds':
+    {
+      author: ['Steven Erikson', 'unique'],
+      title: ['Toll the Hounds', 'hint'],
+      '// duration': '44h1m50s',
+      asins: [
+        'B00UO410TW: ✓ Δ:50s - 44h1m0s -  Toll the Hounds / Steven Erikson / n: Michael Page',
+        '1473555191: ✓ Δ:1m50s - 44h0m0s -  Toll the Hounds / Steven Erikson / n: Michael Page',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 09 Dust of Dreams':
+    {
+      author: ['Steven Erikson', 'unique'],
+      title: ['Dust of Dreams', 'hint'],
+      '// duration': '43h14m19s',
+      asins: [
+        'B00U0IPOSK: ✓ Δ:19s - 43h14m0s -  Dust of Dreams / Steven Erikson / n: Michael Page',
+        '1473555205: ✓ Δ:1m19s - 43h13m0s -  Dust of Dreams / Steven Erikson / n: Michael Page',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/Steven Erikson - Malazan - 10 The Crippled God':
+    {
+      author: ['Steven Erikson', 'unique'],
+      title: ['The Crippled God', 'hint'],
+      '// duration': '45h21m42s',
+      asins: [
+        'B0118MSZCI: ✓ Δ:42s - 45h21m0s -  The Crippled God / Steven Erikson / n: Michael Page',
+        '1473555213: ✓ Δ:1m42s - 45h20m0s -  The Crippled God / Steven Erikson / n: Michael Page',
+      ],
+    },
+  '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/eBooks':
+    {
+      skip: 'no audio files',
+    },
   '/Volumes/Space/archive/media/audiobooks/Steven Pinker - Enlightenment Now': {
     author: ['Steven Pinker', 'unique'],
     title: [
@@ -4179,6 +4364,15 @@ export const db: Record<string, Hint> = {
       '// duration': '15h37m0s',
       asins: [],
     },
+  '/Volumes/Space/archive/media/audiobooks/Tony Fadell - Build': {
+    author: ['Tony Fadell', 'unique'],
+    title: ['Build', 'hint'],
+    '// duration': '11h5m3s',
+    asins: [
+      'B09CF1RCGC: ✓ Δ:3s - 11h5m0s -  Build / Tony Fadell / n: Tony Fadell,Roger Wayne',
+      'B09MSCNTCC: ✓ Δ:1m3s - 11h4m0s -  Build / Tony Fadell / n: Roger Wayne',
+    ],
+  },
   '/Volumes/Space/archive/media/audiobooks/UrsulaKLeGuin-AWizardOfEarthsea': {
     author: ['Ursula K. Le Guin', 'hint'],
     title: ['A Wizard of Earthsea', 'hint'],
