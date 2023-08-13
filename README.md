@@ -1,7 +1,14 @@
-
 # NxAudiobook
 
-Pnpm monorepo with nx for orchestration.
+This repo consolidates audiobook management
+
+- infra directory for (see [README.md](./infra/README.md) in each)
+
+  - audiobookshelf: a standalone audiobook manager
+  - plex-audiobook: a standalone plex agent for audiobooks
+
+- validate/convert tooling (my own)
+  - Pnpm monorepo with nx for orchestration.
 
 ## TODO
 
@@ -22,7 +29,11 @@ Pnpm monorepo with nx for orchestration.
 - [ ] Node18 & native fetch - remove node-fetch
   - [ ] consider [unjs fetch](https://github.com/unjs/ohmyfetch)
 
-## Operation
+## Infra - Operations
+
+- [README.md](./infra/README.md)
+
+## Nx - Operation
 
 for updates:
 
@@ -30,7 +41,7 @@ for updates:
 pnpm update --recursive --interactive
 # Use the --latest option to update the ranges in package.json
 
-# or 
+# or
 # pnpx npm-check-updates was also considered
 ```
 
@@ -51,6 +62,7 @@ time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier -
 
 # convert
 time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir /Volumes/Space/Reading/convert
+time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/' --convertDir /Volumes/Space/Reading/convert
 
 # Test the github action
 act --secret-file nx-cloud.env -j unit
@@ -70,7 +82,7 @@ Take notes when we add the next one. Perhaps add a validator or generator.
 ## Durations
 
 It turns out that the duration of an audio file (.mp3,.m4b,..) is evaluated the same by music-metadata and ffprobe.
-Further Audible lookup rounds the duration to the nearest minute.
+Further, Audible lookup rounds the duration to the nearest minute.
 
 ## References
 
