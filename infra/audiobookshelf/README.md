@@ -14,6 +14,8 @@ Run in docker on `plex-audiobook.imetrical.com`
 docker compose up -d
 ```
 
+**Careful**: (some) files will be created as root in these directories...
+
 Mounting these 3 directories:
 
 - /Volumes/Reading/audiobooks/:/audiobooks:ro (SMB share from syno)
@@ -50,3 +52,4 @@ Archive:  data/metadata/backups/2023-08-13T1942.audiobookshelf
 
 - [Audiobookshelf Site](https://www.audiobookshelf.org/)
 - [GitHub](https://github.com/advplyr/audiobookshelf)
+- [Tone](https://github.com/sandreas/tone)
