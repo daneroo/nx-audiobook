@@ -5,9 +5,9 @@ Moved from <https://github.com/daneroo/plex-audiobook>
 _Note_: as of 2023-08-12 I reinstalled plexmediaserver on this host, by restoring to the 2023-07-16 snapshot.
 _Note_: as of 2023-07-17 I uninstalled plexmediaserver on this host, and will rebuild audiobookshelf on a new server (NixOS)
 
-- `plex-audiobook` VM on proxmox@hibert: is running both these services
+- `plex-audiobook` VM on proxmox@hilbert: is running both these services
 
-  - This VM has daily snapshots on proxmox@hibert
+  - This VM has daily snapshots on proxmox@hilbert
   - This VM mounts remote SMB: `//syno.imetrical.com/Reading to/Volumes/Reading`
   - plex-audiobook.imetrical.com -> 192.168.2.112
     - link/ether 82:a1:71:54:20:4c brd ff:ff:ff:ff:ff:ff
@@ -25,7 +25,7 @@ _Note_: as of 2023-07-17 I uninstalled plexmediaserver on this host, and will re
 
 ## TODO
 
-- [ ] Archive plex-audiobook repo
+- [x] Archive plex-audiobook repo
 - [ ] Define migration to `/Volumes/Reading/audiobooks``
 - [ ] Rename the canonical service names? Include Tailscale?
   - [ ] Remove remote (non-tailscale) <https://audiobook.dl.imetrical.com:443/web>

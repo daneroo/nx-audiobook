@@ -1,6 +1,6 @@
 # Audiobookshelf
 
-Audiobbokshelf Settings
+Audiobookshelf Settings
 
 - Create a daniel user (root for now)
 - Internal backups 20:00 (keep 2) -
@@ -28,7 +28,7 @@ Mounting these 3 directories:
 - `config` dir only contains the sqlite database
 - `metadata` contains log,caches,items covers,...
 - `metadata/backups` contains backups (keeps 2)
-  - `YYYY_MM_DDTHHMM.audiobookshelf` is just a zip file, containting:
+  - `YYYY-MM-DDTHHMM.audiobookshelf` is just a zip file, containing:
 
 ```bash
 $ unzip -l data/metadata/backups/2023-08-13T1942.audiobookshelf

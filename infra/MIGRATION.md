@@ -2,28 +2,40 @@
 
 We wish to move all content of our _Legacy_ audiobook library to our _Reading_ library.
 
+## Progress
+
+Progressive conversion, which means living with a state where we can establish
+what the current state of progress is: n of m done
+
+- [ ] List the books in /Volumes/Space/Ripping/audiobooks
+- [ ] Compare to hints/db.json
+
+## Iteration
+
+- Fine-tune audiobook in this audiobookshelf dev env (galois)
+- Sync to /Volumes/Space/Reading/audiobooks on galois (syncthing to davinci,..)
+- Sync to syno:/Reading/audiobooks on davinci
+
 ## TODO
 
-- Idea: use [tone](https://github.com/sandreas/tone) to extract uniform data from all meda files
+- Idea: use [tone](https://github.com/sandreas/tone) to extract uniform data from all media files
   - `tone` has a NixPkgs package (fleek/home-manager?)
   - Perhaps as with directory-digests on multiple machines
   - See [Tone Dump](#tone-dump) below
 - Syncthing for `/Volumes/Reading/` on galois and davinci, at least
-- Rsync back on syno, from there (syncthing on Synology doesn't look like a good idea)
+- Rsync back to syno, from [galois|davinci] (syncthing on Synology doesn't look like a good idea)
 - Borgbackup: from ?
 
 ## Current State
 
-- Audiobookshelf and Plex both ser content from `syno:Reading/audiobooks` (SMB)
-  - mounted as `/Volumes/Reading/audiobooks` on plex-audiobook VM on hilbert
-    - further mounted as `/audiobooks` in Audiobookshelf container
-
-## Progress
-
-Progressive conversion, which means living with a state where we can establish
-
-- What the current state of progress is: n of m done
-- [ ] How can we match legacy directories to new directories?
+| Name                                | Description                                                       |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| Legacy                              | Source for migration                                              |
+| `$ARCHIVE_HOME/media/audiobooks`    | on syno,galois,davinci,dirac,shannon                              |
+| Canonical New                       |                                                                   |
+| `/Volumes/Space/Reading/audiobooks` | Source of truth, [Syncthing on galois, [davinci, dirac, shannon]] |
+| `syno:Reading/audiobooks`           | Source for Audiobookshelf and Plex on audiobook VM                |
+| `./data/audiobooks`                 | Developer view in this repo                                       |
 
 ## Normalization
 
@@ -32,14 +44,14 @@ Normalization of audiobook files implies:
 - Normalizing all content
   - from `/Volumes/Space/archive/media/audiobooks/`
   - to `/Volumes/Reading/audiobooks/`
-- Standard tags for author,title, but also narattor, translator,series, seriesIndex, etc.
+- Standard tags for author,title, but also narrator, translator,series, seriesIndex, etc.
 - Should be compatible with Audiobookshelf as well as Plex Audiobook agent
-- Should preserve modification times of legacy direcotires and files, to reflect acquisition date, as a proxy for reading date.
+- Should preserve modification times of legacy directories and files, to reflect acquisition date, as a proxy for reading date.
 
 ## Tone Dump
 
 Tone has a bad serialization format which adds `\n\r` inside strings which makes it malformed JSON.
-We can see this in the way that [node-tone](https://github.com/advplyr/node-tone/) (byt thae audiobookshelf author) parses the output of `tone dump`:
+We can see this in the way that [node-tone](https://github.com/advplyr/node-tone/) (by the audiobookshelf author) parses the output of `tone dump`:
 
 ```js
 return JSON.parse(response.replace(/[\n\r]+/g, ' ')) // Remove carriage returns`
