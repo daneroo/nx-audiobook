@@ -17,7 +17,7 @@ rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical
 
 # Staging to Prod
 # on syno, pull from galois (Staging)
-rsync -n --delete -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
 ```
 
 ## TODO

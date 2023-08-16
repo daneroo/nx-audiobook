@@ -25,8 +25,6 @@ _Note_: as of 2023-07-17 I uninstalled plexmediaserver on this host, and will re
 
 ## TODO
 
-- [x] Archive plex-audiobook repo
-- [ ] Define migration to `/Volumes/Reading/audiobooks``
 - [ ] Rename the canonical service names? Include Tailscale?
   - [ ] Remove remote (non-tailscale) <https://audiobook.dl.imetrical.com:443/web>
   - shelf.audiobook[.ts].imetrical.com
