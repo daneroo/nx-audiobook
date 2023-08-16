@@ -57,8 +57,14 @@ pnpm build && pnpm start
 pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
 
 # For now, til we have better cli
-# validate
+# cd apps/validate
 time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
+
+# progress
+cd apps/validate
+# clean output into PROGRESS.md
+pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks | tee ../../infra/PROGRESS.md
+time pnpm run dev --progressDir /Volumes/Space/Reading/audiobooks
 
 # convert
 time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir /Volumes/Space/Reading/convert

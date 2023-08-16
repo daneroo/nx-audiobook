@@ -2,19 +2,23 @@
 
 We wish to move all content of our _Legacy_ audiobook library to our _Reading_ library.
 
-## Progress
-
-Progressive conversion, which means living with a state where we can establish
-what the current state of progress is: n of m done
-
-- [ ] List the books in /Volumes/Space/Ripping/audiobooks
-- [ ] Compare to hints/db.json
+Current [PROGRESS.md](./PROGRESS.md)
 
 ## Iteration
 
 - Fine-tune audiobook in this audiobookshelf dev env (galois)
 - Sync to /Volumes/Space/Reading/audiobooks on galois (syncthing to davinci,..)
 - Sync to syno:/Reading/audiobooks on davinci
+
+```bash
+# Dev to Staging
+#  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
+
+# Staging to Prod
+# on syno, pull from galois (Staging)
+rsync -n --delete -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
+```
 
 ## TODO
 

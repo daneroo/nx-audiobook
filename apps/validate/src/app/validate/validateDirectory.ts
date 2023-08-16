@@ -16,6 +16,7 @@ export function validateDirectory(
     validateUniqueAuthorTitle(hint, audiobook),
     validateDuration(audiobook),
     validateCover(audiobook),
+    validateModTimeRange(audiobook),
   ]
   return validations
 }
@@ -128,6 +129,45 @@ function validateCover(audiobook: AudioBook): Validation {
   return {
     ok: ok && warnings.length === 0,
     message: 'validateCover',
+    level: ok ? 'info' : 'warn',
+    extra,
+  }
+}
+
+// Validates that the modtime of the audio files are within a reasonable range (7 days)
+// This is in preparation for keeping the modTime (min) as an acquisition Date
+// which we would like to preserve.
+function validateModTimeRange(audiobook: AudioBook): Validation {
+  const { audioFiles } = audiobook
+  const hasAudioFiles = audioFiles.length > 0
+
+  const mtimeRange = audioFiles.reduce(
+    (acc, file) => {
+      const mtime = file.fileInfo.mtime.getTime()
+      return {
+        minMtime: Math.min(acc.minMtime, mtime),
+        maxMtime: Math.max(acc.maxMtime, mtime),
+      }
+    },
+    { minMtime: Infinity, maxMtime: -Infinity }
+  )
+  const rangeInHours =
+    (mtimeRange.maxMtime - mtimeRange.minMtime) / (3600 * 1000)
+  const ok = !hasAudioFiles || rangeInHours < 24 * 7 // 7 days
+  const extra = {
+    ...(!hasAudioFiles ? { skip: 'no audio files' } : {}),
+    ...(!ok
+      ? {
+          warnings: `audioFiles mtime range too high ${rangeInHours.toFixed(
+            1
+          )}h`,
+        }
+      : {}),
+    // ...(!ok ? { error: 'no cover found' } : {}),
+  }
+  return {
+    ok,
+    message: 'validateModTime',
     level: ok ? 'info' : 'warn',
     extra,
   }

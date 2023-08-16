@@ -7,6 +7,8 @@ import { validateDirectory } from './app/validate/validateDirectory'
 import { classifyDirectory } from './app/validate/classifyDirectory'
 import { rewriteHints } from './app/validate/rewriteHints'
 import { convertDirectory } from './app/validate/convertDirectory'
+import { reportProgress } from './app/reportProgress'
+
 const defaultRootPath = '/Volumes/Space/archive/media/audiobooks'
 
 main().catch((error) => {
@@ -35,6 +37,12 @@ async function main(): Promise<void> {
       describe:
         'convert audio into destination path: e.g.: --convert /Volumes/Space/Reading/convert',
     })
+    .option('progressDir', {
+      type: 'string',
+      nargs: 1,
+      describe:
+        'measure progress against converted books: --progressDir /Volumes/Space/Reading/audiobooks',
+    })
     .count('verbose')
     .alias('v', 'verbose')
     .help()
@@ -45,10 +53,20 @@ async function main(): Promise<void> {
     rootPath: unverifiedRootPath,
     rewriteHintsDB,
     convertDir,
+    progressDir,
     verbose: verbosity,
   } = argv
   // clean the root path by removing trailing slash
   const rootPath = unverifiedRootPath.replace(/\/$/, '')
+
+  // 5- progress (Moved here to no pollute stdout)
+  if (progressDir !== undefined) {
+    // console.log('=-=- Progress:', progressDir)
+    await reportProgress(rootPath, progressDir)
+    // exit the program early
+    return
+  }
+
   console.info('=- Classify and Validate:', { rootPath })
 
   // 1- Global validation

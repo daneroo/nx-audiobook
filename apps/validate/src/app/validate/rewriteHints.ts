@@ -87,6 +87,12 @@ async function getAsins(
       const delta =
         duration > 0 ? Math.abs(duration - durationMeta) : largeDuration
       const check = delta <= deltaThreshold ? '✓' : '✗'
+
+      // debug: just to see series
+      // if (book.series !== '') {
+      //   console.log('** series', book.series, 'position', book.seriesPosition)
+      // }
+
       return {
         ...book,
         delta,
