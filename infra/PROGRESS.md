@@ -3,8 +3,8 @@
 Progress report for moving audiobooks from Legacy to Staging
 
 - Legacy books: 489 `/Volumes/Space/archive/media/audiobooks`
-- Staging books: 65 `/Volumes/Space/Reading/audiobooks`
-- Legacy books not in Staging: 443
+- Staging books: 75 `/Volumes/Space/Reading/audiobooks`
+- Legacy books not in Staging: 433
 - Staging books not Legacy (20)
 
 ## Staging books not found in legacy (20)
@@ -30,7 +30,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Ursula K. Le Guin - The Dispossessed
 - Ursula K. Le Guin - The Left Hand of Darkness
 
-## Legacy books not in Staging (TODO) (443)
+## Legacy books not in Staging (TODO) (433)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Adrian Tchaikovsky - Children of Time
@@ -195,16 +195,6 @@ Progress report for moving audiobooks from Legacy to Staging
 - Herodotus - Histories
 - Herodotus - The Persian Wars
 - Homer, Stephen Mitchell - translator - The Iliad
-- Iain M. Banks - Consider Phlebas
-- Iain M. Banks - The Player of Games
-- Iain M. Banks - Use of Weapons
-- Iain M. Banks - The State of the Art
-- Iain M. Banks - Excession
-- Iain M. Banks - Inversions
-- Iain M. Banks - Look to Windward
-- Iain M. Banks - Matter
-- Iain M. Banks - Surface Detail
-- Iain M. Banks - The Hydrogen Sonata
 - Iain M Banks - The Algebraist
 - Ian Stewart - Calculating the Cosmos
 - Immanuel Kant - The Critique of Pure Reason
@@ -478,7 +468,7 @@ Progress report for moving audiobooks from Legacy to Staging
 
 ## Books already Migrated
 
-There are 45 books which have been migrated.
+There are 55 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -500,6 +490,16 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Gene Wolfe - The Sword of the Lictor              | 309.98 MiB → 310.33 MiB   | 11h22m26s → 11h22m26s |
 | Gene Wolfe - The Citadel of the Autarch           | 302.41 MiB → 302.75 MiB   | 11h5m46s → 11h5m46s   |
 | Gene Wolfe - The Urth of the New Sun              | 378.21 MiB → 378.92 MiB   | 13h52m43s → 13h52m43s |
+| Iain M. Banks - Consider Phlebas                  | 569.63 MiB → 483.66 MiB   | 16h27m5s → 16h26m14s  |
+| Iain M. Banks - The Player of Games               | 311.83 MiB → 312.25 MiB   | 11h26m33s → 11h26m33s |
+| Iain M. Banks - Use of Weapons                    | 119.11 MiB → 310.40 MiB   | 16h49m17s → 13h30m3s  |
+| Iain M. Banks - The State of the Art              | 173.02 MiB → 173.52 MiB   | 6h20m47s → 6h20m47s   |
+| Iain M. Banks - Excession                         | 875.01 MiB → 812.21 MiB   | 15h55m38s → 15h55m44s |
+| Iain M. Banks - Inversions                        | 312.31 MiB → 269.88 MiB   | 11h27m16s → 11h27m16s |
+| Iain M. Banks - Look to Windward                  | 332.76 MiB → 284.83 MiB   | 12h12m25s → 12h12m25s |
+| Iain M. Banks - Matter                            | 991.88 MiB → 944.31 MiB   | 17h55m17s → 17h55m24s |
+| Iain M. Banks - Surface Detail                    | 555.88 MiB → 484.14 MiB   | 20h23m38s → 20h23m38s |
+| Iain M. Banks - The Hydrogen Sonata               | 469.42 MiB → 416.69 MiB   | 17h13m18s → 17h13m18s |
 | Joe Abercrombie - A Little Hatred                 | 1107.44 MiB → 1107.82 MiB | 1s → 1s               |
 | Joe Abercrombie - The Trouble with Peace          | 1195.41 MiB → 1195.95 MiB | 21h56m15s → 21h56m15s |
 | Joe Abercrombie - The Wisdom of Crowds            | 1286.77 MiB → 1287.32 MiB | 23h36m51s → 23h36m51s |
