@@ -18,6 +18,14 @@ rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical
 # Staging to Prod
 # on syno, pull from galois (Staging)
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
+
+## Permissions dirs 755, files 644
+# Show Bad Perms
+find audiobooks/ -not -perm 644 -type f -exec ls -l {} \;
+find audiobooks/ -not -perm 755 -type d -exec ls -ld {} \;
+# Fix Perms
+find audiobooks/ -type d -exec chmod 755 {} \;
+find audiobooks/ -type f -exec chmod 644 {} \;
 ```
 
 ## TODO

@@ -3,11 +3,11 @@
 Progress report for moving audiobooks from Legacy to Staging
 
 - Legacy books: 489 `/Volumes/Space/archive/media/audiobooks`
-- Staging books: 56 `/Volumes/Space/Reading/audiobooks`
-- Legacy books not in Staging: 449
-- Staging books not Legacy (16)
+- Staging books: 65 `/Volumes/Space/Reading/audiobooks`
+- Legacy books not in Staging: 443
+- Staging books not Legacy (20)
 
-## Staging books not found in legacy (16)
+## Staging books not found in legacy (20)
 
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
@@ -18,6 +18,8 @@ Progress report for moving audiobooks from Legacy to Staging
 - Arthur Conan Doyle - The Valley of Fear
 - Arthur Conan Doyle - His Last Bow
 - Arthur Conan Doyle - The Casebook of Sherlock Holmes
+- Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism
+- Cory Doctorow - Force Multiplier
 - Iain M. Banks - The Algebraist
 - Joe Abercrombie - Half a King
 - Joe Abercrombie - Half the World
@@ -25,8 +27,10 @@ Progress report for moving audiobooks from Legacy to Staging
 - Joe Abercrombie - Last Argument of Kings
 - Roger Penrose - The Emperor's New Mind
 - Seb Falk - The Light Ages
+- Ursula K. Le Guin - The Dispossessed
+- Ursula K. Le Guin - The Left Hand of Darkness
 
-## Legacy books not in Staging (TODO) (449)
+## Legacy books not in Staging (TODO) (443)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Adrian Tchaikovsky - Children of Time
@@ -115,13 +119,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Cixin Liu - Death's End
 - Cixin Liu - The Dark Forest
 - Cixin Liu - The Three-Body Problem
-- Cory Doctorow - Down and Out in the Magic Kingdom
-- Cory Doctorow - Red Team Blues
-- Cory Doctorow - Attack Surface
 - Cory Doctorow - Chokepoint Capitalism
-- Cory Doctorow - Attack Surface
-- Cory Doctorow - Homeland
-- Cory Doctorow - Little Brother
 - Dan Ariely - The Upside of Irrationality
 - Dan Jones - Magna Carta: The Birth of Liberty
 - Dan Jones - The Plantagenets: The Warrior Kings and Queens Who Made England
@@ -480,51 +478,56 @@ Progress report for moving audiobooks from Legacy to Staging
 
 ## Books already Migrated
 
-There are 40 books which have been migrated.
+There are 45 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
 Let's compare the audio file count, size and duration for Legacy → Staging.
 
-| Book                                           | Size                      | Duration              |
-| ---------------------------------------------- | ------------------------- | --------------------- |
-| Amanda H. Podany - Weavers, Scribes, and Kings | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
-| Gene Wolfe - Soldier of the Mist               | 590.57 MiB → 531.18 MiB   | 10h34m16s → 10h34m16s |
-| Gene Wolfe - Soldier of Arete                  | 624.65 MiB → 562.05 MiB   | 11h5m46s → 11h5m46s   |
-| Gene Wolfe - Soldier of Sidon                  | 495.54 MiB → 446.74 MiB   | 8h52m11s → 8h52m11s   |
-| Gene Wolfe - The Shadow of the Torturer        | 329.87 MiB → 330.24 MiB   | 12h6m14s → 12h6m14s   |
-| Gene Wolfe - The Claw of the Conciliator       | 312.21 MiB → 312.64 MiB   | 11h27m17s → 11h27m17s |
-| Gene Wolfe - The Sword of the Lictor           | 309.98 MiB → 310.33 MiB   | 11h22m26s → 11h22m26s |
-| Gene Wolfe - The Citadel of the Autarch        | 302.41 MiB → 302.75 MiB   | 11h5m46s → 11h5m46s   |
-| Gene Wolfe - The Urth of the New Sun           | 378.21 MiB → 378.92 MiB   | 13h52m43s → 13h52m43s |
-| Joe Abercrombie - A Little Hatred              | 1107.44 MiB → 1107.82 MiB | 1s → 1s               |
-| Joe Abercrombie - The Trouble with Peace       | 1195.41 MiB → 1195.95 MiB | 21h56m15s → 21h56m15s |
-| Joe Abercrombie - The Wisdom of Crowds         | 1286.77 MiB → 1287.32 MiB | 23h36m51s → 23h36m51s |
-| Joe Abercrombie - The Blade Itself             | 1528.28 MiB → 610.81 MiB  | 22h14m33s → 22h14m26s |
-| Joe Abercrombie - Before They Are Hanged       | 934.07 MiB → 621.94 MiB   | 22h37m53s → 22h37m53s |
-| Joe Abercrombie - Best Served Cold             | 1095.87 MiB → 759.68 MiB  | 26h29m2s → 26h29m4s   |
-| Joe Abercrombie - The Heroes                   | 954.78 MiB → 657.14 MiB   | 23h5m23s → 23h5m30s   |
-| Joe Abercrombie - Red Country                  | 822.19 MiB → 572.40 MiB   | 19h52m37s → 19h52m55s |
-| Joe Abercrombie - Sharp Ends                   | 324.92 MiB → 321.96 MiB   | 11h48m18s → 11h48m18s |
-| Scott Lynch - The Lies of Locke Lamora         | 456.55 MiB → 600.25 MiB   | 21h53m27s → 21h59m56s |
-| Scott Lynch - Red Seas Under Red Skies         | 707.75 MiB → 698.10 MiB   | 25h34m34s → 25h34m16s |
-| Scott Lynch - The Republic of Thieves          | 1005.97 MiB → 647.78 MiB  | 23h45m54s → 23h43m32s |
-| Steven Brust - The Phoenix Guards              | 447.29 MiB → 449.11 MiB   | 16h14m22s → 16h14m28s |
-| Steven Brust - Five Hundred Years After        | 580.24 MiB → 582.79 MiB   | 21h5m2s → 21h5m10s    |
-| Steven Brust - The Paths of the Dead           | 421.62 MiB → 423.16 MiB   | 15h18m44s → 15h18m45s |
-| Steven Brust - The Lord of Castle Black        | 387.82 MiB → 388.97 MiB   | 14h4m13s → 14h4m18s   |
-| Steven Brust - Sethra Lavode                   | 356.13 MiB → 357.61 MiB   | 12h55m57s → 12h55m52s |
-| Steven Erikson - Gardens of the Moon           | 709.95 MiB → 710.25 MiB   | 26h3m22s → 26h3m22s   |
-| Steven Erikson - Deadhouse Gates               | 928.92 MiB → 929.18 MiB   | 34h5m36s → 34h5m36s   |
-| Steven Erikson - Memories of Ice               | 1196.68 MiB → 1196.99 MiB | 43h55m17s → 43h55m17s |
-| Steven Erikson - House of Chains               | 956.09 MiB → 956.53 MiB   | 35h5m26s → 35h5m26s   |
-| Steven Erikson - Midnight Tides                | 846.72 MiB → 847.04 MiB   | 31h4m34s → 31h4m34s   |
-| Steven Erikson - The Bonehunters               | 1145.20 MiB → 1145.45 MiB | 42h1m55s → 42h1m55s   |
-| Steven Erikson - Reaper's Gale                 | 1197.72 MiB → 1198.20 MiB | 43h57m35s → 43h57m35s |
-| Steven Erikson - Toll the Hounds               | 1199.65 MiB → 1200.16 MiB | 44h1m50s → 44h1m50s   |
-| Steven Erikson - Dust of Dreams                | 1178.08 MiB → 1178.60 MiB | 43h14m19s → 43h14m19s |
-| Steven Erikson - The Crippled God              | 1235.92 MiB → 1236.21 MiB | 45h21m42s → 45h21m42s |
-| Tony Fadell - Build                            | 306.36 MiB → 316.71 MiB   | 11h5m3s → 11h5m3s     |
-| Vernor Vinge - A Fire Upon the Deep            | 366.03 MiB → 300.89 MiB   | 23h51m54s → 21h47m53s |
-| Vernor Vinge - A Deepness in the Sky           | 422.85 MiB → 726.40 MiB   | 28h31m36s → 28h31m36s |
-| Vernor Vinge - The Children of the Sky         | 398.98 MiB → 644.70 MiB   | 27h42m55s → 27h42m55s |
+| Book                                              | Size                      | Duration              |
+| ------------------------------------------------- | ------------------------- | --------------------- |
+| Amanda H. Podany - Weavers, Scribes, and Kings    | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
+| Cory Doctorow - Down and Out in the Magic Kingdom | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
+| Cory Doctorow - Little Brother                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
+| Cory Doctorow - Homeland                          | 664.51 MiB → 667.52 MiB   | 12h5m1s → 12h5m1s     |
+| Cory Doctorow - Attack Surface                    | 32.24 MiB → 618.11 MiB    | 23m20s → 11h8m27s     |
+| Cory Doctorow - Red Team Blues                    | 999.34 MiB → 743.58 MiB   | 7h15m15s → 7h15m15s   |
+| Gene Wolfe - Soldier of the Mist                  | 590.57 MiB → 531.18 MiB   | 10h34m16s → 10h34m16s |
+| Gene Wolfe - Soldier of Arete                     | 624.65 MiB → 562.05 MiB   | 11h5m46s → 11h5m46s   |
+| Gene Wolfe - Soldier of Sidon                     | 495.54 MiB → 446.74 MiB   | 8h52m11s → 8h52m11s   |
+| Gene Wolfe - The Shadow of the Torturer           | 329.87 MiB → 330.24 MiB   | 12h6m14s → 12h6m14s   |
+| Gene Wolfe - The Claw of the Conciliator          | 312.21 MiB → 312.64 MiB   | 11h27m17s → 11h27m17s |
+| Gene Wolfe - The Sword of the Lictor              | 309.98 MiB → 310.33 MiB   | 11h22m26s → 11h22m26s |
+| Gene Wolfe - The Citadel of the Autarch           | 302.41 MiB → 302.75 MiB   | 11h5m46s → 11h5m46s   |
+| Gene Wolfe - The Urth of the New Sun              | 378.21 MiB → 378.92 MiB   | 13h52m43s → 13h52m43s |
+| Joe Abercrombie - A Little Hatred                 | 1107.44 MiB → 1107.82 MiB | 1s → 1s               |
+| Joe Abercrombie - The Trouble with Peace          | 1195.41 MiB → 1195.95 MiB | 21h56m15s → 21h56m15s |
+| Joe Abercrombie - The Wisdom of Crowds            | 1286.77 MiB → 1287.32 MiB | 23h36m51s → 23h36m51s |
+| Joe Abercrombie - The Blade Itself                | 1528.28 MiB → 610.81 MiB  | 22h14m33s → 22h14m26s |
+| Joe Abercrombie - Before They Are Hanged          | 934.07 MiB → 621.94 MiB   | 22h37m53s → 22h37m53s |
+| Joe Abercrombie - Best Served Cold                | 1095.87 MiB → 759.68 MiB  | 26h29m2s → 26h29m4s   |
+| Joe Abercrombie - The Heroes                      | 954.78 MiB → 657.14 MiB   | 23h5m23s → 23h5m30s   |
+| Joe Abercrombie - Red Country                     | 822.19 MiB → 572.40 MiB   | 19h52m37s → 19h52m55s |
+| Joe Abercrombie - Sharp Ends                      | 324.92 MiB → 321.96 MiB   | 11h48m18s → 11h48m18s |
+| Scott Lynch - The Lies of Locke Lamora            | 456.55 MiB → 600.25 MiB   | 21h53m27s → 21h59m56s |
+| Scott Lynch - Red Seas Under Red Skies            | 707.75 MiB → 698.10 MiB   | 25h34m34s → 25h34m16s |
+| Scott Lynch - The Republic of Thieves             | 1005.97 MiB → 647.78 MiB  | 23h45m54s → 23h43m32s |
+| Steven Brust - The Phoenix Guards                 | 447.29 MiB → 449.11 MiB   | 16h14m22s → 16h14m28s |
+| Steven Brust - Five Hundred Years After           | 580.24 MiB → 582.79 MiB   | 21h5m2s → 21h5m10s    |
+| Steven Brust - The Paths of the Dead              | 421.62 MiB → 423.16 MiB   | 15h18m44s → 15h18m45s |
+| Steven Brust - The Lord of Castle Black           | 387.82 MiB → 388.97 MiB   | 14h4m13s → 14h4m18s   |
+| Steven Brust - Sethra Lavode                      | 356.13 MiB → 357.61 MiB   | 12h55m57s → 12h55m52s |
+| Steven Erikson - Gardens of the Moon              | 709.95 MiB → 710.25 MiB   | 26h3m22s → 26h3m22s   |
+| Steven Erikson - Deadhouse Gates                  | 928.92 MiB → 929.18 MiB   | 34h5m36s → 34h5m36s   |
+| Steven Erikson - Memories of Ice                  | 1196.68 MiB → 1196.99 MiB | 43h55m17s → 43h55m17s |
+| Steven Erikson - House of Chains                  | 956.09 MiB → 956.53 MiB   | 35h5m26s → 35h5m26s   |
+| Steven Erikson - Midnight Tides                   | 846.72 MiB → 847.04 MiB   | 31h4m34s → 31h4m34s   |
+| Steven Erikson - The Bonehunters                  | 1145.20 MiB → 1145.45 MiB | 42h1m55s → 42h1m55s   |
+| Steven Erikson - Reaper's Gale                    | 1197.72 MiB → 1198.20 MiB | 43h57m35s → 43h57m35s |
+| Steven Erikson - Toll the Hounds                  | 1199.65 MiB → 1200.16 MiB | 44h1m50s → 44h1m50s   |
+| Steven Erikson - Dust of Dreams                   | 1178.08 MiB → 1178.60 MiB | 43h14m19s → 43h14m19s |
+| Steven Erikson - The Crippled God                 | 1235.92 MiB → 1236.21 MiB | 45h21m42s → 45h21m42s |
+| Tony Fadell - Build                               | 306.36 MiB → 316.71 MiB   | 11h5m3s → 11h5m3s     |
+| Vernor Vinge - A Fire Upon the Deep               | 366.03 MiB → 300.89 MiB   | 23h51m54s → 21h47m53s |
+| Vernor Vinge - A Deepness in the Sky              | 422.85 MiB → 726.40 MiB   | 28h31m36s → 28h31m36s |
+| Vernor Vinge - The Children of the Sky            | 398.98 MiB → 644.70 MiB   | 27h42m55s → 27h42m55s |
