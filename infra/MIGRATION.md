@@ -2,7 +2,13 @@
 
 We wish to move all content of our _Legacy_ audiobook library to our _Reading_ library.
 
-Current [PROGRESS.md](./PROGRESS.md)
+Current [PROGRESS.md](./PROGRESS.md) - (generated)
+
+## TODO
+
+- [x] Dropbox - CurrentlyReading
+- [ ] Dropbox - OnDeck
+- [ ]NewNotAdded (~/Downloads)
 
 ## Iteration
 

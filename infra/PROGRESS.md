@@ -3,12 +3,17 @@
 Progress report for moving audiobooks from Legacy to Staging
 
 - Legacy books: 489 `/Volumes/Space/archive/media/audiobooks`
-- Staging books: 110 `/Volumes/Space/Reading/audiobooks`
-- Legacy books not in Staging: 414
-- Staging books not Legacy (36)
+- Staging books: 123 `/Volumes/Space/Reading/audiobooks`
+- Legacy books not in Staging: 406
+- Staging books not Legacy (41)
 
-## Staging books not found in legacy (36)
+## Staging books not found in legacy (41)
 
+- Adam Savage - Every Tool's a Hammer
+- Annie Duke - How to Decide
+- Annie Duke - Thinking in Bets
+- Arthur C. Clarke - Rendezvous with Rama
+- Arthur C. Clarke - 2001
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
 - Arthur Conan Doyle - The Adventures of Sherlock Holmes
@@ -46,23 +51,15 @@ Progress report for moving audiobooks from Legacy to Staging
 - Ursula K. Le Guin - The Dispossessed
 - Ursula K. Le Guin - The Left Hand of Darkness
 
-## Legacy books not in Staging (TODO) (414)
+## Legacy books not in Staging (TODO) (406)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
-- Adrian Tchaikovsky - Children of Time
-- Adrian Tchaikovsky - Children of Ruin
 - Agatha Christie - And Then There Were None
 - Agatha Christie - The Murder of Roger Ackroyd
 - Agatha Christie - Murder on the Orient Express
 - Agatha Christie - Death on the Nile
-- Alastair Reynolds - House of Suns
 - Albert-László Barabási - The Formula: The Universal Laws of Success
 - Alfred Bester - The Stars My Destination
-- Alastair Reynolds - Revelation Space
-- Alastair Reynolds - Chasm City
-- Alastair Reynolds - Redemption Ark
-- Alastair Reynolds - Absolution Gap
-- Alastair Reynolds - The Prefect
 - Andrew Morton - 17 Carnations - The Royals, the Nazis, and the Biggest Cover-Up in History
 - Annie Duke - How to Decide: Simple Tools for Making Better Choices
 - Annie Duke - Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts
@@ -465,7 +462,7 @@ Progress report for moving audiobooks from Legacy to Staging
 
 ## Books already Migrated
 
-There are 74 books which have been migrated.
+There are 82 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -473,6 +470,14 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 
 | Book                                                              | Size                      | Duration              |
 | ----------------------------------------------------------------- | ------------------------- | --------------------- |
+| Adrian Tchaikovsky - Children of Time                             | 543.87 MiB → 544.02 MiB   | 16h31m33s → 16h31m33s |
+| Adrian Tchaikovsky - Children of Ruin                             | 560.51 MiB → 492.61 MiB   | 15h25m38s → 15h25m38s |
+| Alastair Reynolds - House of Suns                                 | 513.78 MiB → 514.13 MiB   | 18h17m44s → 18h17m44s |
+| Alastair Reynolds - Revelation Space                              | 623.56 MiB → 624.19 MiB   | 22h12m45s → 22h12m45s |
+| Alastair Reynolds - Chasm City                                    | 647.81 MiB → 648.13 MiB   | 23h4m30s → 23h4m30s   |
+| Alastair Reynolds - Redemption Ark                                | 766.96 MiB → 767.06 MiB   | 15m58s → 27h19m9s     |
+| Alastair Reynolds - Absolution Gap                                | 763.49 MiB → 763.64 MiB   | 7m58s → 27h11m10s     |
+| Alastair Reynolds - The Prefect                                   | 553.29 MiB → 553.63 MiB   | 19h41m31s → 19h41m31s |
 | Amanda H. Podany - Weavers, Scribes, and Kings                    | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
 | Cory Doctorow - Down and Out in the Magic Kingdom                 | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
 | Cory Doctorow - Little Brother                                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
