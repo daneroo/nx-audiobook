@@ -3,11 +3,11 @@
 Progress report for moving audiobooks from Legacy to Staging
 
 - Legacy books: 489 `/Volumes/Space/archive/media/audiobooks`
-- Staging books: 90 `/Volumes/Space/Reading/audiobooks`
-- Legacy books not in Staging: 421
-- Staging books not Legacy (23)
+- Staging books: 110 `/Volumes/Space/Reading/audiobooks`
+- Legacy books not in Staging: 414
+- Staging books not Legacy (36)
 
-## Staging books not found in legacy (23)
+## Staging books not found in legacy (36)
 
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
@@ -24,16 +24,29 @@ Progress report for moving audiobooks from Legacy to Staging
 - Cory Doctorow - Force Multiplier
 - George MacDonald Fraser - Flash for Freedom!
 - Iain M. Banks - The Algebraist
+- Ian Mortimer - Medieval Horizons
+- Jo Nesbø - The Bat
+- Jo Nesbø - Cockroaches
+- Jo Nesbø - The Redbreast
+- Jo Nesbo - Nemesis: A Harry Hole Thriller, Book 4
+- Jo Nesbø - The Snowman
+- Jo Nesbø - Phantom
+- Jo Nesbø - Police
+- Jo Nesbø - The Thirst
+- Jo Nesbø - Knife
 - Joe Abercrombie - Half a King
 - Joe Abercrombie - Half the World
 - Joe Abercrombie - Half a War
 - Joe Abercrombie - Last Argument of Kings
+- Lucy Worsley - Agatha Christie
+- Milan Kundera, Michael Henry Heim - translator - The Unbearable Lightness of Being
 - Roger Penrose - The Emperor's New Mind
 - Seb Falk - The Light Ages
+- Stendhal - Stendhal - Le Rouge et le Noir
 - Ursula K. Le Guin - The Dispossessed
 - Ursula K. Le Guin - The Left Hand of Darkness
 
-## Legacy books not in Staging (TODO) (421)
+## Legacy books not in Staging (TODO) (414)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Adrian Tchaikovsky - Children of Time
@@ -255,10 +268,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Jo Nesbo - Cockroaches
 - Jo Nesbo - The Redbreast
 - Jo Nesbo - Nemesis
-- Jo Nesbø - The Devil's Star
-- Jo Nesbø - The Redeemer
 - Jo Nesbo - The Snowman
-- Jo Nesbø - The Leopard
 - Jo Nesbo - Phantom
 - Jo Nesbo - The Police
 - Jo Nesbo - The Thirst
@@ -390,13 +400,9 @@ Progress report for moving audiobooks from Legacy to Staging
 - Richard Powers - The Overstory
 - Richard Morgan - Altered Carbon
 - Robert Greene - Mastery
-- Roger Penrose - Cycles of Time
 - Roger Penrose - The Emperor's New Mind - Concerning Computers, Minds, and the Laws of Physics
 - Rosa Brooks - How Everything Became War and the Military Became Everything
 - Ryan Holiday - Ego Is the Enemy
-- Salman Rushdie - Midnight's Children
-- Salman Rushdie - The Satanic Verses
-- Salman Rushdie - The Enchantress of Florence
 - Sam Harris - Waking Up
 - Sean Carroll - The Big Picture
 - Sean Carroll - The Higgs Boson and Beyond
@@ -459,7 +465,7 @@ Progress report for moving audiobooks from Legacy to Staging
 
 ## Books already Migrated
 
-There are 67 books which have been migrated.
+There are 74 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -503,6 +509,9 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Iain M. Banks - Matter                                            | 991.88 MiB → 944.31 MiB   | 17h55m17s → 17h55m24s |
 | Iain M. Banks - Surface Detail                                    | 555.88 MiB → 484.14 MiB   | 20h23m38s → 20h23m38s |
 | Iain M. Banks - The Hydrogen Sonata                               | 469.42 MiB → 416.69 MiB   | 17h13m18s → 17h13m18s |
+| Jo Nesbø - The Devil's Star                                       | 394.84 MiB → 397.03 MiB   | 14h18m48s → 14h18m48s |
+| Jo Nesbø - The Redeemer                                           | 408.29 MiB → 417.70 MiB   | 14h54m10s → 14h50m14s |
+| Jo Nesbø - The Leopard                                            | 532.93 MiB → 554.01 MiB   | 19h23m50s → 19h23m52s |
 | Joe Abercrombie - A Little Hatred                                 | 1107.44 MiB → 1107.82 MiB | 1s → 1s               |
 | Joe Abercrombie - The Trouble with Peace                          | 1195.41 MiB → 1195.95 MiB | 21h56m15s → 21h56m15s |
 | Joe Abercrombie - The Wisdom of Crowds                            | 1286.77 MiB → 1287.32 MiB | 23h36m51s → 23h36m51s |
@@ -512,6 +521,10 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Joe Abercrombie - The Heroes                                      | 954.78 MiB → 657.14 MiB   | 23h5m23s → 23h5m30s   |
 | Joe Abercrombie - Red Country                                     | 822.19 MiB → 572.40 MiB   | 19h52m37s → 19h52m55s |
 | Joe Abercrombie - Sharp Ends                                      | 324.92 MiB → 321.96 MiB   | 11h48m18s → 11h48m18s |
+| Roger Penrose - Cycles of Time                                    | 202.78 MiB → 213.76 MiB   | 7h22m55s → 7h22m55s   |
+| Salman Rushdie - Midnight's Children                              | 672.94 MiB → 677.19 MiB   | 24h29m49s → 24h29m58s |
+| Salman Rushdie - The Enchantress of Florence                      | 731.17 MiB → 704.87 MiB   | 13h17m5s → 13h17m4s   |
+| Salman Rushdie - The Satanic Verses                               | 599.81 MiB → 600.20 MiB   | 21h36m14s → 21h36m14s |
 | Scott Lynch - The Lies of Locke Lamora                            | 456.55 MiB → 600.25 MiB   | 21h53m27s → 21h59m56s |
 | Scott Lynch - Red Seas Under Red Skies                            | 707.75 MiB → 698.10 MiB   | 25h34m34s → 25h34m16s |
 | Scott Lynch - The Republic of Thieves                             | 1005.97 MiB → 647.78 MiB  | 23h45m54s → 23h43m32s |
