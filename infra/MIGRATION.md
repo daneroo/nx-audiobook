@@ -60,6 +60,17 @@ Normalization of audiobook files implies:
 - Should be compatible with Audiobookshelf as well as Plex Audiobook agent
 - Should preserve modification times of legacy directories and files, to reflect acquisition date, as a proxy for reading date.
 
+## Corrupt files
+
+Flashman had a strange encoding that prevented tone from embedding it's tags:
+
+This pass-through (output) encoding removed the problematic stream (1?)
+
+```bash
+cp file.m4b file.orig.m4b
+ffmpeg -i file.orig.m4b -c copy -map 0:0 -map 0:2 file.m4b
+```
+
 ## Tone Dump
 
 Tone has a bad serialization format which adds `\n\r` inside strings which makes it malformed JSON.

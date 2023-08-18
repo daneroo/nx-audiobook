@@ -4,10 +4,10 @@ Progress report for moving audiobooks from Legacy to Staging
 
 - Legacy books: 489 `/Volumes/Space/archive/media/audiobooks`
 - Staging books: 90 `/Volumes/Space/Reading/audiobooks`
-- Legacy books not in Staging: 420
-- Staging books not Legacy (22)
+- Legacy books not in Staging: 421
+- Staging books not Legacy (23)
 
-## Staging books not found in legacy (22)
+## Staging books not found in legacy (23)
 
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
@@ -22,6 +22,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Brené Brown - Atlas of the Heart
 - Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism
 - Cory Doctorow - Force Multiplier
+- George MacDonald Fraser - Flash for Freedom!
 - Iain M. Banks - The Algebraist
 - Joe Abercrombie - Half a King
 - Joe Abercrombie - Half the World
@@ -32,7 +33,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Ursula K. Le Guin - The Dispossessed
 - Ursula K. Le Guin - The Left Hand of Darkness
 
-## Legacy books not in Staging (TODO) (420)
+## Legacy books not in Staging (TODO) (421)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Adrian Tchaikovsky - Children of Time
@@ -169,6 +170,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Gabriel García Márquez - One Hundred Years of Solitude
 - Gary Taubes - Why We Get Fat
 - Geoffrey Chaucer - The Canterbury Tales
+- George MacDonald Fraser - Flash for Freedom
 - Guy Gavriel Kay - All the Seas of the World
 - Guy Gavriel Kay - The Lions of al-Rassan
 - Guy Gavriel Kay - Tigana
@@ -457,7 +459,7 @@ Progress report for moving audiobooks from Legacy to Staging
 
 ## Books already Migrated
 
-There are 68 books which have been migrated.
+There are 67 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -480,18 +482,17 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Gene Wolfe - The Sword of the Lictor                              | 309.98 MiB → 310.33 MiB   | 11h22m26s → 11h22m26s |
 | Gene Wolfe - The Citadel of the Autarch                           | 302.41 MiB → 302.75 MiB   | 11h5m46s → 11h5m46s   |
 | Gene Wolfe - The Urth of the New Sun                              | 378.21 MiB → 378.92 MiB   | 13h52m43s → 13h52m43s |
-| George MacDonald Fraser - Flashman                                | 280.60 MiB → 280.60 MiB   | 9h58m15s → 9h58m15s   |
-| George MacDonald Fraser - Royal Flash                             | 261.81 MiB → 261.81 MiB   | 9h17m54s → 9h17m54s   |
-| George MacDonald Fraser - Flashman's Lady                         | 331.90 MiB → 331.90 MiB   | 11h47m49s → 11h47m49s |
-| George MacDonald Fraser - Flashman and the Mountain of Light      | 315.77 MiB → 315.77 MiB   | 11h13m17s → 11h13m17s |
-| George MacDonald Fraser - Flash for Freedom                       | 278.52 MiB → 278.52 MiB   | 9h53m37s → 9h53m37s   |
-| George MacDonald Fraser - Flashman and the Redskins               | 403.93 MiB → 403.93 MiB   | 14h21m35s → 14h21m35s |
-| George MacDonald Fraser - Flashman at the Charge                  | 294.59 MiB → 294.59 MiB   | 10h28m1s → 10h28m1s   |
-| George MacDonald Fraser - Flashman in the Great Game              | 347.03 MiB → 347.03 MiB   | 12h20m3s → 12h20m3s   |
-| George MacDonald Fraser - Flashman and the Angel of the Lord      | 353.44 MiB → 353.44 MiB   | 12h33m47s → 12h33m47s |
-| George MacDonald Fraser - Flashman and the Dragon                 | 311.22 MiB → 311.22 MiB   | 11h3m33s → 11h3m33s   |
-| George MacDonald Fraser - Flashman on the March                   | 293.36 MiB → 293.36 MiB   | 10h25m27s → 10h25m27s |
-| George MacDonald Fraser - Flashman and the Tiger                  | 321.55 MiB → 321.55 MiB   | 11h25m36s → 11h25m36s |
+| George MacDonald Fraser - Flashman                                | 280.60 MiB → 280.41 MiB   | 9h58m15s → 9h58m15s   |
+| George MacDonald Fraser - Royal Flash                             | 261.81 MiB → 261.60 MiB   | 9h17m54s → 9h17m54s   |
+| George MacDonald Fraser - Flashman's Lady                         | 331.90 MiB → 331.68 MiB   | 11h47m49s → 11h47m49s |
+| George MacDonald Fraser - Flashman and the Mountain of Light      | 315.77 MiB → 315.56 MiB   | 11h13m17s → 11h13m17s |
+| George MacDonald Fraser - Flashman and the Redskins               | 403.93 MiB → 403.66 MiB   | 14h21m35s → 14h21m35s |
+| George MacDonald Fraser - Flashman at the Charge                  | 294.59 MiB → 294.39 MiB   | 10h28m1s → 10h28m1s   |
+| George MacDonald Fraser - Flashman in the Great Game              | 347.03 MiB → 346.79 MiB   | 12h20m3s → 12h20m3s   |
+| George MacDonald Fraser - Flashman and the Angel of the Lord      | 353.44 MiB → 353.19 MiB   | 12h33m47s → 12h33m47s |
+| George MacDonald Fraser - Flashman and the Dragon                 | 311.22 MiB → 311.00 MiB   | 11h3m33s → 11h3m33s   |
+| George MacDonald Fraser - Flashman on the March                   | 293.36 MiB → 293.14 MiB   | 10h25m27s → 10h25m27s |
+| George MacDonald Fraser - Flashman and the Tiger                  | 321.55 MiB → 321.29 MiB   | 11h25m36s → 11h25m36s |
 | Iain M. Banks - Consider Phlebas                                  | 569.63 MiB → 483.66 MiB   | 16h27m5s → 16h26m14s  |
 | Iain M. Banks - The Player of Games                               | 311.83 MiB → 312.25 MiB   | 11h26m33s → 11h26m33s |
 | Iain M. Banks - Use of Weapons                                    | 119.11 MiB → 310.40 MiB   | 16h49m17s → 13h30m3s  |
