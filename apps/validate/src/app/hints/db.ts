@@ -4379,7 +4379,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/UrsulaKLeGuin-TheLeftHandOfDarkness':
     {
       author: ['Ursula K. Le Guin', 'hint'],
-      title: ['The Left Hand Of Darkness', 'hint'],
+      title: ['The Left Hand of Darkness', 'hint'],
       '// duration': '9h40m5s',
       asins: [
         'B01NH0D987: ✓ Δ:1m5s - 9h39m0s -  The Left Hand of Darkness / Ursula K. Le Guin / n: George Guidall',
