@@ -1546,7 +1546,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Guy Gavriel Kay - The Lions of al-Rassan':
     {
       author: ['Guy Gavriel Kay', 'unique'],
-      title: ['The Lions of al-Rassan ', 'unique'],
+      title: ['The Lions of al-Rassan', 'hint'],
       '// duration': '19h40m24s',
       asins: [
         'B008ESCXIW: ✓ Δ:1m24s - 19h39m0s -  The Lions of Al-Rassan / Guy Gavriel Kay / n: Euan Morton',
