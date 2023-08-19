@@ -2353,9 +2353,7 @@ export const db: Record<string, Hint> = {
       author: ['Jo Nesbø', 'unique'],
       title: ['Nemesis', 'hint'],
       '// duration': '14h55m45s',
-      asins: [
-        'B005D9I44C: ✓ Δ:2m45s - 14h53m0s -  Nemesis: A Harry Hole Thriller, Book 4 / Jo Nesbo / n: Sean Barrett',
-      ],
+      asins: [],
     },
   "/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/05. The Devil's Star (Hary Hole) - Jo Nesbo":
     {
