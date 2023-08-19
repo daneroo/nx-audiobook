@@ -293,11 +293,10 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Bernard Cornwell - The Saxon Chronicles/Bernard Cornwell - Saxon Chronicles 05 - The Burning Land':
     {
       author: ['Bernard Cornwell', 'unique'],
-      title: ['Saxon Stories', 'unique'],
+      title: ['The Burning Land', 'hint'],
       '// duration': '10h59m38s',
       asins: [
         'B0035YQ0PC: ✓ Δ:5m22s - 11h5m0s -  The Burning Land / Bernard Cornwell / n: John Lee',
-        'B00QW0JVNE: ✓ Δ:12m22s - 11h12m0s -  The Empty Throne / Bernard Cornwell / n: Matt Bates',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Bernard Cornwell - The Saxon Chronicles/Bernard Cornwell - Saxon Chronicles 06 - Death Of Kings - Saxon Chronicles - Bernard Cornwell -':
