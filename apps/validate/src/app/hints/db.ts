@@ -2405,7 +2405,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/10. Police (Hary Hole) - Jo Nesbo':
     {
       author: ['Jo Nesbø', 'hint'],
-      title: ['The Police', 'hint'],
+      title: ['Police', 'hint'],
       '// duration': '17h3m54s',
       asins: [
         'B00F0U6D8I: ✓ Δ:54s - 17h3m0s -  Police / Jo Nesbø / n: Sean Barrett',
