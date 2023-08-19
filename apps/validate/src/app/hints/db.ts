@@ -2378,7 +2378,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/07.  The Snowman (Hary Hole) - Jo Nesbo':
     {
       author: ['Jo Nesbø', 'hint'],
-      title: [' The Snowman', 'hint'],
+      title: ['The Snowman', 'hint'],
       '// duration': '14h38m48s',
       asins: [
         'B0042LLAFW: ✓ Δ:2m48s - 14h36m0s -  The Snowman: A Harry Hole Thriller, Book 7 / Jo Nesbø / n: Sean Barrett',
