@@ -234,15 +234,18 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/ArthurCClarke-2001-ASpaceOdyssey': {
     author: ['Arthur C. Clarke', 'hint'],
-    title: ['2001: A Space Odyssey', 'hint'],
+    title: ['2001', 'hint'],
     '// duration': '6h59m49s',
-    asins: [],
+    asins: [
+      "B07W93B4D3: ✓ Δ:6m11s - 7h6m0s -  2001. L'Odyssée de l'espace / Arthur C. Clarke / n: Matthieu Dahan",
+    ],
   },
   '/Volumes/Space/archive/media/audiobooks/ArthurCClarke-RendezvousWithRama': {
     author: ['Arthur C. Clarke', 'hint'],
-    title: ['Rendezvous With Rama', 'hint'],
+    title: ['Rendezvous with Rama', 'hint'],
     '// duration': '9h1m56s',
     asins: [
+      'B0C4M8CRGR: ✓ Δ:56s - 9h1m0s -  Cita con Rama [Rendezvous with Rama] / Arthur C. Clarke / n: Luis Posada',
       'B002UZLF2U: ✓ Δ:2m4s - 9h4m0s -  Rendezvous with Rama / Arthur C. Clarke / n: Peter Ganim,Robert J. Sawyer - introduction',
       'B079Q5P62Z: ✓ Δ:3m56s - 8h58m0s -  Rendez-vous avec Rama / Arthur C. Clarke / n: Pascal Casanova',
     ],
@@ -3827,13 +3830,11 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Seb Falk - The Light Ages': {
     author: ['Seb Falk', 'unique'],
-    title: [
-      'The Light Ages: The Surprising Story of Medieval Science',
-      'unique',
-    ],
+    title: ['The Light Ages', 'hint'],
     '// duration': '11h3m49s',
     asins: [
       '1705265588: ✓ Δ:49s - 11h3m0s -  The Light Ages / Seb Falk / n: Seb Falk',
+      '024149186X: ✓ Δ:49s - 11h3m0s -  The Light Ages / Seb Falk / n: Seb Falk',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Stendhal - Le rouge et le noir': {
