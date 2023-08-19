@@ -2321,7 +2321,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/01. The Bat (Hary Hole) - Jo Nesbo (Barrett)':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['The Bat', 'hint'],
       '// duration': '10h44m9s',
       asins: [
@@ -2331,7 +2331,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/02. Cockroaches (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['Cockroaches', 'hint'],
       '// duration': '10h38m16s',
       asins: [
@@ -2340,7 +2340,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/03. The Redbreast (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['The Redbreast', 'hint'],
       '// duration': '16h41m9s',
       asins: [
@@ -2350,7 +2350,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/04. Nemesis (Hary Hole) - Jo Nesbo (2002)':
     {
-      author: ['Jo Nesbo', 'hint'],
+      author: ['Jo Nesbø', 'unique'],
       title: ['Nemesis', 'hint'],
       '// duration': '14h55m45s',
       asins: [
@@ -2379,7 +2379,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/07.  The Snowman (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: [' The Snowman', 'hint'],
       '// duration': '14h38m48s',
       asins: [
@@ -2397,7 +2397,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/09. Phantom (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'hint'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['Phantom', 'hint'],
       '// duration': '14h55m56s',
       asins: [
@@ -2406,7 +2406,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/10. Police (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['The Police', 'hint'],
       '// duration': '17h3m54s',
       asins: [
@@ -2415,7 +2415,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/11. The Thirst (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['The Thirst', 'hint'],
       '// duration': '17h42m55s',
       asins: [
@@ -2424,7 +2424,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jo Nesbo - Harry Hole Series/12. Knife (Hary Hole) - Jo Nesbo':
     {
-      author: ['Jo Nesbo', 'unique'],
+      author: ['Jo Nesbø', 'hint'],
       title: ['Knife', 'hint'],
       '// duration': '16h56m46s',
       asins: [
