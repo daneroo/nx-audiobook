@@ -302,7 +302,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Bernard Cornwell - The Saxon Chronicles/Bernard Cornwell - Saxon Chronicles 06 - Death Of Kings - Saxon Chronicles - Bernard Cornwell -':
     {
       author: ['Bernard Cornwell', 'unique'],
-      title: ['Death Of Kings', 'unique'],
+      title: ['Death of Kings', 'hint'],
       '// duration': '10h22m47s',
       asins: [
         'B006UM37Q6: ✓ Δ:47s - 10h22m0s -  Death of Kings / Bernard Cornwell / n: Stephen Perring',
@@ -331,7 +331,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Bernard Cornwell - The Saxon Chronicles/Bernard Cornwell - Saxon Chronicles 09 - Warriors Of The Storm - Bernard Cornwell (Matt Bates)':
     {
       author: ['Bernard Cornwell', 'unique'],
-      title: ['Warriors Of The Storm', 'hint'],
+      title: ['Warriors of the Storm', 'hint'],
       '// duration': '12h12m26s',
       asins: [
         'B0176W9S66: ✓ Δ:26s - 12h12m0s -  Warriors of the Storm / Bernard Cornwell / n: Matt Bates',
@@ -1754,7 +1754,7 @@ export const db: Record<string, Hint> = {
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Iain M. Banks - The Algebraist': {
-    author: ['Iain M Banks', 'unique'],
+    author: ['Iain M. Banks', 'hint'],
     title: ['The Algebraist', 'unique'],
     '// duration': '24h10m16s',
     asins: [
