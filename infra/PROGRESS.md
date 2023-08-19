@@ -2,18 +2,19 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-- Legacy books: 489 `/Volumes/Space/archive/media/audiobooks`
-- Staging books: 123 `/Volumes/Space/Reading/audiobooks`
-- Legacy books not in Staging: 406
-- Staging books not Legacy (41)
+_Progress:_ 138 of 516 26.7% (377 remaining)
 
-## Staging books not found in legacy (41)
+- TOTAL+ - 516 - Legacy U Staging:
+- SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
+- DONE++ - 138 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 377 - Legacy books not in Staging
+- ADDED - 27 - Staging books not in Legacy
+
+## ADDED - Staging books not in Legacy (27)
 
 - Adam Savage - Every Tool's a Hammer
 - Annie Duke - How to Decide
 - Annie Duke - Thinking in Bets
-- Arthur C. Clarke - Rendezvous with Rama
-- Arthur C. Clarke - 2001
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
 - Arthur Conan Doyle - The Adventures of Sherlock Holmes
@@ -28,17 +29,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism
 - Cory Doctorow - Force Multiplier
 - George MacDonald Fraser - Flash for Freedom!
-- Iain M. Banks - The Algebraist
 - Ian Mortimer - Medieval Horizons
-- Jo Nesbø - The Bat
-- Jo Nesbø - Cockroaches
-- Jo Nesbø - The Redbreast
-- Jo Nesbo - Nemesis: A Harry Hole Thriller, Book 4
-- Jo Nesbø - The Snowman
-- Jo Nesbø - Phantom
-- Jo Nesbø - Police
-- Jo Nesbø - The Thirst
-- Jo Nesbø - Knife
 - Joe Abercrombie - Half a King
 - Joe Abercrombie - Half the World
 - Joe Abercrombie - Half a War
@@ -46,12 +37,10 @@ Progress report for moving audiobooks from Legacy to Staging
 - Lucy Worsley - Agatha Christie
 - Milan Kundera, Michael Henry Heim - translator - The Unbearable Lightness of Being
 - Roger Penrose - The Emperor's New Mind
-- Seb Falk - The Light Ages
 - Stendhal - Stendhal - Le Rouge et le Noir
 - Ursula K. Le Guin - The Dispossessed
-- Ursula K. Le Guin - The Left Hand of Darkness
 
-## Legacy books not in Staging (TODO) (406)
+## REMAIN - Legacy books not in Staging (377)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Agatha Christie - And Then There Were None
@@ -66,24 +55,7 @@ Progress report for moving audiobooks from Legacy to Staging
 - Anthony Aguirre - Cosmological Koans: A Journey to the Heart of Physics
 - Arjuna Ardagh - Leap Before You Look
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
-- Arthur C. Clarke - 2001: A Space Odyssey
-- Arthur C. Clarke - Rendezvous With Rama
 - Ayn Rand - Atlas Shrugged
-- Bernard Cornwell - The Last Kingdom
-- Bernard Cornwell - The Pale Horseman
-- Bernard Cornwell - The Lords of the North
-- Bernard Cornwell - Sword Song
-- Bernard Cornwell - Saxon Stories
-- Bernard Cornwell - Death Of Kings
-- Bernard Cornwell - The Pagan Lord
-- Bernard Cornwell - The Empty Throne
-- Bernard Cornwell - Warriors Of The Storm
-- Bernard Cornwell - The Flame Bearer
-- Bernard Cornwell - War of the Wolf
-- Bernard Cornwell - Sword of Kings
-- Bernard Cornwell - The Winter King
-- Bernard Cornwell - Enemy of God
-- Bernard Cornwell - Excalibur
 - Bill Bryson - A Short History of Nearly Everything
 - Bill Bryson - Shakespeare
 - Blake Crouch - Dark Matter
@@ -196,7 +168,6 @@ Progress report for moving audiobooks from Legacy to Staging
 - Herodotus - Histories
 - Herodotus - The Persian Wars
 - Homer, Stephen Mitchell - translator - The Iliad
-- Iain M Banks - The Algebraist
 - Ian Stewart - Calculating the Cosmos
 - Immanuel Kant - The Critique of Pure Reason
 - Isaac Asimov - Foundation
@@ -261,15 +232,6 @@ Progress report for moving audiobooks from Legacy to Staging
 - Jim Butcher - Cold Case
 - Jim Butcher - Skin Game
 - Jim Collins - Good To Great
-- Jo Nesbo - The Bat
-- Jo Nesbo - Cockroaches
-- Jo Nesbo - The Redbreast
-- Jo Nesbo - Nemesis
-- Jo Nesbo - The Snowman
-- Jo Nesbo - Phantom
-- Jo Nesbo - The Police
-- Jo Nesbo - The Thirst
-- Jo Nesbo - Knife
 - Joe Abercrombie - Last Argument Of Kings
 - John Brunner - Stand on Zanzibar
 - John Steinbeck - The Acts of King Arthur
@@ -404,7 +366,6 @@ Progress report for moving audiobooks from Legacy to Staging
 - Sean Carroll - The Big Picture
 - Sean Carroll - The Higgs Boson and Beyond
 - Sean Carroll - Something Deeply Hidden: Quantum Worlds and the Emergence of Spacetime
-- Seb Falk - The Light Ages: The Surprising Story of Medieval Science
 - Stendhal - Le Rouge et le noir
 - Stephen Batchelor - Buddhism Without Beliefs
 - Stephen Fry - Heroes: The Greek Myths Reimagined
@@ -444,7 +405,6 @@ Progress report for moving audiobooks from Legacy to Staging
 - Tom Holland - Persian Fire
 - Tom Holland - Rubicon
 - Ursula K. Le Guin - A Wizard of Earthsea
-- Ursula K. Le Guin - The Left Hand Of Darkness
 - V.E. Schwab - A Darker Shade of Magic
 - V.E. Schwab - A Gathering of Shadows
 - V. E. Schwab - A Conjuring of Light
@@ -462,7 +422,7 @@ Progress report for moving audiobooks from Legacy to Staging
 
 ## Books already Migrated
 
-There are 82 books which have been migrated.
+There are 111 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -479,6 +439,23 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Alastair Reynolds - Absolution Gap                                | 763.49 MiB → 763.64 MiB   | 7m58s → 27h11m10s     |
 | Alastair Reynolds - The Prefect                                   | 553.29 MiB → 553.63 MiB   | 19h41m31s → 19h41m31s |
 | Amanda H. Podany - Weavers, Scribes, and Kings                    | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
+| Arthur C. Clarke - Rendezvous with Rama                           | 250.75 MiB → 250.72 MiB   | 9h1m56s → 9h1m59s     |
+| Arthur C. Clarke - 2001                                           | 192.38 MiB → 196.43 MiB   | 6h59m49s → 6h59m51s   |
+| Bernard Cornwell - The Last Kingdom                               | 310.05 MiB → 267.79 MiB   | 12h53m28s → 12h54m5s  |
+| Bernard Cornwell - The Pale Horseman                              | 348.57 MiB → 411.97 MiB   | 14h29m33s → 14h30m15s |
+| Bernard Cornwell - The Lords of the North                         | 288.18 MiB → 251.80 MiB   | 11h58m53s → 11h59m27s |
+| Bernard Cornwell - Sword Song                                     | 160.84 MiB → 193.39 MiB   | 5h47m19s → 13h14m40s  |
+| Bernard Cornwell - The Burning Land                               | 603.99 MiB → 296.40 MiB   | 10h59m38s → 10h59m42s |
+| Bernard Cornwell - Death of Kings                                 | 284.08 MiB → 286.07 MiB   | 10h22m47s → 10h22m47s |
+| Bernard Cornwell - The Pagan Lord                                 | 965.72 MiB → 976.18 MiB   | 11h44m15s → 11h44m15s |
+| Bernard Cornwell - The Empty Throne                               | 310.90 MiB → 311.84 MiB   | 11h13m38s → 11h13m38s |
+| Bernard Cornwell - Warriors of the Storm                          | 336.39 MiB → 337.32 MiB   | 12h12m26s → 12h12m26s |
+| Bernard Cornwell - The Flame Bearer                               | 281.39 MiB → 281.97 MiB   | 10h19m35s → 10h19m35s |
+| Bernard Cornwell - War of the Wolf                                | 367.34 MiB → 369.22 MiB   | 13h22m23s → 13h22m28s |
+| Bernard Cornwell - Sword of Kings                                 | 184.78 MiB → 185.61 MiB   | 13h18m27s → 13h18m27s |
+| Bernard Cornwell - The Winter King                                | 496.50 MiB → 515.22 MiB   | 20h38m34s → 19h55m44s |
+| Bernard Cornwell - Enemy of God                                   | 503.58 MiB → 460.60 MiB   | 20h55m23s → 18h11m20s |
+| Bernard Cornwell - Excalibur                                      | 552.64 MiB → 478.78 MiB   | 20h7m8s → 18h50m23s   |
 | Cory Doctorow - Down and Out in the Magic Kingdom                 | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
 | Cory Doctorow - Little Brother                                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
 | Cory Doctorow - Homeland                                          | 664.51 MiB → 667.52 MiB   | 12h5m1s → 12h5m1s     |
@@ -514,9 +491,19 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Iain M. Banks - Matter                                            | 991.88 MiB → 944.31 MiB   | 17h55m17s → 17h55m24s |
 | Iain M. Banks - Surface Detail                                    | 555.88 MiB → 484.14 MiB   | 20h23m38s → 20h23m38s |
 | Iain M. Banks - The Hydrogen Sonata                               | 469.42 MiB → 416.69 MiB   | 17h13m18s → 17h13m18s |
+| Iain M. Banks - The Algebraist                                    | 742.52 MiB → 1253.46 MiB  | 24h10m16s → 24h10m14s |
+| Jo Nesbø - The Bat                                                | 257.13 MiB → 302.28 MiB   | 10h44m9s → 10h41m26s  |
+| Jo Nesbø - Cockroaches                                            | 638.50 MiB → 585.03 MiB   | 10h38m16s → 10h38m16s |
+| Jo Nesbø - The Redbreast                                          | 459.90 MiB → 463.13 MiB   | 16h41m9s → 16h41m9s   |
+| Jo Nesbø - Nemesis                                                | 829.32 MiB → 828.09 MiB   | 14h55m45s → 14h53m43s |
 | Jo Nesbø - The Devil's Star                                       | 394.84 MiB → 397.03 MiB   | 14h18m48s → 14h18m48s |
 | Jo Nesbø - The Redeemer                                           | 408.29 MiB → 417.70 MiB   | 14h54m10s → 14h50m14s |
+| Jo Nesbø - The Snowman                                            | 400.99 MiB → 410.99 MiB   | 14h38m48s → 14h34m57s |
 | Jo Nesbø - The Leopard                                            | 532.93 MiB → 554.01 MiB   | 19h23m50s → 19h23m52s |
+| Jo Nesbø - Phantom                                                | 410.21 MiB → 412.60 MiB   | 14h55m56s → 14h55m56s |
+| Jo Nesbø - Police                                                 | 468.85 MiB → 471.05 MiB   | 17h3m54s → 17h3m54s   |
+| Jo Nesbø - The Thirst                                             | 488.74 MiB → 496.41 MiB   | 17h42m55s → 17h42m49s |
+| Jo Nesbø - Knife                                                  | 351.23 MiB → 357.02 MiB   | 16h56m46s → 16h56m46s |
 | Joe Abercrombie - A Little Hatred                                 | 1107.44 MiB → 1107.82 MiB | 1s → 1s               |
 | Joe Abercrombie - The Trouble with Peace                          | 1195.41 MiB → 1195.95 MiB | 21h56m15s → 21h56m15s |
 | Joe Abercrombie - The Wisdom of Crowds                            | 1286.77 MiB → 1287.32 MiB | 23h36m51s → 23h36m51s |
@@ -533,6 +520,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Scott Lynch - The Lies of Locke Lamora                            | 456.55 MiB → 600.25 MiB   | 21h53m27s → 21h59m56s |
 | Scott Lynch - Red Seas Under Red Skies                            | 707.75 MiB → 698.10 MiB   | 25h34m34s → 25h34m16s |
 | Scott Lynch - The Republic of Thieves                             | 1005.97 MiB → 647.78 MiB  | 23h45m54s → 23h43m32s |
+| Seb Falk - The Light Ages                                         | 602.92 MiB → 604.53 MiB   | 11h3m49s → 11h3m49s   |
 | Steven Brust - The Phoenix Guards                                 | 447.29 MiB → 449.11 MiB   | 16h14m22s → 16h14m28s |
 | Steven Brust - Five Hundred Years After                           | 580.24 MiB → 582.79 MiB   | 21h5m2s → 21h5m10s    |
 | Steven Brust - The Paths of the Dead                              | 421.62 MiB → 423.16 MiB   | 15h18m44s → 15h18m45s |
@@ -549,6 +537,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Steven Erikson - Dust of Dreams                                   | 1178.08 MiB → 1178.60 MiB | 43h14m19s → 43h14m19s |
 | Steven Erikson - The Crippled God                                 | 1235.92 MiB → 1236.21 MiB | 45h21m42s → 45h21m42s |
 | Tony Fadell - Build                                               | 306.36 MiB → 316.71 MiB   | 11h5m3s → 11h5m3s     |
+| Ursula K. Le Guin - The Left Hand of Darkness                     | 265.60 MiB → 267.10 MiB   | 9h40m5s → 9h40m5s     |
 | Vernor Vinge - A Fire Upon the Deep                               | 366.03 MiB → 300.89 MiB   | 23h51m54s → 21h47m53s |
 | Vernor Vinge - A Deepness in the Sky                              | 422.85 MiB → 726.40 MiB   | 28h31m36s → 28h31m36s |
 | Vernor Vinge - The Children of the Sky                            | 398.98 MiB → 644.70 MiB   | 27h42m55s → 27h42m55s |

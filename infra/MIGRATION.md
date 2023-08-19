@@ -10,6 +10,16 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 - [ ] Dropbox - OnDeck
 - [ ]NewNotAdded (~/Downloads)
 
+### Stretch
+
+- Idea: use [tone](https://github.com/sandreas/tone) to extract uniform data from all media files
+  - `tone` has a NixPkgs package (fleek/home-manager?)
+  - Perhaps as with directory-digests on multiple machines
+  - See [Tone Dump](#tone-dump) below
+- Syncthing for `/Volumes/Reading/` on galois and davinci, at least
+- Rsync back to syno, from [galois|davinci] (syncthing on Synology doesn't look like a good idea)
+- Borgbackup: from ?
+
 ## Iteration
 
 - Fine-tune audiobook in this audiobookshelf dev env (galois)
@@ -20,6 +30,11 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 # Dev to Staging
 #  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
+
+cd apps/validate
+# clean output into PROGRESS.md
+pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks | tee ../../infra/PROGRESS.md
+
 
 # Staging to Prod
 # on syno, pull from galois (Staging)
@@ -33,16 +48,6 @@ find audiobooks/ -not -perm 755 -type d -exec ls -ld {} \;
 find audiobooks/ -type d -exec chmod 755 {} \;
 find audiobooks/ -type f -exec chmod 644 {} \;
 ```
-
-## TODO
-
-- Idea: use [tone](https://github.com/sandreas/tone) to extract uniform data from all media files
-  - `tone` has a NixPkgs package (fleek/home-manager?)
-  - Perhaps as with directory-digests on multiple machines
-  - See [Tone Dump](#tone-dump) below
-- Syncthing for `/Volumes/Reading/` on galois and davinci, at least
-- Rsync back to syno, from [galois|davinci] (syncthing on Synology doesn't look like a good idea)
-- Borgbackup: from ?
 
 ## Current State
 
@@ -68,13 +73,16 @@ Normalization of audiobook files implies:
 
 ## Corrupt files
 
-Flashman had a strange encoding that prevented tone from embedding it's tags:
+Many books (Flashman, Saxon Chronicles) had a strange encoding that prevented tone from embedding it's tags:
 
-This pass-through (output) encoding removed the problematic stream (1?)
+Using ffmpeg to pass-through the streams seemed to fix things
 
 ```bash
 cp file.m4b file.orig.m4b
-ffmpeg -i file.orig.m4b -c copy -map 0:0 -map 0:2 file.m4b
+
+ffmpeg -y -loglevel quiet -i orig.m4b -c copy fixed.m4b
+# in on case we had to remove a stream (stream 1 [0-indexed])
+ffmpeg -y -loglevel quiet -i orig.m4b -c copy -map 0:0 -map 0:2 fixed.m4b
 ```
 
 ## Tone Dump
@@ -89,7 +97,12 @@ return JSON.parse(response.replace(/[\n\r]+/g, ' ')) // Remove carriage returns`
 We can do the same from the command line with `tr -d '\n\r'` as in:
 
 ```bash
+alias tone=~/Downloads/tone-0.1.5-osx-arm64/tone
 tone dump  /Volumes/Space/archive/media/audiobooks/ --format json | tr -d '\n\r' | jq
+
+# without the embeddedPictures or chapters
+tone dump audiobooks/ --format json | tr -d '\n\r' | jq '.meta | del(.embeddedPictures)'
+tone dump audiobooks/ --format json | tr -d '\n\r' | jq '.meta | del(.embeddedPictures) | del(.chapters)'
 ```
 
 ```bash

@@ -23,7 +23,26 @@ export async function reportProgress(
   // - legacy books found in staging
   // - legacy books not found in staging
   const legacyBooksNotInStaging = legacyBooks.filter((legacyBook) => {
+    let debug = false
+    if (legacyBook.metadata.title.includes('Snowman')) {
+      debug = true
+      console.error(
+        `*** found in legacy: ${bookKey(legacyBook)} : ${
+          legacyBook.metadata.title
+        }`
+      )
+    }
     const stagingBook = stagingBooksMap.get(bookKey(legacyBook))
+    if (debug) {
+      console.error('  * found in staging? ', stagingBook?.metadata.title)
+      // if not found, then list all the titles in stagingBooksMap
+      if (stagingBook === undefined) {
+        console.error('  * staging books:')
+        for (const [key, book] of stagingBooksMap.entries()) {
+          console.error(`  ? ${key} : ${book.metadata.title}`)
+        }
+      }
+    }
     return stagingBook === undefined
   })
   const stagingBooksNotInLegacy = stagingBooks.filter((stagingBook) => {
@@ -31,18 +50,25 @@ export async function reportProgress(
     return legacyBook === undefined
   })
 
+  const totalBooks = legacyBooks.length + stagingBooksNotInLegacy.length
   console.info(`# Progress
 
 Progress report for moving audiobooks from Legacy to Staging
-  
-- Legacy  books: ${legacyBooks.length} \`${legacyPath}\`
-- Staging books: ${stagingBooks.length} \`${stagingPath}\`
-- Legacy books not in Staging: ${legacyBooksNotInStaging.length}
-- Staging books not Legacy (${stagingBooksNotInLegacy.length})
+
+_Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
+    (stagingBooks.length / totalBooks) *
+    100
+  ).toFixed(1)}% (${legacyBooksNotInStaging.length} remaining)
+
+- TOTAL+ - ${totalBooks} - Legacy U Staging:
+- SOURCE - ${legacyBooks.length} \`${legacyPath}\` - Legacy books
+- DONE++ - ${stagingBooks.length} \`${stagingPath}\` - Staging books
+- REMAIN - ${legacyBooksNotInStaging.length} - Legacy books not in Staging
+- ADDED - ${stagingBooksNotInLegacy.length} - Staging books not in Legacy
 `)
 
   console.log(
-    `## Staging books not found in legacy (${stagingBooksNotInLegacy.length})\n`
+    `## ADDED - Staging books not in Legacy (${stagingBooksNotInLegacy.length})\n`
   )
   for (const stagingBook of stagingBooksNotInLegacy) {
     console.log(`- ${bookKey(stagingBook)}`)
@@ -56,7 +82,7 @@ Progress report for moving audiobooks from Legacy to Staging
     return legacyBook !== undefined
   })
   console.log(
-    `## Legacy books not in Staging (TODO) (${legacyBooksNotInStaging.length})\n`
+    `## REMAIN - Legacy books not in Staging (${legacyBooksNotInStaging.length})\n`
   )
   for (const stagingBook of legacyBooksNotInStaging) {
     console.log(`- ${bookKey(stagingBook)}`)

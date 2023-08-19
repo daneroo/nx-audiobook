@@ -3187,7 +3187,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Maurice Druon - The Accursed Kings [Series]/02-The Strangled Queen':
     {
       author: ['Maurice Druon', 'unique'],
-      title: ['The Strangled Queen ', 'unique'],
+      title: ['The Strangled Queen', 'unique'],
       '// duration': '8h28m15s',
       asins: [
         'B00C6CT326: ✓ Δ:2m15s - 8h26m0s -  The Strangled Queen / Maurice Druon / n: Peter Joyce',
