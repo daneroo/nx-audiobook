@@ -83,6 +83,11 @@ cp file.m4b file.orig.m4b
 ffmpeg -y -loglevel quiet -i orig.m4b -c copy fixed.m4b
 # in on case we had to remove a stream (stream 1 [0-indexed])
 ffmpeg -y -loglevel quiet -i orig.m4b -c copy -map 0:0 -map 0:2 fixed.m4b
+
+# other options
+ffmpeg -i input.m4b -c:a copy output.m4b
+ffmpeg -i input.m4b -c:a aac -b:a 128k output.m4b
+
 ```
 
 ## Tone Dump
@@ -118,4 +123,34 @@ tone dump  /Volumes/Space/archive/media/audiobooks/ --format json --include-prop
 
 # from inside audiobookshelf container
 tone dump /audiobooks/ --format json --exclude-property embeddedPictures --exclude-property comment --exclude-property description| tr -d '\n\r'| jq
+```
+
+## Vaidating Tone Writeability
+
+Some files are not writeable by tone, and we need to fix that.
+
+Here is a test script that will copy the file to a temporary location, and then run tone on it.
+
+```bash
+alias tone=~/Downloads/tone-0.1.5-osx-arm64/tone
+find . -type f -name "*.m4b" | while IFS= read -r file_in_question; do
+    cp "$file_in_question" /tmp/book.m4b
+    echo "Testing ${file_in_question}"
+    # your test operations here
+    # tone dump /tmp/book.m4b --format json | tr -d '\n\r' | jq '.meta | del(.embeddedPictures) | del(.chapters)'
+    tone dump /tmp/book.m4b --format json | tr -d '\n\r' | jq '.meta.album'
+    # ffmpeg -y -loglevel quiet -i /tmp/book.m4b -c copy ${file_in_question}
+
+done
+```
+
+## Logged Errors to investigate
+
+```bash
+ffprobe -hide_banner -loglevel fatal -show_error -show_format -show_streams -show_programs -show_chapters -show_private_data -print_format json
+```
+
+```bash
+[2023-08-19 22:44:16] ERROR: [MediaFileScanner] TypeError: Cannot read properties of null (reading 'bit_rate') : "/audiobooks/Alastair Reynolds - Revelation Space/Alastair Reynolds - Revelation Space 04 - Absolution Gap/Alastair Reynolds - Revelation Space 04 - Absolution Gap.m4b" (MediaFileScanner.js:65)
+[2023-08-19 22:44:17] ERROR: [MediaFileScanner] TypeError: Cannot read properties of null (reading 'bit_rate') : "/audiobooks/Alastair Reynolds - Revelation Space/Alastair Reynolds - Revelation Space 03 - Redemption Ark/Alastair Reynolds - Revelation Space 03 - Redemption Ark.m4b" (MediaFileScanner.js:65)
 ```

@@ -2,17 +2,20 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 138 of 516 26.7% (377 remaining)
+_Progress:_ 144 of 519 27.7% (374 remaining)
 
-- TOTAL+ - 516 - Legacy U Staging:
+- TOTAL+ - 519 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 138 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 377 - Legacy books not in Staging
-- ADDED - 27 - Staging books not in Legacy
+- DONE++ - 144 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 374 - Legacy books not in Staging
+- ADDED - 30 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (27)
+## ADDED - Staging books not in Legacy (30)
 
 - Adam Savage - Every Tool's a Hammer
+- Alastair Reynolds - Diamond Dogs, Turquoise Days
+- Alastair Reynolds - Inhibitor Phase
+- Alastair Reynolds - Galactic North
 - Annie Duke - How to Decide
 - Annie Duke - Thinking in Bets
 - Arthur Conan Doyle - A Study in Scarlet
@@ -40,7 +43,7 @@ _Progress:_ 138 of 516 26.7% (377 remaining)
 - Stendhal - Stendhal - Le Rouge et le Noir
 - Ursula K. Le Guin - The Dispossessed
 
-## REMAIN - Legacy books not in Staging (377)
+## REMAIN - Legacy books not in Staging (374)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Agatha Christie - And Then There Were None
@@ -58,9 +61,6 @@ _Progress:_ 138 of 516 26.7% (377 remaining)
 - Ayn Rand - Atlas Shrugged
 - Bill Bryson - A Short History of Nearly Everything
 - Bill Bryson - Shakespeare
-- Blake Crouch - Dark Matter
-- Blake Crouch - Recursion
-- Blake Crouch - Upgrade
 - Bob Woodward - Obama's Wars
 - Brandon Sanderson - Arcanum Unbounded
 - Brandon Sanderson - The Final Empire
@@ -422,7 +422,7 @@ _Progress:_ 138 of 516 26.7% (377 remaining)
 
 ## Books already Migrated
 
-There are 111 books which have been migrated.
+There are 114 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -435,8 +435,8 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Alastair Reynolds - House of Suns                                 | 513.78 MiB → 514.13 MiB   | 18h17m44s → 18h17m44s |
 | Alastair Reynolds - Revelation Space                              | 623.56 MiB → 624.19 MiB   | 22h12m45s → 22h12m45s |
 | Alastair Reynolds - Chasm City                                    | 647.81 MiB → 648.13 MiB   | 23h4m30s → 23h4m30s   |
-| Alastair Reynolds - Redemption Ark                                | 766.96 MiB → 767.06 MiB   | 15m58s → 27h19m9s     |
-| Alastair Reynolds - Absolution Gap                                | 763.49 MiB → 763.64 MiB   | 7m58s → 27h11m10s     |
+| Alastair Reynolds - Redemption Ark                                | 766.96 MiB → 771.32 MiB   | 15m58s → 27h15m24s    |
+| Alastair Reynolds - Absolution Gap                                | 763.49 MiB → 768.83 MiB   | 7m58s → 27h7m26s      |
 | Alastair Reynolds - The Prefect                                   | 553.29 MiB → 553.63 MiB   | 19h41m31s → 19h41m31s |
 | Amanda H. Podany - Weavers, Scribes, and Kings                    | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
 | Arthur C. Clarke - Rendezvous with Rama                           | 250.75 MiB → 250.72 MiB   | 9h1m56s → 9h1m59s     |
@@ -456,6 +456,9 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Bernard Cornwell - The Winter King                                | 496.50 MiB → 515.22 MiB   | 20h38m34s → 19h55m44s |
 | Bernard Cornwell - Enemy of God                                   | 503.58 MiB → 460.60 MiB   | 20h55m23s → 18h11m20s |
 | Bernard Cornwell - Excalibur                                      | 552.64 MiB → 478.78 MiB   | 20h7m8s → 18h50m23s   |
+| Blake Crouch - Dark Matter                                        | 279.72 MiB → 225.60 MiB   | 10h8m56s → 10h8m56s   |
+| Blake Crouch - Recursion                                          | 288.95 MiB → 311.93 MiB   | 10h47m39s → 10h47m39s |
+| Blake Crouch - Upgrade                                            | 354.88 MiB → 355.20 MiB   | 9h47m55s → 9h47m55s   |
 | Cory Doctorow - Down and Out in the Magic Kingdom                 | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
 | Cory Doctorow - Little Brother                                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
 | Cory Doctorow - Homeland                                          | 664.51 MiB → 667.52 MiB   | 12h5m1s → 12h5m1s     |
