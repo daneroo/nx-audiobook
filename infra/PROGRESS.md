@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 158 of 529 29.9% (370 remaining)
+_Progress:_ 164 of 534 30.7% (369 remaining)
 
-- TOTAL+ - 529 - Legacy U Staging:
+- TOTAL+ - 534 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 158 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 370 - Legacy books not in Staging
-- ADDED - 40 - Staging books not in Legacy
+- DONE++ - 164 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 369 - Legacy books not in Staging
+- ADDED - 45 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (40)
+## ADDED - Staging books not in Legacy (45)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -45,15 +45,20 @@ _Progress:_ 158 of 529 29.9% (370 remaining)
 - Lucy Worsley - Agatha Christie
 - Milan Kundera, Michael Henry Heim - translator - The Unbearable Lightness of Being
 - Naomi Novik - His Majesty's Dragon
+- Neil Gaiman, Terry Pratchett - Good Omens
 - Niall Ferguson - Doom
 - Niall Ferguson - The Ascent of Money
 - Niall Ferguson - The Square and the Tower
+- Nick Bostrom - Superintelligence
+- Philip K. Dick - Blade Runner
+- Philip K. Dick - Do Androids Dream of Electric Sheep?
 - Roger Penrose - The Emperor's New Mind
 - Stendhal - Stendhal - Le Rouge et le Noir
+- Tiago Forte - Building a Second Brain
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (370)
+## REMAIN - Legacy books not in Staging (369)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Agatha Christie - And Then There Were None
@@ -361,7 +366,6 @@ _Progress:_ 158 of 529 29.9% (370 remaining)
 - Peter Ackroyd - The Canterbury Tales: A Retelling
 - Peter Singer - The Life You Can Save
 - Peter F. Hamilton - The Dreaming Void
-- Philip K. Dick - A Scanner Darkly
 - Priyamvada Natarajan - Mapping the Heavens: The Radical Scientific Ideas That Reveal the Cosmos
 - R. F. Kuang - The Poppy War: A Novel
 - Ramez Naam - Nexus
@@ -428,7 +432,7 @@ _Progress:_ 158 of 529 29.9% (370 remaining)
 
 ## Books already Migrated
 
-There are 118 books which have been migrated.
+There are 119 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -522,6 +526,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Joe Abercrombie - The Heroes                                      | 954.78 MiB → 657.14 MiB   | 23h5m23s → 23h5m30s   |
 | Joe Abercrombie - Red Country                                     | 822.19 MiB → 572.40 MiB   | 19h52m37s → 19h52m55s |
 | Joe Abercrombie - Sharp Ends                                      | 324.92 MiB → 321.96 MiB   | 11h48m18s → 11h48m18s |
+| Philip K. Dick - A Scanner Darkly                                 | 251.18 MiB → 251.40 MiB   | 9h13m2s → 9h13m2s     |
 | Roger Penrose - Cycles of Time                                    | 202.78 MiB → 213.76 MiB   | 7h22m55s → 7h22m55s   |
 | Salman Rushdie - Midnight's Children                              | 672.94 MiB → 677.19 MiB   | 24h29m49s → 24h29m58s |
 | Salman Rushdie - The Enchantress of Florence                      | 731.17 MiB → 704.87 MiB   | 13h17m5s → 13h17m4s   |
