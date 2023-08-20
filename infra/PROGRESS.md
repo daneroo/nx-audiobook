@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 144 of 519 27.7% (374 remaining)
+_Progress:_ 158 of 529 29.9% (370 remaining)
 
-- TOTAL+ - 519 - Legacy U Staging:
+- TOTAL+ - 529 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 144 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 374 - Legacy books not in Staging
-- ADDED - 30 - Staging books not in Legacy
+- DONE++ - 158 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 370 - Legacy books not in Staging
+- ADDED - 40 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (30)
+## ADDED - Staging books not in Legacy (40)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -31,19 +31,29 @@ _Progress:_ 144 of 519 27.7% (374 remaining)
 - Brené Brown - Atlas of the Heart
 - Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism
 - Cory Doctorow - Force Multiplier
+- Frank Dikotter - The Tragedy of Liberation
 - George MacDonald Fraser - Flash for Freedom!
+- Iain M. Banks - Feersum Endjinn
 - Ian Mortimer - Medieval Horizons
+- Jack Vance - Suldrun’s Garden
+- Jack Vance - The Dying Earth
+- Jack Vance - The Eyes of the Overworld
 - Joe Abercrombie - Half a King
 - Joe Abercrombie - Half the World
 - Joe Abercrombie - Half a War
 - Joe Abercrombie - Last Argument of Kings
 - Lucy Worsley - Agatha Christie
 - Milan Kundera, Michael Henry Heim - translator - The Unbearable Lightness of Being
+- Naomi Novik - His Majesty's Dragon
+- Niall Ferguson - Doom
+- Niall Ferguson - The Ascent of Money
+- Niall Ferguson - The Square and the Tower
 - Roger Penrose - The Emperor's New Mind
 - Stendhal - Stendhal - Le Rouge et le Noir
 - Ursula K. Le Guin - The Dispossessed
+- William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (374)
+## REMAIN - Legacy books not in Staging (370)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Agatha Christie - And Then There Were None
@@ -413,16 +423,12 @@ _Progress:_ 144 of 519 27.7% (374 remaining)
 - Walter Isaacson - Steve Jobs
 - Will Durant - Our Oriental Heritage
 - William Gibson, Bruce Sterling - The Difference Engine
-- William Gibson - Burning Chrome
-- William Gibson - Count Zero
-- William Gibson - Mona Lisa Overdrive
-- William Gibson - Neuromancer
 - William MacAskill - What We Owe the Future
 - Wu Ch'eng-en - Monkey
 
 ## Books already Migrated
 
-There are 114 books which have been migrated.
+There are 118 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -544,3 +550,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Vernor Vinge - A Fire Upon the Deep                               | 366.03 MiB → 300.89 MiB   | 23h51m54s → 21h47m53s |
 | Vernor Vinge - A Deepness in the Sky                              | 422.85 MiB → 726.40 MiB   | 28h31m36s → 28h31m36s |
 | Vernor Vinge - The Children of the Sky                            | 398.98 MiB → 644.70 MiB   | 27h42m55s → 27h42m55s |
+| William Gibson - Burning Chrome                                   | 139.10 MiB → 197.40 MiB   | 7h20m29s → 7h5m59s    |
+| William Gibson - Neuromancer                                      | 482.91 MiB → 514.60 MiB   | 17h34m49s → 17h34m55s |
+| William Gibson - Count Zero                                       | 630.95 MiB → 634.77 MiB   | 11h28m58s → 11h29m2s  |
+| William Gibson - Mona Lisa Overdrive                              | 596.35 MiB → 609.85 MiB   | 10h51m14s → 10h51m18s |
