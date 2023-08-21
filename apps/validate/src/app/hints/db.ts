@@ -174,10 +174,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Annie Duke - How to Decide Simple Tools for Making Better Choices/AudioBook':
     {
       author: ['Annie Duke', 'unique'],
-      title: [
-        'How to Decide: Simple Tools for Making Better Choices',
-        'unique',
-      ],
+      title: ['How to Decide', 'hint'],
       '// duration': '6h39m43s',
       asins: [
         '0593345320: ✓ Δ:43s - 6h39m0s -  How to Decide / Annie Duke / n: Annie Duke',
@@ -189,10 +186,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Annie Duke - Thinking in Bets': {
     author: ['Annie Duke', 'unique'],
-    title: [
-      "Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts",
-      'unique',
-    ],
+    title: ['Thinking in Bets', 'hint'],
     '// duration': '6h51m6s',
     asins: [
       'B078SDRSGX: ✓ Δ:1m6s - 6h50m0s -  Thinking in Bets / Annie Duke / n: Annie Duke',
@@ -866,14 +860,14 @@ export const db: Record<string, Hint> = {
     skip: 'not on audible',
   },
   '/Volumes/Space/archive/media/audiobooks/CoryDoctorow-ChokepointCapitalism': {
-    author: ['Cory Doctorow', 'hint'],
+    author: ['Rebecca Giblin, Cory Doctorow', 'hint'],
     title: ['Chokepoint Capitalism', 'unique'],
     '// duration': '11h56m4s',
     skip: 'not on audible',
   },
   '/Volumes/Space/archive/media/audiobooks/CoryDoctorow-ForceMultiplier': {
     author: ['Cory Doctorow', 'unique'],
-    title: ['Attack Surface', 'unique'],
+    title: ['Force Multiplier', 'hint'],
     '// duration': '23m20s',
     skip: 'not on audible',
   },
@@ -1466,7 +1460,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/George MacDonald Fraser - The Flashman Papers/George MacDonald Fraser - The Flashman Papers - 05 - Flash for Freedom':
     {
       author: ['George MacDonald Fraser', 'unique'],
-      title: ['Flash for Freedom', 'unique'],
+      title: ['Flash for Freedom!', 'hint'],
       '// duration': '9h53m37s',
       asins: [
         'B00VUS2G7Q: ✓ Δ:14m23s - 10h8m0s -  Flash for Freedom! / George MacDonald Fraser / n: Colin Mace',
@@ -3187,7 +3181,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Maurice Druon - The Accursed Kings [Series]/02-The Strangled Queen':
     {
       author: ['Maurice Druon', 'unique'],
-      title: ['The Strangled Queen', 'unique'],
+      title: ['The Strangled Queen', 'hint'],
       '// duration': '8h28m15s',
       asins: [
         'B00C6CT326: ✓ Δ:2m15s - 8h26m0s -  The Strangled Queen / Maurice Druon / n: Peter Joyce',
