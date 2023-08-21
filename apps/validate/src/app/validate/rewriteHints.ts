@@ -27,12 +27,20 @@ export async function rewriteHints(
         audiobook.audioFiles.map((file) => file.metadata.author)
       )
       const authorHintReason: AuthorTitleHintReason =
-        authors.length === 1 && authors[0] === author ? 'unique' : 'hint'
+        authors.length === 1 &&
+        authors[0] === author &&
+        oldHint?.author?.[1] === 'unique'
+          ? 'unique'
+          : 'hint'
       const titles = dedupArray(
         audiobook.audioFiles.map((file) => file.metadata.title)
       )
       const titleHintReason: AuthorTitleHintReason =
-        titles.length === 1 && titles[0] === title ? 'unique' : 'hint'
+        titles.length === 1 &&
+        titles[0] === title &&
+        oldHint?.title?.[1] === 'unique'
+          ? 'unique'
+          : 'hint'
 
       const hint: Hint = {
         author: [author, authorHintReason],
