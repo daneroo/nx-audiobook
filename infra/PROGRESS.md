@@ -2,22 +2,20 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 164 of 534 30.7% (369 remaining)
+_Progress:_ 164 of 529 31.0% (365 remaining)
 
-- TOTAL+ - 534 - Legacy U Staging:
+- TOTAL+ - 529 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
 - DONE++ - 164 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 369 - Legacy books not in Staging
-- ADDED - 45 - Staging books not in Legacy
+- REMAIN - 365 - Legacy books not in Staging
+- ADDED - 40 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (45)
+## ADDED - Staging books not in Legacy (40)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
 - Alastair Reynolds - Inhibitor Phase
 - Alastair Reynolds - Galactic North
-- Annie Duke - How to Decide
-- Annie Duke - Thinking in Bets
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
 - Arthur Conan Doyle - The Adventures of Sherlock Holmes
@@ -29,10 +27,7 @@ _Progress:_ 164 of 534 30.7% (369 remaining)
 - Arthur Conan Doyle - The Casebook of Sherlock Holmes
 - Bessel A. van der Kolk - The Body Keeps the Score
 - Brené Brown - Atlas of the Heart
-- Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism
-- Cory Doctorow - Force Multiplier
 - Frank Dikotter - The Tragedy of Liberation
-- George MacDonald Fraser - Flash for Freedom!
 - Iain M. Banks - Feersum Endjinn
 - Ian Mortimer - Medieval Horizons
 - Jack Vance - Suldrun’s Garden
@@ -58,7 +53,7 @@ _Progress:_ 164 of 534 30.7% (369 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (369)
+## REMAIN - Legacy books not in Staging (365)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Agatha Christie - And Then There Were None
@@ -68,8 +63,6 @@ _Progress:_ 164 of 534 30.7% (369 remaining)
 - Albert-László Barabási - The Formula: The Universal Laws of Success
 - Alfred Bester - The Stars My Destination
 - Andrew Morton - 17 Carnations - The Royals, the Nazis, and the Biggest Cover-Up in History
-- Annie Duke - How to Decide: Simple Tools for Making Better Choices
-- Annie Duke - Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts
 - Anthony Aguirre - Cosmological Koans: A Journey to the Heart of Physics
 - Arjuna Ardagh - Leap Before You Look
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
@@ -119,7 +112,6 @@ _Progress:_ 164 of 534 30.7% (369 remaining)
 - Cixin Liu - Death's End
 - Cixin Liu - The Dark Forest
 - Cixin Liu - The Three-Body Problem
-- Cory Doctorow - Chokepoint Capitalism
 - Dan Ariely - The Upside of Irrationality
 - Dan Jones - Magna Carta: The Birth of Liberty
 - Dan Jones - The Plantagenets: The Warrior Kings and Queens Who Made England
@@ -167,7 +159,6 @@ _Progress:_ 164 of 534 30.7% (369 remaining)
 - Gabriel García Márquez - One Hundred Years of Solitude
 - Gary Taubes - Why We Get Fat
 - Geoffrey Chaucer - The Canterbury Tales
-- George MacDonald Fraser - Flash for Freedom
 - Guy Gavriel Kay - All the Seas of the World
 - Guy Gavriel Kay - The Lions of al-Rassan
 - Guy Gavriel Kay - Tigana
@@ -432,7 +423,7 @@ _Progress:_ 164 of 534 30.7% (369 remaining)
 
 ## Books already Migrated
 
-There are 119 books which have been migrated.
+There are 124 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -449,6 +440,8 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Alastair Reynolds - Absolution Gap                                | 763.49 MiB → 768.83 MiB   | 7m58s → 27h7m26s      |
 | Alastair Reynolds - The Prefect                                   | 553.29 MiB → 553.63 MiB   | 19h41m31s → 19h41m31s |
 | Amanda H. Podany - Weavers, Scribes, and Kings                    | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
+| Annie Duke - How to Decide                                        | 363.08 MiB → 363.29 MiB   | 6h39m43s → 6h39m43s   |
+| Annie Duke - Thinking in Bets                                     | 186.70 MiB → 194.11 MiB   | 6h51m6s → 6h51m6s     |
 | Arthur C. Clarke - Rendezvous with Rama                           | 250.75 MiB → 250.72 MiB   | 9h1m56s → 9h1m59s     |
 | Arthur C. Clarke - 2001                                           | 192.38 MiB → 196.43 MiB   | 6h59m49s → 6h59m51s   |
 | Bernard Cornwell - The Last Kingdom                               | 310.05 MiB → 267.79 MiB   | 12h53m28s → 12h54m5s  |
@@ -469,10 +462,12 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Blake Crouch - Dark Matter                                        | 279.72 MiB → 225.60 MiB   | 10h8m56s → 10h8m56s   |
 | Blake Crouch - Recursion                                          | 288.95 MiB → 311.93 MiB   | 10h47m39s → 10h47m39s |
 | Blake Crouch - Upgrade                                            | 354.88 MiB → 355.20 MiB   | 9h47m55s → 9h47m55s   |
+| Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism             | 331.38 MiB → 331.55 MiB   | 11h56m4s → 11h56m4s   |
 | Cory Doctorow - Down and Out in the Magic Kingdom                 | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
 | Cory Doctorow - Little Brother                                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
 | Cory Doctorow - Homeland                                          | 664.51 MiB → 667.52 MiB   | 12h5m1s → 12h5m1s     |
-| Cory Doctorow - Attack Surface                                    | 32.24 MiB → 618.11 MiB    | 23m20s → 11h8m27s     |
+| Cory Doctorow - Force Multiplier                                  | 32.24 MiB → 21.65 MiB     | 23m20s → 23m21s       |
+| Cory Doctorow - Attack Surface                                    | 633.18 MiB → 618.11 MiB   | 11h8m27s → 11h8m27s   |
 | Cory Doctorow - Red Team Blues                                    | 999.34 MiB → 743.58 MiB   | 7h15m15s → 7h15m15s   |
 | Galileo Galilei - Dialogue Concerning the Two Chief World Systems | 1194.95 MiB → 1202.80 MiB | 21h40m26s → 21h40m34s |
 | Gene Wolfe - Soldier of the Mist                                  | 590.57 MiB → 531.18 MiB   | 10h34m16s → 10h34m16s |
@@ -487,6 +482,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | George MacDonald Fraser - Royal Flash                             | 261.81 MiB → 261.60 MiB   | 9h17m54s → 9h17m54s   |
 | George MacDonald Fraser - Flashman's Lady                         | 331.90 MiB → 331.68 MiB   | 11h47m49s → 11h47m49s |
 | George MacDonald Fraser - Flashman and the Mountain of Light      | 315.77 MiB → 315.56 MiB   | 11h13m17s → 11h13m17s |
+| George MacDonald Fraser - Flash for Freedom!                      | 278.52 MiB → 278.31 MiB   | 9h53m37s → 9h53m37s   |
 | George MacDonald Fraser - Flashman and the Redskins               | 403.93 MiB → 403.66 MiB   | 14h21m35s → 14h21m35s |
 | George MacDonald Fraser - Flashman at the Charge                  | 294.59 MiB → 294.39 MiB   | 10h28m1s → 10h28m1s   |
 | George MacDonald Fraser - Flashman in the Great Game              | 347.03 MiB → 346.79 MiB   | 12h20m3s → 12h20m3s   |
