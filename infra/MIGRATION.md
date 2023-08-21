@@ -27,6 +27,18 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 - Sync to syno:/Reading/audiobooks on davinci
 
 ```bash
+
+## Permissions dirs 755, files 644
+# Show Bad Perms
+find audiobooks/ -not -perm 644 -type f -exec ls -l {} \;
+find audiobooks/ -not -perm 755 -type d -exec ls -ld {} \;
+# Fix Perms
+find audiobooks/ -type d -exec chmod 755 {} \;
+find audiobooks/ -type f -exec chmod 644 {} \;
+
+# Show unneeded files
+find audiobooks/ -type f -not -name \*m4b -not -name cover.jpg -not -name \*.epub|wc -l
+
 # Dev to Staging
 #  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
@@ -40,13 +52,6 @@ pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks 
 # on syno, pull from galois (Staging)
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
 
-## Permissions dirs 755, files 644
-# Show Bad Perms
-find audiobooks/ -not -perm 644 -type f -exec ls -l {} \;
-find audiobooks/ -not -perm 755 -type d -exec ls -ld {} \;
-# Fix Perms
-find audiobooks/ -type d -exec chmod 755 {} \;
-find audiobooks/ -type f -exec chmod 644 {} \;
 ```
 
 ## Current State

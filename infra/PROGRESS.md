@@ -2,20 +2,24 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 164 of 529 31.0% (365 remaining)
+_Progress:_ 175 of 533 32.8% (358 remaining)
 
-- TOTAL+ - 529 - Legacy U Staging:
+- TOTAL+ - 533 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 164 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 365 - Legacy books not in Staging
-- ADDED - 40 - Staging books not in Legacy
+- DONE++ - 175 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 358 - Legacy books not in Staging
+- ADDED - 44 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (40)
+## ADDED - Staging books not in Legacy (44)
 
+- Adam Becker - What Is Real?
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
 - Alastair Reynolds - Inhibitor Phase
 - Alastair Reynolds - Galactic North
+- Albert-László Barabási - The Formula
+- Andrew Morton - 17 Carnations
+- Anthony Aguirre - Cosmological Koans
 - Arthur Conan Doyle - A Study in Scarlet
 - Arthur Conan Doyle - The Sign of Four
 - Arthur Conan Doyle - The Adventures of Sherlock Holmes
@@ -53,20 +57,13 @@ _Progress:_ 164 of 529 31.0% (365 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (365)
+## REMAIN - Legacy books not in Staging (358)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
-- Agatha Christie - And Then There Were None
-- Agatha Christie - The Murder of Roger Ackroyd
-- Agatha Christie - Murder on the Orient Express
-- Agatha Christie - Death on the Nile
 - Albert-László Barabási - The Formula: The Universal Laws of Success
-- Alfred Bester - The Stars My Destination
 - Andrew Morton - 17 Carnations - The Royals, the Nazis, and the Biggest Cover-Up in History
 - Anthony Aguirre - Cosmological Koans: A Journey to the Heart of Physics
-- Arjuna Ardagh - Leap Before You Look
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
-- Ayn Rand - Atlas Shrugged
 - Bill Bryson - A Short History of Nearly Everything
 - Bill Bryson - Shakespeare
 - Bob Woodward - Obama's Wars
@@ -423,7 +420,7 @@ _Progress:_ 164 of 529 31.0% (365 remaining)
 
 ## Books already Migrated
 
-There are 124 books which have been migrated.
+There are 131 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -433,17 +430,24 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | ----------------------------------------------------------------- | ------------------------- | --------------------- |
 | Adrian Tchaikovsky - Children of Time                             | 543.87 MiB → 544.02 MiB   | 16h31m33s → 16h31m33s |
 | Adrian Tchaikovsky - Children of Ruin                             | 560.51 MiB → 492.61 MiB   | 15h25m38s → 15h25m38s |
+| Agatha Christie - And Then There Were None                        | 334.94 MiB → 335.22 MiB   | 6h1m53s → 6h1m53s     |
+| Agatha Christie - The Murder of Roger Ackroyd                     | 142.74 MiB → 148.61 MiB   | 6h54m25s → 6h55m7s    |
+| Agatha Christie - Murder on the Orient Express                    | 94.18 MiB → 96.07 MiB     | 6h52m35s → 6h50m39s   |
+| Agatha Christie - Death on the Nile                               | 179.49 MiB → 187.32 MiB   | 8h41m1s → 8h41m54s    |
 | Alastair Reynolds - House of Suns                                 | 513.78 MiB → 514.13 MiB   | 18h17m44s → 18h17m44s |
 | Alastair Reynolds - Revelation Space                              | 623.56 MiB → 624.19 MiB   | 22h12m45s → 22h12m45s |
 | Alastair Reynolds - Chasm City                                    | 647.81 MiB → 648.13 MiB   | 23h4m30s → 23h4m30s   |
 | Alastair Reynolds - Redemption Ark                                | 766.96 MiB → 771.32 MiB   | 15m58s → 27h15m24s    |
 | Alastair Reynolds - Absolution Gap                                | 763.49 MiB → 768.83 MiB   | 7m58s → 27h7m26s      |
 | Alastair Reynolds - The Prefect                                   | 553.29 MiB → 553.63 MiB   | 19h41m31s → 19h41m31s |
+| Alfred Bester - The Stars My Destination                          | 116.46 MiB → 119.01 MiB   | 8h27m48s → 8h27m48s   |
 | Amanda H. Podany - Weavers, Scribes, and Kings                    | 525.58 MiB → 526.09 MiB   | 18h26m40s → 18h26m40s |
 | Annie Duke - How to Decide                                        | 363.08 MiB → 363.29 MiB   | 6h39m43s → 6h39m43s   |
 | Annie Duke - Thinking in Bets                                     | 186.70 MiB → 194.11 MiB   | 6h51m6s → 6h51m6s     |
+| Arjuna Ardagh - Leap Before You Look                              | 70.26 MiB → 69.63 MiB     | 2h30m30s → 2h30m30s   |
 | Arthur C. Clarke - Rendezvous with Rama                           | 250.75 MiB → 250.72 MiB   | 9h1m56s → 9h1m59s     |
 | Arthur C. Clarke - 2001                                           | 192.38 MiB → 196.43 MiB   | 6h59m49s → 6h59m51s   |
+| Ayn Rand - Atlas Shrugged                                         | 1533.68 MiB → 1824.97 MiB | 55h26m35s → 62h57m4s  |
 | Bernard Cornwell - The Last Kingdom                               | 310.05 MiB → 267.79 MiB   | 12h53m28s → 12h54m5s  |
 | Bernard Cornwell - The Pale Horseman                              | 348.57 MiB → 411.97 MiB   | 14h29m33s → 14h30m15s |
 | Bernard Cornwell - The Lords of the North                         | 288.18 MiB → 251.80 MiB   | 11h58m53s → 11h59m27s |
