@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 175 of 533 32.8% (358 remaining)
+_Progress:_ 197 of 548 35.9% (351 remaining)
 
-- TOTAL+ - 533 - Legacy U Staging:
+- TOTAL+ - 548 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 175 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 358 - Legacy books not in Staging
-- ADDED - 44 - Staging books not in Legacy
+- DONE++ - 197 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 351 - Legacy books not in Staging
+- ADDED - 59 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (44)
+## ADDED - Staging books not in Legacy (59)
 
 - Adam Becker - What Is Real?
 - Adam Savage - Every Tool's a Hammer
@@ -30,6 +30,22 @@ _Progress:_ 175 of 533 32.8% (358 remaining)
 - Arthur Conan Doyle - His Last Bow
 - Arthur Conan Doyle - The Casebook of Sherlock Holmes
 - Bessel A. van der Kolk - The Body Keeps the Score
+- Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]
+- Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation]
+- Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation]
+- Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]
+- Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation]
+- Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation]
+- Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]
+- Brent Weeks - The Blood Mirror (2 of 2) [Dramatized Adaptation]
+- Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation]
+- Brent Weeks - The Burning White (2 of 5) [Dramatized Adaptation]
+- Brent Weeks - The Burning White (3 of 5) [Dramatized Adaptation]
+- Brent Weeks - The Burning White (4 of 5) [Dramatized Adaptation]
+- Brent Weeks - The Burning White (5 of 5) [Dramatized Adaptation]
+- Brent Weeks - Black Prism (1 of 3) [Dramatized Adaptation]
+- Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation]
+- Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation]
 - Brené Brown - Atlas of the Heart
 - Frank Dikotter - The Tragedy of Liberation
 - Iain M. Banks - Feersum Endjinn
@@ -45,7 +61,6 @@ _Progress:_ 175 of 533 32.8% (358 remaining)
 - Milan Kundera, Michael Henry Heim - translator - The Unbearable Lightness of Being
 - Naomi Novik - His Majesty's Dragon
 - Neil Gaiman, Terry Pratchett - Good Omens
-- Niall Ferguson - Doom
 - Niall Ferguson - The Ascent of Money
 - Niall Ferguson - The Square and the Tower
 - Nick Bostrom - Superintelligence
@@ -57,16 +72,13 @@ _Progress:_ 175 of 533 32.8% (358 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (358)
+## REMAIN - Legacy books not in Staging (351)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Albert-László Barabási - The Formula: The Universal Laws of Success
 - Andrew Morton - 17 Carnations - The Royals, the Nazis, and the Biggest Cover-Up in History
 - Anthony Aguirre - Cosmological Koans: A Journey to the Heart of Physics
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
-- Bill Bryson - A Short History of Nearly Everything
-- Bill Bryson - Shakespeare
-- Bob Woodward - Obama's Wars
 - Brandon Sanderson - Arcanum Unbounded
 - Brandon Sanderson - The Final Empire
 - Brandon Sanderson - Sixth of the Dusk
@@ -93,9 +105,6 @@ _Progress:_ 175 of 533 32.8% (358 remaining)
 - Brent Weeks - The Broken Eye
 - Brent Weeks - The Blood Mirror
 - Brent Weeks - The Burning White
-- Brian Greene - Light Falls
-- Brian Greene - The Fabric of the Cosmos
-- Brian Greene - Until the End of Time - Mind, Matter, and Our Search for Meaning in an Evolving Universe
 - Cal Newport - So Good They Can't Ignore You
 - Camilla Townsend - Fifth Sun: A New History of the Aztecs
 - Carlo Rovelli - Reality Is Not What It Seems: The Journey to Quantum Gravity
@@ -338,7 +347,6 @@ _Progress:_ 175 of 533 32.8% (358 remaining)
 - Neal Stephenson - Reamde
 - Neal Stephenson - Snow Crash
 - Neal Stephenson - The Diamond Age
-- Niall Ferguson - Doom - The Politics of Catastrophe
 - Nick Bostrom - Superintelligence (Unabridged)
 - Nicole Perlroth - This Is How They Tell Me the World Ends
 - Oliver Burkeman - Four Thousand Weeks
@@ -420,7 +428,7 @@ _Progress:_ 175 of 533 32.8% (358 remaining)
 
 ## Books already Migrated
 
-There are 131 books which have been migrated.
+There are 138 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -463,9 +471,15 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Bernard Cornwell - The Winter King                                | 496.50 MiB → 515.22 MiB   | 20h38m34s → 19h55m44s |
 | Bernard Cornwell - Enemy of God                                   | 503.58 MiB → 460.60 MiB   | 20h55m23s → 18h11m20s |
 | Bernard Cornwell - Excalibur                                      | 552.64 MiB → 478.78 MiB   | 20h7m8s → 18h50m23s   |
+| Bill Bryson - A Short History of Nearly Everything                | 503.37 MiB → 523.69 MiB   | 18h19m27s → 18h19m34s |
+| Bill Bryson - Shakespeare                                         | 301.46 MiB → 300.33 MiB   | 5h29m16s → 5h29m16s   |
 | Blake Crouch - Dark Matter                                        | 279.72 MiB → 225.60 MiB   | 10h8m56s → 10h8m56s   |
 | Blake Crouch - Recursion                                          | 288.95 MiB → 311.93 MiB   | 10h47m39s → 10h47m39s |
 | Blake Crouch - Upgrade                                            | 354.88 MiB → 355.20 MiB   | 9h47m55s → 9h47m55s   |
+| Bob Woodward - Obama's Wars                                       | 416.90 MiB → 453.21 MiB   | 15h37m16s → 15h37m16s |
+| Brian Greene - Light Falls                                        | 33.15 MiB → 34.05 MiB     | 2h24m50s → 2h24m50s   |
+| Brian Greene - The Fabric of the Cosmos                           | 615.89 MiB → 578.14 MiB   | 22h36m18s → 22h36m18s |
+| Brian Greene - Until the End of Time                              | 401.39 MiB → 430.61 MiB   | 14h36m46s → 14h36m46s |
 | Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism             | 331.38 MiB → 331.55 MiB   | 11h56m4s → 11h56m4s   |
 | Cory Doctorow - Down and Out in the Magic Kingdom                 | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
 | Cory Doctorow - Little Brother                                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
@@ -526,6 +540,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Joe Abercrombie - The Heroes                                      | 954.78 MiB → 657.14 MiB   | 23h5m23s → 23h5m30s   |
 | Joe Abercrombie - Red Country                                     | 822.19 MiB → 572.40 MiB   | 19h52m37s → 19h52m55s |
 | Joe Abercrombie - Sharp Ends                                      | 324.92 MiB → 321.96 MiB   | 11h48m18s → 11h48m18s |
+| Niall Ferguson - Doom                                             | 455.71 MiB → 475.84 MiB   | 16h35m22s → 16h35m22s |
 | Philip K. Dick - A Scanner Darkly                                 | 251.18 MiB → 251.40 MiB   | 9h13m2s → 9h13m2s     |
 | Roger Penrose - Cycles of Time                                    | 202.78 MiB → 213.76 MiB   | 7h22m55s → 7h22m55s   |
 | Salman Rushdie - Midnight's Children                              | 672.94 MiB → 677.19 MiB   | 24h29m49s → 24h29m58s |

@@ -707,10 +707,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Brian Greene - Until the End of Time':
     {
       author: ['Brian Greene', 'unique'],
-      title: [
-        'Until the End of Time - Mind, Matter, and Our Search for Meaning in an Evolving Universe',
-        'unique',
-      ],
+      title: ['Until the End of Time', 'hint'],
       '// duration': '14h36m46s',
       asins: [
         '1524734284: ✓ Δ:46s - 14h36m0s -  Until the End of Time / Brian Greene / n: Brian Greene',
@@ -3468,7 +3465,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Niall Ferguson - Doom': {
     author: ['Niall Ferguson', 'unique'],
-    title: ['Doom - The Politics of Catastrophe', 'unique'],
+    title: ['Doom', 'hint'],
     '// duration': '16h35m22s',
     asins: [
       '0593413148: ✓ Δ:22s - 16h35m0s -  Doom / Niall Ferguson / n: Niall Ferguson',
