@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 197 of 548 35.9% (351 remaining)
+_Progress:_ 197 of 547 36.0% (350 remaining)
 
-- TOTAL+ - 548 - Legacy U Staging:
+- TOTAL+ - 547 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
 - DONE++ - 197 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 351 - Legacy books not in Staging
-- ADDED - 59 - Staging books not in Legacy
+- REMAIN - 350 - Legacy books not in Staging
+- ADDED - 58 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (59)
+## ADDED - Staging books not in Legacy (58)
 
 - Adam Becker - What Is Real?
 - Adam Savage - Every Tool's a Hammer
@@ -58,7 +58,6 @@ _Progress:_ 197 of 548 35.9% (351 remaining)
 - Joe Abercrombie - Half a War
 - Joe Abercrombie - Last Argument of Kings
 - Lucy Worsley - Agatha Christie
-- Milan Kundera, Michael Henry Heim - translator - The Unbearable Lightness of Being
 - Naomi Novik - His Majesty's Dragon
 - Neil Gaiman, Terry Pratchett - Good Omens
 - Niall Ferguson - The Ascent of Money
@@ -72,7 +71,7 @@ _Progress:_ 197 of 548 35.9% (351 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (351)
+## REMAIN - Legacy books not in Staging (350)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Albert-László Barabási - The Formula: The Universal Laws of Success
@@ -329,7 +328,6 @@ _Progress:_ 197 of 548 35.9% (351 remaining)
 - Michael Lewis - The Undoing Project
 - Miguel de Cervantes - Don Quixote
 - Mihaly Csikszentmihalyi - Flow
-- Milan Kundera - The Unbearable Lightness of Being
 - N. K. Jemisin - The Broken Earth, Book 1 - The Fifth Season
 - N. K. Jemisin - The Obelisk Gate
 - N. K. Jemisin - The Stone Sky
@@ -428,7 +426,7 @@ _Progress:_ 197 of 548 35.9% (351 remaining)
 
 ## Books already Migrated
 
-There are 138 books which have been migrated.
+There are 139 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -540,6 +538,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Joe Abercrombie - The Heroes                                      | 954.78 MiB → 657.14 MiB   | 23h5m23s → 23h5m30s   |
 | Joe Abercrombie - Red Country                                     | 822.19 MiB → 572.40 MiB   | 19h52m37s → 19h52m55s |
 | Joe Abercrombie - Sharp Ends                                      | 324.92 MiB → 321.96 MiB   | 11h48m18s → 11h48m18s |
+| Milan Kundera - The Unbearable Lightness of Being                 | 264.52 MiB → 272.12 MiB   | 9h37m28s → 9h37m30s   |
 | Niall Ferguson - Doom                                             | 455.71 MiB → 475.84 MiB   | 16h35m22s → 16h35m22s |
 | Philip K. Dick - A Scanner Darkly                                 | 251.18 MiB → 251.40 MiB   | 9h13m2s → 9h13m2s     |
 | Roger Penrose - Cycles of Time                                    | 202.78 MiB → 213.76 MiB   | 7h22m55s → 7h22m55s   |
