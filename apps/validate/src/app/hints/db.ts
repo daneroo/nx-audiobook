@@ -1200,7 +1200,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Frank Herbert - Dune Collection/01 - Dune Saga/06. Chapterhouse_ Dune':
     {
       author: ['Frank Herbert', 'hint'],
-      title: ['Chapterhouse: Dune', 'unique'],
+      title: ['Chapterhouse Dune', 'hint'],
       '// duration': '16h42m22s',
       asins: [
         'B002V0K6D8: ✓ Δ:22s - 16h42m0s -  Chapterhouse Dune / Frank Herbert / n: Euan Morton,Katherine Kellgren,Scott Brick,Simon Vance',
@@ -1208,7 +1208,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Frank Herbert - Dune Collection/01 - Dune Saga/07. Hunters of Dune':
     {
-      author: ['Brian Herbert', 'hint'],
+      author: ['Brian Herbert, Kevin J. Anderson', 'hint'],
       title: ['Hunters of Dune', 'unique'],
       '// duration': '20h22m5s',
       asins: [
@@ -1218,7 +1218,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Frank Herbert - Dune Collection/01 - Dune Saga/08. Sandworms of Dune':
     {
-      author: ['Brian Herbert', 'hint'],
+      author: ['Brian Herbert, Kevin J. Anderson', 'hint'],
       title: ['Sandworms of Dune', 'unique'],
       '// duration': '19h35m35s',
       asins: [
@@ -1232,22 +1232,22 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Frank Herbert - Dune Collection/02 - Prelude to Dune/01. House Atreides':
     {
-      author: ['Brian Herbert', 'hint'],
-      title: ['House Atreides', 'hint'],
+      author: ['Brian Herbert, Kevin J. Anderson', 'hint'],
+      title: ['Dune: House Atreides', 'hint'],
       '// duration': '25h32m55s',
       asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Frank Herbert - Dune Collection/02 - Prelude to Dune/02. House Harkonnen':
     {
-      author: ['Brian Herbert', 'hint'],
-      title: ['House Harkonnen', 'hint'],
+      author: ['Brian Herbert, Kevin J. Anderson', 'hint'],
+      title: ['Dune: House Harkonnen', 'hint'],
       '// duration': '25h49m52s',
       asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Frank Herbert - Dune Collection/02 - Prelude to Dune/03. House Corrino':
     {
-      author: ['Brian Herbert', 'hint'],
-      title: ['House Corrino', 'hint'],
+      author: ['Brian Herbert, Kevin J. Anderson', 'hint'],
+      title: ['Dune: House Corrino', 'hint'],
       '// duration': '22h44m37s',
       asins: [],
     },
