@@ -961,10 +961,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/David Chalmers - Reality+': {
     author: ['David J. Chalmers', 'unique'],
-    title: [
-      'Reality+: Virtual Worlds and the Problems of Philosophy',
-      'unique',
-    ],
+    title: ['Reality+', 'hint'],
     '// duration': '17h12m35s',
     asins: [
       'B09FRKHZ4J: ✓ Δ:35s - 17h12m0s -  Reality+ / David J. Chalmers / n: Grant Cartwright',
@@ -974,7 +971,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/David Deutsch - The Beginning Of Infinity':
     {
       author: ['David Deutsch', 'unique'],
-      title: ['The Beginning Of Infinity', 'unique'],
+      title: ['The Beginning of Infinity', 'hint'],
       '// duration': '20h0m20s',
       asins: [
         'B005HR40BG: ✓ Δ:20s - 20h0m0s -  The Beginning of Infinity / David Deutsch / n: Walter Dixon',
@@ -990,7 +987,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/David Mitchell - The Thousand Autumns of Jacob de Zoet':
     {
       author: ['David Mitchell', 'hint'],
-      title: ['Thousand Autumns of Jacob de Zoet, The', 'unique'],
+      title: ['The Thousand Autumns of Jacob de Zoet', 'hint'],
       '// duration': '18h56m0s',
       asins: [
         'B003SPZOZA: ✓ Δ:3m0s - 18h53m0s -  The Thousand Autumns of Jacob de Zoet / David Mitchell / n: Jonathan Aris,Paula Wilcox',
@@ -1008,8 +1005,8 @@ export const db: Record<string, Hint> = {
     {
       author: ['David Thomas, Andrew Hunt', 'unique'],
       title: [
-        'The Pragmatic Programmer: 20th Anniversary Edition, 2nd Edition: Your Journey to Mastery',
-        'unique',
+        'The Pragmatic Programmer: 20th Anniversary Edition, 2nd Edition',
+        'hint',
       ],
       '// duration': '9h55m40s',
       asins: [
@@ -1024,7 +1021,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/DorisKearnsGoodwin-TeamOfRivals': {
     author: ['Doris Kearns Goodwin', 'unique'],
-    title: ['Team Of Rivals', 'unique'],
+    title: ['Team of Rivals', 'hint'],
     '// duration': '9h29m22s',
     asins: [
       'B002V8MOTE: ✓ Δ:1m22s - 9h28m0s -  Team of Rivals / Doris Kearns Goodwin / n: Doris Kearns Goodwin (introduction),Richard Thomas',
