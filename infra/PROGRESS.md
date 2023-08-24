@@ -2,12 +2,12 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 197 of 547 36.0% (350 remaining)
+_Progress:_ 213 of 547 38.9% (334 remaining)
 
 - TOTAL+ - 547 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 197 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 350 - Legacy books not in Staging
+- DONE++ - 213 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 334 - Legacy books not in Staging
 - ADDED - 58 - Staging books not in Legacy
 
 ## ADDED - Staging books not in Legacy (58)
@@ -71,32 +71,16 @@ _Progress:_ 197 of 547 36.0% (350 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (350)
+## REMAIN - Legacy books not in Staging (334)
 
 - Adam Becker - What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics
 - Albert-László Barabási - The Formula: The Universal Laws of Success
 - Andrew Morton - 17 Carnations - The Royals, the Nazis, and the Biggest Cover-Up in History
 - Anthony Aguirre - Cosmological Koans: A Journey to the Heart of Physics
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
-- Brandon Sanderson - Arcanum Unbounded
-- Brandon Sanderson - The Final Empire
 - Brandon Sanderson - Sixth of the Dusk
-- Brandon Sanderson - The Alloy of Law
 - Brandon Sanderson - Allomancer Jak and the Pits of Eltania
-- Brandon Sanderson - Shadows of Self
-- Brandon Sanderson - The Bands of Mourning
-- Brandon Sanderson - Warbreaker
-- Brandon Sanderson - The Way of Kings
-- Brandon Sanderson - Words of Radiance
-- Brandon Sanderson - Edgedancer
-- Brandon Sanderson - The Well of Ascension
-- Brandon Sanderson - Oathbringer
-- Brandon Sanderson - Rhythm of War: The Stormlight Archive, Book 4
-- Brandon Sanderson - Mistborn 3: The Hero of Ages
 - Brandon Sanderson - The Eleventh Metal
-- Brandon Sanderson - Secret History
-- Brandon Sanderson - Elantris
-- Brandon Sanderson - The Emperor's Soul
 - Brandon Sanderson - The Hope of Elantris
 - Brandon Sanderson - Shadows for Silence in the Forests of Hell
 - Brent Weeks - The Black Prism
@@ -426,7 +410,7 @@ _Progress:_ 197 of 547 36.0% (350 remaining)
 
 ## Books already Migrated
 
-There are 139 books which have been migrated.
+There are 155 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -475,6 +459,22 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Blake Crouch - Recursion                                          | 288.95 MiB → 311.93 MiB   | 10h47m39s → 10h47m39s |
 | Blake Crouch - Upgrade                                            | 354.88 MiB → 355.20 MiB   | 9h47m55s → 9h47m55s   |
 | Bob Woodward - Obama's Wars                                       | 416.90 MiB → 453.21 MiB   | 15h37m16s → 15h37m16s |
+| Brandon Sanderson - Elantris                                      | 768.21 MiB → 783.08 MiB   | 54h55m49s → 28h42m35s |
+| Brandon Sanderson - The Emperor's Soul                            | 108.89 MiB → 109.89 MiB   | 3h57m52s → 3h57m52s   |
+| Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection     | 618.74 MiB → 622.89 MiB   | 22h31m39s → 22h31m39s |
+| Brandon Sanderson - The Final Empire                              | 1016.01 MiB → 1264.20 MiB | 24h39m25s → 24h39m25s |
+| Brandon Sanderson - The Well of Ascension                         | 795.69 MiB → 774.56 MiB   | 28h57m38s → 28h57m38s |
+| Brandon Sanderson - The Hero of Ages                              | 1153.50 MiB → 1530.95 MiB | 27h25m13s → 27h25m13s |
+| Brandon Sanderson - Secret History                                | 150.63 MiB → 151.90 MiB   | 5h29m3s → 5h29m3s     |
+| Brandon Sanderson - The Alloy of Law                              | 296.76 MiB → 309.11 MiB   | 10h48m12s → 10h48m12s |
+| Brandon Sanderson - Shadows of Self                               | 1734.22 MiB → 706.46 MiB  | 12h37m41s → 12h37m40s |
+| Brandon Sanderson - The Bands of Mourning                         | 428.36 MiB → 406.00 MiB   | 14h41m24s → 14h41m24s |
+| Brandon Sanderson - The Way of Kings                              | 1256.80 MiB → 1330.86 MiB | 45h33m6s → 45h33m6s   |
+| Brandon Sanderson - Words of Radiance                             | 1344.11 MiB → 1398.19 MiB | 48h12m59s → 48h12m59s |
+| Brandon Sanderson - Edgedancer                                    | 142.10 MiB → 143.13 MiB   | 5h10m26s → 5h10m26s   |
+| Brandon Sanderson - Oathbringer                                   | 1501.32 MiB → 1502.04 MiB | 55h6m9s → 55h6m9s     |
+| Brandon Sanderson - Rhythm of War                                 | 1565.24 MiB → 1566.24 MiB | 57h26m57s → 57h26m57s |
+| Brandon Sanderson - Warbreaker                                    | 679.87 MiB → 680.27 MiB   | 24h57m9s → 24h57m9s   |
 | Brian Greene - Light Falls                                        | 33.15 MiB → 34.05 MiB     | 2h24m50s → 2h24m50s   |
 | Brian Greene - The Fabric of the Cosmos                           | 615.89 MiB → 578.14 MiB   | 22h36m18s → 22h36m18s |
 | Brian Greene - Until the End of Time                              | 401.39 MiB → 430.61 MiB   | 14h36m46s → 14h36m46s |
