@@ -6,10 +6,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Adam Becker - What Is Real': {
     author: ['Adam Becker', 'unique'],
-    title: [
-      'What Is Real? - The Unfinished Quest for the Meaning of Quantum Physics',
-      'unique',
-    ],
+    title: ['What Is Real', 'hint'],
     '// duration': '11h45m0s',
     asins: [
       'B078P2MS47: ✓ Δ:0s - 11h45m0s -  What Is Real? / Adam Becker / n: Greg Tremblay',
@@ -87,10 +84,11 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/AlbertLaszloBarabasi-TheFormula': {
     author: ['Albert-László Barabási', 'unique'],
-    title: ['The Formula: The Universal Laws of Success', 'unique'],
+    title: ['The Formula', 'hint'],
     '// duration': '7h55m1s',
     asins: [
       '1478917768: ✓ Δ:1m1s - 7h54m0s -  The Formula / Albert-László Barabási / n: Ryan Vincent Anderson',
+      'B07FKMNHXH: ✓ Δ:1m1s - 7h54m0s -  The Formula / Albert-László Barabási / n: Ryan Vincent Anderson',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Alfred Bester - The Stars My Destination':
@@ -158,10 +156,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Andrew Morton - 17 Carnations': {
     author: ['Andrew Morton', 'unique'],
-    title: [
-      '17 Carnations - The Royals, the Nazis, and the Biggest Cover-Up in History',
-      'unique',
-    ],
+    title: ['17 Carnations', 'hint'],
     '// duration': '11h7m50s',
     asins: [
       'B00U1S19RO: ✓ Δ:1m50s - 11h6m0s -  17 Carnations / Andrew Morton / n: James Langton',
@@ -194,7 +189,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/AnthonyAguirre-CosmologicalKoans': {
     author: ['Anthony Aguirre', 'unique'],
-    title: ['Cosmological Koans: A Journey to the Heart of Physics', 'unique'],
+    title: ['Cosmological Koans', 'hint'],
     '// duration': '12h33m56s',
     asins: [
       '0241431069: ✓ Δ:56s - 12h33m0s -  Cosmological Koans / Anthony Aguirre / n: Jonathan Todd Ross',
@@ -455,7 +450,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Brandon Sanderson - Cosmere/Sanderson, Brandon - Arcanum Unbounded - The Cosmere Collection':
     {
       author: ['Brandon Sanderson', 'hint'],
-      title: ['Arcanum Unbounded', 'hint'],
+      title: ['Arcanum Unbounded: The Cosmere Collection', 'hint'],
       '// duration': '22h31m39s',
       asins: [
         'B01K5Q6VWO: ✓ Δ:39s - 22h31m0s -  Arcanum Unbounded: The Cosmere Collection / Brandon Sanderson / n: Michael Kramer,Kate Reading',
@@ -571,17 +566,17 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Brandon Sanderson - Cosmere/Sanderson, Brandon - Cosmere 22 - The Stormlight Archive 4 - Rhythm of War':
     {
       author: ['Brandon Sanderson', 'unique'],
-      title: ['Rhythm of War: The Stormlight Archive, Book 4', 'unique'],
+      title: ['Rhythm of War', 'hint'],
       '// duration': '57h26m57s',
       asins: [
         '1250759781: ✓ Δ:57s - 57h26m0s -  Rhythm of War / Brandon Sanderson / n: Kate Reading,Michael Kramer',
-        '1473231051: ✓ Δ:57s - 57h26m0s -  Rhythm of War / Brandon Sanderson / n: Michael Kramer,Kate Reading',
+        '1473231051: ✓ Δ:57s - 57h26m0s -  Rhythm of War / Brandon Sanderson / n: Kate Reading,Michael Kramer',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Brandon Sanderson - Cosmere/Sanderson, Brandon - Cosmere 3 - Mistborn 3 - The Hero of Ages':
     {
       author: ['Brandon Sanderson', 'unique'],
-      title: ['Mistborn 3: The Hero of Ages', 'unique'],
+      title: ['The Hero of Ages', 'hint'],
       '// duration': '27h25m13s',
       asins: [
         'B002VA9IKK: ✓ Δ:13s - 27h25m0s -  The Hero of Ages / Brandon Sanderson / n: Michael Kramer',
