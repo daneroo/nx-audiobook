@@ -2,12 +2,12 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 226 of 544 41.5% (318 remaining)
+_Progress:_ 236 of 544 43.4% (308 remaining)
 
 - TOTAL+ - 544 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 226 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 318 - Legacy books not in Staging
+- DONE++ - 236 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 308 - Legacy books not in Staging
 - ADDED - 55 - Staging books not in Legacy
 
 ## ADDED - Staging books not in Legacy (55)
@@ -68,7 +68,7 @@ _Progress:_ 226 of 544 41.5% (318 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (318)
+## REMAIN - Legacy books not in Staging (308)
 
 - Adam Becker - What Is Real
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
@@ -82,16 +82,6 @@ _Progress:_ 226 of 544 41.5% (318 remaining)
 - Brent Weeks - The Broken Eye
 - Brent Weeks - The Blood Mirror
 - Brent Weeks - The Burning White
-- Dan Ariely - The Upside of Irrationality
-- Dan Jones - Magna Carta: The Birth of Liberty
-- Dan Jones - The Plantagenets: The Warrior Kings and Queens Who Made England
-- Dan Jones - The Templars
-- Dan Simmons - Hyperion
-- Dan Carlin - The End Is Always Near: Apocalyptic Moments, from the Bronze Age Collapse to Nuclear Near Misses
-- Daniel C. Dennett - From Bacteria to Bach and Back: The Evolution of Minds
-- Daniel C. Dennett - Intuition Pumps and Other Tools for Thinking
-- Daniel C. Dennett - Kinds of Minds
-- Daniel Gilbert - Stumbling on Happiness
 - David J. Chalmers - Reality+: Virtual Worlds and the Problems of Philosophy
 - David Deutsch - The Beginning Of Infinity
 - David E. Sanger - The Perfect Weapon
@@ -391,7 +381,7 @@ _Progress:_ 226 of 544 41.5% (318 remaining)
 
 ## Books already Migrated
 
-There are 171 books which have been migrated.
+There are 181 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -482,6 +472,16 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Cory Doctorow - Force Multiplier                                  | 32.24 MiB → 21.65 MiB     | 23m20s → 23m21s       |
 | Cory Doctorow - Attack Surface                                    | 633.18 MiB → 618.11 MiB   | 11h8m27s → 11h8m27s   |
 | Cory Doctorow - Red Team Blues                                    | 999.34 MiB → 743.58 MiB   | 7h15m15s → 7h15m15s   |
+| Dan Ariely - The Upside of Irrationality                          | 300.42 MiB → 299.40 MiB   | 8h6m11s → 8h6m11s     |
+| Dan Carlin - The End Is Always Near                               | 218.10 MiB → 224.89 MiB   | 7h55m28s → 7h55m28s   |
+| Dan Jones - Magna Carta                                           | 197.95 MiB → 199.39 MiB   | 7h12m16s → 7h12m16s   |
+| Dan Jones - The Plantagenets                                      | 573.24 MiB → 590.25 MiB   | 20h51m27s → 20h51m27s |
+| Dan Jones - The Templars                                          | 389.74 MiB → 388.31 MiB   | 15h36m2s → 15h36m2s   |
+| Dan Simmons - Hyperion                                            | 383.13 MiB → 291.14 MiB   | 20h50m25s → 20h44m33s |
+| Daniel C. Dennett - From Bacteria to Bach and Back                | 216.06 MiB → 221.20 MiB   | 15h44m42s → 15h40m47s |
+| Daniel C. Dennett - Intuition Pumps and Other Tools for Thinking  | 369.16 MiB → 362.03 MiB   | 13h26m26s → 13h26m22s |
+| Daniel C. Dennett - Kinds of Minds                                | 48.24 MiB → 50.08 MiB     | 3h31m42s → 3h30m43s   |
+| Daniel Gilbert - Stumbling on Happiness                           | 203.61 MiB → 214.73 MiB   | 7h26m46s → 7h26m46s   |
 | Galileo Galilei - Dialogue Concerning the Two Chief World Systems | 1194.95 MiB → 1202.80 MiB | 21h40m26s → 21h40m34s |
 | Gene Wolfe - Soldier of the Mist                                  | 590.57 MiB → 531.18 MiB   | 10h34m16s → 10h34m16s |
 | Gene Wolfe - Soldier of Arete                                     | 624.65 MiB → 562.05 MiB   | 11h5m46s → 11h5m46s   |

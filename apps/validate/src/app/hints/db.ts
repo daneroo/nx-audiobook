@@ -192,6 +192,7 @@ export const db: Record<string, Hint> = {
     title: ['Cosmological Koans', 'hint'],
     '// duration': '12h33m56s',
     asins: [
+      '1980029989: ✓ Δ:56s - 12h33m0s -  Cosmological Koans / Anthony Aguirre / n: Jonathan Todd Ross',
       '0241431069: ✓ Δ:56s - 12h33m0s -  Cosmological Koans / Anthony Aguirre / n: Jonathan Todd Ross',
     ],
   },
@@ -721,7 +722,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Camilla Townsend - Fifth Sun': {
     author: ['Camilla Townsend', 'unique'],
-    title: ['Fifth Sun: A New History of the Aztecs', 'unique'],
+    title: ['Fifth Sun', 'hint'],
     '// duration': '12h2m58s',
     asins: [
       '1705217087: ✓ Δ:58s - 12h2m0s -  Fifth Sun / Camilla Townsend / n: Christina Delaine',
@@ -730,10 +731,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Carlo Rovelli - Reality Is Not What It Seems':
     {
       author: ['Carlo Rovelli', 'unique'],
-      title: [
-        'Reality Is Not What It Seems: The Journey to Quantum Gravity',
-        'unique',
-      ],
+      title: ['Reality Is Not What It Seems', 'hint'],
       '// duration': '6h11m27s',
       asins: [
         'B01LYC1GK9: ✓ Δ:27s - 6h11m0s -  Reality Is Not What It Seems / Carlo Rovelli / n: Roy McMillan',
@@ -789,21 +787,20 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Chris Miller - Chip War': {
     author: ['Chris Miller', 'unique'],
-    title: [
-      "Chip War: The Quest to Dominate the World's Most Critical Technology",
-      'unique',
-    ],
+    title: ['Chip War', 'hint'],
     '// duration': '12h38m23s',
     asins: [
       'B09TX11LQB: ✓ Δ:23s - 12h38m0s -  Chip War / Chris Miller / n: Stephen Graybill',
+      'B0B4F6Y8LF: ✓ Δ:23s - 12h38m0s -  Chip War / Chris Miller / n: Stephen Graybill',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/ChristopherHitchens-GodIsNotGreat': {
     author: ['Christopher Hitchens', 'unique'],
-    title: ['god is not Great _ How Religion Poisons Everything', 'unique'],
+    title: ['God Is Not Great', 'hint'],
     '// duration': '8h47m0s',
     asins: [
       'B002V8KU2W: ✓ Δ:2m0s - 8h45m0s -  God Is Not Great / Christopher Hitchens / n: Christopher Hitchens',
+      '1474616712: ✓ Δ:2m0s - 8h45m0s -  God Is Not Great / Christopher Hitchens / n: Christopher Hitchens',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/CixinLiu-DeathsEnd': {
@@ -888,7 +885,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Dan Jones - Magna Carta The Birth of Liberty':
     {
       author: ['Dan Jones', 'unique'],
-      title: ['Magna Carta: The Birth of Liberty', 'unique'],
+      title: ['Magna Carta', 'hint'],
       '// duration': '7h12m16s',
       asins: [
         'B015NNXBBI: ✓ Δ:16s - 7h12m0s -  Magna Carta / Dan Jones / n: Dan Jones',
@@ -896,13 +893,10 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Dan Jones - The Plantagenets': {
     author: ['Dan Jones', 'unique'],
-    title: [
-      'The Plantagenets: The Warrior Kings and Queens Who Made England',
-      'unique',
-    ],
+    title: ['The Plantagenets', 'hint'],
     '// duration': '20h51m27s',
     asins: [
-      'B00BSUVFZK: ✓ Δ:2m27s - 20h49m0s -  The Plantagenets / Dan Jones / n: Clive Chafer',
+      'B0CF6X2LDY: ✓ Δ:8m33s - 21h0m0s -  The Plantagenets / Dan Jones / n: ',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Dan Jones - The Templars': {
@@ -924,10 +918,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/DanCarlin-TheEndIsAlwaysNear': {
     author: ['Dan Carlin', 'unique'],
-    title: [
-      'The End Is Always Near: Apocalyptic Moments, from the Bronze Age Collapse to Nuclear Near Misses',
-      'unique',
-    ],
+    title: ['The End Is Always Near', 'hint'],
     '// duration': '7h55m28s',
     asins: [
       '0062868071: ✓ Δ:28s - 7h55m0s -  The End Is Always Near / Dan Carlin / n: Dan Carlin',
@@ -937,10 +928,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Daniel C. Dennett - From Bacteria to Bach and Back':
     {
       author: ['Daniel C. Dennett', 'unique'],
-      title: [
-        'From Bacteria to Bach and Back: The Evolution of Minds',
-        'unique',
-      ],
+      title: ['From Bacteria to Bach and Back', 'hint'],
       '// duration': '15h44m42s',
       asins: [
         'B01MYBBU13: ✓ Δ:42s - 15h44m0s -  From Bacteria to Bach and Back / Daniel C. Dennett / n: Tom Perkins',
