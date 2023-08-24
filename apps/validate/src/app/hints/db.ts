@@ -1096,7 +1096,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Edward Frenkel - Love and Math': {
     author: ['Edward Frenkel', 'unique'],
-    title: ['Love and Math (Unabridged)', 'unique'],
+    title: ['Love and Math', 'hint'],
     '// duration': '10h10m8s',
     skip: 'not on audible',
   },
@@ -1111,8 +1111,8 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Elliot Ackerman - 2034 -  A Novel of the Next World War':
     {
-      author: ['Elliot Ackerman', 'unique'],
-      title: ['2034 - A Novel of the Next World War', 'unique'],
+      author: ['Elliot Ackerman', 'hint'],
+      title: ['2034', 'hint'],
       '// duration': '10h49m45s',
       asins: [
         '0593394747: ✓ Δ:45s - 10h49m0s -  2034 / Elliot Ackerman,Admiral James Stavridis / n: Emily Woo Zeller,P.J. Ochlan,Vikas Adam,Dion Graham,Feodor Chin',
@@ -1130,8 +1130,8 @@ export const db: Record<string, Hint> = {
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Erwin Schrodinger - What Is Life': {
-    author: ['Erwin Schrodinger', 'hint'],
-    title: ['What Is Life', 'hint'],
+    author: ['Erwin Schrödinger', 'hint'],
+    title: ['What Is Life?', 'hint'],
     '// duration': '6h9m3s',
     asins: [
       '1541446410: ✓ Δ:1m3s - 6h8m0s -  What Is Life? / Erwin Schrödinger,Roger Penrose - foreword / n: Bob Souer',
