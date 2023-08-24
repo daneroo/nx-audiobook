@@ -2,12 +2,12 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 213 of 544 39.2% (331 remaining)
+_Progress:_ 226 of 544 41.5% (318 remaining)
 
 - TOTAL+ - 544 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 213 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 331 - Legacy books not in Staging
+- DONE++ - 226 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 318 - Legacy books not in Staging
 - ADDED - 55 - Staging books not in Legacy
 
 ## ADDED - Staging books not in Legacy (55)
@@ -68,7 +68,7 @@ _Progress:_ 213 of 544 39.2% (331 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (331)
+## REMAIN - Legacy books not in Staging (318)
 
 - Adam Becker - What Is Real
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
@@ -82,19 +82,6 @@ _Progress:_ 213 of 544 39.2% (331 remaining)
 - Brent Weeks - The Broken Eye
 - Brent Weeks - The Blood Mirror
 - Brent Weeks - The Burning White
-- Cal Newport - So Good They Can't Ignore You
-- Camilla Townsend - Fifth Sun: A New History of the Aztecs
-- Carlo Rovelli - Reality Is Not What It Seems: The Journey to Quantum Gravity
-- Carlo Rovelli - Seven Brief Lessons on Physics
-- Carlo Rovelli - The Order of Time
-- Charlie Jane Anders - All the Birds in the Sky
-- Chögyam Trungpa - The Myth of Freedom and the Way of Meditation
-- Chögyam Trungpa - Cutting Through Spiritual Materialism
-- Chris Miller - Chip War: The Quest to Dominate the World's Most Critical Technology
-- Christopher Hitchens - god is not Great \_ How Religion Poisons Everything
-- Cixin Liu - Death's End
-- Cixin Liu - The Dark Forest
-- Cixin Liu - The Three-Body Problem
 - Dan Ariely - The Upside of Irrationality
 - Dan Jones - Magna Carta: The Birth of Liberty
 - Dan Jones - The Plantagenets: The Warrior Kings and Queens Who Made England
@@ -404,7 +391,7 @@ _Progress:_ 213 of 544 39.2% (331 remaining)
 
 ## Books already Migrated
 
-There are 158 books which have been migrated.
+There are 171 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -475,6 +462,19 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Brian Greene - Light Falls                                        | 33.15 MiB → 34.05 MiB     | 2h24m50s → 2h24m50s   |
 | Brian Greene - The Fabric of the Cosmos                           | 615.89 MiB → 578.14 MiB   | 22h36m18s → 22h36m18s |
 | Brian Greene - Until the End of Time                              | 401.39 MiB → 430.61 MiB   | 14h36m46s → 14h36m46s |
+| Cal Newport - So Good They Can't Ignore You                       | 178.24 MiB → 186.49 MiB   | 6h28m55s → 6h28m55s   |
+| Camilla Townsend - Fifth Sun                                      | 661.94 MiB → 665.98 MiB   | 12h2m58s → 12h2m58s   |
+| Carlo Rovelli - Reality Is Not What It Seems                      | 170.78 MiB → 163.89 MiB   | 6h11m27s → 6h11m30s   |
+| Carlo Rovelli - Seven Brief Lessons on Physics                    | 48.45 MiB → 50.42 MiB     | 1h45m34s → 1h45m35s   |
+| Carlo Rovelli - The Order of Time                                 | 119.73 MiB → 119.61 MiB   | 4h19m5s → 4h19m5s     |
+| Charlie Jane Anders - All the Birds in the Sky                    | 173.42 MiB → 176.95 MiB   | 12h40m7s → 12h36m33s  |
+| Chögyam Trungpa - The Myth of Freedom and the Way of Meditation   | 142.53 MiB → 143.92 MiB   | 5h11m21s → 5h11m21s   |
+| Chögyam Trungpa - Cutting Through Spiritual Materialism           | 121.79 MiB → 124.47 MiB   | 8h51m3s → 8h51m3s     |
+| Chris Miller - Chip War                                           | 485.21 MiB → 622.84 MiB   | 12h38m23s → 12h38m23s |
+| Christopher Hitchens - God Is Not Great                           | 264.42 MiB → 303.64 MiB   | 8h47m0s → 8h47m0s     |
+| Cixin Liu - The Three-Body Problem                                | 605.31 MiB → 613.19 MiB   | 14h37m48s → 14h37m48s |
+| Cixin Liu - The Dark Forest                                       | 323.03 MiB → 307.11 MiB   | 22h37m14s → 22h37m14s |
+| Cixin Liu - Death's End                                           | 798.18 MiB → 826.19 MiB   | 28h51m52s → 28h52m3s  |
 | Rebecca Giblin, Cory Doctorow - Chokepoint Capitalism             | 331.38 MiB → 331.55 MiB   | 11h56m4s → 11h56m4s   |
 | Cory Doctorow - Down and Out in the Magic Kingdom                 | 102.18 MiB → 113.22 MiB   | 4h13m4s → 4h13m4s     |
 | Cory Doctorow - Little Brother                                    | 659.88 MiB → 658.38 MiB   | 11h54m15s → 11h54m21s |
