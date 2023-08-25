@@ -6,7 +6,7 @@ _Progress:_ 310 of 543 57.1% (233 remaining)
 
 - TOTAL+ - 543 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 310 `/Volumes/Space/Reading/audiobooks` - Staging books
+- DONE++ - 310 `/Volumes/Reading/audiobooks` - Staging books
 - REMAIN - 233 - Legacy books not in Staging
 - ADDED - 54 - Staging books not in Legacy
 

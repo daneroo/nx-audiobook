@@ -63,8 +63,8 @@ time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier -
 # progress
 cd apps/validate
 # clean output into PROGRESS.md
-pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks | tee ../../infra/PROGRESS.md
-time pnpm run dev --progressDir /Volumes/Space/Reading/audiobooks
+pnpm vite-node src/index.ts --  --progressDir /Volumes/Reading/audiobooks | tee ../../infra/PROGRESS.md
+time pnpm run dev --progressDir /Volumes/Reading/audiobooks
 
 # convert
 time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir /Volumes/Space/Reading/convert

@@ -23,7 +23,7 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 ## Iteration
 
 - Fine-tune audiobook in this audiobookshelf dev env (galois)
-- Sync to /Volumes/Space/Reading/audiobooks on galois (syncthing to davinci,..)
+- Sync to /Volumes/Reading/audiobooks on galois (syncthing to davinci,..)
 - Sync to syno:/Reading/audiobooks on davinci
 
 ```bash
@@ -37,33 +37,42 @@ find audiobooks/ -type d -exec chmod 755 {} \;
 find audiobooks/ -type f -exec chmod 644 {} \;
 
 # Show unneeded files
-find audiobooks/ -type f -not -name \*m4b -not -name cover.jpg -not -name \*.epub|wc -l
+find audiobooks/ -type f -not -name \*m4b -not -name cover.jpg -not -name \*.epub -not -name .DS_Store | wc -l
 
 # Dev to Staging
-#  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
+#  on galois, dev, sync to /Volumes/Reading/audiobooks
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Reading/audiobooks/
 
 cd apps/validate
 # clean output into PROGRESS.md
-pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks | tee ../../infra/PROGRESS.md
+pnpm vite-node src/index.ts --  --progressDir /Volumes/Reading/audiobooks | tee ../../infra/PROGRESS.md
 
 
 # Staging to Prod
 # on syno, pull from galois (Staging)
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /volume1/Reading/audiobooks/
 
 ```
 
 ## Current State
 
-| Name                                | Description                                                       |
-| ----------------------------------- | ----------------------------------------------------------------- |
-| Legacy                              | Source for migration                                              |
-| `$ARCHIVE_HOME/media/audiobooks`    | on syno,galois,davinci,dirac,shannon                              |
-| Canonical New                       |                                                                   |
-| `/Volumes/Space/Reading/audiobooks` | Source of truth, [Syncthing on galois, [davinci, dirac, shannon]] |
-| `syno:Reading/audiobooks`           | Source for Audiobookshelf and Plex on audiobook VM                |
-| `./data/audiobooks`                 | Developer view in this repo                                       |
+| Name                             | Description                                                       |
+| -------------------------------- | ----------------------------------------------------------------- |
+| Legacy                           | Source for migration                                              |
+| `$ARCHIVE_HOME/media/audiobooks` | on syno,galois,davinci,dirac,shannon                              |
+| Canonical New                    |                                                                   |
+| `/Volumes/Reading/audiobooks`    | Source of truth, [Syncthing on galois, [davinci, dirac, shannon]] |
+| `syno:Reading/audiobooks`        | Source for Audiobookshelf and Plex on audiobook VM                |
+| `./data/audiobooks`              | Developer view in this repo                                       |
+
+## One time migration to /Volumes/Reading/audiobooks
+
+```bash
+# on galois
+time (cd /Volumes/Space/Reading/audiobooks && find . -type f -print0 | sort -z | xargs -0 sha1sum > /tmp/sums-vol-space-reading-audiobooks.txt)
+time (cd /Volumes/Reading/audiobooks && find . -type f -print0 | sort -z | xargs -0 sha1sum > /tmp/sums-vol-reading-audiobooks.txt)
+diff /tmp/sums-vol-space-reading-audiobooks.txt /tmp/sums-vol-reading-audiobooks.txt
+```
 
 ## Normalization
 
@@ -130,7 +139,7 @@ tone dump  /Volumes/Space/archive/media/audiobooks/ --format json --include-prop
 tone dump /audiobooks/ --format json --exclude-property embeddedPictures --exclude-property comment --exclude-property description| tr -d '\n\r'| jq
 ```
 
-## Vaidating Tone Writeability
+## Validating Tone Writeability
 
 Some files are not writeable by tone, and we need to fix that.
 

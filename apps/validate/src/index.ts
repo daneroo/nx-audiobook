@@ -41,7 +41,7 @@ async function main(): Promise<void> {
       type: 'string',
       nargs: 1,
       describe:
-        'measure progress against converted books: --progressDir /Volumes/Space/Reading/audiobooks',
+        'measure progress against converted books: --progressDir /Volumes/Reading/audiobooks',
     })
     .count('verbose')
     .alias('v', 'verbose')
