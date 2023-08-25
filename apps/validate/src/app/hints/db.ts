@@ -1738,7 +1738,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Immanuel Kant - The Critique of Pure Reason':
     {
-      author: ['Israel Bouseman, Immanuel Kant', 'hint'],
+      author: ['Immanuel Kant, Israel Bouseman', 'hint'],
       title: ['The Critique of Pure Reason', 'hint'],
       '// duration': '26h49m15s',
       asins: [
@@ -1760,7 +1760,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/IsaacAsimov-FoundationSeries/1952 - Foundation & Empire (Brick) 64k 09.34.38 {268mb}':
     {
       author: ['Isaac Asimov', 'unique'],
-      title: ['Foundation & Empire', 'unique'],
+      title: ['Foundation and Empire', 'hint'],
       '// duration': '9h34m40s',
       asins: [
         'B003FCV4O6: ✓ Δ:1m40s - 9h33m0s -  Foundation and Empire / Isaac Asimov / n: Scott Brick',
@@ -1856,44 +1856,31 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Andy Serkis/J.R.R. Tolkien - The Hobbit - Andy Serkis':
     {
-      author: ['J.R.R. Tolkien', 'hint'],
+      author: ['J. R. R. Tolkien, Andy Serkis', 'hint'],
       title: ['The Hobbit', 'unique'],
       '// duration': '10h24m43s',
-      asins: [
-        '1705009050: ✓ Δ:17s - 10h25m0s -  The Hobbit / J. R. R. Tolkien / n: Andy Serkis',
-        '0008433844: ✓ Δ:43s - 10h24m0s -  The Hobbit / J. R. R. Tolkien / n: Andy Serkis',
-        'B00U6GS58C: ✓ Δ:10m43s - 10h14m0s -  Le Hobbit / J. R. R. Tolkien / n: Dominique Pinon',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Andy Serkis/J.R.R. Tolkien - The Lord of the Rings 1 - The Fellowship of the Ring - Andy Serkis':
     {
-      author: ['J.R.R. Tolkien', 'hint'],
+      author: ['J. R. R. Tolkien, Andy Serkis', 'hint'],
       title: ['The Fellowship of the Ring', 'hint'],
       '// duration': '22h38m13s',
-      asins: [
-        '1705047572: ✓ Δ:13s - 22h38m0s -  The Fellowship of the Ring / J. R. R. Tolkien / n: Andy Serkis',
-        '0008487278: ✓ Δ:13s - 22h38m0s -  The Fellowship of the Ring / J. R. R. Tolkien / n: Andy Serkis',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Andy Serkis/J.R.R. Tolkien - The Lord of the Rings 2 - The Two Towers - Andy Serkis':
     {
-      author: ['J.R.R. Tolkien', 'hint'],
+      author: ['J. R. R. Tolkien, Andy Serkis', 'hint'],
       title: ['The Two Towers', 'hint'],
       '// duration': '20h46m37s',
-      asins: [
-        '0008487286: ✓ Δ:23s - 20h47m0s -  The Two Towers / J. R. R. Tolkien / n: Andy Serkis',
-        '1705047580: ✓ Δ:37s - 20h46m0s -  The Two Towers / J. R. R. Tolkien / n: Andy Serkis',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Andy Serkis/J.R.R. Tolkien - The Lord of the Rings 3 - The Return of the King - Andy Serkis':
     {
-      author: ['J.R.R. Tolkien', 'hint'],
+      author: ['J. R. R. Tolkien, Andy Serkis', 'hint'],
       title: ['The Return of the King', 'hint'],
       '// duration': '21h52m15s',
-      asins: [
-        '1705047599: ✓ Δ:15s - 21h52m0s -  The Return of the King / J. R. R. Tolkien / n: Andy Serkis',
-        '0008487294: ✓ Δ:15s - 21h52m0s -  The Return of the King / J. R. R. Tolkien / n: Andy Serkis',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Rob Inglis':
     {
@@ -1901,39 +1888,31 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Rob Inglis/J.R.R. Tolkien - The Hobbit - Rob Inglis':
     {
-      author: ['J.R.R. Tolkien', 'hint'],
+      author: ['J. R. R. Tolkien, Rob Inglis', 'hint'],
       title: ['The Hobbit', 'unique'],
       '// duration': '11h5m10s',
-      asins: [
-        'B0099RKI5W: ✓ Δ:10s - 11h5m0s -  The Hobbit / J. R. R. Tolkien / n: Rob Inglis',
-        'B0030EJV3U: ✓ Δ:3m10s - 11h2m0s -  The Hobbit / J. R. R. Tolkien / n: Rob Inglis',
-        'B00TJF0K5W: ✓ Δ:12m10s - 10h53m0s -  Der Hobbit / J. R. R. Tolkien / n: Gert Heidenreich',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Rob Inglis/J.R.R. Tolkien - The Lord of the Rings 1 - The Fellowship of the Ring - Rob Inglis':
     {
-      author: ['J.R.R. Tolkien', 'unique'],
+      author: ['J. R. R. Tolkien, Rob Inglis', 'hint'],
       title: ['The Fellowship of the Ring', 'hint'],
       '// duration': '19h56m30s',
-      asins: [
-        'B0036KVAZ0: ✓ Δ:3m30s - 19h53m0s -  The Lord of the Rings / J. R.R. Tolkien / n: Rob Inglis',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Rob Inglis/J.R.R. Tolkien - The Lord of the Rings 2 - The Two Towers - Rob Inglis':
     {
-      author: ['J.R.R. Tolkien', 'unique'],
+      author: ['J. R. R. Tolkien, Rob Inglis', 'hint'],
       title: ['The Two Towers', 'hint'],
       '// duration': '14h59m47s',
       asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/J.R.R. Tolkien - The Lord of the Rings - Rob Inglis/J.R.R. Tolkien - The Lord of the Rings 3 - The Return of the King - Rob Inglis':
     {
-      author: ['J.R.R. Tolkien', 'unique'],
+      author: ['J. R. R. Tolkien, Rob Inglis', 'hint'],
       title: ['The Return of the King', 'hint'],
       '// duration': '17h19m15s',
-      asins: [
-        'B0036GTIBW: ✓ Δ:7m15s - 17h12m0s -  The Return of the King / J. R.R. Tolkien / n: Rob Inglis',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/JackKornfield-TheInnerArtofMeditation':
     {

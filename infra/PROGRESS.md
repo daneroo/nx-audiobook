@@ -2,12 +2,12 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 288 of 543 53.0% (255 remaining)
+_Progress:_ 310 of 543 57.1% (233 remaining)
 
 - TOTAL+ - 543 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 288 `/Volumes/Space/Reading/audiobooks` - Staging books
-- REMAIN - 255 - Legacy books not in Staging
+- DONE++ - 310 `/Volumes/Space/Reading/audiobooks` - Staging books
+- REMAIN - 233 - Legacy books not in Staging
 - ADDED - 54 - Staging books not in Legacy
 
 ## ADDED - Staging books not in Legacy (54)
@@ -67,7 +67,7 @@ _Progress:_ 288 of 543 53.0% (255 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (255)
+## REMAIN - Legacy books not in Staging (233)
 
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
 - Brandon Sanderson - Sixth of the Dusk
@@ -80,28 +80,6 @@ _Progress:_ 288 of 543 53.0% (255 remaining)
 - Brent Weeks - The Broken Eye
 - Brent Weeks - The Blood Mirror
 - Brent Weeks - The Burning White
-- Ian Stewart - Calculating the Cosmos
-- Immanuel Kant - The Critique of Pure Reason
-- Isaac Asimov - Foundation
-- Isaac Asimov - Foundation & Empire
-- Isaac Asimov - Second Foundation
-- Isaac Asimov - I, Robot
-- Isaac Asimov - The Caves of Steel
-- Isaac Asimov - The Naked Sun
-- Isaac Asimov - The Complete Robot
-- Isaac Asimov - The Robots of Dawn
-- Isaac Asimov - Robots & Empire
-- Isaac Asimov - Robot Dreams
-- Isaac Asimov - Robot Visions
-- Isaac Asimov - The Positronic Man
-- J.R.R. Tolkien - The Hobbit
-- J.R.R. Tolkien - The Fellowship of the Ring
-- J.R.R. Tolkien - The Two Towers
-- J.R.R. Tolkien - The Return of the King
-- J.R.R. Tolkien - The Hobbit
-- J.R.R. Tolkien - The Fellowship of the Ring
-- J.R.R. Tolkien - The Two Towers
-- J.R.R. Tolkien - The Return of the King
 - Jack Kornfield - The Inner Art of Meditation
 - James Nestor - Breath: The New Science of a Lost Art
 - James Surowiecki - Wisdom of Crowds
@@ -327,7 +305,7 @@ _Progress:_ 288 of 543 53.0% (255 remaining)
 
 ## Books already Migrated
 
-There are 234 books which have been migrated.
+There are 256 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -513,6 +491,28 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Iain M. Banks - Surface Detail | 555.88 MiB → 484.14 MiB | 20h23m38s → 20h23m38s |
 | Iain M. Banks - The Hydrogen Sonata | 469.42 MiB → 416.69 MiB | 17h13m18s → 17h13m18s |
 | Iain M. Banks - The Algebraist | 742.52 MiB → 1253.46 MiB | 24h10m16s → 24h10m14s |
+| Ian Stewart - Calculating the Cosmos | 348.41 MiB → 349.14 MiB | 12h39m32s → 12h39m32s |
+| Immanuel Kant, Israel Bouseman - The Critique of Pure Reason | 736.68 MiB → 740.80 MiB | 26h49m15s → 26h49m15s |
+| Isaac Asimov - Foundation | 475.15 MiB → 482.44 MiB | 8h38m1s → 8h38m1s |
+| Isaac Asimov - Foundation and Empire | 268.97 MiB → 226.63 MiB | 9h34m40s → 9h34m40s |
+| Isaac Asimov - Second Foundation | 263.75 MiB → 219.65 MiB | 9h22m50s → 9h22m50s |
+| Isaac Asimov - I, Robot | 348.73 MiB → 354.26 MiB | 8h20m35s → 8h20m35s |
+| Isaac Asimov - The Complete Robot | 984.49 MiB → 987.46 MiB | 23h50m55s → 23h50m55s |
+| Isaac Asimov - Robot Dreams | 422.17 MiB → 423.70 MiB | 15h12m4s → 15h12m4s |
+| Isaac Asimov - Robot Visions | 422.73 MiB → 422.14 MiB | 15h8m32s → 15h8m32s |
+| Isaac Asimov - The Positronic Man | 205.78 MiB → 203.33 MiB | 8h26m18s → 8h26m18s |
+| Isaac Asimov - The Caves of Steel | 638.25 MiB → 650.07 MiB | 7h43m52s → 7h43m52s |
+| Isaac Asimov - The Naked Sun | 630.53 MiB → 641.09 MiB | 7h38m9s → 7h38m9s |
+| Isaac Asimov - The Robots of Dawn | 1296.93 MiB → 1319.70 MiB | 15h43m21s → 15h43m21s |
+| Isaac Asimov - Robots & Empire | 401.35 MiB → 403.98 MiB | 14h26m10s → 14h26m10s |
+| J. R. R. Tolkien, Andy Serkis - The Hobbit | 572.65 MiB → 576.06 MiB | 10h24m43s → 10h24m43s |
+| J. R. R. Tolkien, Andy Serkis - The Fellowship of the Ring | 621.86 MiB → 641.52 MiB | 22h38m13s → 22h38m21s |
+| J. R. R. Tolkien, Andy Serkis - The Two Towers | 570.76 MiB → 588.22 MiB | 20h46m37s → 20h46m44s |
+| J. R. R. Tolkien, Andy Serkis - The Return of the King | 600.81 MiB → 619.87 MiB | 21h52m15s → 21h52m22s |
+| J. R. R. Tolkien, Rob Inglis - The Hobbit | 305.18 MiB → 305.73 MiB | 11h5m10s → 11h5m10s |
+| J. R. R. Tolkien, Rob Inglis - The Fellowship of the Ring | 755.29 MiB → 572.15 MiB | 19h56m30s → 19h56m30s |
+| J. R. R. Tolkien, Rob Inglis - The Two Towers | 559.47 MiB → 558.66 MiB | 14h59m47s → 14h59m47s |
+| J. R. R. Tolkien, Rob Inglis - The Return of the King | 658.50 MiB → 663.13 MiB | 17h19m15s → 17h19m14s |
 | Jo Nesbø - The Bat | 257.13 MiB → 302.28 MiB | 10h44m9s → 10h41m26s |
 | Jo Nesbø - Cockroaches | 638.50 MiB → 585.03 MiB | 10h38m16s → 10h38m16s |
 | Jo Nesbø - The Redbreast | 459.90 MiB → 463.13 MiB | 16h41m9s → 16h41m9s |
