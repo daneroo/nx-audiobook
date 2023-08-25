@@ -65,15 +65,6 @@ rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical
 | `syno:Reading/audiobooks`        | Source for Audiobookshelf and Plex on audiobook VM                |
 | `./data/audiobooks`              | Developer view in this repo                                       |
 
-## One time migration to /Volumes/Reading/audiobooks
-
-```bash
-# on galois
-time (cd /Volumes/Space/Reading/audiobooks && find . -type f -print0 | sort -z | xargs -0 sha1sum > /tmp/sums-vol-space-reading-audiobooks.txt)
-time (cd /Volumes/Reading/audiobooks && find . -type f -print0 | sort -z | xargs -0 sha1sum > /tmp/sums-vol-reading-audiobooks.txt)
-diff /tmp/sums-vol-space-reading-audiobooks.txt /tmp/sums-vol-reading-audiobooks.txt
-```
-
 ## Normalization
 
 Normalization of audiobook files implies:

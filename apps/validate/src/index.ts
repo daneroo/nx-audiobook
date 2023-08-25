@@ -35,7 +35,7 @@ async function main(): Promise<void> {
       type: 'string',
       nargs: 1,
       describe:
-        'convert audio into destination path: e.g.: --convert /Volumes/Space/Reading/convert',
+        'convert audio into destination path: e.g.: --convert /Volumes/Space/Scratch/convert',
     })
     .option('progressDir', {
       type: 'string',

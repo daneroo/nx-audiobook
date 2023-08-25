@@ -67,8 +67,8 @@ pnpm vite-node src/index.ts --  --progressDir /Volumes/Reading/audiobooks | tee 
 time pnpm run dev --progressDir /Volumes/Reading/audiobooks
 
 # convert
-time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir /Volumes/Space/Reading/convert
-time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/' --convertDir /Volumes/Space/Reading/convert
+time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir /Volumes/Space/Scratch/convert
+time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Erikson - The Malazan Book of the Fallen/' --convertDir /Volumes/Space/Scratch/convert
 
 # Test the github action
 act --secret-file nx-cloud.env -j unit
