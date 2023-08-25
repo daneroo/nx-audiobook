@@ -6,7 +6,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Adam Becker - What Is Real': {
     author: ['Adam Becker', 'unique'],
-    title: ['What Is Real', 'hint'],
+    title: ['What Is Real?', 'hint'],
     '// duration': '11h45m0s',
     asins: [
       'B078P2MS47: ✓ Δ:0s - 11h45m0s -  What Is Real? / Adam Becker / n: Greg Tremblay',
@@ -1535,7 +1535,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Hale Dwoskin/Hale Dwoskin - Anger Solution':
     {
       author: ['Hale Dwoskin', 'unique'],
-      title: ['The Anger Solution', 'hint'],
+      title: ['Anger Solution', 'hint'],
       '// duration': '46m8s',
       skip: 'not on audible',
     },
@@ -1621,14 +1621,10 @@ export const db: Record<string, Hint> = {
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Homer - The Iliad': {
-    author: ['Homer, Stephen Mitchell - translator', 'unique'],
+    author: ['Homer', 'hint'],
     title: ['The Iliad', 'hint'],
     '// duration': '16h4m15s',
-    asins: [
-      'B005TJS450: ✓ Δ:15s - 16h4m0s -  The Iliad / Homer,Stephen Mitchell - translator / n: Alfred Molina',
-      'B07FSX5119: ✓ Δ:1m15s - 16h3m0s -  The Iliad / Homer,Stephen Mitchell - translator / n: Alfred Molina',
-      'B006G0AUXK: ✓ Δ:2m15s - 16h2m0s -  The Iliad / Homer,Stephen Mitchell - translator / n: Alfred Molina',
-    ],
+    asins: [],
   },
   '/Volumes/Space/archive/media/audiobooks/Iain M. Banks - Culture Novels': {
     skip: 'no audio files',
@@ -2938,7 +2934,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Lee Child - Jack Reacher/23.6 Cleaning the Gold':
     {
       author: ['Lee Child, Karin Slaughter', 'unique'],
-      title: [' Cleaning the Gold', 'hint'],
+      title: ['Cleaning the Gold', 'hint'],
       '// duration': '2h15m53s',
       asins: [
         '0008358958: ✓ Δ:53s - 2h15m0s -  Cleaning the Gold / Karin Slaughter,Lee Child / n: Eric Jason Martin,Jeff Harding',
