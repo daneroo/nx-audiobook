@@ -55,6 +55,7 @@ export const db: Record<string, Hint> = {
       '// duration': '6h54m25s',
       asins: [
         'B008DF9K32: ✓ Δ:25s - 6h54m0s -  The Murder of Roger Ackroyd / Agatha Christie / n: Hugh Fraser',
+        'B0036GRNDW: ✓ Δ:25s - 6h54m0s -  The Murder of Roger Ackroyd / Agatha Christie / n: Hugh Fraser',
         'B09YVQ9RTF: ✓ Δ:35s - 6h55m0s -  The Murder of Roger Ackroyd / Agatha Christie / n: Chirag Patel',
       ],
     },
@@ -255,9 +256,7 @@ export const db: Record<string, Hint> = {
       author: ['Bernard Cornwell', 'hint'],
       title: ['The Last Kingdom', 'hint'],
       '// duration': '12h53m28s',
-      asins: [
-        'B00JQEK2G8: ✓ Δ:9m28s - 12h44m0s -  The Lords of the North / Bernard Cornwell / n: Jonathan Keeble',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Bernard Cornwell - The Saxon Chronicles/Bernard Cornwell - Saxon Chronicles 02 - The Pale Horseman':
     {
@@ -526,7 +525,7 @@ export const db: Record<string, Hint> = {
       asins: [
         'B003ZWFO7E: ✓ Δ:3m6s - 45h30m0s -  The Way of Kings / Brandon Sanderson / n: Kate Reading,Michael Kramer',
         'B0052EFJLE: ✓ Δ:4m6s - 45h29m0s -  The Way of Kings / Brandon Sanderson / n: Michael Kramer,Kate Reading',
-        '8417347895: ✓ Δ:9m54s - 45h43m0s -  El camino de los reyes [The Way of Kings] / Brandon Sanderson / n: Esther Solans,Francesc Belda',
+        '8417347895: ✓ Δ:9m54s - 45h43m0s -  El camino de los reyes [The Way of Kings] / Brandon Sanderson,Rafael Marín Trechera / n: Francesc Belda,Esther Solans',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Brandon Sanderson - Cosmere/Sanderson, Brandon - Cosmere 18 - The Stormlight Archive 2 - Words of Radiance':
@@ -630,9 +629,7 @@ export const db: Record<string, Hint> = {
       author: ['Brandon Sanderson', 'hint'],
       title: ['Shadows for Silence in the Forests of Hell', 'hint'],
       '// duration': '2h13m7s',
-      asins: [
-        'B012EHVBGS: ✓ Δ:6m7s - 2h7m0s -  Shadows for Silence in the Forests of Hell / Brandon Sanderson / n: Kate Reading',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Brent Weeks - The LightBringer Saga':
     {
@@ -825,8 +822,8 @@ export const db: Record<string, Hint> = {
     title: ['The Three-Body Problem', 'unique'],
     '// duration': '14h37m48s',
     asins: [
-      'B01577B2Z2: ✓ Δ:48s - 14h37m0s -  The Three-Body Problem / Cixin Liu / n: Bruno Roubicek',
       '8417347526: ✓ Δ:48s - 14h37m0s -  El problema de los tres cuerpos [The Three-Body Problem] / Cixin Liu / n: Francesc Belda',
+      'B0BVW67D5L: ✓ Δ:8m12s - 14h46m0s -  The Three-Body Problem / Cixin Liu,Ken Liu / n: Daniel York Loh',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Cory Doctorow - Down and Out in the Magic Kingdom':
@@ -1041,8 +1038,6 @@ export const db: Record<string, Hint> = {
         "B0093PY9KK: ✓ Δ:32s - 5h51m0s -  Hitchhiker's Guide to the Galaxy / Douglas Adams / n: Stephen Fry",
         'B002V02SHK: ✓ Δ:3m32s - 5h48m0s -  Life, the Universe, and Everything / Douglas Adams / n: Martin Freeman',
         'B002V5D5ZE: ✓ Δ:4m32s - 5h47m0s -  The Restaurant at the End of the Universe / Douglas Adams / n: Martin Freeman',
-        'B00AAZDJG2: ✓ Δ:4m32s - 5h47m0s -  The Restaurant at the End of the Universe / Douglas Adams / n: Martin Freeman',
-        'B00AAZE0LA: ✓ Δ:7m32s - 5h44m0s -  Life, the Universe, and Everything / Douglas Adams / n: Martin Freeman',
       ],
     },
   "/Volumes/Space/archive/media/audiobooks/Douglas Adams - The Hitchhiker's Guide to the Galaxy 1-5 /Douglas Adams - THGTTG 02 - The Restaurant at the End of the Universe":
@@ -1081,8 +1076,8 @@ export const db: Record<string, Hint> = {
       title: ['So Long, and Thanks for All the Fish', 'hint'],
       '// duration': '4h39m14s',
       asins: [
-        'B00AAZEQK0: ✓ Δ:14s - 4h39m0s -  So Long and Thanks for All the Fish / Douglas Adams / n: Martin Freeman',
         'B002V1AGC8: ✓ Δ:14s - 4h39m0s -  So Long, and Thanks for All the Fish / Douglas Adams / n: Martin Freeman',
+        'B00AAZEQK0: ✓ Δ:14s - 4h39m0s -  So Long and Thanks for All the Fish / Douglas Adams / n: Martin Freeman',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Edward Chancellor - Devil Take the Hindmost':
@@ -1407,7 +1402,6 @@ export const db: Record<string, Hint> = {
       title: ['Flashman', 'unique'],
       '// duration': '9h58m15s',
       asins: [
-        'B00TJ1O9W6: ✓ Δ:15s - 9h58m0s -  Flashman / George MacDonald Fraser / n: Colin Mace',
         'B009R6RBEG: ✓ Δ:4m15s - 9h54m0s -  Royal Flash / George MacDonald Fraser / n: David Case',
       ],
     },
@@ -1511,7 +1505,7 @@ export const db: Record<string, Hint> = {
       '// duration': '18h4m56s',
       asins: [
         'B09FWP41GZ: ✓ Δ:56s - 18h4m0s -  All the Seas of the World / Guy Gavriel Kay / n: Simon Vance',
-        'B09X229M9S: ✓ Δ:56s - 18h4m0s -  All the Seas of the World / Guy Gavriel Kay / n: Simon Vance',
+        'B09X229M9S: ✓ Δ:56s - 18h4m0s -  All the Seas of the World / Guy Gavriel Kay / n: Mr Simon Vance',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Guy Gavriel Kay - The Lions of al-Rassan':
@@ -1624,7 +1618,9 @@ export const db: Record<string, Hint> = {
     author: ['Homer', 'hint'],
     title: ['The Iliad', 'hint'],
     '// duration': '16h4m15s',
-    asins: [],
+    asins: [
+      'B005TJS450: ✓ Δ:15s - 16h4m0s -  The Iliad / Homer,Stephen Mitchell - translator / n: Alfred Molina',
+    ],
   },
   '/Volumes/Space/archive/media/audiobooks/Iain M. Banks - Culture Novels': {
     skip: 'no audio files',
@@ -1637,7 +1633,7 @@ export const db: Record<string, Hint> = {
       asins: [
         'B004ZLBCO8: ✓ Δ:1m5s - 16h26m0s -  Consider Phlebas / Iain M. Banks / n: Peter Kenny',
         'B004ASGI7C: ✓ Δ:2m5s - 16h25m0s -  Consider Phlebas / Iain M. Banks / n: Peter Kenny',
-        '1549102893: ✓ Δ:2m5s - 16h25m0s -  Consider Phlebas (Booktrack Edition) / Iain M. Banks / n: Peter Kenny',
+        '1549102893: ✓ Δ:2m5s - 16h25m0s -  Consider Phlebas: Booktrack Edition / Iain M. Banks / n: Peter Kenny',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Iain M. Banks - Culture Novels/Iain M. Banks - Culture 02 - The Player of Games':
@@ -1742,7 +1738,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Immanuel Kant - The Critique of Pure Reason':
     {
-      author: ['Immanuel Kant', 'hint'],
+      author: ['Israel Bouseman, Immanuel Kant', 'hint'],
       title: ['The Critique of Pure Reason', 'hint'],
       '// duration': '26h49m15s',
       asins: [
@@ -2489,7 +2485,7 @@ export const db: Record<string, Hint> = {
       title: ['Red Country', 'hint'],
       '// duration': '19h52m37s',
       asins: [
-        '1549103016: ✓ Δ:23s - 19h53m0s -  Red Country (Booktrack Edition) / Joe Abercrombie / n: Steven Pacey',
+        '1549103016: ✓ Δ:23s - 19h53m0s -  Red Country: Booktrack Edition / Joe Abercrombie / n: Steven Pacey',
         'B00A0XYUTE: ✓ Δ:37s - 19h52m0s -  Red Country / Joe Abercrombie / n: Steven Pacey',
         'B009OROUGU: ✓ Δ:37s - 19h52m0s -  Red Country / Joe Abercrombie / n: Steven Pacey',
       ],
@@ -2984,9 +2980,7 @@ export const db: Record<string, Hint> = {
       author: ['Lucy Worsley', 'unique'],
       title: ['Agatha Christie: A Very Elusive Woman', 'unique'],
       '// duration': '13h47m1s',
-      asins: [
-        'B09PNSM79B: ✓ Δ:1m1s - 13h46m0s -  Agatha Christie / Lucy Worsley / n: Lucy Worsley',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Malcolm Gladwell - David and Goliath':
     {
@@ -2996,6 +2990,7 @@ export const db: Record<string, Hint> = {
       asins: [
         'B00EKQO0AG: ✓ Δ:20s - 7h1m0s -  David and Goliath / Malcolm Gladwell / n: Malcolm Gladwell',
         'B00FA48ZPS: ✓ Δ:40s - 7h0m0s -  David and Goliath / Malcolm Gladwell / n: Malcolm Gladwell',
+        'B0BVRPC67B: ✓ Δ:11m40s - 6h49m0s -  David et Goliath / Malcolm Gladwell / n: Lucas Vauthier',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Malcolm Gladwell-TippingPoint': {
@@ -3003,7 +2998,6 @@ export const db: Record<string, Hint> = {
     title: ['The Tipping Point', 'hint'],
     '// duration': '3h4m32s',
     asins: [
-      'B0032N8PRM: ✓ Δ:32s - 3h4m0s -  The Tipping Point / Malcolm Gladwell / n: Malcolm Gladwell',
       'B002V8H7B4: ✓ Δ:32s - 3h4m0s -  The Tipping Point / Malcolm Gladwell / n: Malcolm Gladwell',
     ],
   },
@@ -3032,8 +3026,8 @@ export const db: Record<string, Hint> = {
     title: ['Maddaddam', 'unique'],
     '// duration': '13h31m18s',
     asins: [
+      'B08CF27SZK: ✓ Δ:3m18s - 13h28m0s -  MaddAddam / Margaret Atwood / n: Bertrand Pazos',
       'B00E7Z9N6G: ✓ Δ:7m18s - 13h24m0s -  MaddAddam / Margaret Atwood / n: Bernadette Dunne,Bob Walter,Robbie Daymond',
-      'B00JV4FP1A: ✓ Δ:10m18s - 13h21m0s -  MaddAddam / Margaret Atwood / n: Bernadette Dunne,Bob Walter,Robbie Daymond',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Margaret Atwood - The Year of the Flood':
@@ -3277,7 +3271,7 @@ export const db: Record<string, Hint> = {
       '// duration': '9h37m28s',
       asins: [
         'B0081IIOP6: ✓ Δ:28s - 9h37m0s -  The Unbearable Lightness of Being / Milan Kundera,Michael Henry Heim - translator / n: Richmond Hoxie',
-        'B008PTRAWY: ✓ Δ:1m28s - 9h36m0s -  The Unbearable Lightness of Being / Milan Kundera / n: Richmond Hoxie',
+        'B008PTRAWY: ✓ Δ:1m28s - 9h36m0s -  The Unbearable Lightness of Being / Milan Kundera,Michael Henry Heim / n: Richmond Hoxie',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/N.K. Jemison - The Broken earth Series':
@@ -3292,7 +3286,7 @@ export const db: Record<string, Hint> = {
       asins: [
         'B012HQ7IPY: ✓ Δ:27s - 15h27m0s -  The Fifth Season / N. K. Jemisin / n: Robin Miles',
         'B017KZOTW2: ✓ Δ:27s - 15h27m0s -  The Fifth Season / N. K. Jemisin / n: Robin Miles',
-        '1549102567: ✓ Δ:27s - 15h27m0s -  The Fifth Season / N. K. Jemisin / n: Robin Miles',
+        '1549102567: ✓ Δ:27s - 15h27m0s -  The Fifth Season: Booktrack Edition / N. K. Jemisin / n: Robin Miles',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/N.K. Jemison - The Broken earth Series/N.K. Jemisin - 02 - The Obelisk Gate':
@@ -3303,7 +3297,7 @@ export const db: Record<string, Hint> = {
       asins: [
         'B01K5RQ6J6: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
         'B01LBGCRPW: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
-        'B09JFTZKMF: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate / N. K. Jemisin / n: Robin Miles',
+        'B09JFTZKMF: ✓ Δ:21s - 13h19m0s -  The Obelisk Gate: Booktrack Edition / N. K. Jemisin / n: Robin Miles',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/N.K. Jemison - The Broken earth Series/N.K. Jemisin - 03 - The Stone Sky3':
@@ -3312,7 +3306,7 @@ export const db: Record<string, Hint> = {
       title: ['The Stone Sky', 'hint'],
       '// duration': '14h16m51s',
       asins: [
-        '1549128310: ✓ Δ:9s - 14h17m0s -  The Stone Sky (Booktrack Edition) / N. K. Jemisin / n: Robin Miles',
+        '1549128310: ✓ Δ:9s - 14h17m0s -  The Stone Sky: Booktrack Edition / N. K. Jemisin / n: Robin Miles',
         'B07288JYYG: ✓ Δ:51s - 14h16m0s -  The Stone Sky / N. K. Jemisin / n: Robin Miles',
         'B06XRM24H2: ✓ Δ:51s - 14h16m0s -  The Stone Sky / N. K. Jemisin / n: Robin Miles',
       ],
@@ -3329,19 +3323,17 @@ export const db: Record<string, Hint> = {
     author: ['Nassim Nicholas Taleb', 'unique'],
     title: ['The Black Swan', 'hint'],
     '// duration': '14h20m16s',
-    asins: [
-      'B002V5BGUA: ✓ Δ:16s - 14h20m0s -  The Black Swan / Nassim Nicholas Taleb / n: David Chandler',
-    ],
+    asins: [],
   },
   '/Volumes/Space/archive/media/audiobooks/Neal Stephenson - Termination Shock':
     {
       author: ['Neal Stephenson', 'unique'],
       title: ['Termination Shock', 'unique'],
-      '// duration': '22h53m56s',
+      '// duration': '22h53m55s',
       asins: [
-        'B09KYHBKCQ: ✓ Δ:4s - 22h54m0s -  Termination Shock / Neal Stephenson / n: Edoardo Ballerini',
-        '0063028085: ✓ Δ:4s - 22h54m0s -  Termination Shock / Neal Stephenson / n: Edoardo Ballerini',
-        'B09F3QVQ29: ✓ Δ:56s - 22h53m0s -  Termination Shock / Neal Stephenson / n: Edoardo Ballerini',
+        '0063028085: ✓ Δ:5s - 22h54m0s -  Termination Shock / Neal Stephenson / n: Edoardo Ballerini',
+        'B09KYHBKCQ: ✓ Δ:5s - 22h54m0s -  Termination Shock / Neal Stephenson / n: Edoardo Ballerini',
+        'B09F3QVQ29: ✓ Δ:55s - 22h53m0s -  Termination Shock / Neal Stephenson / n: Edoardo Ballerini',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Neal Stephenson - The Baroque Cycle':
@@ -4152,8 +4144,8 @@ export const db: Record<string, Hint> = {
     ],
     '// duration': '11h18m58s',
     asins: [
-      '024153092X: ✓ Δ:2s - 11h19m0s -  Rationality / Steven Pinker / n: Arthur Morey',
       '1984843559: ✓ Δ:2s - 11h19m0s -  Rationality / Steven Pinker / n: Arthur Morey',
+      '024153092X: ✓ Δ:2s - 11h19m0s -  Rationality / Steven Pinker / n: Arthur Morey',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Steven Pinker - The Language Instinct':
@@ -4203,7 +4195,6 @@ export const db: Record<string, Hint> = {
       ],
       '// duration': '5h32m44s',
       asins: [
-        'B002V9ZB1Q: ✓ Δ:2m44s - 5h30m0s -  The First Three Minutes / Steven Weinberg / n: Raymond Todd',
         'B0BGVBN2Z7: ✓ Δ:4m16s - 5h37m0s -  The First Three Minutes / Steven Weinberg / n: Raymond Todd',
       ],
     },
@@ -4433,6 +4424,7 @@ export const db: Record<string, Hint> = {
         '179711705X: ✓ Δ:1m0s - 16h4m0s -  The Code Breaker / Walter Isaacson / n: Kathe Mazur,Walter Isaacson',
         '1398502332: ✓ Δ:1m0s - 16h4m0s -  The Code Breaker / Walter Isaacson / n: Kathe Mazur,Walter Isaacson - introduction and epilogue',
         '1760859915: ✓ Δ:1m0s - 16h4m0s -  The Code Breaker / Walter Isaacson / n: Kathe Mazur',
+        'B0CD2W3C1L: ✓ Δ:5m0s - 16h0m0s -  A decodificadora [The Code Breaker] / Walter Isaacson / n: Roberto Rocha',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/WalterIsaacson-SteveJobs': {
