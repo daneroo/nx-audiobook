@@ -162,3 +162,20 @@ ffprobe -hide_banner -loglevel fatal -show_error -show_format -show_streams -sho
 [2023-08-19 22:44:16] ERROR: [MediaFileScanner] TypeError: Cannot read properties of null (reading 'bit_rate') : "/audiobooks/Alastair Reynolds - Revelation Space/Alastair Reynolds - Revelation Space 04 - Absolution Gap/Alastair Reynolds - Revelation Space 04 - Absolution Gap.m4b" (MediaFileScanner.js:65)
 [2023-08-19 22:44:17] ERROR: [MediaFileScanner] TypeError: Cannot read properties of null (reading 'bit_rate') : "/audiobooks/Alastair Reynolds - Revelation Space/Alastair Reynolds - Revelation Space 03 - Redemption Ark/Alastair Reynolds - Revelation Space 03 - Redemption Ark.m4b" (MediaFileScanner.js:65)
 ```
+
+## Bitrate estimation
+
+```bash
+alias tone=~/Downloads/tone-0.1.5-osx-arm64/tone
+
+bitrate() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: bitrate <filename>"
+        return 1
+    fi
+
+    echo "Bitrate for: $(basename "$1")"
+    echo "Tone: $(tone dump "$1" | grep 'bitrate')"
+    echo "FFprobe: $(ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate "$1" | grep 'rate')"
+}
+```

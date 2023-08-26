@@ -1924,7 +1924,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/JamesNestor-BreathTheNewScienceOfALostArt':
     {
       author: ['James Nestor', 'unique'],
-      title: ['Breath: The New Science of a Lost Art', 'hint'],
+      title: ['Breath', 'hint'],
       '// duration': '7h19m11s',
       asins: [
         '024199022X: ✓ Δ:11s - 7h19m0s -  Breath / James Nestor / n: James Nestor',
@@ -1933,7 +1933,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/JamesSurowiecki-TheWisdomofCrowds': {
     author: ['James Surowiecki', 'unique'],
-    title: ['Wisdom of Crowds', 'unique'],
+    title: ['The Wisdom of Crowds', 'hint'],
     '// duration': '9h32m7s',
     asins: [
       'B002V8HM14: ✓ Δ:3m7s - 9h29m0s -  The Wisdom of Crowds / James Surowiecki / n: Grover Gardner',
@@ -1964,7 +1964,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Jeff VanderMeer - Southern Reach Trilogy/Jeff VanderMeer - Book 2 - Authority':
     {
-      author: ['Jeff Vandermeer', 'unique'],
+      author: ['Jeff VanderMeer', 'hint'],
       title: ['Authority', 'hint'],
       '// duration': '10h38m30s',
       asins: [
@@ -2257,7 +2257,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/JimCollins-GoodToGreat': {
     author: ['Jim Collins', 'unique'],
-    title: ['Good To Great', 'unique'],
+    title: ['Good to Great', 'hint'],
     '// duration': '5h40m11s',
     asins: [],
   },
