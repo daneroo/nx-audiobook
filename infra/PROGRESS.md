@@ -26,6 +26,7 @@ _Progress:_ 310 of 543 57.1% (233 remaining)
 - Arthur Conan Doyle - His Last Bow
 - Arthur Conan Doyle - The Casebook of Sherlock Holmes
 - Bessel A. van der Kolk - The Body Keeps the Score
+- Brené Brown - Atlas of the Heart
 - Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]
 - Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation]
 - Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation]
@@ -42,7 +43,6 @@ _Progress:_ 310 of 543 57.1% (233 remaining)
 - Brent Weeks - Black Prism (1 of 3) [Dramatized Adaptation]
 - Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation]
 - Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation]
-- Brené Brown - Atlas of the Heart
 - Frank Dikotter - The Tragedy of Liberation
 - Iain M. Banks - Feersum Endjinn
 - Ian Mortimer - Medieval Horizons

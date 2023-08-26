@@ -52,6 +52,9 @@ pnpm vite-node src/index.ts --  --progressDir /Volumes/Reading/audiobooks | tee 
 # on syno, pull from galois (Staging)
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /volume1/Reading/audiobooks/
 
+# Make a copy on shannon,davinci (till syncthing is setup)
+# on shannon,davinci pull from galois (Staging)
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /Volumes/Reading/audiobooks/
 ```
 
 ## Current State
