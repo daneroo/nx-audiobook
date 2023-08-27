@@ -2431,7 +2431,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Joe Abercrombie - The First Law/Joe Abercrombie - The First Law 03 Last Argument Of Kings':
     {
       author: ['Joe Abercrombie', 'unique'],
-      title: ['Last Argument Of Kings', 'hint'],
+      title: ['Last Argument of Kings', 'hint'],
       '// duration': '27h2m28s',
       asins: [
         'B003NHEU1M: ✓ Δ:32s - 27h3m0s -  Last Argument of Kings / Joe Abercrombie / n: Steven Pacey',
@@ -2490,7 +2490,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/John Steinbeck - The Acts of King Arthur and His Noble Knights':
     {
       author: ['John Steinbeck', 'unique'],
-      title: ['The Acts of King Arthur', 'unique'],
+      title: ['The Acts of King Arthur and His Noble Knights', 'hint'],
       '// duration': '13h58m18s',
       asins: [],
     },
@@ -2509,7 +2509,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/JonKabatZinn/Jon Kabat-Zinn - Mindfulness For Beginners':
     {
       author: ['Jon Kabat-Zinn', 'unique'],
-      title: ['Mindfulness For Beginners', 'unique'],
+      title: ['Mindfulness for Beginners', 'hint'],
       '// duration': '2h24m43s',
       asins: [
         'B002V0KO0S: ✓ Δ:43s - 2h24m0s -  Mindfulness for Beginners / Jon Kabat-Zinn / n: Jon Kabat-Zinn',
@@ -2557,10 +2557,11 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Kim Stanley Robinson - The Ministry for the Future':
     {
       author: ['Kim Stanley Robinson', 'unique'],
-      title: ['The Ministry for the Future: A Novel', 'unique'],
+      title: ['The Ministry for the Future', 'hint'],
       '// duration': '20h41m55s',
       asins: [
         '1549186434: ✓ Δ:5s - 20h42m0s -  The Ministry for the Future / Kim Stanley Robinson / n: Jennifer Fitzgerald,Fajer Al-Kaisi,Ramon de Ocampo,Gary Bennett,Raphael Corkhill,Barrie Kreinik,Natasha Soudek,Nikki Massoud,Joniece Abbott Pratt,Inés del Castillo,Vikas Adam',
+        '1405541121: ✓ Δ:55s - 20h41m0s -  The Ministry for the Future / Kim Stanley Robinson / n: Jennifer Fitzgerald,Fajer Al-Kaisi,Ramon de Ocampo,Gary Bennett,Raphael Corkhill,Barrie Kreinik,Natasha Soudek,Nikki Massoud,Joniece Abbott-Pratt,Inés del Castillo,Vikas Adam',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/KimMacQuarrie-TheLastDaysOfTheIncas':
@@ -2582,7 +2583,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/KurtVonnegut-AManWithoutACountry-Unb':
     {
       author: ['Kurt Vonnegut', 'unique'],
-      title: ['A Man Without A Country', 'unique'],
+      title: ['A Man Without a Country', 'hint'],
       '// duration': '2h25m54s',
       asins: [
         'B002VA97LA: ✓ Δ:3m54s - 2h22m0s -  A Man Without a Country / Kurt Vonnegut / n: Norman Dietz',
