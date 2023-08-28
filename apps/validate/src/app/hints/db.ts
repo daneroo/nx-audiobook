@@ -2597,8 +2597,8 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/LarryNiven-JerryPournelle-TheMoteInGodsEye':
     {
-      author: ['Larry Niven & Jerry Pournelle', 'unique'],
-      title: ["The Mote In God's Eye", 'unique'],
+      author: ['Larry Niven, Jerry Pournelle', 'hint'],
+      title: ["The Mote in God's Eye", 'hint'],
       '// duration': '23h7m6s',
       asins: [],
     },
@@ -2649,9 +2649,11 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Lee Child - Jack Reacher/04 The Visitor':
     {
       author: ['Lee Child', 'unique'],
-      title: ['Running Blind', 'hint'],
+      title: ['The Visitor', 'hint'],
       '// duration': '14h17m40s',
-      asins: [],
+      asins: [
+        'B076HVNW43: ✓ Δ:40s - 14h17m0s -  The Visitor / Lee Child / n: Jeff Harding',
+      ],
     },
   '/Volumes/Space/archive/media/audiobooks/Lee Child - Jack Reacher/05 Echo Burning':
     {
@@ -2909,7 +2911,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Lee Child - Jack Reacher/23.6 Cleaning the Gold':
     {
-      author: ['Lee Child, Karin Slaughter', 'unique'],
+      author: ['Lee Child', 'hint'],
       title: ['Cleaning the Gold', 'hint'],
       '// duration': '2h15m53s',
       asins: [

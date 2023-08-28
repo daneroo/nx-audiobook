@@ -2,12 +2,12 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 348 of 544 64.0% (196 remaining)
+_Progress:_ 389 of 544 71.5% (155 remaining)
 
 - TOTAL+ - 544 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 348 `/Volumes/Reading/audiobooks` - Staging books
-- REMAIN - 196 - Legacy books not in Staging
+- DONE++ - 389 `/Volumes/Reading/audiobooks` - Staging books
+- REMAIN - 155 - Legacy books not in Staging
 - ADDED - 55 - Staging books not in Legacy
 
 ## ADDED - Staging books not in Legacy (55)
@@ -68,7 +68,7 @@ _Progress:_ 348 of 544 64.0% (196 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (196)
+## REMAIN - Legacy books not in Staging (155)
 
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
 - Brandon Sanderson - Sixth of the Dusk
@@ -100,47 +100,6 @@ _Progress:_ 348 of 544 64.0% (196 remaining)
 - Jim Butcher - Bombshells
 - Jim Butcher - Jury Duty
 - Jim Butcher - Cold Case
-- Larry Bossidy - Execution
-- Larry Niven & Jerry Pournelle - The Mote In God's Eye
-- Larry Niven - Ringworld
-- Lawrence Lessig - Free Culture
-- Lee Child - Killing Floor
-- Lee Child - Die Trying
-- Lee Child - Tripwire
-- Lee Child - Running Blind
-- Lee Child - Echo Burning
-- Lee Child - Without Fail
-- Lee Child - Persuader
-- Lee Child - The Enemy
-- Lee Child - One Shot
-- Lee Child - The Hard Way
-- Lee Child - Bad Luck and Trouble
-- Lee Child - Nothing to Lose
-- Lee Child - James Penney’s New Identity - Guy Walks into a Bar
-- Lee Child - Gone Tomorrow
-- Lee Child - 61 Hours
-- Lee Child - Worth Dying For
-- Lee Child - Second Son
-- Lee Child - The Affair
-- Lee Child - Deep Down
-- Lee Child - A Wanted Man
-- Lee Child - High Heat
-- Lee Child - Never Go Back
-- Lee Child - Not a Drill
-- Lee Child - Personal
-- Lee Child - Small Wars
-- Lee Child - Make Me
-- Lee Child - Night School
-- Lee Child - No Middle Name
-- Lee Child - The Midnight Line
-- Lee Child - The Christmas Scorpion
-- Lee Child - Past Tense
-- Lee Child - The Fourth Man
-- Lee Child, Karin Slaughter - Cleaning the Gold
-- Lee Child - Blue Moon
-- Lee McIntyre - How to Talk to a Science Denier
-- Lee Smolin - Einstein's Unfinished Revolution
-- Lisa Randall - Dark Matter and the Dinosaurs
 - Lucy Worsley - Agatha Christie: A Very Elusive Woman
 - Malcolm Gladwell - David and Goliath
 - Malcolm Gladwell - The Tipping Point
@@ -269,7 +228,7 @@ _Progress:_ 348 of 544 64.0% (196 remaining)
 
 ## Books already Migrated
 
-There are 293 books which have been migrated.
+There are 334 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -535,6 +494,47 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Kim Stanley Robinson - The Ministry for the Future | 832.82 MiB → 809.79 MiB | 20h41m55s → 20h41m55s |
 | Kurt Vonnegut - A Man Without a Country | 35.80 MiB → 34.09 MiB | 2h25m54s → 2h25m56s |
 | Kurt Vonnegut - Slaughterhouse-Five | 71.70 MiB → 127.04 MiB | 5h13m16s → 5h13m16s |
+| Larry Bossidy - Execution | 809.52 MiB → 313.10 MiB | 7h48m58s → 7h49m0s |
+| Larry Niven - Ringworld | 463.82 MiB → 467.65 MiB | 11h15m27s → 11h15m27s |
+| Larry Niven, Jerry Pournelle - The Mote in God's Eye | 316.17 MiB → 339.01 MiB | 23h7m6s → 23h0m36s |
+| Lawrence Lessig - Free Culture | 100.30 MiB → 100.74 MiB | 9h41m43s → 9h42m26s |
+| Lee Child - Killing Floor | 427.04 MiB → 427.08 MiB | 15h40m5s → 15h40m5s |
+| Lee Child - Die Trying | 433.97 MiB → 434.33 MiB | 15h55m13s → 15h55m13s |
+| Lee Child - Tripwire | 430.21 MiB → 430.43 MiB | 15h46m59s → 15h46m59s |
+| Lee Child - The Visitor | 389.67 MiB → 390.14 MiB | 14h17m40s → 14h17m40s |
+| Lee Child - Echo Burning | 381.09 MiB → 381.39 MiB | 13h58m45s → 13h58m45s |
+| Lee Child - Without Fail | 381.74 MiB → 381.77 MiB | 14h0m8s → 14h0m8s |
+| Lee Child - Persuader | 389.26 MiB → 389.41 MiB | 14h16m45s → 14h16m45s |
+| Lee Child - The Enemy | 391.21 MiB → 391.34 MiB | 14h21m7s → 14h21m7s |
+| Lee Child - One Shot | 350.87 MiB → 350.98 MiB | 12h52m13s → 12h52m13s |
+| Lee Child - The Hard Way | 323.24 MiB → 323.54 MiB | 11h51m19s → 11h51m19s |
+| Lee Child - Bad Luck and Trouble | 345.73 MiB → 345.92 MiB | 12h40m51s → 12h40m51s |
+| Lee Child - Nothing to Lose | 366.58 MiB → 366.70 MiB | 13h26m52s → 13h26m52s |
+| Lee Child - James Penney’s New Identity - Guy Walks into a Bar | 38.70 MiB → 38.84 MiB | 1h24m47s → 1h24m47s |
+| Lee Child - Gone Tomorrow | 362.20 MiB → 362.39 MiB | 13h17m17s → 13h17m17s |
+| Lee Child - 61 Hours | 336.14 MiB → 336.27 MiB | 12h19m48s → 12h19m48s |
+| Lee Child - Worth Dying For | 354.95 MiB → 355.03 MiB | 13h1m12s → 13h1m12s |
+| Lee Child - Second Son | 33.98 MiB → 33.83 MiB | 1h14m19s → 1h14m19s |
+| Lee Child - The Affair | 334.95 MiB → 335.20 MiB | 12h17m13s → 12h17m13s |
+| Lee Child - Deep Down | 36.13 MiB → 36.35 MiB | 1h19m7s → 1h19m7s |
+| Lee Child - A Wanted Man | 321.50 MiB → 321.69 MiB | 11h47m33s → 11h47m33s |
+| Lee Child - High Heat | 54.38 MiB → 54.65 MiB | 1h59m18s → 1h59m18s |
+| Lee Child - Never Go Back | 320.43 MiB → 320.89 MiB | 11h45m11s → 11h45m11s |
+| Lee Child - Not a Drill | 33.52 MiB → 34.13 MiB | 1h13m19s → 1h13m19s |
+| Lee Child - Personal | 304.42 MiB → 304.58 MiB | 11h9m54s → 11h9m54s |
+| Lee Child - Small Wars | 35.14 MiB → 35.38 MiB | 1h16m51s → 1h16m51s |
+| Lee Child - Make Me | 319.29 MiB → 319.59 MiB | 11h42m54s → 11h42m54s |
+| Lee Child - Night School | 305.41 MiB → 305.75 MiB | 11h12m8s → 11h12m8s |
+| Lee Child - No Middle Name | 308.59 MiB → 308.92 MiB | 11h19m8s → 11h19m8s |
+| Lee Child - The Midnight Line | 307.69 MiB → 308.01 MiB | 11h17m18s → 11h17m18s |
+| Lee Child - The Christmas Scorpion | 15.70 MiB → 15.94 MiB | 34m3s → 34m3s |
+| Lee Child - Past Tense | 339.98 MiB → 340.44 MiB | 12h28m22s → 12h28m22s |
+| Lee Child - The Fourth Man | 16.40 MiB → 16.61 MiB | 35m40s → 35m40s |
+| Lee Child - Cleaning the Gold | 123.61 MiB → 123.64 MiB | 2h15m53s → 2h15m53s |
+| Lee Child - Blue Moon | 612.38 MiB → 612.80 MiB | 11h14m0s → 11h14m0s |
+| Lee McIntyre - How to Talk to a Science Denier | 234.22 MiB → 248.37 MiB | 8h31m34s → 8h31m34s |
+| Lee Smolin - Einstein's Unfinished Revolution | 286.18 MiB → 286.32 MiB | 10h18m21s → 10h18m21s |
+| Lisa Randall - Dark Matter and the Dinosaurs | 344.49 MiB → 362.71 MiB | 12h32m24s → 12h32m29s |
 | Milan Kundera - The Unbearable Lightness of Being | 264.52 MiB → 272.12 MiB | 9h37m28s → 9h37m30s |
 | Niall Ferguson - Doom | 455.71 MiB → 475.84 MiB | 16h35m22s → 16h35m22s |
 | Philip K. Dick - A Scanner Darkly | 251.18 MiB → 251.40 MiB | 9h13m2s → 9h13m2s |
