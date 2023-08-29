@@ -3005,11 +3005,12 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Margaret Atwood - Maddadam': {
     author: ['Margaret Atwood', 'unique'],
-    title: ['Maddaddam', 'unique'],
+    title: ['MaddAddam', 'hint'],
     '// duration': '13h31m18s',
     asins: [
       'B08CF27SZK: ✓ Δ:3m18s - 13h28m0s -  MaddAddam / Margaret Atwood / n: Bertrand Pazos',
       'B00E7Z9N6G: ✓ Δ:7m18s - 13h24m0s -  MaddAddam / Margaret Atwood / n: Bernadette Dunne,Bob Walter,Robbie Daymond',
+      'B00JV4FP1A: ✓ Δ:10m18s - 13h21m0s -  MaddAddam / Margaret Atwood / n: Bernadette Dunne,Bob Walter,Robbie Daymond',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Margaret Atwood - The Year of the Flood':
@@ -3034,8 +3035,8 @@ export const db: Record<string, Hint> = {
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Mary Beard - Classics': {
-    author: ['Mary Beard, John Henderson', 'unique'],
-    title: ['Classics: A Very Short Introduction', 'unique'],
+    author: ['Mary Beard', 'hint'],
+    title: ['Classics', 'hint'],
     '// duration': '4h18m21s',
     asins: [
       'B09MWKR3QB: ✓ Δ:21s - 4h18m0s -  Classics / Mary Beard,John Henderson / n: Julia Whelan',
@@ -3052,10 +3053,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Mary Beard - Twelve Caesars': {
     author: ['Mary Beard', 'unique'],
-    title: [
-      'Twelve Caesars - Images of Power from the Ancient World to the Modern',
-      'unique',
-    ],
+    title: ['Twelve Caesars', 'hint'],
     '// duration': '10h11m38s',
     asins: [
       '0691231826: ✓ Δ:38s - 10h11m0s -  Twelve Caesars / Mary Beard / n: Mary Beard',
@@ -3194,10 +3192,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Max Tegmark - Our Mathematical Universe':
     {
       author: ['Max Tegmark', 'unique'],
-      title: [
-        'Our Mathematical Universe - My Quest for the Ultimate Nature of Reality',
-        'unique',
-      ],
+      title: ['Our Mathematical Universe', 'hint'],
       '// duration': '15h22m22s',
       asins: [
         'B00HJX0952: ✓ Δ:22s - 15h22m0s -  Our Mathematical Universe / Max Tegmark / n: Rob Shapiro',
@@ -3215,7 +3210,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Michael Lewis - The Premonition': {
     author: ['Michael Lewis', 'unique'],
-    title: ['The Premonition: A Pandemic Story', 'unique'],
+    title: ['The Premonition', 'hint'],
     '// duration': '11h25m51s',
     asins: [
       'B08XQVYQ3D: ✓ Δ:9s - 11h26m0s -  The Premonition / Michael Lewis / n: Adenrele Ojo',
@@ -3263,7 +3258,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/N.K. Jemison - The Broken earth Series/N.K. Jemisin - 01 - The Fifth Season':
     {
       author: ['N. K. Jemisin', 'unique'],
-      title: ['The Broken Earth, Book 1 - The Fifth Season', 'unique'],
+      title: ['The Fifth Season', 'hint'],
       '// duration': '15h27m27s',
       asins: [
         'B012HQ7IPY: ✓ Δ:27s - 15h27m0s -  The Fifth Season / N. K. Jemisin / n: Robin Miles',
@@ -3424,9 +3419,11 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Nick Bostrom - Superintelligence': {
     author: ['Nick Bostrom', 'unique'],
-    title: ['Superintelligence (Unabridged)', 'unique'],
+    title: ['Superintelligence', 'hint'],
     '// duration': '14h17m8s',
-    asins: [],
+    asins: [
+      'B00LPMD72K: ✓ Δ:8s - 14h17m0s -  Superintelligence / Nick Bostrom / n: Napoleon Ryan',
+    ],
   },
   '/Volumes/Space/archive/media/audiobooks/Nicole Perlroth - This Is How They Tell Me the World Ends':
     {
@@ -3461,12 +3458,14 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Oscar Wilde - The Importance of Being Earnest':
     {
       author: ['Oscar Wilde', 'unique'],
-      title: ['The Importance of Being Earnest  (Dramatized)', 'unique'],
+      title: ['The Importance of Being Earnest', 'hint'],
       '// duration': '1h58m15s',
       asins: [
+        'B077YMPPSX: ✓ Δ:15s - 1h58m0s -  The Importance of Being Earnest / Oscar Wilde / n: Michael Ward',
         'B0036I8XE8: ✓ Δ:15s - 1h58m0s -  The Importance of Being Earnest (Dramatized) / Oscar Wilde / n: James Marsters,Charles Busch,Emily Bergl,Neil Dickson,Jill Gascoine,Christopher Neame,Matthew Wolf',
         'B002VAA82C: ✓ Δ:4m15s - 1h54m0s -  The Importance of Being Earnest (Dramatized) / Oscar Wilde / n: full cast,Greg Wise,Miriam Margolyes',
-        'B002V8M9R6: ✓ Δ:9m15s - 1h49m0s -  The Importance of Being Earnest (dramatized) / Oscar Wilde / n: John Gielgud,Edith Evans',
+        'B004AGWT1S: ✓ Δ:5m45s - 2h4m0s -  La importancia de llamarse Ernesto [The Importance of Being Earnest] / Oscar Wilde / n: Antón Palomar',
+        'B017DYVY1O: ✓ Δ:7m45s - 2h6m0s -  La Importancia de Llamarse Ernesto [The Importance of Being Earnest] / Oscar Wilde / n: RUMI Productions LLC',
       ],
     },
   '/Volumes/Space/archive/media/audiobooks/Oscar Wilde - The Picture of Dorian Gray':

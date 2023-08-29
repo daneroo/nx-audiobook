@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 389 of 544 71.5% (155 remaining)
+_Progress:_ 439 of 543 80.8% (104 remaining)
 
-- TOTAL+ - 544 - Legacy U Staging:
+- TOTAL+ - 543 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 389 `/Volumes/Reading/audiobooks` - Staging books
-- REMAIN - 155 - Legacy books not in Staging
-- ADDED - 55 - Staging books not in Legacy
+- DONE++ - 439 `/Volumes/Reading/audiobooks` - Staging books
+- REMAIN - 104 - Legacy books not in Staging
+- ADDED - 54 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (55)
+## ADDED - Staging books not in Legacy (54)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -59,7 +59,6 @@ _Progress:_ 389 of 544 71.5% (155 remaining)
 - Neil Gaiman, Terry Pratchett - Good Omens
 - Niall Ferguson - The Ascent of Money
 - Niall Ferguson - The Square and the Tower
-- Nick Bostrom - Superintelligence
 - Philip K. Dick - Blade Runner
 - Philip K. Dick - Do Androids Dream of Electric Sheep?
 - Roger Penrose - The Emperor's New Mind
@@ -68,7 +67,7 @@ _Progress:_ 389 of 544 71.5% (155 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (155)
+## REMAIN - Legacy books not in Staging (104)
 
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
 - Brandon Sanderson - Sixth of the Dusk
@@ -101,58 +100,7 @@ _Progress:_ 389 of 544 71.5% (155 remaining)
 - Jim Butcher - Jury Duty
 - Jim Butcher - Cold Case
 - Lucy Worsley - Agatha Christie: A Very Elusive Woman
-- Malcolm Gladwell - David and Goliath
-- Malcolm Gladwell - The Tipping Point
-- Malcolm Gladwell - Blink
-- Malcolm Gladwell - Talking to Strangers
-- Margaret Atwood - Maddaddam
-- Margaret Atwood - The Year of the Flood
-- Margaret Atwood - Oryx and Crake
-- Mary Beard, John Henderson - Classics: A Very Short Introduction
-- Mary Beard - SPQR
-- Mary Beard - Twelve Caesars - Images of Power from the Ancient World to the Modern
-- Mary Stewart - The Crystal Cave
-- Mary Stewart - The Hollow Hills
-- Mary Stewart - The Last Enchantment
-- Mary Stewart - The Wicked Day
-- Mary Stewart - The Prince and the Pilgrim
-- Maurice Druon - The Iron King
-- Maurice Druon - The Strangled Queen
-- Maurice Druon - The Poisoned Crown
-- Maurice Druon - The Royal Succession
-- Maurice Druon - The She-Wolf
-- Maurice Druon - The Lily and the Lion
-- Maurice Druon - The King Without a Kingdom
-- Max Tegmark - Life 3.0
-- Max Tegmark - Our Mathematical Universe - My Quest for the Ultimate Nature of Reality
-- Micaiah Johnson - The Space Between Worlds
-- Michael Lewis - The Premonition: A Pandemic Story
-- Michael Lewis - The Undoing Project
-- Miguel de Cervantes - Don Quixote
 - Mihaly Csikszentmihalyi - Flow
-- N. K. Jemisin - The Broken Earth, Book 1 - The Fifth Season
-- N. K. Jemisin - The Obelisk Gate
-- N. K. Jemisin - The Stone Sky
-- Nassim Nicholas Taleb - Antifragile
-- Nassim Nicholas Taleb - The Black Swan
-- Neal Stephenson - Termination Shock
-- Neal Stephenson - Quicksilver
-- Neal Stephenson - King of the Vagabonds
-- Neal Stephenson - Odalisque
-- Neal Stephenson - The Confusion
-- Neal Stephenson - Solomon's Gold
-- Neal Stephenson - Currency
-- Neal Stephenson - The System of the World
-- Neal Stephenson - Anathem
-- Neal Stephenson - Reamde
-- Neal Stephenson - Snow Crash
-- Neal Stephenson - The Diamond Age
-- Nick Bostrom - Superintelligence (Unabridged)
-- Nicole Perlroth - This Is How They Tell Me the World Ends
-- Oliver Burkeman - Four Thousand Weeks
-- Orson Scott Card - Ender's Game
-- Oscar Wilde - The Importance of Being Earnest  (Dramatized)
-- Oscar Wilde - The Picture of Dorian Gray
 - Patrick Rothfuss - The Slow Regard of Silent Things
 - Patrick Rothfuss - The Name of the Wind
 - Patrick Rothfuss - The Wise Man's Fear
@@ -228,7 +176,7 @@ _Progress:_ 389 of 544 71.5% (155 remaining)
 
 ## Books already Migrated
 
-There are 334 books which have been migrated.
+There are 385 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -535,8 +483,59 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Lee McIntyre - How to Talk to a Science Denier | 234.22 MiB → 248.37 MiB | 8h31m34s → 8h31m34s |
 | Lee Smolin - Einstein's Unfinished Revolution | 286.18 MiB → 286.32 MiB | 10h18m21s → 10h18m21s |
 | Lisa Randall - Dark Matter and the Dinosaurs | 344.49 MiB → 362.71 MiB | 12h32m24s → 12h32m29s |
+| Malcolm Gladwell - Blink | 433.87 MiB → 457.89 MiB | 7h44m28s → 7h44m28s |
+| Malcolm Gladwell - David and Goliath | 385.19 MiB → 390.24 MiB | 7h0m40s → 7h0m43s |
+| Malcolm Gladwell - Talking to Strangers | 239.49 MiB → 251.17 MiB | 8h42m8s → 8h42m8s |
+| Malcolm Gladwell - The Tipping Point | 129.44 MiB → 132.11 MiB | 3h4m32s → 3h4m32s |
+| Margaret Atwood - Oryx and Crake | 345.89 MiB → 351.32 MiB | 12h22m43s → 12h22m47s |
+| Margaret Atwood - The Year of the Flood | 580.11 MiB → 584.86 MiB | 14h4m50s → 14h4m50s |
+| Margaret Atwood - MaddAddam | 96.11 MiB → 97.54 MiB | 13h31m18s → 13h31m18s |
+| Mary Beard - Classics | 118.28 MiB → 119.55 MiB | 4h18m21s → 4h18m21s |
+| Mary Beard - SPQR | 505.01 MiB → 484.42 MiB | 18h30m38s → 18h30m38s |
+| Mary Beard - Twelve Caesars | 280.06 MiB → 285.49 MiB | 10h11m38s → 10h11m42s |
+| Mary Stewart - The Crystal Cave | 463.73 MiB → 473.38 MiB | 16h51m37s → 16h51m43s |
+| Mary Stewart - The Hollow Hills | 444.53 MiB → 462.78 MiB | 16h10m54s → 16h11m0s |
+| Mary Stewart - The Last Enchantment | 494.79 MiB → 518.71 MiB | 18h0m42s → 18h0m48s |
+| Mary Stewart - The Wicked Day | 406.66 MiB → 432.65 MiB | 14h48m10s → 14h48m15s |
+| Mary Stewart - The Prince and the Pilgrim | 223.46 MiB → 234.70 MiB | 8h8m3s → 8h8m6s |
+| Maurice Druon - The Iron King | 300.96 MiB → 300.97 MiB | 11h2m41s → 11h2m41s |
+| Maurice Druon - The Strangled Queen | 466.00 MiB → 435.89 MiB | 8h28m15s → 8h28m19s |
+| Maurice Druon - The Poisoned Crown | 228.25 MiB → 228.80 MiB | 8h22m34s → 8h22m34s |
+| Maurice Druon - The Royal Succession | 272.58 MiB → 273.06 MiB | 10h0m11s → 10h0m11s |
+| Maurice Druon - The She-Wolf | 357.11 MiB → 357.63 MiB | 13h6m21s → 13h6m21s |
+| Maurice Druon - The Lily and the Lion | 321.05 MiB → 321.53 MiB | 11h46m55s → 11h46m55s |
+| Maurice Druon - The King Without a Kingdom | 319.48 MiB → 320.08 MiB | 11h43m26s → 11h43m26s |
+| Max Tegmark - Life 3.0 | 367.78 MiB → 367.94 MiB | 13h29m55s → 13h29m55s |
+| Max Tegmark - Our Mathematical Universe | 423.61 MiB → 441.08 MiB | 15h22m22s → 15h22m28s |
+| Micaiah Johnson - The Space Between Worlds | 648.24 MiB → 652.54 MiB | 11h46m52s → 11h46m52s |
+| Michael Lewis - The Premonition | 314.00 MiB → 324.25 MiB | 11h25m51s → 11h25m51s |
+| Michael Lewis - The Undoing Project | 283.64 MiB → 285.11 MiB | 10h18m35s → 10h18m35s |
+| Miguel de Cervantes - Don Quixote | 983.51 MiB → 984.04 MiB | 36h5m52s → 36h5m52s |
 | Milan Kundera - The Unbearable Lightness of Being | 264.52 MiB → 272.12 MiB | 9h37m28s → 9h37m30s |
+| N. K. Jemisin - The Fifth Season | 422.65 MiB → 381.34 MiB | 15h27m27s → 15h27m27s |
+| N. K. Jemisin - The Obelisk Gate | 389.08 MiB → 388.30 MiB | 13h19m21s → 13h19m21s |
+| N. K. Jemisin - The Stone Sky | 392.33 MiB → 400.53 MiB | 14h16m51s → 14h16m56s |
+| Nassim Nicholas Taleb - Antifragile | 446.85 MiB → 463.35 MiB | 16h15m12s → 16h15m15s |
+| Nassim Nicholas Taleb - The Black Swan | 394.26 MiB → 396.49 MiB | 14h20m16s → 14h20m16s |
+| Neal Stephenson - Anathem | 783.67 MiB → 785.76 MiB | 32h26m4s → 32h25m13s |
+| Neal Stephenson - Reamde | 274.67 MiB → 276.44 MiB | 38h40m23s → 38h40m23s |
+| Neal Stephenson - Snow Crash | 477.53 MiB → 492.56 MiB | 17h23m9s → 17h23m9s |
+| Neal Stephenson - Termination Shock | 576.30 MiB → 576.30 MiB | 22h53m55s → 22h53m55s |
+| Neal Stephenson - Quicksilver | 594.34 MiB → 601.52 MiB | 14h26m47s → 14h25m31s |
+| Neal Stephenson - King of the Vagabonds | 460.18 MiB → 465.73 MiB | 11h11m10s → 11h10m12s |
+| Neal Stephenson - Odalisque | 1063.85 MiB → 745.27 MiB | 13h22m52s → 13h22m57s |
+| Neal Stephenson - The Confusion | 1420.14 MiB → 1440.30 MiB | 34h30m31s → 34h30m31s |
+| Neal Stephenson - Solomon's Gold | 779.27 MiB → 787.32 MiB | 14h10m49s → 14h10m55s |
+| Neal Stephenson - Currency | 783.57 MiB → 792.77 MiB | 14h15m30s → 14h15m36s |
+| Neal Stephenson - The System of the World | 638.38 MiB → 643.61 MiB | 11h36m59s → 11h37m4s |
+| Neal Stephenson - The Diamond Age | 510.39 MiB → 540.38 MiB | 18h33m35s → 18h28m35s |
 | Niall Ferguson - Doom | 455.71 MiB → 475.84 MiB | 16h35m22s → 16h35m22s |
+| Nick Bostrom - Superintelligence | 343.43 MiB → 396.61 MiB | 14h17m8s → 14h17m8s |
+| Nicole Perlroth - This Is How They Tell Me the World Ends | 1018.96 MiB → 1025.16 MiB | 18h31m40s → 18h31m40s |
+| Oliver Burkeman - Four Thousand Weeks | 162.09 MiB → 169.30 MiB | 5h54m5s → 5h54m5s |
+| Orson Scott Card - Ender's Game | 614.72 MiB → 620.71 MiB | 11h11m47s → 11h11m47s |
+| Oscar Wilde - The Importance of Being Earnest | 271.26 MiB → 230.35 MiB | 1h58m15s → 1h58m15s |
+| Oscar Wilde - The Picture of Dorian Gray | 889.59 MiB → 895.88 MiB | 8h5m10s → 8h5m10s |
 | Philip K. Dick - A Scanner Darkly | 251.18 MiB → 251.40 MiB | 9h13m2s → 9h13m2s |
 | Roger Penrose - Cycles of Time | 202.78 MiB → 213.76 MiB | 7h22m55s → 7h22m55s |
 | Salman Rushdie - Midnight's Children | 672.94 MiB → 677.19 MiB | 24h29m49s → 24h29m58s |
