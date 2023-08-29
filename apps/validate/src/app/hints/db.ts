@@ -3510,10 +3510,7 @@ export const db: Record<string, Hint> = {
   "/Volumes/Space/archive/media/audiobooks/Paul Halpern - Einstein's Dice and Schrodinger's Cat":
     {
       author: ['Paul Halpern', 'unique'],
-      title: [
-        "Einstein's Dice and Schrödinger's Cat: How Two Great Minds Battled Quantum Randomness to Create a Unified Theory of Physics",
-        'unique',
-      ],
+      title: ["Einstein's Dice and Schrödinger's Cat", 'hint'],
       '// duration': '10h18m50s',
       asins: [
         'B00VAW9TEA: ✓ Δ:50s - 10h18m0s -  Einstein’s Dice and Schrödinger’s Cat / Paul Halpern / n: Sean Runnette',
@@ -3575,10 +3572,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Priyamvada Natarajan - Mapping the Heavens':
     {
       author: ['Priyamvada Natarajan', 'unique'],
-      title: [
-        'Mapping the Heavens: The Radical Scientific Ideas That Reveal the Cosmos',
-        'unique',
-      ],
+      title: ['Mapping the Heavens', 'hint'],
       '// duration': '8h27m41s',
       asins: [
         'B01E0JI5AS: ✓ Δ:41s - 8h27m0s -  Mapping the Heavens / Priyamvada Natarajan / n: Elisabeth Rodgers',
