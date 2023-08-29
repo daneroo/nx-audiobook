@@ -3580,9 +3580,11 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/R.F. Kuang - The Poppy War': {
     author: ['R. F. Kuang', 'unique'],
-    title: ['The Poppy War: A Novel', 'unique'],
+    title: ['The Poppy War', 'hint'],
     '// duration': '18h57m41s',
-    asins: [],
+    asins: [
+      'B07BQ9QPTV: ✓ Δ:41s - 18h57m0s -  The Poppy War / R. F. Kuang / n: Emily Woo Zeller',
+    ],
   },
   '/Volumes/Space/archive/media/audiobooks/Ramez-Naam-Nexus': {
     author: ['Ramez Naam', 'unique'],
@@ -3609,11 +3611,10 @@ export const db: Record<string, Hint> = {
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/RichardMorgan-AlteredCarbon': {
-    author: ['Richard Morgan', 'hint'],
+    author: ['Richard K. Morgan', 'hint'],
     title: ['Altered Carbon', 'hint'],
     '// duration': '17h12m51s',
     asins: [
-      'B00BNHKG8A: ✓ Δ:1m9s - 17h14m0s -  Altered Carbon / Richard Morgan / n: Todd McLaren',
       'B002V1O6X8: ✓ Δ:2m51s - 17h10m0s -  Altered Carbon / Richard K. Morgan / n: Todd McLaren',
     ],
   },

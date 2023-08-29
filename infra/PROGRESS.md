@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 449 of 543 82.7% (94 remaining)
+_Progress:_ 464 of 550 84.4% (86 remaining)
 
-- TOTAL+ - 543 - Legacy U Staging:
+- TOTAL+ - 550 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 449 `/Volumes/Reading/audiobooks` - Staging books
-- REMAIN - 94 - Legacy books not in Staging
-- ADDED - 54 - Staging books not in Legacy
+- DONE++ - 464 `/Volumes/Reading/audiobooks` - Staging books
+- REMAIN - 86 - Legacy books not in Staging
+- ADDED - 61 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (54)
+## ADDED - Staging books not in Legacy (61)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -56,18 +56,25 @@ _Progress:_ 449 of 543 82.7% (94 remaining)
 - Joe Abercrombie - Half a War
 - Lucy Worsley - Agatha Christie
 - Naomi Novik - His Majesty's Dragon
+- Neal Stephenson - Fall; or, Dodge in Hell
 - Neil Gaiman, Terry Pratchett - Good Omens
 - Niall Ferguson - The Ascent of Money
 - Niall Ferguson - The Square and the Tower
 - Philip K. Dick - Blade Runner
 - Philip K. Dick - Do Androids Dream of Electric Sheep?
+- R. F. Kuang - The Dragon Republic
+- R. F. Kuang - The Burning God
+- Ramez Naam - Crux
+- Ramez Naam - Apex
+- Richard K. Morgan - Broken Angels
+- Richard K. Morgan - Woken Furies
 - Roger Penrose - The Emperor's New Mind
 - Stendhal - Stendhal - Le Rouge et le Noir
 - Tiago Forte - Building a Second Brain
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (94)
+## REMAIN - Legacy books not in Staging (86)
 
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
 - Brandon Sanderson - Sixth of the Dusk
@@ -101,15 +108,7 @@ _Progress:_ 449 of 543 82.7% (94 remaining)
 - Jim Butcher - Cold Case
 - Lucy Worsley - Agatha Christie: A Very Elusive Woman
 - Mihaly Csikszentmihalyi - Flow
-- R. F. Kuang - The Poppy War: A Novel
-- Ramez Naam - Nexus
-- Rebecca Wragg Sykes - Kindred
-- Richard Powers - The Overstory
-- Richard Morgan - Altered Carbon
-- Robert Greene - Mastery
 - Roger Penrose - The Emperor's New Mind - Concerning Computers, Minds, and the Laws of Physics
-- Rosa Brooks - How Everything Became War and the Military Became Everything
-- Ryan Holiday - Ego Is the Enemy
 - Sam Harris - Waking Up
 - Sean Carroll - The Big Picture
 - Sean Carroll - The Higgs Boson and Beyond
@@ -166,7 +165,7 @@ _Progress:_ 449 of 543 82.7% (94 remaining)
 
 ## Books already Migrated
 
-There are 395 books which have been migrated.
+There are 403 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -508,7 +507,7 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Nassim Nicholas Taleb - Antifragile                                                         | 446.85 MiB → 463.35 MiB   | 16h15m12s → 16h15m15s |
 | Nassim Nicholas Taleb - The Black Swan                                                      | 394.26 MiB → 396.49 MiB   | 14h20m16s → 14h20m16s |
 | Neal Stephenson - Anathem                                                                   | 783.67 MiB → 785.76 MiB   | 32h26m4s → 32h25m13s  |
-| Neal Stephenson - Reamde                                                                    | 274.67 MiB → 276.44 MiB   | 38h40m23s → 38h40m23s |
+| Neal Stephenson - Reamde                                                                    | 274.67 MiB → 540.15 MiB   | 38h40m23s → 38h32m52s |
 | Neal Stephenson - Snow Crash                                                                | 477.53 MiB → 492.56 MiB   | 17h23m9s → 17h23m9s   |
 | Neal Stephenson - Termination Shock                                                         | 576.30 MiB → 576.30 MiB   | 22h53m55s → 22h53m55s |
 | Neal Stephenson - Quicksilver                                                               | 594.34 MiB → 601.52 MiB   | 14h26m47s → 14h25m31s |
@@ -537,7 +536,15 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Peter Singer - The Life You Can Save                                                        | 204.85 MiB → 210.53 MiB   | 7h19m46s → 7h19m46s   |
 | Philip K. Dick - A Scanner Darkly                                                           | 251.18 MiB → 251.40 MiB   | 9h13m2s → 9h13m2s     |
 | Priyamvada Natarajan - Mapping the Heavens                                                  | 232.76 MiB → 241.86 MiB   | 8h27m41s → 8h27m44s   |
+| R. F. Kuang - The Poppy War                                                                 | 516.64 MiB → 517.08 MiB   | 18h57m41s → 18h57m41s |
+| Ramez Naam - Nexus                                                                          | 233.72 MiB → 239.09 MiB   | 5h41m20s → 5h41m20s   |
+| Rebecca Wragg Sykes - Kindred                                                               | 896.35 MiB → 910.55 MiB   | 16h26m29s → 16h26m29s |
+| Richard K. Morgan - Altered Carbon                                                          | 237.87 MiB → 951.28 MiB   | 17h12m51s → 17h11m12s |
+| Richard Powers - The Overstory                                                              | 633.90 MiB → 637.01 MiB   | 22h58m40s → 22h58m40s |
+| Robert Greene - Mastery                                                                     | 1337.04 MiB → 1346.31 MiB | 16h13m18s → 16h13m24s |
 | Roger Penrose - Cycles of Time                                                              | 202.78 MiB → 213.76 MiB   | 7h22m55s → 7h22m55s   |
+| Rosa Brooks - How Everything Became War and the Military Became Everything                  | 359.28 MiB → 387.03 MiB   | 13h4m43s → 13h4m46s   |
+| Ryan Holiday - Ego Is the Enemy                                                             | 189.06 MiB → 189.31 MiB   | 6h56m18s → 6h56m18s   |
 | Salman Rushdie - Midnight's Children                                                        | 672.94 MiB → 677.19 MiB   | 24h29m49s → 24h29m58s |
 | Salman Rushdie - The Enchantress of Florence                                                | 731.17 MiB → 704.87 MiB   | 13h17m5s → 13h17m4s   |
 | Salman Rushdie - The Satanic Verses                                                         | 599.81 MiB → 600.20 MiB   | 21h36m14s → 21h36m14s |
