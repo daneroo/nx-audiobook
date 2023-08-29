@@ -23,26 +23,7 @@ export async function reportProgress(
   // - legacy books found in staging
   // - legacy books not found in staging
   const legacyBooksNotInStaging = legacyBooks.filter((legacyBook) => {
-    let debug = false
-    if (legacyBook.metadata.title.includes('Snowman')) {
-      debug = true
-      console.error(
-        `*** found in legacy: ${bookKey(legacyBook)} : ${
-          legacyBook.metadata.title
-        }`
-      )
-    }
     const stagingBook = stagingBooksMap.get(bookKey(legacyBook))
-    if (debug) {
-      console.error('  * found in staging? ', stagingBook?.metadata.title)
-      // if not found, then list all the titles in stagingBooksMap
-      if (stagingBook === undefined) {
-        console.error('  * staging books:')
-        for (const [key, book] of stagingBooksMap.entries()) {
-          console.error(`  ? ${key} : ${book.metadata.title}`)
-        }
-      }
-    }
     return stagingBook === undefined
   })
   const stagingBooksNotInLegacy = stagingBooks.filter((stagingBook) => {
