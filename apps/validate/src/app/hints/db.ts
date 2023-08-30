@@ -2960,9 +2960,12 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Lucy Worsley - Agatha Christie A Very Elusive Woman':
     {
       author: ['Lucy Worsley', 'unique'],
-      title: ['Agatha Christie: A Very Elusive Woman', 'unique'],
+      title: ['Agatha Christie', 'hint'],
       '// duration': '13h47m1s',
-      asins: [],
+      asins: [
+        'B0BCHF3QZ6: ✓ Δ:1m1s - 13h46m0s -  Agatha Christie / Lucy Worsley / n: Lucy Worsley',
+        'B09PNSM79B: ✓ Δ:1m1s - 13h46m0s -  Agatha Christie / Lucy Worsley / n: Lucy Worsley',
+      ],
     },
   '/Volumes/Space/archive/media/audiobooks/Malcolm Gladwell - David and Goliath':
     {
@@ -3638,10 +3641,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Roger Penrose - The Emperors New Mind':
     {
       author: ['Roger Penrose', 'unique'],
-      title: [
-        "The Emperor's New Mind - Concerning Computers, Minds, and the Laws of Physics",
-        'unique',
-      ],
+      title: ["The Emperor's New Mind", 'hint'],
       '// duration': '18h26m58s',
       asins: [
         "1515943836: ✓ Δ:2s - 18h27m0s -  The Emperor's New Mind / Roger Penrose / n: Julian Elfer",
@@ -4214,7 +4214,10 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/TheGreatestScienceFictionStoriesOfThe20thCentury':
     {
-      author: ['Various Authors', 'multiple'],
+      author: [
+        'Greg Bear, Terry Bisson, David Brin, John W. Campbell, Harlan Ellison, Ursula K. Le Guin, Judith Merrill, Frederik Pohl, Eric Frank Russell, Arthur C. Clarke',
+        'multiple',
+      ],
       title: [
         'The Greatest Science Fiction Stories of the 20th Century',
         'unique',
@@ -4244,7 +4247,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Titania McGrath - Woke A Guide to Social Justice':
     {
       author: ['Titania McGrath', 'unique'],
-      title: ['Woke: A Guide to Social Justice', 'unique'],
+      title: ['Woke', 'hint'],
       '// duration': '2h52m40s',
       asins: [
         '1405545240: ✓ Δ:40s - 2h52m0s -  Woke / Titania McGrath / n: Alice Marshall',
@@ -4252,13 +4255,11 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Tom Holland - Dominion': {
     author: ['Tom Holland', 'unique'],
-    title: [
-      'Dominion: How the Christian Revolution Remade the World',
-      'unique',
-    ],
+    title: ['Dominion', 'hint'],
     '// duration': '22h18m10s',
     asins: [
       '1549151533: ✓ Δ:10s - 22h18m0s -  Dominion / Tom Holland / n: Tom Holland,Mark Meadows',
+      '1405534389: ✓ Δ:1m10s - 22h17m0s -  Dominion / Tom Holland,Nassim Nicholas Taleb / n: Mark Meadows,Tom Holland',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/Tom Holland - Persian Fire': {
@@ -4335,7 +4336,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Victoria Schwab - A Darker Shade of Magic Series/Victoria Schwab - SoM01 - A Darker Shade of Magic':
     {
-      author: ['V.E. Schwab', 'hint'],
+      author: ['V. E. Schwab', 'hint'],
       title: ['A Darker Shade of Magic', 'hint'],
       '// duration': '11h34m47s',
       asins: [
@@ -4345,7 +4346,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Victoria Schwab - A Darker Shade of Magic Series/Victoria Schwab - SoM02 - A Gathering of Shadows':
     {
-      author: ['V.E. Schwab', 'unique'],
+      author: ['V. E. Schwab', 'hint'],
       title: ['A Gathering of Shadows', 'hint'],
       '// duration': '16h9m14s',
       asins: [
@@ -4452,7 +4453,7 @@ export const db: Record<string, Hint> = {
     },
   "/Volumes/Space/archive/media/audiobooks/Wu Ch'eng-en - Journey to the West (Monkey) [abridged]":
     {
-      author: ["Wu Ch'eng-en", 'unique'],
+      author: ["Wu Ch'êng-ên", 'hint'],
       title: ['Monkey', 'hint'],
       '// duration': '13h40m58s',
       asins: [
