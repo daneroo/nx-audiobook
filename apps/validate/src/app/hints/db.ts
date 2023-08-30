@@ -3754,10 +3754,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/SeanCarroll-SomethingDeeplyHidden': {
     author: ['Sean Carroll', 'unique'],
-    title: [
-      'Something Deeply Hidden: Quantum Worlds and the Emergence of Spacetime',
-      'unique',
-    ],
+    title: ['Something Deeply Hidden', 'hint'],
     '// duration': '10h9m56s',
     asins: [
       '0525592474: ✓ Δ:56s - 10h9m0s -  Something Deeply Hidden / Sean Carroll / n: Sean Carroll',
@@ -3774,7 +3771,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Stendhal - Le rouge et le noir': {
     author: ['Stendhal', 'unique'],
-    title: ['Le Rouge et le noir', 'unique'],
+    title: ['Le Rouge et le Noir', 'hint'],
     '// duration': '18h38m57s',
     asins: [],
   },
@@ -3789,10 +3786,11 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/StephenFry-Heroes': {
     author: ['Stephen Fry', 'unique'],
-    title: ['Heroes: The Greek Myths Reimagined', 'unique'],
+    title: ['Heroes', 'hint'],
     '// duration': '15h1m59s',
     asins: [
       '1797204211: ✓ Δ:59s - 15h1m0s -  Heroes / Stephen Fry / n: Stephen Fry',
+      '1405940573: ✓ Δ:1m59s - 15h0m0s -  Heroes / Stephen Fry / n: Stephen Fry',
     ],
   },
   '/Volumes/Space/archive/media/audiobooks/StephenFry-Mythos': {
@@ -4102,10 +4100,7 @@ export const db: Record<string, Hint> = {
     },
   '/Volumes/Space/archive/media/audiobooks/Steven Pinker - Enlightenment Now': {
     author: ['Steven Pinker', 'unique'],
-    title: [
-      'Enlightenment Now: The Case for Reason, Science, Humanism, and Progress',
-      'unique',
-    ],
+    title: ['Enlightenment Now', 'hint'],
     '// duration': '19h49m51s',
     asins: [
       'B075FBZBLT: ✓ Δ:51s - 19h49m0s -  Enlightenment Now / Steven Pinker / n: Arthur Morey',
@@ -4114,10 +4109,7 @@ export const db: Record<string, Hint> = {
   },
   '/Volumes/Space/archive/media/audiobooks/Steven Pinker - Rationality': {
     author: ['Steven Pinker', 'unique'],
-    title: [
-      'Rationality - What It Is, Why It Seems Scarce, Why It Matters',
-      'unique',
-    ],
+    title: ['Rationality', 'hint'],
     '// duration': '11h18m58s',
     asins: [
       '1984843559: ✓ Δ:2s - 11h19m0s -  Rationality / Steven Pinker / n: Arthur Morey',
@@ -4136,10 +4128,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Steven Pinker - The Sense of Style':
     {
       author: ['Steven Pinker', 'unique'],
-      title: [
-        "The Sense of Style - The Thinking Person's Guide to Writing in the 21st Century",
-        'unique',
-      ],
+      title: ['The Sense of Style', 'hint'],
       '// duration': '12h26m26s',
       asins: [
         'B00M8U0CJ4: ✓ Δ:26s - 12h26m0s -  The Sense of Style / Steven Pinker / n: Arthur Morey',
@@ -4165,10 +4154,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Steven Weinberg - The First Three Minutes':
     {
       author: ['Steven Weinberg', 'unique'],
-      title: [
-        'The First Three Minutes: A Modern View Of The Origin Of The Universe',
-        'unique',
-      ],
+      title: ['The First Three Minutes', 'hint'],
       '// duration': '5h32m44s',
       asins: [
         'B0BGVBN2Z7: ✓ Δ:4m16s - 5h37m0s -  The First Three Minutes / Steven Weinberg / n: Raymond Todd',
@@ -4177,10 +4163,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Steven Weinberg - To Explain the World':
     {
       author: ['Steven Weinberg', 'unique'],
-      title: [
-        'To Explain the World - The Discovery of Modern Science',
-        'unique',
-      ],
+      title: ['To Explain the World', 'hint'],
       '// duration': '10h43m26s',
       asins: [
         'B00SX3YBEC: ✓ Δ:26s - 10h43m0s -  To Explain the World / Steven Weinberg / n: Tom Perkins',
@@ -4197,10 +4180,7 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Susan Wise Bauer - The History of the Ancient World':
     {
       author: ['Susan Wise Bauer', 'unique'],
-      title: [
-        'The History of the Ancient World: From the Earliest Accounts to the Fall of Rome',
-        'unique',
-      ],
+      title: ['The History of the Ancient World', 'hint'],
       '// duration': '26h21m3s',
       asins: [
         'B00CYNMAIG: ✓ Δ:1m3s - 26h20m0s -  The History of the Ancient World / Susan Wise Bauer / n: John Lee',

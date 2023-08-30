@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 464 of 550 84.4% (86 remaining)
+_Progress:_ 496 of 549 90.3% (53 remaining)
 
-- TOTAL+ - 550 - Legacy U Staging:
+- TOTAL+ - 549 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 464 `/Volumes/Reading/audiobooks` - Staging books
-- REMAIN - 86 - Legacy books not in Staging
-- ADDED - 61 - Staging books not in Legacy
+- DONE++ - 496 `/Volumes/Reading/audiobooks` - Staging books
+- REMAIN - 53 - Legacy books not in Staging
+- ADDED - 60 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (61)
+## ADDED - Staging books not in Legacy (60)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -69,12 +69,11 @@ _Progress:_ 464 of 550 84.4% (86 remaining)
 - Richard K. Morgan - Broken Angels
 - Richard K. Morgan - Woken Furies
 - Roger Penrose - The Emperor's New Mind
-- Stendhal - Stendhal - Le Rouge et le Noir
 - Tiago Forte - Building a Second Brain
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## REMAIN - Legacy books not in Staging (86)
+## REMAIN - Legacy books not in Staging (53)
 
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
 - Brandon Sanderson - Sixth of the Dusk
@@ -109,39 +108,6 @@ _Progress:_ 464 of 550 84.4% (86 remaining)
 - Lucy Worsley - Agatha Christie: A Very Elusive Woman
 - Mihaly Csikszentmihalyi - Flow
 - Roger Penrose - The Emperor's New Mind - Concerning Computers, Minds, and the Laws of Physics
-- Sam Harris - Waking Up
-- Sean Carroll - The Big Picture
-- Sean Carroll - The Higgs Boson and Beyond
-- Sean Carroll - Something Deeply Hidden: Quantum Worlds and the Emergence of Spacetime
-- Stendhal - Le Rouge et le noir
-- Stephen Batchelor - Buddhism Without Beliefs
-- Stephen Fry - Heroes: The Greek Myths Reimagined
-- Stephen Fry - Mythos
-- Steven Brust - Jhereg
-- Steven Brust - Yendi
-- Steven Brust - Teckla
-- Steven Brust - Taltos
-- Steven Brust - Phoenix
-- Steven Brust - Athyra
-- Steven Brust - Orca
-- Steven Brust - Dragon
-- Steven Brust - Issola
-- Steven Brust - Dzur
-- Steven Brust - Jhegaala
-- Steven Brust - Iorich
-- Steven Brust - Tiassa
-- Steven Brust - Hawk
-- Steven Brust - Vallista
-- Steven Pinker - Enlightenment Now: The Case for Reason, Science, Humanism, and Progress
-- Steven Pinker - Rationality - What It Is, Why It Seems Scarce, Why It Matters
-- Steven Pinker - The Language Instinct
-- Steven Pinker - The Sense of Style - The Thinking Person's Guide to Writing in the 21st Century
-- Stephen R. Covey - The 7 Habits of Highly Effective People
-- Steven Weinberg - Dreams of a Final Theory
-- Steven Weinberg - The First Three Minutes: A Modern View Of The Origin Of The Universe
-- Steven Weinberg - To Explain the World - The Discovery of Modern Science
-- Steven Pinker - The Stuff of Thought
-- Susan Wise Bauer - The History of the Ancient World: From the Earliest Accounts to the Fall of Rome
 - Ted Chiang - Exhalation
 - Ted Chiang - Stories of Your Life and Others
 - Ryan Holiday - The Daily Stoic
@@ -165,7 +131,7 @@ _Progress:_ 464 of 550 84.4% (86 remaining)
 
 ## Books already Migrated
 
-There are 403 books which have been migrated.
+There are 436 books which have been migrated.
 
 We could also report the media mime type, file counts,..
 
@@ -548,15 +514,38 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Salman Rushdie - Midnight's Children                                                        | 672.94 MiB → 677.19 MiB   | 24h29m49s → 24h29m58s |
 | Salman Rushdie - The Enchantress of Florence                                                | 731.17 MiB → 704.87 MiB   | 13h17m5s → 13h17m4s   |
 | Salman Rushdie - The Satanic Verses                                                         | 599.81 MiB → 600.20 MiB   | 21h36m14s → 21h36m14s |
+| Sam Harris - Waking Up                                                                      | 160.85 MiB → 163.49 MiB   | 5h53m37s → 5h53m37s   |
 | Scott Lynch - The Lies of Locke Lamora                                                      | 456.55 MiB → 600.25 MiB   | 21h53m27s → 21h59m56s |
 | Scott Lynch - Red Seas Under Red Skies                                                      | 707.75 MiB → 698.10 MiB   | 25h34m34s → 25h34m16s |
 | Scott Lynch - The Republic of Thieves                                                       | 1005.97 MiB → 647.78 MiB  | 23h45m54s → 23h43m32s |
+| Sean Carroll - Something Deeply Hidden                                                      | 280.63 MiB → 280.95 MiB   | 10h9m56s → 10h9m56s   |
+| Sean Carroll - The Big Picture                                                              | 357.03 MiB → 361.03 MiB   | 17h18m9s → 17h19m55s  |
+| Sean Carroll - The Higgs Boson and Beyond                                                   | 174.16 MiB → 175.85 MiB   | 6h20m28s → 6h20m28s   |
 | Seb Falk - The Light Ages                                                                   | 602.92 MiB → 604.53 MiB   | 11h3m49s → 11h3m49s   |
+| Stendhal - Le Rouge et le Noir                                                              | 518.71 MiB → 525.09 MiB   | 18h38m57s → 18h38m55s |
+| Stephen Batchelor - Buddhism Without Beliefs                                                | 260.68 MiB → 266.47 MiB   | 4h44m37s → 4h44m39s   |
+| Stephen Fry - Mythos                                                                        | 420.57 MiB → 421.85 MiB   | 15h25m42s → 15h25m42s |
+| Stephen Fry - Heroes                                                                        | 625.28 MiB → 630.91 MiB   | 15h1m59s → 15h1m59s   |
 | Steven Brust - The Phoenix Guards                                                           | 447.29 MiB → 449.11 MiB   | 16h14m22s → 16h14m28s |
 | Steven Brust - Five Hundred Years After                                                     | 580.24 MiB → 582.79 MiB   | 21h5m2s → 21h5m10s    |
 | Steven Brust - The Paths of the Dead                                                        | 421.62 MiB → 423.16 MiB   | 15h18m44s → 15h18m45s |
 | Steven Brust - The Lord of Castle Black                                                     | 387.82 MiB → 388.97 MiB   | 14h4m13s → 14h4m18s   |
 | Steven Brust - Sethra Lavode                                                                | 356.13 MiB → 357.61 MiB   | 12h55m57s → 12h55m52s |
+| Steven Brust - Jhereg                                                                       | 417.49 MiB → 440.77 MiB   | 8h40m29s → 8h40m53s   |
+| Steven Brust - Yendi                                                                        | 279.02 MiB → 282.84 MiB   | 6h46m21s → 6h46m21s   |
+| Steven Brust - Teckla                                                                       | 198.66 MiB → 206.53 MiB   | 7h13m55s → 7h13m55s   |
+| Steven Brust - Taltos                                                                       | 171.62 MiB → 180.74 MiB   | 6h14m6s → 6h14m9s     |
+| Steven Brust - Phoenix                                                                      | 217.93 MiB → 229.06 MiB   | 7h56m2s → 7h56m5s     |
+| Steven Brust - Athyra                                                                       | 460.99 MiB → 467.99 MiB   | 8h23m21s → 8h23m24s   |
+| Steven Brust - Orca                                                                         | 257.14 MiB → 264.92 MiB   | 9h16m10s → 9h16m14s   |
+| Steven Brust - Dragon                                                                       | 368.33 MiB → 373.79 MiB   | 8h56m25s → 8h56m25s   |
+| Steven Brust - Issola                                                                       | 475.74 MiB → 482.14 MiB   | 8h39m27s → 8h39m30s   |
+| Steven Brust - Dzur                                                                         | 447.02 MiB → 454.56 MiB   | 8h8m7s → 8h8m10s      |
+| Steven Brust - Jhegaala                                                                     | 252.66 MiB → 255.88 MiB   | 9h11m27s → 9h11m28s   |
+| Steven Brust - Iorich                                                                       | 238.86 MiB → 241.68 MiB   | 8h41m34s → 8h41m34s   |
+| Steven Brust - Tiassa                                                                       | 231.33 MiB → 240.70 MiB   | 8h24m7s → 8h24m10s    |
+| Steven Brust - Hawk                                                                         | 241.88 MiB → 253.71 MiB   | 8h48m16s → 8h48m20s   |
+| Steven Brust - Vallista                                                                     | 259.68 MiB → 260.31 MiB   | 9h31m44s → 9h31m44s   |
 | Steven Erikson - Gardens of the Moon                                                        | 709.95 MiB → 710.25 MiB   | 26h3m22s → 26h3m22s   |
 | Steven Erikson - Deadhouse Gates                                                            | 928.92 MiB → 929.18 MiB   | 34h5m36s → 34h5m36s   |
 | Steven Erikson - Memories of Ice                                                            | 1196.68 MiB → 1196.99 MiB | 43h55m17s → 43h55m17s |
@@ -567,6 +556,16 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
 | Steven Erikson - Toll the Hounds                                                            | 1199.65 MiB → 1200.16 MiB | 44h1m50s → 44h1m50s   |
 | Steven Erikson - Dust of Dreams                                                             | 1178.08 MiB → 1178.60 MiB | 43h14m19s → 43h14m19s |
 | Steven Erikson - The Crippled God                                                           | 1235.92 MiB → 1236.21 MiB | 45h21m42s → 45h21m42s |
+| Steven Pinker - Enlightenment Now                                                           | 587.62 MiB → 570.18 MiB   | 19h49m51s → 19h49m51s |
+| Steven Pinker - Rationality                                                                 | 310.88 MiB → 310.79 MiB   | 11h18m58s → 11h19m2s  |
+| Steven Pinker - The Language Instinct                                                       | 520.07 MiB → 535.43 MiB   | 18h56m6s → 18h56m6s   |
+| Steven Pinker - The Sense of Style                                                          | 341.77 MiB → 351.05 MiB   | 12h26m26s → 12h26m31s |
+| Steven Pinker - The Stuff of Thought                                                        | 245.86 MiB → 262.53 MiB   | 9h38m23s → 9h38m23s   |
+| Stephen R. Covey - The 7 Habits of Highly Effective People                                  | 364.21 MiB → 361.88 MiB   | 13h4m47s → 13h4m47s   |
+| Steven Weinberg - Dreams of a Final Theory                                                  | 45.70 MiB → 46.62 MiB     | 3h19m38s → 3h19m29s   |
+| Steven Weinberg - The First Three Minutes                                                   | 75.84 MiB → 82.13 MiB     | 5h32m44s → 5h31m11s   |
+| Steven Weinberg - To Explain the World                                                      | 294.61 MiB → 307.58 MiB   | 10h43m26s → 10h43m30s |
+| Susan Wise Bauer - The History of the Ancient World                                         | 728.05 MiB → 751.43 MiB   | 26h21m3s → 26h21m4s   |
 | Tony Fadell - Build                                                                         | 306.36 MiB → 316.71 MiB   | 11h5m3s → 11h5m3s     |
 | Ursula K. Le Guin - The Left Hand of Darkness                                               | 265.60 MiB → 267.10 MiB   | 9h40m5s → 9h40m5s     |
 | Vernor Vinge - A Fire Upon the Deep                                                         | 366.03 MiB → 300.89 MiB   | 23h51m54s → 21h47m53s |
