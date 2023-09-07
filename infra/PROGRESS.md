@@ -2,15 +2,15 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 516 of 547 94.3% (31 remaining)
+_Progress:_ 517 of 548 94.3% (31 remaining)
 
-- TOTAL+ - 547 - Legacy U Staging:
+- TOTAL+ - 548 - Legacy U Staging:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 516 `/Volumes/Reading/audiobooks` - Staging books
+- DONE++ - 517 `/Volumes/Reading/audiobooks` - Staging books
 - REMAIN - 31 - Legacy books not in Staging
-- ADDED - 58 - Staging books not in Legacy
+- ADDED - 59 - Staging books not in Legacy
 
-## ADDED - Staging books not in Legacy (58)
+## ADDED - Staging books not in Legacy (59)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -43,6 +43,7 @@ _Progress:_ 516 of 547 94.3% (31 remaining)
 - Brent Weeks - Black Prism (1 of 3) [Dramatized Adaptation]
 - Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation]
 - Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation]
+- Cory Doctorow - The Internet Con
 - Frank Dikotter - The Tragedy of Liberation
 - Iain M. Banks - Feersum Endjinn
 - Ian Mortimer - Medieval Horizons

@@ -27,6 +27,9 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 - Sync to syno:/Reading/audiobooks on davinci
 
 ```bash
+## Remove .DS_Store
+find audiobooks/ -name .DS_Store
+find audiobooks/ -name .DS_Store -delete
 
 ## Permissions dirs 755, files 644
 # Show Bad Perms
@@ -35,6 +38,17 @@ find audiobooks/ -not -perm 755 -type d -exec ls -ld {} \;
 # Fix Perms
 find audiobooks/ -type d -exec chmod 755 {} \;
 find audiobooks/ -type f -exec chmod 644 {} \;
+# Find xattrs - just files
+find audiobooks/ -type f | while read -r file; do
+    attrs=$(xattr "$file")
+    if [[ $attrs ]]; then
+        echo "$file has xattrs:"
+        echo "$attrs"
+        # Remove the xattrs
+        # xattr -c "$file"
+        echo "----"
+    fi
+done
 
 # Show unneeded files
 find audiobooks/ -type f -not -name \*m4b -not -name cover.jpg -not -name \*.epub -not -name .DS_Store | wc -l
