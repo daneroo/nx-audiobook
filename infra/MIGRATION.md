@@ -44,7 +44,7 @@ find audiobooks/ -type f | while read -r file; do
     if [[ $attrs ]]; then
         echo "$file has xattrs:"
         echo "$attrs"
-        # Remove the xattrs
+        # echo Remove the xattrs
         # xattr -c "$file"
         echo "----"
     fi
