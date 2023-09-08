@@ -34,12 +34,27 @@ export async function reportProgress(
     const wasSplit = legacySplit(bookKey(stagingBook))
     return wasSplit.length === 0
   })
-  const actuallyConsolidated = stagingBooksNotInLegacy.filter((stagingBook) => {
+  const actuallySplit = stagingBooksNotInLegacy.filter((stagingBook) => {
     const wasSplit = legacySplit(bookKey(stagingBook))
     return wasSplit.length > 0
   })
+  const actuallyRemaining = legacyBooksNotInStaging.filter((legacyBook) => {
+    const wasConsolidated = stagingConsolidated(bookKey(legacyBook))
+    const wasSplit = stagingSplit(bookKey(legacyBook))
+    return wasSplit.length === 0 && wasConsolidated.length === 0
+  })
+  const remainingButSplit = legacyBooksNotInStaging.filter((legacyBook) => {
+    const wasSplit = stagingSplit(bookKey(legacyBook))
+    return wasSplit.length > 0
+  })
+  const remainingButConsolidated = legacyBooksNotInStaging.filter(
+    (legacyBook) => {
+      const wasConsolidated = stagingConsolidated(bookKey(legacyBook))
+      return wasConsolidated.length > 0
+    }
+  )
 
-  const totalBooks = legacyBooks.length + stagingBooksNotInLegacy.length
+  const totalBooks = stagingBooks.length + actuallyRemaining.length
   console.info(`# Progress
 
 Progress report for moving audiobooks from Legacy to Staging
@@ -47,20 +62,23 @@ Progress report for moving audiobooks from Legacy to Staging
 _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
     (stagingBooks.length / totalBooks) *
     100
-  ).toFixed(1)}% (${legacyBooksNotInStaging.length} remaining)
+  ).toFixed(1)}% (${actuallyRemaining.length} remaining)
 
-- TOTAL+ - ${totalBooks} - Legacy U Staging:
+- TOTAL - ${totalBooks} - Staging + Actually Remaining:
 - SOURCE - ${legacyBooks.length} \`${legacyPath}\` - Legacy books
-- DONE++ - ${stagingBooks.length} \`${stagingPath}\` - Staging books
-- REMAIN - ${legacyBooksNotInStaging.length} - Legacy books not in Staging
-- NEW - ${stagingBooksNotInLegacy.length} - Staging books not in Legacy
+- DONE - ${stagingBooks.length} \`${stagingPath}\` - Staging books
+- Staging books not in Legacy - ${stagingBooksNotInLegacy.length}
   - ADDED - ${
     actuallyAdded.length
   } - Staging books not in Legacy (actually added)
-  - CONSOL - ${
-    actuallyConsolidated.length
-  } - Staging books not in Legacy (consolidated)
-`)
+  - SPLIT - ${
+    actuallySplit.length
+  } - Staging books not in Legacy but split into 1+
+- Legacy books not in Staging - ${legacyBooksNotInStaging.length}
+  - Actually REMAINING - ${actuallyRemaining.length}
+  - REMAINING but Split - ${remainingButSplit.length}
+  - REMAINING but Consolidated - ${remainingButConsolidated.length}
+  `)
 
   console.log(
     `## ADDED - Staging books not in Legacy (${actuallyAdded.length})\n`
@@ -71,9 +89,9 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
   console.log() // nl
 
   console.log(
-    `## CONSOLIDATED - Staging books not in Legacy but split from one (${actuallyConsolidated.length})\n`
+    `## SPLIT - Staging books not in Legacy but split from one (${actuallySplit.length})\n`
   )
-  for (const stagingBook of actuallyConsolidated) {
+  for (const stagingBook of actuallySplit) {
     const wasSplit = legacySplit(bookKey(stagingBook))
     console.log(
       `- ${bookKey(stagingBook)} ${
@@ -89,10 +107,42 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
     const legacyBook = legacyBooksMap.get(key)
     return legacyBook !== undefined
   })
+
+  // - remain but split
   console.log(
-    `## REMAIN - Legacy books not in Staging (${legacyBooksNotInStaging.length})\n`
+    `## Legacy books not in Staging but Split into 1+ (${remainingButSplit.length})\n`
   )
-  for (const stagingBook of legacyBooksNotInStaging) {
+  for (const stagingBook of remainingButSplit) {
+    const wasSplit = stagingSplit(bookKey(stagingBook))
+    console.log(
+      `- ${bookKey(stagingBook)}${
+        wasSplit.length > 0 ? ` (split into ${wasSplit})+` : ''
+      }`
+    )
+  }
+  console.log() // nl
+  // - remain but consolidated
+  console.log(
+    `## Legacy books not in Staging but consolidated into one (${remainingButConsolidated.length})\n`
+  )
+  for (const stagingBook of remainingButConsolidated) {
+    const wasConsolidated = stagingConsolidated(bookKey(stagingBook))
+    console.log(
+      `- ${bookKey(stagingBook)}${
+        wasConsolidated.length > 0
+          ? ` (consolidated into ${wasConsolidated})`
+          : ''
+      }`
+    )
+  }
+  console.log() // nl
+
+  // - actualy remaining
+
+  console.log(
+    `## REMAIN - Legacy books not in Staging (${actuallyRemaining.length})\n`
+  )
+  for (const stagingBook of actuallyRemaining) {
     console.log(`- ${bookKey(stagingBook)}`)
   }
   console.log() // nl
@@ -228,52 +278,53 @@ function legacySplit(stagingBookKey: string): string {
       'Brent Weeks - Black Prism',
 
     'Arthur Conan Doyle - A Study in Scarlet':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Sign of Four':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Adventures of Sherlock Holmes':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Memoirs of Sherlock Holmes':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Hound of the Baskervilles':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Return of Sherlock Holmes':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Valley of Fear':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - His Last Bow':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
     'Arthur Conan Doyle - The Casebook of Sherlock Holmes':
-      'Sherlock Holmes The Definitive Audio Collection',
+      'Sherlock Holmes: The Definitive Audio Collection',
   }
   return stagingToLegacy[stagingBookKey] ?? ''
 }
 
+// books from legacy that were consolidated into another title in staging
 function stagingConsolidated(legacyBookKey: string): string {
   // map from legacy key -> new (staging) key
   // - Jim Butcher - Side Jobs
   // - Jim Butcher - Brief Cases
 
   const legacyToStaging: Record<string, string> = {
-    'Jim Butcher - Restoration of Faith': 'Side Jobs',
-    'Jim Butcher - B is for Bigfoot': 'Brief Cases',
-    'Jim Butcher - Vinette': 'Side Jobs',
-    'Jim Butcher - Something Borrowed': 'Side Jobs',
-    'Jim Butcher - I Was a Teenage Bigfoot': 'Brief Cases',
-    'Jim Butcher - Its my Birthday too': 'Side Jobs',
-    'Jim Butcher - Heorot': 'Side Jobs',
-    'Jim Butcher - Day off': 'Side Jobs',
-    'Jim Butcher - Backup': 'Side Jobs',
-    'Jim Butcher - The Warrior': 'Side Jobs',
-    'Jim Butcher - Last Call': 'Side Jobs',
-    'Jim Butcher - Curses': 'Brief Cases',
-    'Jim Butcher - Love Hurts': 'Side Jobs',
-    'Jim Butcher - Even Hand': 'Brief Cases',
-    'Jim Butcher - Bigfoot on Campus': 'Brief Cases',
-    'Jim Butcher - Aftermath': 'Side Jobs',
-    'Jim Butcher - Bombshells': 'Brief Cases',
-    'Jim Butcher - Jury Duty': 'Brief Cases',
-    'Jim Butcher - Cold Case': 'Brief Cases',
+    'Jim Butcher - Restoration of Faith': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - B is for Bigfoot': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Vinette': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Something Borrowed': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - I Was a Teenage Bigfoot': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Its my Birthday too': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Heorot': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Day off': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Backup': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - The Warrior': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Last Call': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Curses': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Love Hurts': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Even Hand': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Bigfoot on Campus': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Aftermath': 'Jim Butcher - Side Jobs',
+    'Jim Butcher - Bombshells': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Jury Duty': 'Jim Butcher - Brief Cases',
+    'Jim Butcher - Cold Case': 'Jim Butcher - Brief Cases',
 
     'Brandon Sanderson - Sixth of the Dusk':
       'Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection',
@@ -285,6 +336,30 @@ function stagingConsolidated(legacyBookKey: string): string {
       'Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection',
     'Brandon Sanderson - Shadows for Silence in the Forests of Hell':
       'Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection',
+  }
+  return legacyToStaging[legacyBookKey] ?? ''
+}
+
+// books from legacy that were split into many another titles in staging, return the first
+function stagingSplit(legacyBookKey: string): string {
+  // map from legacy key -> new (staging) key
+  // - Jim Butcher - Side Jobs
+  // - Jim Butcher - Brief Cases
+
+  const legacyToStaging: Record<string, string> = {
+    'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection':
+      'Arthur Conan Doyle - A Study in Scarlet',
+
+    'Brent Weeks - The Black Prism':
+      'Brent Weeks - The Black Prism (1 of 3) [Dramatized Adaptation]',
+    'Brent Weeks - The Blinding Knife':
+      'Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]',
+    'Brent Weeks - The Broken Eye':
+      'Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation]',
+    'Brent Weeks - The Blood Mirror':
+      'Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]',
+    'Brent Weeks - The Burning White':
+      'Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation]',
   }
   return legacyToStaging[legacyBookKey] ?? ''
 }

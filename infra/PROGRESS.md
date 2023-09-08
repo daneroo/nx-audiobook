@@ -2,15 +2,18 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 518 of 549 94.4% (31 remaining)
+_Progress:_ 518 of 519 99.8% (1 remaining)
 
-- TOTAL+ - 549 - Legacy U Staging:
+- TOTAL - 519 - Staging + Actually Remaining:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE++ - 518 `/Volumes/Reading/audiobooks` - Staging books
-- REMAIN - 31 - Legacy books not in Staging
-- NEW - 60 - Staging books not in Legacy
+- DONE - 518 `/Volumes/Reading/audiobooks` - Staging books
+- Staging books not in Legacy - 60
   - ADDED - 35 - Staging books not in Legacy (actually added)
-  - CONSOL - 25 - Staging books not in Legacy (consolidated)
+  - SPLIT - 25 - Staging books not in Legacy but split into 1+
+- Legacy books not in Staging - 31
+  - Actually REMAINING - 1
+  - REMAINING but Split - 6
+  - REMAINING but Consolidated - 24
 
 ## ADDED - Staging books not in Legacy (35)
 
@@ -50,17 +53,17 @@ _Progress:_ 518 of 549 94.4% (31 remaining)
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
 
-## CONSOLIDATED - Staging books not in Legacy but split from one (25)
+## SPLIT - Staging books not in Legacy but split from one (25)
 
-- Arthur Conan Doyle - A Study in Scarlet (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Sign of Four (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Adventures of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Memoirs of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Hound of the Baskervilles (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Return of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Valley of Fear (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - His Last Bow (from Sherlock Holmes The Definitive Audio Collection)
-- Arthur Conan Doyle - The Casebook of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - A Study in Scarlet (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Sign of Four (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Adventures of Sherlock Holmes (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Memoirs of Sherlock Holmes (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Hound of the Baskervilles (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Return of Sherlock Holmes (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Valley of Fear (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - His Last Bow (from Sherlock Holmes: The Definitive Audio Collection)
+- Arthur Conan Doyle - The Casebook of Sherlock Holmes (from Sherlock Holmes: The Definitive Audio Collection)
 - Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
 - Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
 - Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
@@ -78,38 +81,44 @@ _Progress:_ 518 of 549 94.4% (31 remaining)
 - Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation] (from Brent Weeks - Black Prism)
 - Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation] (from Brent Weeks - Black Prism)
 
-## REMAIN - Legacy books not in Staging (31)
+## Legacy books not in Staging but Split into 1+ (6)
 
-- Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection
-- Brandon Sanderson - Sixth of the Dusk
-- Brandon Sanderson - Allomancer Jak and the Pits of Eltania
-- Brandon Sanderson - The Eleventh Metal
-- Brandon Sanderson - The Hope of Elantris
-- Brandon Sanderson - Shadows for Silence in the Forests of Hell
-- Brent Weeks - The Black Prism
-- Brent Weeks - The Blinding Knife
-- Brent Weeks - The Broken Eye
-- Brent Weeks - The Blood Mirror
-- Brent Weeks - The Burning White
-- Jim Butcher - Restoration of Faith
-- Jim Butcher - B is for Bigfoot
-- Jim Butcher - Vinette
-- Jim Butcher - Something Borrowed
-- Jim Butcher - I Was a Teenage Bigfoot
-- Jim Butcher - Its my Birthday too
-- Jim Butcher - Heorot
-- Jim Butcher - Day off
-- Jim Butcher - Backup
-- Jim Butcher - The Warrior
-- Jim Butcher - Last Call
-- Jim Butcher - Curses
-- Jim Butcher - Love Hurts
-- Jim Butcher - Even Hand
-- Jim Butcher - Bigfoot on Campus
-- Jim Butcher - Aftermath
-- Jim Butcher - Bombshells
-- Jim Butcher - Jury Duty
-- Jim Butcher - Cold Case
+- Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection (split into Arthur Conan Doyle - A Study in Scarlet)+
+- Brent Weeks - The Black Prism (split into Brent Weeks - The Black Prism (1 of 3) [Dramatized Adaptation])+
+- Brent Weeks - The Blinding Knife (split into Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation])+
+- Brent Weeks - The Broken Eye (split into Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation])+
+- Brent Weeks - The Blood Mirror (split into Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation])+
+- Brent Weeks - The Burning White (split into Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation])+
+
+## Legacy books not in Staging but consolidated into one (24)
+
+- Brandon Sanderson - Sixth of the Dusk (consolidated into Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection)
+- Brandon Sanderson - Allomancer Jak and the Pits of Eltania (consolidated into Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection)
+- Brandon Sanderson - The Eleventh Metal (consolidated into Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection)
+- Brandon Sanderson - The Hope of Elantris (consolidated into Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection)
+- Brandon Sanderson - Shadows for Silence in the Forests of Hell (consolidated into Brandon Sanderson - Arcanum Unbounded: The Cosmere Collection)
+- Jim Butcher - Restoration of Faith (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - B is for Bigfoot (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Vinette (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Something Borrowed (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - I Was a Teenage Bigfoot (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Its my Birthday too (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Heorot (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Day off (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Backup (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - The Warrior (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Last Call (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Curses (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Love Hurts (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Even Hand (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Bigfoot on Campus (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Aftermath (consolidated into Jim Butcher - Side Jobs)
+- Jim Butcher - Bombshells (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Jury Duty (consolidated into Jim Butcher - Brief Cases)
+- Jim Butcher - Cold Case (consolidated into Jim Butcher - Brief Cases)
+
+## REMAIN - Legacy books not in Staging (1)
+
 - Mihaly Csikszentmihalyi - Flow
 
 ## Books already Migrated
