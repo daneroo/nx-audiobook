@@ -8,16 +8,17 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 
 - [x] Dropbox - CurrentlyReading
 - [ ] Dropbox - OnDeck
-- [ ]NewNotAdded (~/Downloads)
-
-Broken durations/bitrate (>1000kbps)
+- [ ] NewNotAdded (~/Downloads)
+- [x] Separate Added - into ActuallyAdded and SplitFromLegacy
+- [ ] Remove Consolidated from Remaining books
+- [ ] Broken durations/bitrate (>1000kbps) - New only
+  - [ ] Just A little hatred
 
 ```txt
 =-=-= kbps > 1000 6715.817453027139 15m58s /Volumes/Space/archive/media/audiobooks/Alistair Reynolds - Revelation Space/3. Alastair Reynolds - Revelation Space 03 Redemption Ark
 =-=-= kbps > 1000 13398.84309623431 7m58s /Volumes/Space/archive/media/audiobooks/Alistair Reynolds - Revelation Space/4. Alastair Reynolds - Revelation Space 04 Absolution Gap
 =-=-= kbps > 1000 9289866.752 1s /Volumes/Space/archive/media/audiobooks/Joe Abercrombie - The Age of Madness/Joe Abercrombie - The Age of Madness 01 - A Little Hatred
 =-=-= kbps > 1000 9293078.984 1s /Volumes/Reading/audiobooks/Joe Abercrombie - The Age of Madness/Joe Abercrombie - The Age of Madness 01 - A Little Hatred
-
 ```
 
 ### Stretch
@@ -27,6 +28,7 @@ Broken durations/bitrate (>1000kbps)
   - Perhaps as with directory-digests on multiple machines
   - See [Tone Dump](#tone-dump) below
 - Syncthing for `/Volumes/Reading/` on galois and davinci, at least
+  - Move back to `/Volumes/Space/Reading/audiobooks`
 - Rsync back to syno, from [galois|davinci] (syncthing on Synology doesn't look like a good idea)
 - Borgbackup: from ?
 

@@ -8,42 +8,19 @@ _Progress:_ 518 of 549 94.4% (31 remaining)
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
 - DONE++ - 518 `/Volumes/Reading/audiobooks` - Staging books
 - REMAIN - 31 - Legacy books not in Staging
-- ADDED - 60 - Staging books not in Legacy
+- NEW - 60 - Staging books not in Legacy
+  - ADDED - 35 - Staging books not in Legacy (actually added)
+  - CONSOL - 25 - Staging books not in Legacy (consolidated)
 
-## ADDED - Staging books not in Legacy (60)
+## ADDED - Staging books not in Legacy (35)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
 - Alastair Reynolds - Inhibitor Phase
 - Alastair Reynolds - Galactic North
-- Arthur Conan Doyle - A Study in Scarlet
-- Arthur Conan Doyle - The Sign of Four
-- Arthur Conan Doyle - The Adventures of Sherlock Holmes
-- Arthur Conan Doyle - The Memoirs of Sherlock Holmes
-- Arthur Conan Doyle - The Hound of the Baskervilles
-- Arthur Conan Doyle - The Return of Sherlock Holmes
-- Arthur Conan Doyle - The Valley of Fear
-- Arthur Conan Doyle - His Last Bow
-- Arthur Conan Doyle - The Casebook of Sherlock Holmes
 - Bessel A. van der Kolk - The Body Keeps the Score
 - Brandon Sanderson - The Lost Metal
 - Brené Brown - Atlas of the Heart
-- Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]
-- Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation]
-- Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation]
-- Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]
-- Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation]
-- Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation]
-- Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]
-- Brent Weeks - The Blood Mirror (2 of 2) [Dramatized Adaptation]
-- Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation]
-- Brent Weeks - The Burning White (2 of 5) [Dramatized Adaptation]
-- Brent Weeks - The Burning White (3 of 5) [Dramatized Adaptation]
-- Brent Weeks - The Burning White (4 of 5) [Dramatized Adaptation]
-- Brent Weeks - The Burning White (5 of 5) [Dramatized Adaptation]
-- Brent Weeks - Black Prism (1 of 3) [Dramatized Adaptation]
-- Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation]
-- Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation]
 - Cory Doctorow - The Internet Con
 - Frank Dikotter - The Tragedy of Liberation
 - Iain M. Banks - Feersum Endjinn
@@ -72,6 +49,34 @@ _Progress:_ 518 of 549 94.4% (31 remaining)
 - Tiago Forte - Building a Second Brain
 - Ursula K. Le Guin - The Dispossessed
 - William Gibson - The Peripheral
+
+## CONSOLIDATED - Staging books not in Legacy but split from one (25)
+
+- Arthur Conan Doyle - A Study in Scarlet (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Sign of Four (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Adventures of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Memoirs of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Hound of the Baskervilles (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Return of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Valley of Fear (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - His Last Bow (from Sherlock Holmes The Definitive Audio Collection)
+- Arthur Conan Doyle - The Casebook of Sherlock Holmes (from Sherlock Holmes The Definitive Audio Collection)
+- Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
+- Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
+- Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
+- Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye )
+- Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye )
+- Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye )
+- Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation] (from Brent Weeks - The Blood Mirror)
+- Brent Weeks - The Blood Mirror (2 of 2) [Dramatized Adaptation] (from Brent Weeks - The Blood Mirror)
+- Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation] (from Brent Weeks - The Burning White)
+- Brent Weeks - The Burning White (2 of 5) [Dramatized Adaptation] (from Brent Weeks - The Burning White)
+- Brent Weeks - The Burning White (3 of 5) [Dramatized Adaptation] (from Brent Weeks - The Burning White)
+- Brent Weeks - The Burning White (4 of 5) [Dramatized Adaptation] (from Brent Weeks - The Burning White)
+- Brent Weeks - The Burning White (5 of 5) [Dramatized Adaptation] (from Brent Weeks - The Burning White)
+- Brent Weeks - Black Prism (1 of 3) [Dramatized Adaptation] (from Brent Weeks - Black Prism)
+- Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation] (from Brent Weeks - Black Prism)
+- Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation] (from Brent Weeks - Black Prism)
 
 ## REMAIN - Legacy books not in Staging (31)
 
