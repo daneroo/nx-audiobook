@@ -78,7 +78,7 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
   - Actually REMAINING - ${actuallyRemaining.length}
   - REMAINING but Split - ${remainingButSplit.length}
   - REMAINING but Consolidated - ${remainingButConsolidated.length}
-  `)
+`)
 
   console.log(
     `## ADDED - Staging books not in Legacy (${actuallyAdded.length})\n`
@@ -147,14 +147,8 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
   }
   console.log() // nl
 
-  console.log(`## Books already Migrated
+  console.log(`## Books already Migrated (${inBoth.length})\n`)
 
-There are ${inBoth.length} books which have been migrated.
-
-Let's compare the effective audio bitrate (size/duration) for Legacy → Staging.
-
-| Book | Effective | Bitrate |
-| ---- | ---: | ---: |`)
   for (const stagingBook of inBoth) {
     const key = bookKey(stagingBook)
     const legacyBook = legacyBooksMap.get(key)
@@ -163,16 +157,34 @@ Let's compare the effective audio bitrate (size/duration) for Legacy → Staging
         `=-=- Legacy book not found: ${key}. This should not happen`
       )
     } else {
+      console.log(`- ${bookKey(stagingBook)}`)
+    }
+  }
+  console.log() // nl
+
+  console.log(`## Staging Books with bitrate issues\n`)
+  for (const book of stagingBooks) {
+    const key = bookKey(book)
+    // sum the audioFIles sizes
+    const size = book.audioFiles.reduce((acc, file) => {
+      return acc + file.fileInfo.size
+    }, 0)
+    const sizeInBytes = size
+    const durationInSeconds = book.metadata.duration
+    const kbps = (sizeInBytes * 8) / durationInSeconds / 1000.0
+    if (kbps > 1000) {
+      const duration = durationToHMS(durationInSeconds)
       console.log(
-        `| ${key} | ${bookEffectiveBitrate(
-          legacyBook
-        )} | ${bookEffectiveBitrate(stagingBook)} |`
+        `- ${key} dur: ${duration} size: ${sizeInBytes}b kbps: ${kbps.toFixed(
+          2
+        )} path: ${book.directoryPath}`
       )
     }
   }
+  console.log() // nl
 }
 
-function bookEffectiveBitrate(book: AudioBook): string {
+function bookEffectiveBitrate(book: AudioBook): number {
   // sum the audioFIles sizes
   const size = book.audioFiles.reduce((acc, file) => {
     return acc + file.fileInfo.size
