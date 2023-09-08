@@ -58,7 +58,7 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
 
   // now compare the books that are in both legacy and staging
   const inBoth = stagingBooks.filter((stagingBook) => {
-    const key = `${stagingBook.metadata.author} - ${stagingBook.metadata.title}`
+    const key = bookKey(stagingBook)
     const legacyBook = legacyBooksMap.get(key)
     return legacyBook !== undefined
   })
@@ -74,14 +74,12 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
 
 There are ${inBoth.length} books which have been migrated.
 
-We could also report the media mime type, file counts,..
+Let's compare the effective audio bitrate (size/duration) for Legacy → Staging.
 
-Let's compare the audio file count, size and duration for Legacy → Staging.
-
-| Book | Size | Duration |
-| ---- | ---- | -------- |`)
+| Book | Effective | Bitrate |
+| ---- | ---: | ---: |`)
   for (const stagingBook of inBoth) {
-    const key = `${stagingBook.metadata.author} - ${stagingBook.metadata.title}`
+    const key = bookKey(stagingBook)
     const legacyBook = legacyBooksMap.get(key)
     if (legacyBook === undefined) {
       console.error(
@@ -89,26 +87,48 @@ Let's compare the audio file count, size and duration for Legacy → Staging.
       )
     } else {
       console.log(
-        `| ${key} | ${bookSize(legacyBook)} → ${bookSize(
-          stagingBook
-        )} | ${bookDuration(legacyBook)} → ${bookDuration(stagingBook)} |`
+        `| ${key} | ${bookEffectiveBitrate(
+          legacyBook
+        )} | ${bookEffectiveBitrate(stagingBook)} |`
       )
     }
   }
 }
-function bookSize(book: AudioBook): string {
+
+function bookEffectiveBitrate(book: AudioBook): string {
   // sum the audioFIles sizes
   const size = book.audioFiles.reduce((acc, file) => {
     return acc + file.fileInfo.size
   }, 0)
-  const sizeInMiB = (size / 1024 / 1024).toFixed(2)
-  return `${sizeInMiB} MiB`
+  const sizeInBytes = size
+  const durationInSeconds = book.metadata.duration
+  const kbps = (sizeInBytes * 8) / durationInSeconds / 1000.0
+  // if (kbps > 1000) {
+  //   const duration = durationToHMS(durationInSeconds)
+  //   console.error('=-=-= kbps > 1000', kbps, duration, book.directoryPath)
+  // }
+  return `${kbps.toFixed(2)} kbps`
 }
-function bookDuration(book: AudioBook): string {
-  return `${durationToHMS(book.metadata.duration)}`
-}
+
+// function bookSize(book: AudioBook): string {
+//   // sum the audioFIles sizes
+//   const size = book.audioFiles.reduce((acc, file) => {
+//     return acc + file.fileInfo.size
+//   }, 0)
+//   const sizeInMiB = (size / 1024 / 1024).toFixed(2)
+//   return `${sizeInMiB} MiB`
+// }
+// function bookDuration(book: AudioBook): string {
+//   return `${durationToHMS(book.metadata.duration)}`
+// }
+
 function bookKey(book: AudioBook): string {
-  return `${book.metadata.author} - ${book.metadata.title}`
+  // replace author by 'multiple' if there are more than 2 authors (',' separated)
+  const author =
+    book.metadata.author.split(',').length > 2
+      ? 'Multiple Authors'
+      : book.metadata.author
+  return `${author} - ${book.metadata.title}`
 }
 function mapBooks(books: AudioBook[]): Map<string, AudioBook> {
   const map = new Map<string, AudioBook>()
