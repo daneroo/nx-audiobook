@@ -65,9 +65,9 @@ _Progress:_ 518 of 519 99.8% (1 remaining)
 - Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
 - Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
 - Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation] (from Brent Weeks - The Blinding Knife)
-- Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye)
-- Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye)
-- Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye)
+- Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye)
+- Brent Weeks - The Broken Eye (2 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye)
+- Brent Weeks - The Broken Eye (3 of 3) [Dramatized Adaptation] (from Brent Weeks - The Broken Eye)
 - Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation] (from Brent Weeks - The Blood Mirror)
 - Brent Weeks - The Blood Mirror (2 of 2) [Dramatized Adaptation] (from Brent Weeks - The Blood Mirror)
 - Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation] (from Brent Weeks - The Burning White)
@@ -86,7 +86,7 @@ _Progress:_ 518 of 519 99.8% (1 remaining)
 - Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection (split into Arthur Conan Doyle - A Study in Scarlet)+
 - Brent Weeks - The Black Prism (split into Brent Weeks - The Black Prism (1 of 3) [Dramatized Adaptation])+
 - Brent Weeks - The Blinding Knife (split into Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation])+
-- Brent Weeks - The Broken Eye (split into Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation])+
+- Brent Weeks - The Broken Eye (split into Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation])+
 - Brent Weeks - The Blood Mirror (split into Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation])+
 - Brent Weeks - The Burning White (split into Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation])+
 
@@ -283,9 +283,9 @@ _Progress:_ 518 of 519 99.8% (1 remaining)
 - Hannu Rajaniemi - The Quantum Thief
 - Hannu Rajaniemi - The Fractal Prince
 - Hannu Rajaniemi - The Causal Angel
-- Haruki Murakami - 1Q84
-- Haruki Murakami - 1Q84
-- Haruki Murakami - 1Q84
+- Haruki Murakami - 1Q84 Book 1
+- Haruki Murakami - 1Q84 Book 2
+- Haruki Murakami - 1Q84 Book 3
 - Henry David Thoreau - Walden
 - Herodotus - Histories
 - Herodotus - The Persian Wars
@@ -633,9 +633,9 @@ _Progress:_ 518 of 519 99.8% (1 remaining)
 "Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]": ['2022-05-01T04:07:18.000Z', "split from Brent Weeks - The Blinding Knife"],
 "Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation]": ['2022-05-01T04:07:18.000Z', "split from Brent Weeks - The Blinding Knife"],
 "Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation]": ['2022-05-01T04:07:18.000Z', "split from Brent Weeks - The Blinding Knife"],
-"Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]": ['2022-05-01T04:05:00.000Z', "split from Brent Weeks - The Broken Eye"],
-"Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation]": ['2022-05-01T04:05:00.000Z', "split from Brent Weeks - The Broken Eye"],
-"Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation]": ['2022-05-01T04:05:00.000Z', "split from Brent Weeks - The Broken Eye"],
+"Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation]": ['2022-05-01T04:05:00.000Z', "split from Brent Weeks - The Broken Eye"],
+"Brent Weeks - The Broken Eye (2 of 3) [Dramatized Adaptation]": ['2022-05-01T04:05:00.000Z', "split from Brent Weeks - The Broken Eye"],
+"Brent Weeks - The Broken Eye (3 of 3) [Dramatized Adaptation]": ['2022-05-01T04:05:00.000Z', "split from Brent Weeks - The Broken Eye"],
 "Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]": ['2022-05-01T04:08:34.000Z', "split from Brent Weeks - The Blood Mirror"],
 "Brent Weeks - The Blood Mirror (2 of 2) [Dramatized Adaptation]": ['2022-05-01T04:08:34.000Z', "split from Brent Weeks - The Blood Mirror"],
 "Brent Weeks - The Burning White (1 of 5) [Dramatized Adaptation]": ['2022-05-01T03:50:21.000Z', "split from Brent Weeks - The Burning White"],
@@ -808,9 +808,9 @@ _Progress:_ 518 of 519 99.8% (1 remaining)
 "Hannu Rajaniemi - The Quantum Thief": ['2021-01-02T05:23:51.000Z', "1:1"],
 "Hannu Rajaniemi - The Fractal Prince": ['2021-01-02T05:31:00.000Z', "1:1"],
 "Hannu Rajaniemi - The Causal Angel": ['2021-01-02T20:19:48.000Z', "1:1"],
-"Haruki Murakami - 1Q84": ['2021-04-14T04:51:18.000Z', "1:1"],
-"Haruki Murakami - 1Q84": ['2021-04-14T04:51:18.000Z', "1:1"],
-"Haruki Murakami - 1Q84": ['2021-04-14T04:51:18.000Z', "1:1"],
+"Haruki Murakami - 1Q84 Book 1": ['2021-04-14T04:51:18.000Z', "1:1"],
+"Haruki Murakami - 1Q84 Book 2": ['2021-04-14T04:51:18.000Z', "1:1"],
+"Haruki Murakami - 1Q84 Book 3": ['2021-04-14T04:51:18.000Z', "1:1"],
 "Henry David Thoreau - Walden": ['2006-07-19T22:56:34.000Z', "1:1"],
 "Herodotus - Histories": ['2021-09-25T22:15:37.000Z', "1:1"],
 "Herodotus - The Persian Wars": ['2021-09-26T22:10:17.000Z', "1:1"],

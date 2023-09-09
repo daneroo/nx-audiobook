@@ -1570,27 +1570,23 @@ export const db: Record<string, Hint> = {
   '/Volumes/Space/archive/media/audiobooks/Haruki Murakami - 1Q84/Haruki Murakami - 1Q84 - Book1':
     {
       author: ['Haruki Murakami', 'unique'],
-      title: ['1Q84', 'unique'],
+      title: ['1Q84 Book 1', 'hint'],
       '// duration': '15h19m57s',
       asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Haruki Murakami - 1Q84/Haruki Murakami - 1Q84 - Book2':
     {
       author: ['Haruki Murakami', 'unique'],
-      title: ['1Q84', 'unique'],
+      title: ['1Q84 Book 2', 'hint'],
       '// duration': '14h6m44s',
-      asins: [
-        'B00TKGK28K: ✓ Δ:7m16s - 14h14m0s -  1Q84 - Livre 2, Juillet-Septembre / Haruki Murakami / n: Maia Baran,Emmanuel Dekoninck',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/Haruki Murakami - 1Q84/Haruki Murakami - 1Q84 - Book3':
     {
       author: ['Haruki Murakami', 'unique'],
-      title: ['1Q84', 'unique'],
+      title: ['1Q84 Book 3', 'hint'],
       '// duration': '17h20m55s',
-      asins: [
-        'B00TLDITZ0: ✓ Δ:4m55s - 17h16m0s -  1Q84, Buch 3 / Haruki Murakami / n: David Nathan',
-      ],
+      asins: [],
     },
   '/Volumes/Space/archive/media/audiobooks/HenryDavidThoreau-Walden': {
     author: ['Henry David Thoreau', 'hint'],

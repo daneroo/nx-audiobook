@@ -378,11 +378,11 @@ function legacySplit(stagingBookKey: string): string {
       'Brent Weeks - The Blinding Knife',
     'Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation]':
       'Brent Weeks - The Blinding Knife',
-    'Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]':
+    'Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation]':
       'Brent Weeks - The Broken Eye',
-    'Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation]':
+    'Brent Weeks - The Broken Eye (2 of 3) [Dramatized Adaptation]':
       'Brent Weeks - The Broken Eye',
-    'Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation]':
+    'Brent Weeks - The Broken Eye (3 of 3) [Dramatized Adaptation]':
       'Brent Weeks - The Broken Eye',
     'Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]':
       'Brent Weeks - The Blood Mirror',
@@ -459,7 +459,7 @@ function stagingSplit(legacyBookKey: string): string {
     'Brent Weeks - The Blinding Knife':
       'Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]',
     'Brent Weeks - The Broken Eye':
-      'Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]',
+      'Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation]',
     'Brent Weeks - The Blood Mirror':
       'Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]',
     'Brent Weeks - The Burning White':
