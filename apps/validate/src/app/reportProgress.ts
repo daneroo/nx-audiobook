@@ -3,6 +3,8 @@ import { durationToHMS } from '@nx-audiobook/time'
 import { db as hints } from './hints/db'
 import { classifyDirectory } from './validate/classifyDirectory'
 import type { AudioBook } from './types'
+import { statSync } from 'node:fs'
+import { format } from 'date-fns'
 
 // legacyPath is the path of the original audiobooks
 // stagingPath is the path of the migrated audiobooks
@@ -21,7 +23,6 @@ export async function reportProgress(
   // - legacy books not found in staging
   // - staging books not found in legacy
   // - legacy books found in staging
-  // - legacy books not found in staging
   const legacyBooksNotInStaging = legacyBooks.filter((legacyBook) => {
     const stagingBook = stagingBooksMap.get(bookKey(legacyBook))
     return stagingBook === undefined
@@ -172,7 +173,7 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
     const sizeInBytes = size
     const durationInSeconds = book.metadata.duration
     const kbps = (sizeInBytes * 8) / durationInSeconds / 1000.0
-    if (kbps > 1000) {
+    if (kbps > 1000 || key.includes('atred')) {
       const duration = durationToHMS(durationInSeconds)
       console.log(
         `- ${key} dur: ${duration} size: ${sizeInBytes}b kbps: ${kbps.toFixed(
@@ -182,22 +183,93 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
     }
   }
   console.log() // nl
+
+  console.log(`## Mtime estimates for Staging\n`)
+  for (const book of stagingBooks) {
+    const key = bookKey(book)
+    const legacyBook = legacyBooksMap.get(key)
+    // const mtime = legacyBook != null ? bookMtime(legacyBook) : bookMtime(book)
+    if (legacyBook === undefined) {
+      const wasSplit = legacySplit(key)
+      if (wasSplit.length > 0) {
+        const legacyBookFromSplit = legacyBooksMap.get(wasSplit)
+        if (legacyBookFromSplit !== undefined) {
+          const mtime = bookMtime(legacyBookFromSplit)
+          const isoWithOffset = format(
+            new Date(mtime),
+            "yyyy-MM-dd'T'HH:mm:ssXXX"
+          )
+          console.log(
+            `- ${key} mtime: ${isoWithOffset} (split from ${wasSplit})`
+          )
+        } else {
+          console.error(
+            `=-=- Legacy book not found: ${key} - ${wasSplit}. This should not happen`
+          )
+        }
+      } else {
+        console.log(`- ${key} mtime: MISSING LEGACY BOOK`)
+      }
+    } else {
+      const mtime = bookMtime(legacyBook)
+      // const iso = new Date(mtime).toISOString()
+      // console.log(`- ${key} mtime: ${iso}`)
+      const isoWithOffset = format(new Date(mtime), "yyyy-MM-dd'T'HH:mm:ssXXX")
+      console.log(`- ${key} mtime: ${isoWithOffset}  (1:1)`)
+    }
+  }
+  console.log() // nl
 }
 
-function bookEffectiveBitrate(book: AudioBook): number {
-  // sum the audioFIles sizes
-  const size = book.audioFiles.reduce((acc, file) => {
-    return acc + file.fileInfo.size
-  }, 0)
-  const sizeInBytes = size
-  const durationInSeconds = book.metadata.duration
-  const kbps = (sizeInBytes * 8) / durationInSeconds / 1000.0
-  // if (kbps > 1000) {
-  //   const duration = durationToHMS(durationInSeconds)
-  //   console.error('=-=-= kbps > 1000', kbps, duration, book.directoryPath)
-  // }
-  return `${kbps.toFixed(2)} kbps`
+// function lookupLegacy(stagingBook) {
+//   const wasSplit = legacySplit(bookKey(stagingBook))
+//   const wasConsolidated = stagingConsolidated(bookKey(stagingBook))
+//   const wasSplit = stagingSplit(bookKey(stagingBook))
+// }
+
+function bookMtime(book: AudioBook): number {
+  const { audioFiles } = book
+  // const hasAudioFiles = audioFiles.length > 0
+
+  const mtimeRange = audioFiles.reduce(
+    (acc, file) => {
+      const mtime = file.fileInfo.mtime.getTime()
+      return {
+        minMtime: Math.min(acc.minMtime, mtime),
+        maxMtime: Math.max(acc.maxMtime, mtime),
+      }
+    },
+    { minMtime: Infinity, maxMtime: -Infinity }
+  )
+  // also add the directory mtime to the range
+  const includeDirMtime = false
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (includeDirMtime) {
+    const dirStat = statSync(book.directoryPath)
+    // console.log('*****', audiobook.directoryPath, dirStat.mtime.getTime())
+    mtimeRange.minMtime = Math.min(mtimeRange.minMtime, dirStat.mtime.getTime())
+    mtimeRange.maxMtime = Math.max(mtimeRange.maxMtime, dirStat.mtime.getTime())
+  }
+  // ...
+  // const rangeInHours =
+  //   (mtimeRange.maxMtime - mtimeRange.minMtime) / (3600 * 1000)
+  return mtimeRange.minMtime
 }
+
+// function bookEffectiveBitrate(book: AudioBook): string {
+//   // sum the audioFIles sizes
+//   const size = book.audioFiles.reduce((acc, file) => {
+//     return acc + file.fileInfo.size
+//   }, 0)
+//   const sizeInBytes = size
+//   const durationInSeconds = book.metadata.duration
+//   const kbps = (sizeInBytes * 8) / durationInSeconds / 1000.0
+//   // if (kbps > 1000) {
+//   //   const duration = durationToHMS(durationInSeconds)
+//   //   console.error('=-=-= kbps > 1000', kbps, duration, book.directoryPath)
+//   // }
+//   return `${kbps.toFixed(2)} kbps`
+// }
 
 // function bookSize(book: AudioBook): string {
 //   // sum the audioFIles sizes
@@ -256,6 +328,25 @@ async function getBooks(path: string): Promise<AudioBook[]> {
 function legacySplit(stagingBookKey: string): string {
   // map from new (staging) key -> legacy key
   const stagingToLegacy: Record<string, string> = {
+    'Arthur Conan Doyle - A Study in Scarlet':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Sign of Four':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Adventures of Sherlock Holmes':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Memoirs of Sherlock Holmes':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Hound of the Baskervilles':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Return of Sherlock Holmes':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Valley of Fear':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - His Last Bow':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+    'Arthur Conan Doyle - The Casebook of Sherlock Holmes':
+      'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection',
+
     'Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]':
       'Brent Weeks - The Blinding Knife',
     'Brent Weeks - The Blinding Knife (2 of 3) [Dramatized Adaptation]':
@@ -263,11 +354,11 @@ function legacySplit(stagingBookKey: string): string {
     'Brent Weeks - The Blinding Knife (3 of 3) [Dramatized Adaptation]':
       'Brent Weeks - The Blinding Knife',
     'Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]':
-      'Brent Weeks - The Broken Eye ',
+      'Brent Weeks - The Broken Eye',
     'Brent Weeks - The Broken Eye ( 2 of 3) [Dramatized Adaptation]':
-      'Brent Weeks - The Broken Eye ',
+      'Brent Weeks - The Broken Eye',
     'Brent Weeks - The Broken Eye ( 3 of 3) [Dramatized Adaptation]':
-      'Brent Weeks - The Broken Eye ',
+      'Brent Weeks - The Broken Eye',
     'Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]':
       'Brent Weeks - The Blood Mirror',
     'Brent Weeks - The Blood Mirror (2 of 2) [Dramatized Adaptation]':
@@ -283,40 +374,20 @@ function legacySplit(stagingBookKey: string): string {
     'Brent Weeks - The Burning White (5 of 5) [Dramatized Adaptation]':
       'Brent Weeks - The Burning White',
     'Brent Weeks - Black Prism (1 of 3) [Dramatized Adaptation]':
-      'Brent Weeks - Black Prism',
+      'Brent Weeks - The Black Prism',
     'Brent Weeks - Black Prism (2 of 3) [Dramatized Adaptation]':
-      'Brent Weeks - Black Prism',
+      'Brent Weeks - The Black Prism',
     'Brent Weeks - Black Prism (3 of 3) [Dramatized Adaptation]':
-      'Brent Weeks - Black Prism',
+      'Brent Weeks - The Black Prism',
 
-    'Arthur Conan Doyle - A Study in Scarlet':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Sign of Four':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Adventures of Sherlock Holmes':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Memoirs of Sherlock Holmes':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Hound of the Baskervilles':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Return of Sherlock Holmes':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Valley of Fear':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - His Last Bow':
-      'Sherlock Holmes: The Definitive Audio Collection',
-    'Arthur Conan Doyle - The Casebook of Sherlock Holmes':
-      'Sherlock Holmes: The Definitive Audio Collection',
+    'Jim Butcher - Side Jobs': 'Jim Butcher - Restoration of Faith',
+    'Jim Butcher - Brief Cases': 'Jim Butcher - B is for Bigfoot',
   }
   return stagingToLegacy[stagingBookKey] ?? ''
 }
 
 // books from legacy that were consolidated into another title in staging
 function stagingConsolidated(legacyBookKey: string): string {
-  // map from legacy key -> new (staging) key
-  // - Jim Butcher - Side Jobs
-  // - Jim Butcher - Brief Cases
-
   const legacyToStaging: Record<string, string> = {
     'Jim Butcher - Restoration of Faith': 'Jim Butcher - Side Jobs',
     'Jim Butcher - B is for Bigfoot': 'Jim Butcher - Brief Cases',
@@ -354,10 +425,6 @@ function stagingConsolidated(legacyBookKey: string): string {
 
 // books from legacy that were split into many another titles in staging, return the first
 function stagingSplit(legacyBookKey: string): string {
-  // map from legacy key -> new (staging) key
-  // - Jim Butcher - Side Jobs
-  // - Jim Butcher - Brief Cases
-
   const legacyToStaging: Record<string, string> = {
     'Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection':
       'Arthur Conan Doyle - A Study in Scarlet',
@@ -367,7 +434,7 @@ function stagingSplit(legacyBookKey: string): string {
     'Brent Weeks - The Blinding Knife':
       'Brent Weeks - The Blinding Knife (1 of 3) [Dramatized Adaptation]',
     'Brent Weeks - The Broken Eye':
-      'Brent Weeks - The Broken Eye (1 of 3) [Dramatized Adaptation]',
+      'Brent Weeks - The Broken Eye ( 1 of 3) [Dramatized Adaptation]',
     'Brent Weeks - The Blood Mirror':
       'Brent Weeks - The Blood Mirror (1 of 2) [Dramatized Adaptation]',
     'Brent Weeks - The Burning White':

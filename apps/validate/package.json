@@ -26,6 +26,7 @@
         "@nx-audiobook/file-walk": "workspace:*",
         "@nx-audiobook/time": "workspace:*",
         "@nx-audiobook/validators": "workspace:*",
+        "date-fns": "^2.30.0",
         "ffmeta": "^1.0.2",
         "image-type": "^5.2.0",
         "music-metadata": "^8.1.3",
