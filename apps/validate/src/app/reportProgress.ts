@@ -185,24 +185,22 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
   console.log() // nl
 
   console.log(`## Mtime estimates for Staging\n`)
+
+  // for each staging book, find the corresponding legacy book
+  // - either 1:1, or split from a legacy book
   for (const book of stagingBooks) {
     const key = bookKey(book)
-    const legacyBook = legacyBooksMap.get(key)
-    // const mtime = legacyBook != null ? bookMtime(legacyBook) : bookMtime(book)
-    if (legacyBook === undefined) {
+    const legacyBookExact = legacyBooksMap.get(key)
+    if (legacyBookExact === undefined) {
       const wasSplit = legacySplit(key)
+      const legacyBookFromSplit = legacyBooksMap.get(wasSplit)
       if (wasSplit.length > 0) {
-        const legacyBookFromSplit = legacyBooksMap.get(wasSplit)
         if (legacyBookFromSplit !== undefined) {
           const mtime = bookMtime(legacyBookFromSplit)
-          const isoWithOffset = format(
-            new Date(mtime),
-            "yyyy-MM-dd'T'HH:mm:ssXXX"
-          )
-          console.log(
-            `- ${key} mtime: ${isoWithOffset} (split from ${wasSplit})`
-          )
+          const iso = new Date(mtime).toISOString()
+          console.log(`- ${key} mtime: ${iso} (split from ${wasSplit})`)
         } else {
+          //  this would mean that wasSplit is not in legacyBooksMap
           console.error(
             `=-=- Legacy book not found: ${key} - ${wasSplit}. This should not happen`
           )
@@ -211,11 +209,9 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
         console.log(`- ${key} mtime: MISSING LEGACY BOOK`)
       }
     } else {
-      const mtime = bookMtime(legacyBook)
-      // const iso = new Date(mtime).toISOString()
-      // console.log(`- ${key} mtime: ${iso}`)
-      const isoWithOffset = format(new Date(mtime), "yyyy-MM-dd'T'HH:mm:ssXXX")
-      console.log(`- ${key} mtime: ${isoWithOffset}  (1:1)`)
+      const mtime = bookMtime(legacyBookExact)
+      const iso = new Date(mtime).toISOString()
+      console.log(`- ${key} mtime: ${iso}  (1:1)`)
     }
   }
   console.log() // nl
