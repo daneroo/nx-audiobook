@@ -4,7 +4,6 @@ import { db as hints } from './hints/db'
 import { classifyDirectory } from './validate/classifyDirectory'
 import type { AudioBook } from './types'
 import { statSync } from 'node:fs'
-import { format } from 'date-fns'
 
 // legacyPath is the path of the original audiobooks
 // stagingPath is the path of the migrated audiobooks
@@ -188,6 +187,7 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
 
   // for each staging book, find the corresponding legacy book
   // - either 1:1, or split from a legacy book
+  const mtimeArray: Array<[string, number, string]> = []
   for (const book of stagingBooks) {
     const key = bookKey(book)
     const legacyBookExact = legacyBooksMap.get(key)
@@ -197,8 +197,11 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
       if (wasSplit.length > 0) {
         if (legacyBookFromSplit !== undefined) {
           const mtime = bookMtime(legacyBookFromSplit)
-          const iso = new Date(mtime).toISOString()
-          console.log(`- ${key} mtime: ${iso} (split from ${wasSplit})`)
+          // const iso = new Date(mtime).toISOString()
+          // console.log(
+          //   `${JSON.stringify(key)}: '${iso}', // split from ${wasSplit}`
+          // )
+          mtimeArray.push([key, mtime, `split from ${wasSplit}`])
         } else {
           //  this would mean that wasSplit is not in legacyBooksMap
           console.error(
@@ -206,23 +209,49 @@ _Progress:_ ${stagingBooks.length} of ${totalBooks} ${(
           )
         }
       } else {
-        console.log(`- ${key} mtime: MISSING LEGACY BOOK`)
+        // console.log(
+        //   `${JSON.stringify(
+        //     key
+        //   )}: 'YYYY-MM-DDThh:mm:ssZ', // MISSING LEGACY BOOK`
+        // )
+        mtimeArray.push([key, 0, `MISSING LEGACY BOOK`])
       }
     } else {
       const mtime = bookMtime(legacyBookExact)
-      const iso = new Date(mtime).toISOString()
-      console.log(`- ${key} mtime: ${iso}  (1:1)`)
+      // const iso = new Date(mtime).toISOString()
+      // console.log(`${JSON.stringify(key)}: '${iso}', // 1:1`)
+      mtimeArray.push([key, mtime, `1:1`])
     }
   }
-  console.log() // nl
+  // output the mtimeArray as JSON rows with comments
+  //  actually do this in three parts
+  const reorderedMtimeArray = [
+    ...mtimeArray.filter((bookMtimeWithComment) => {
+      const [, , comment] = bookMtimeWithComment
+      return comment === 'MISSING LEGACY BOOK'
+    }),
+    ...mtimeArray.filter((bookMtimeWithComment) => {
+      const [, , comment] = bookMtimeWithComment
+      return comment.startsWith('split from')
+    }),
+    ...mtimeArray.filter((bookMtimeWithComment) => {
+      const [, , comment] = bookMtimeWithComment
+      return comment === '1:1'
+    }),
+  ]
+
+  for (const bookMtimeWithComment of reorderedMtimeArray) {
+    const [key, mtime, comment] = bookMtimeWithComment
+    const iso =
+      mtime === 0 ? 'YYYY-MM-DDThh:mm:ssZ' : new Date(mtime).toISOString()
+    console.log(
+      `${JSON.stringify(key)}: ['${iso}', ${JSON.stringify(comment)}],`
+    )
+  }
+  // console.log() // nl
 }
 
-// function lookupLegacy(stagingBook) {
-//   const wasSplit = legacySplit(bookKey(stagingBook))
-//   const wasConsolidated = stagingConsolidated(bookKey(stagingBook))
-//   const wasSplit = stagingSplit(bookKey(stagingBook))
-// }
-
+// extract the min mtime from the audioFiles of a book
 function bookMtime(book: AudioBook): number {
   const { audioFiles } = book
   // const hasAudioFiles = audioFiles.length > 0

@@ -11,8 +11,10 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
 - [ ] NewNotAdded (~/Downloads)
 - [x] Separate Added - into ActuallyAdded and SplitFromLegacy
 - [x] Remove Consolidated from Remaining books
+- [ ] Three books with title: "Haruki Murakami - 1Q84": '2021-04-14T04:51:18.000Z', // 1:1
 - [ ] Fix 'Brent Weeks - The Broken Eye ( x of 3) [Dramatized Adaptation]' (extra space in m4b title)
 - [ ] Broken durations/bitrate (>1000kbps) - Just A little hatred - re-encode `.m4a` did not help
+- [ ] fix bad chars in titles (e.g. `’` in `Lee Child - James Penney’s New Identity - Guy Walks into a Bar` or `Jack Vance - Suldrun’s Garden`)
 
 ### Stretch
 
