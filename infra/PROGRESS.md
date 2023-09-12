@@ -2,20 +2,20 @@
 
 Progress report for moving audiobooks from Legacy to Staging
 
-_Progress:_ 531 of 531 100.0% (0 remaining)
+_Progress:_ 532 of 532 100.0% (0 remaining)
 
-- TOTAL - 531 - Staging + Actually Remaining:
+- TOTAL - 532 - Staging + Actually Remaining:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE - 531 `/Volumes/Reading/audiobooks` - Staging books
-- Staging books not in Legacy - 72
-  - ADDED - 45 - Staging books not in Legacy (actually added)
+- DONE - 532 `/Volumes/Reading/audiobooks` - Staging books
+- Staging books not in Legacy - 73
+  - ADDED - 46 - Staging books not in Legacy (actually added)
   - SPLIT - 27 - Staging books not in Legacy but split into 1+
 - Legacy books not in Staging - 30
   - Actually REMAINING - 0
   - REMAINING but Split - 6
   - REMAINING but Consolidated - 24
 
-## ADDED - Staging books not in Legacy (45)
+## ADDED - Staging books not in Legacy (46)
 
 - Adam Savage - Every Tool's a Hammer
 - Alastair Reynolds - Diamond Dogs, Turquoise Days
@@ -54,6 +54,7 @@ _Progress:_ 531 of 531 100.0% (0 remaining)
 - Richard Dawkins - The Greatest Show on Earth
 - Richard Dawkins - The Magic of Reality
 - Richard Dawkins - The Selfish Gene
+- Richard Dawkins - Unweaving the Rainbow
 - Richard K. Morgan - Broken Angels
 - Richard K. Morgan - Woken Furies
 - Tiago Forte - Building a Second Brain
@@ -637,6 +638,7 @@ _Progress:_ 531 of 531 100.0% (0 remaining)
 "Richard Dawkins - The Greatest Show on Earth": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
 "Richard Dawkins - The Magic of Reality": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
 "Richard Dawkins - The Selfish Gene": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
+"Richard Dawkins - Unweaving the Rainbow": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
 "Richard K. Morgan - Broken Angels": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
 "Richard K. Morgan - Woken Furies": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
 "Tiago Forte - Building a Second Brain": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
