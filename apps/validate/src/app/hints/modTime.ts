@@ -1,51 +1,81 @@
+import type { AudioBook } from '../types'
+
+// Return the modtime hint for the audiobook (in ms since epoch)
+// TODO:(daneroo) What should we do if there is no hint? return 0?
+export function modTimeHint(audiobook: AudioBook): number {
+  const key = bookKey(audiobook)
+  const mtimeStr = mtimes[key]?.[0] ?? 'YYYY-MM-DDThh:mm:ssZ'
+  const mtime = new Date(mtimeStr).getTime()
+  return mtime
+}
+
+function bookKey(book: AudioBook): string {
+  // replace author by 'multiple' if there are more than 2 authors (',' separated)
+  const author =
+    book.metadata.author.split(',').length > 2
+      ? 'Multiple Authors'
+      : book.metadata.author
+  return `${author} - ${book.metadata.title}`
+}
+
+/**
+ * Get the UTC modification time of a file (bash function)
+
+get_utc_mod_time() {
+  local filename="$1"
+  date -u -r $(stat -f "%m" "${filename}") +"%Y-%m-%dT%H:%M:%SZ"
+}
+
+*/
+
 // prettier-ignore
 export const mtimes: Record<string, [string, string]> = {
-  "Adam Savage - Every Tool's a Hammer": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Alastair Reynolds - Diamond Dogs, Turquoise Days": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Alastair Reynolds - Inhibitor Phase": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Alastair Reynolds - Galactic North": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Bessel A. van der Kolk - The Body Keeps the Score": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Brandon Sanderson - The Lost Metal": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Brené Brown - Atlas of the Heart": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Cory Doctorow - The Internet Con": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Frank Dikotter - The Tragedy of Liberation": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Iain M. Banks - Feersum Endjinn": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Ian Mortimer - Medieval Horizons": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Jack Vance - Suldrun’s Garden": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Jack Vance - The Dying Earth": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Jack Vance - The Eyes of the Overworld": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Joe Abercrombie - Half a King": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Joe Abercrombie - Half the World": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Joe Abercrombie - Half a War": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Mihaly Csikszentmihalyi - Creativity": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Naomi Novik - His Majesty's Dragon": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Neal Stephenson - Fall; or, Dodge in Hell": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Neil Gaiman, Terry Pratchett - Good Omens": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Niall Ferguson - The Ascent of Money": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Niall Ferguson - The Square and the Tower": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Philip K. Dick - Blade Runner": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Philip K. Dick - Do Androids Dream of Electric Sheep?": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "R. F. Kuang - The Dragon Republic": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "R. F. Kuang - The Burning God": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Ramez Naam - Crux": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Ramez Naam - Apex": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - An Appetite for Wonder": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - Flights of Fancy": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The Ancestor's Tale": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The Blind Watchmaker": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The God Delusion": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The Greatest Show on Earth": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The Magic of Reality": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The Selfish Gene": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - Unweaving the Rainbow": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard K. Morgan - Broken Angels": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Richard K. Morgan - Woken Furies": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Tiago Forte - Building a Second Brain": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Ursula K. Le Guin - The Dispossessed": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "William Gibson - The Peripheral": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Yuval Noah Harari - 21 Lessons for the 21st Century": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Yuval Noah Harari - Sapiens": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
-  "Yuval Noah Harari - Homo Deus": ['YYYY-MM-DDThh:mm:ssZ', "MISSING LEGACY BOOK"],
+  "Adam Savage - Every Tool's a Hammer": ['2021-01-17T20:59:45Z', "MISSING LEGACY BOOK"],
+  "Alastair Reynolds - Diamond Dogs, Turquoise Days": ['2023-08-20T02:06:37Z', "MISSING LEGACY BOOK"],
+  "Alastair Reynolds - Inhibitor Phase": ['2023-08-20T01:59:56Z', "MISSING LEGACY BOOK"],
+  "Alastair Reynolds - Galactic North": ['2023-08-20T02:04:07Z', "MISSING LEGACY BOOK"],
+  "Bessel A. van der Kolk - The Body Keeps the Score": ['2022-11-17T06:43:03Z', "MISSING LEGACY BOOK"],
+  "Brandon Sanderson - The Lost Metal": ['2023-09-07T22:19:15Z', "MISSING LEGACY BOOK"],
+  "Brené Brown - Atlas of the Heart": ['2022-12-14T07:13:55Z', "MISSING LEGACY BOOK"],
+  "Cory Doctorow - The Internet Con": ['2023-09-07T17:14:36Z', "MISSING LEGACY BOOK"],
+  "Frank Dikotter - The Tragedy of Liberation": ['2023-01-12T04:59:42Z', "MISSING LEGACY BOOK"],
+  "Iain M. Banks - Feersum Endjinn": ['2022-12-13T23:03:35Z', "MISSING LEGACY BOOK"],
+  "Ian Mortimer - Medieval Horizons": ['2023-06-19T23:48:37Z', "MISSING LEGACY BOOK"],
+  "Jack Vance - Suldrun’s Garden": ['2022-10-28T17:55:47Z', "MISSING LEGACY BOOK"],
+  "Jack Vance - The Dying Earth": ['2022-11-04T18:34:37Z', "MISSING LEGACY BOOK"],
+  "Jack Vance - The Eyes of the Overworld": ['2022-11-04T18:34:37Z', "MISSING LEGACY BOOK"],
+  "Joe Abercrombie - Half a King": ['2023-02-17T08:50:35Z', "MISSING LEGACY BOOK"],
+  "Joe Abercrombie - Half the World": ['2023-02-22T02:41:55Z', "MISSING LEGACY BOOK"],
+  "Joe Abercrombie - Half a War": ['2023-02-22T02:40:10Z', "MISSING LEGACY BOOK"],
+  "Mihaly Csikszentmihalyi - Creativity": ['2023-09-09T06:16:13Z', "MISSING LEGACY BOOK"],
+  "Naomi Novik - His Majesty's Dragon": ['2023-01-26T01:07:39Z', "MISSING LEGACY BOOK"],
+  "Neal Stephenson - Fall; or, Dodge in Hell": ['2019-07-18T18:25:05Z', "MISSING LEGACY BOOK"],
+  "Neil Gaiman, Terry Pratchett - Good Omens": ['2023-08-20T21:17:14Z', "MISSING LEGACY BOOK"],
+  "Niall Ferguson - The Ascent of Money": ['2023-01-26T01:19:18Z', "MISSING LEGACY BOOK"],
+  "Niall Ferguson - The Square and the Tower": ['2023-03-15T04:01:17Z', "MISSING LEGACY BOOK"],
+  "Philip K. Dick - Blade Runner": ['2022-10-30T03:49:56Z', "MISSING LEGACY BOOK"],
+  "Philip K. Dick - Do Androids Dream of Electric Sheep?": ['2022-10-30T03:49:56Z', "MISSING LEGACY BOOK"],
+  "R. F. Kuang - The Dragon Republic": ['2022-04-10T15:24:37.000Z', "MISSING LEGACY BOOK"],
+  "R. F. Kuang - The Burning God": ['2022-04-10T15:24:37.000Z', "MISSING LEGACY BOOK"],
+  "Ramez Naam - Crux": ['2016-05-31T04:12:25.000Z', "MISSING LEGACY BOOK"],
+  "Ramez Naam - Apex": ['2016-05-31T04:12:25.000Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - An Appetite for Wonder": ['2023-09-12T01:01:44Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - Flights of Fancy": ['2022-09-19T02:57:15Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The Ancestor's Tale": ['2011-11-05T02:57:15Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The Blind Watchmaker": ['2023-09-27T02:57:15Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The God Delusion": ['2011-11-05T02:57:15Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The Greatest Show on Earth": ['2023-09-12T01:23:35Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The Magic of Reality": ['2023-09-12T01:07:00Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The Selfish Gene": ['2011-11-05T02:57:15Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - Unweaving the Rainbow": ['2023-09-12T14:49:00Z', "MISSING LEGACY BOOK"],
+  "Richard K. Morgan - Broken Angels": ['2023-08-29T20:05:40Z', "MISSING LEGACY BOOK"],
+  "Richard K. Morgan - Woken Furies": ['2023-08-29T17:06:43Z', "MISSING LEGACY BOOK"],
+  "Tiago Forte - Building a Second Brain": ['2023-01-12T20:36:53Z', "MISSING LEGACY BOOK"],
+  "Ursula K. Le Guin - The Dispossessed": ['2023-01-23T06:32:08Z', "MISSING LEGACY BOOK"],
+  "William Gibson - The Peripheral": ['2022-12-05T08:30:26Z', "MISSING LEGACY BOOK"],
+  "Yuval Noah Harari - 21 Lessons for the 21st Century": ['2023-09-11T23:06:55Z', "MISSING LEGACY BOOK"],
+  "Yuval Noah Harari - Sapiens": ['2015-01-14T22:16:18Z', "MISSING LEGACY BOOK"],
+  "Yuval Noah Harari - Homo Deus": ['2018-01-27T22:16:18Z', "MISSING LEGACY BOOK"],
   "Arthur Conan Doyle - A Study in Scarlet": ['2021-09-07T06:35:46.000Z', "split from Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection"],
   "Arthur Conan Doyle - The Sign of Four": ['2021-09-07T06:35:46.000Z', "split from Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection"],
   "Arthur Conan Doyle - The Adventures of Sherlock Holmes": ['2021-09-07T06:35:46.000Z', "split from Arthur Conan Doyle - Sherlock Holmes: The Definitive Collection"],

@@ -18,4 +18,7 @@ export interface CoverImage {
   format: CoverImageFormat
 }
 
-export type CoverImageFormat = 'image/jpeg' | 'image/png'
+export type CoverImageFormat =
+  | 'image/jpeg'
+  | 'image/png'
+  | 'application/octet-stream'

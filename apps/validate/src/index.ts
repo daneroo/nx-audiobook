@@ -2,14 +2,12 @@ import yargs from 'yargs/yargs'
 
 import { getDirectories, getFiles } from '@nx-audiobook/file-walk'
 import { show, validateFilesAllAccountedFor } from '@nx-audiobook/validators'
-import { db as hints } from './app/hints/db'
 import { validateDirectory } from './app/validate/validateDirectory'
 import { classifyDirectory } from './app/validate/classifyDirectory'
-import { rewriteHints } from './app/validate/rewriteHints'
 import { convertDirectory } from './app/validate/convertDirectory'
-import { reportProgress } from './app/reportProgress'
+import { fixModTimeHintPerDirectory } from './app/validate/validateModTime'
 
-const defaultRootPath = '/Volumes/Space/archive/media/audiobooks'
+const defaultRootPath = '/Volumes/Reading/audiobooks'
 
 main().catch((error) => {
   console.error(error)
@@ -25,23 +23,16 @@ async function main(): Promise<void> {
       default: defaultRootPath,
       describe: 'Path of the root directory to search from',
     })
-    .option('rewriteHintsDB', {
-      type: 'string',
-      nargs: 1,
-      describe:
-        'Path of hints file to rewrite e.g.: --rewriteHints=src/app/hints/newdb.ts',
-    })
     .option('convertDir', {
       type: 'string',
       nargs: 1,
       describe:
         'convert audio into destination path: e.g.: --convert /Volumes/Space/Scratch/convert',
     })
-    .option('progressDir', {
+    .option('mtime', {
       type: 'string',
-      nargs: 1,
-      describe:
-        'measure progress against converted books: --progressDir /Volumes/Reading/audiobooks',
+      choices: ['check', 'fix'], // Limit the options to 'check' or 'fix'
+      describe: 'Fix (or check) modification time of audio files',
     })
     .count('verbose')
     .alias('v', 'verbose')
@@ -51,18 +42,18 @@ async function main(): Promise<void> {
   // destructure arguments
   const {
     rootPath: unverifiedRootPath,
-    rewriteHintsDB,
     convertDir,
-    progressDir,
     verbose: verbosity,
+    mtime: mtimeMethod,
   } = argv
   // clean the root path by removing trailing slash
   const rootPath = unverifiedRootPath.replace(/\/$/, '')
 
-  // 5- progress (Moved here to no pollute stdout)
-  if (progressDir !== undefined) {
-    // console.log('=-=- Progress:', progressDir)
-    await reportProgress(rootPath, progressDir)
+  // 5- mtime (Moved here to no pollute stdout)
+  if (mtimeMethod !== undefined) {
+    console.log('=-=- Mtime:', mtimeMethod)
+    const dryRun = mtimeMethod !== 'fix'
+    await fixModTimeHintPerDirectory(rootPath, dryRun)
     // exit the program early
     return
   }
@@ -77,14 +68,7 @@ async function main(): Promise<void> {
   // 2- Per directory validation
   await validatePerDirectory(rootPath, verbosity)
 
-  // 3- rewrite hints
-  if (rewriteHintsDB !== undefined) {
-    console.log('=-=- Rewriting hints db:', rewriteHintsDB)
-    const directories = await getDirectories(rootPath)
-    await rewriteHints(hints, rewriteHintsDB, directories)
-  }
-
-  // 4- convert
+  // 3 - convert
   if (convertDir !== undefined) {
     console.log('=-=- Convert:', convertDir)
     await convertPerDirectory(rootPath, convertDir)
@@ -110,9 +94,8 @@ async function validatePerDirectory(
   console.info(`=-=- Classify and validate ${directories.length} directories`)
   let totalBooks = 0
   for (const directoryPath of directories) {
-    const hint = hints[directoryPath]
-    const audiobook = await classifyDirectory(hint, directoryPath)
-    const validations = validateDirectory(hint, audiobook)
+    const audiobook = await classifyDirectory(directoryPath)
+    const validations = validateDirectory(audiobook)
     const shortPath = directoryPath.substring(rootPath.length)
     show(
       shortPath.length === 0 ? '/ (<root>)' : shortPath,
@@ -139,8 +122,7 @@ async function convertPerDirectory(
     `=- Convert ${directories.length} directories into ${convertDir}`
   )
   for (const directoryPath of directories) {
-    const hint = hints[directoryPath]
-    const audiobook = await classifyDirectory(hint, directoryPath)
+    const audiobook = await classifyDirectory(directoryPath)
     await convertDirectory(audiobook, convertDir)
   }
 }

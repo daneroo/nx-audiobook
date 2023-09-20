@@ -2,41 +2,37 @@ import {
   validateFilesAllAccountedFor,
   type Validation,
 } from '@nx-audiobook/validators'
-import type { Hint } from '../hints/types'
 import type { AudioBook } from '../types'
 import { dedupArray } from './dedupArray'
+import { validateModTimeRange, validateModTimeHint } from './validateModTime'
 
 export function validateDirectory(
-  hint: Hint | undefined,
+  // hint: Hint | undefined,
   audiobook: AudioBook
 ): Validation[] {
   const { audioFiles } = audiobook
   const validations: Validation[] = [
     validateFilesAllAccountedFor(audioFiles.map((file) => file.fileInfo)),
-    validateUniqueAuthorTitle(hint, audiobook),
+    validateUniqueAuthorTitle(audiobook),
     validateDuration(audiobook),
     validateCover(audiobook),
     validateModTimeRange(audiobook),
+    validateModTimeHint(audiobook),
   ]
   return validations
 }
 
-// references hints db (as imported above)
+// TODO(daneroo): needs to be revisited, now that we removed hints and conastrain to a single audio file
 // - either validateAuthorTitleHint is ok (as set by hints in classifyDirectory)
 // - or validateUniqueAuthorTitle is ok
-function validateUniqueAuthorTitle(
-  hint: Hint | undefined,
-  audiobook: AudioBook
-): Validation {
+function validateUniqueAuthorTitle(audiobook: AudioBook): Validation {
   const { audioFiles } = audiobook
-  // hints[directoryPath]?.author?.[0] ?? '',
-  const skip = hint?.skip
-  if (skip === 'no audio files') {
+  if (audioFiles.length === 0) {
     return {
       ok: true,
       message: 'validateUniqueAuthorTitle',
       level: 'info',
-      extra: { skip },
+      extra: { skip: 'no audio files' },
     }
   }
 
@@ -100,10 +96,9 @@ function validateDuration(audiobook: AudioBook): Validation {
   }
 }
 
-// Check that the cover image exists
-//  as metadata.cover
-//  - from audio files metadata (first file)
-//  - or from cover.jpg in the directory (coverFile)
+// Check that the cover image exists (metadata and file)
+// - metadata.cover - from audio files metadata (first file)
+// - from cover.(jpg|png) in the directory (coverFile)
 function validateCover(audiobook: AudioBook): Validation {
   const { audioFiles, metadata, coverFile } = audiobook
   const hasAudioFiles = audioFiles.length > 0
@@ -114,6 +109,19 @@ function validateCover(audiobook: AudioBook): Validation {
       .map((file) => file.metadata.warning.cover)
       .filter((w) => w !== undefined)
   )
+
+  if (hasAudioFiles) {
+    if (coverFile === undefined) {
+      warnings.push('no cover file found')
+    } else {
+      const coverFileRE = /^cover\.(jpg|png)$/
+      if (!coverFileRE.test(coverFile.basename)) {
+        warnings.push(
+          `bad cover file name (cover.(jpg|png)): ${coverFile.basename}`
+        )
+      }
+    }
+  }
 
   const ok =
     !hasAudioFiles || coverFile !== undefined || metadata.cover !== undefined
@@ -129,45 +137,6 @@ function validateCover(audiobook: AudioBook): Validation {
   return {
     ok: ok && warnings.length === 0,
     message: 'validateCover',
-    level: ok ? 'info' : 'warn',
-    extra,
-  }
-}
-
-// Validates that the modtime of the audio files are within a reasonable range (7 days)
-// This is in preparation for keeping the modTime (min) as an acquisition Date
-// which we would like to preserve.
-function validateModTimeRange(audiobook: AudioBook): Validation {
-  const { audioFiles } = audiobook
-  const hasAudioFiles = audioFiles.length > 0
-
-  const mtimeRange = audioFiles.reduce(
-    (acc, file) => {
-      const mtime = file.fileInfo.mtime.getTime()
-      return {
-        minMtime: Math.min(acc.minMtime, mtime),
-        maxMtime: Math.max(acc.maxMtime, mtime),
-      }
-    },
-    { minMtime: Infinity, maxMtime: -Infinity }
-  )
-  const rangeInHours =
-    (mtimeRange.maxMtime - mtimeRange.minMtime) / (3600 * 1000)
-  const ok = !hasAudioFiles || rangeInHours < 24 * 7 // 7 days
-  const extra = {
-    ...(!hasAudioFiles ? { skip: 'no audio files' } : {}),
-    ...(!ok
-      ? {
-          warnings: `audioFiles mtime range too high ${rangeInHours.toFixed(
-            1
-          )}h`,
-        }
-      : {}),
-    // ...(!ok ? { error: 'no cover found' } : {}),
-  }
-  return {
-    ok,
-    message: 'validateModTime',
     level: ok ? 'info' : 'warn',
     extra,
   }

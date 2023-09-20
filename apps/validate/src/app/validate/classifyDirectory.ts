@@ -1,14 +1,12 @@
 import { type FileInfo, getFiles } from '@nx-audiobook/file-walk'
 import { isAudioFile } from '@nx-audiobook/validators'
 import { getMetadataForSingleFile } from '../metadata/main'
-import type { Hint } from '../hints/types'
+// import type { Hint } from '../hints/types'
 import type { AudioBook, AudioFile } from '../types'
 
 // Audiobook represents the data for a Directory
 // - the audio files in the directory
-// requires a hint (author/title), but should have a default from metadata
 export async function classifyDirectory(
-  hint: Hint | undefined,
   directoryPath: string,
   sequentially = false
 ): Promise<AudioBook> {
@@ -31,25 +29,32 @@ export async function classifyDirectory(
     }
   }
 
-  // Check for cover File
-  // - could also look for cover.png
+  // Check for cover File (*.jpg, *.png)
   const coverFile = fileInfos.find((fileInfo) =>
-    // if we re-add png, check returned format below
-    ['jpg', 'jpeg', 'JPG', 'JPEG' /* , 'png', 'PNG' */].includes(
-      fileInfo.extension.slice(1)
+    ['jpg', 'jpeg', 'png'].includes(
+      // careful fileInfo.extension contains the leading "."
+      fileInfo.extension.slice(1).toLowerCase()
     )
   )
-  // if (coverFile !== undefined) {
-  //   console.log('coverFile:', coverFile.path)
-  // }
+  const coverFileFormat =
+    coverFile === undefined
+      ? 'application/octet-stream'
+      : ['jpg', 'jpeg'].includes(
+          coverFile.extension.slice(1).toLocaleLowerCase()
+        )
+      ? 'image/jpeg'
+      : ['png'].includes(coverFile.extension.slice(1).toLocaleLowerCase())
+      ? 'image/png'
+      : 'application/octet-stream'
+
   // aggregates the AudioBookMetadata for the entire directories' audioFiles
   // and overrides with hints for author and title, if present.
   const duration = Math.round(
     audioFiles.reduce((sum, file) => sum + file.metadata.duration, 0)
   )
-  // set author, title from hints
-  const author = hint?.author?.[0] ?? ''
-  const title = hint?.title?.[0] ?? ''
+  // set author, title from metadata (first audio file)
+  const author = audioFiles[0]?.metadata?.author ?? ''
+  const title = audioFiles[0]?.metadata?.title ?? ''
 
   // Get the cover image from the first audioFile, or cover.{jpg|png}
   // - Could do a reduce to get the first non-empty metadata cover,
@@ -59,7 +64,8 @@ export async function classifyDirectory(
     (coverFile !== undefined
       ? {
           size: coverFile.size,
-          format: 'image/jpeg', // this could be png
+          // careful fileInfo.extension contains the leading "."
+          format: coverFileFormat,
         }
       : undefined)
 
