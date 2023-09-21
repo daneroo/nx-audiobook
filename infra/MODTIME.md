@@ -3,6 +3,15 @@
 - We are likely to have to keep a database of hints for preserving the modTimes of files..
 - We can use the `touch` command to set the modtime of a file to the current time.
 
+## List all .m4b files in a directory inverse sorted by modtime
+
+```bash
+# MacOS with gls - gnu ls
+find /Volumes/Reading/audiobooks -name "*m4b" -print0 | xargs -0 gls -l --time-style=full-iso | sort -r -k6,7
+# in audiobookshelf ash shell
+find /audiobooks -name "*m4b" -print0 | xargs -0 ls -lt --full-time | sort -r -k6,7
+```
+
 ## touch
 
 ```bash

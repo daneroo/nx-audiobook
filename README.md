@@ -12,7 +12,11 @@ This repo consolidates audiobook management
 
 ## TODO
 
-- [ ] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
+- [x] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
+- [ ] Cleanup PROGRESS / MIGRATION / MODTIME / WORKFLOW (new) Justfile
+- [ ] validate
+  - [ ] add a --mtime write option
+  - [ ] add a fine naming validations - char sets, author - series - title...
 - [ ] minimal front-end for verifying chapters
   - [ ] t3-app <https://github.com/t3-oss/create-t3-app>
     - `pnpm create t3-app@latest`
@@ -53,12 +57,15 @@ pnpm run coverage
 pnpm build
 pnpm build && pnpm start
 
-# cd apps/validate
-pnpm run dev # run's the cli in dev mode (i.e. with vite-node)
+# cd apps/validate -
+# # run's the cli in dev mode (i.e. with vite-node)
+pnpm run dev --help
+pnpm run dev
 
 # For now, til we have better cli
 # cd apps/validate
-time pnpm run dev --rewriteHintsDB src/app/hints/newdb.ts ; pnpm exec prettier --write src/app/hints/newdb.ts ; difft src/app/hints/*db.ts
+# TODO(daneroo): add a --mtime write option
+time pnpm run dev --mtime write ; pnpm exec prettier --write src/app/hints/mtimehints.json ; difft src/app/hints/mtime*.json
 
 # progress
 cd apps/validate

@@ -22,7 +22,7 @@ export function validateDirectory(
   return validations
 }
 
-// TODO(daneroo): needs to be revisited, now that we removed hints and conastrain to a single audio file
+// TODO(daneroo): needs to be revisited, now that we removed hints and constrain to a single audio file
 // - either validateAuthorTitleHint is ok (as set by hints in classifyDirectory)
 // - or validateUniqueAuthorTitle is ok
 function validateUniqueAuthorTitle(audiobook: AudioBook): Validation {

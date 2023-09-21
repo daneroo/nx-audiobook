@@ -1,7 +1,6 @@
 import { type FileInfo, getFiles } from '@nx-audiobook/file-walk'
 import { isAudioFile } from '@nx-audiobook/validators'
 import { getMetadataForSingleFile } from '../metadata/main'
-// import type { Hint } from '../hints/types'
 import type { AudioBook, AudioFile } from '../types'
 
 // Audiobook represents the data for a Directory
@@ -48,7 +47,6 @@ export async function classifyDirectory(
       : 'application/octet-stream'
 
   // aggregates the AudioBookMetadata for the entire directories' audioFiles
-  // and overrides with hints for author and title, if present.
   const duration = Math.round(
     audioFiles.reduce((sum, file) => sum + file.metadata.duration, 0)
   )

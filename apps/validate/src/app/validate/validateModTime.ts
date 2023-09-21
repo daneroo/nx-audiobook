@@ -3,7 +3,7 @@ import type { AudioBook } from '../types'
 import { statSync } from 'node:fs'
 import { utimes } from 'node:fs/promises'
 import { modTimeHint } from '../hints/modTime'
-import { getDirectories, getFiles } from '@nx-audiobook/file-walk'
+import { getDirectories } from '@nx-audiobook/file-walk'
 import { classifyDirectory } from './classifyDirectory'
 
 export async function fixModTimeHintPerDirectory(
