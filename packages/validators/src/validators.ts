@@ -1,11 +1,5 @@
 import type { Validation } from './types'
 
-// import {
-//   filterAudioFileExtensions,
-//   // filterNonAudioFileExtensions,
-//   filterNonAudioExtensionsOrNames,
-//   // filterNonAudioFilenames,
-// } from './filters';
 import type { FileInfo } from '@nx-audiobook/file-walk'
 
 // for files in a set (typically a directory),
@@ -13,25 +7,11 @@ import type { FileInfo } from '@nx-audiobook/file-walk'
 // simply console.error the unaccounted for files files.
 // three inputs options:
 //  audio file extensions: e.g. ['.mp3', '.m4b', '.m4a']
-//  ignored (known, non-audio) file extensions: e.g. ['.jpeg', '.jpg', '.JPG', '.gif', '.png', '.pdf', '.cue', '.epub', '.txt', '.nfo', '.mobi', '.m3u', '.rtf']
+//  ignored (known, non-audio) file extensions: e.g. ['.jpg', '.png', '.pdf', '.epub']
 //  ignored (known, non-audio) filenames: e.g. ['.DS_Store', 'MD5SUM']
 
 export const audioExtensions = ['.mp3', '.m4b', '.m4a']
-export const ignoredExtensions = [
-  '.jpeg',
-  '.jpg',
-  '.JPG',
-  '.gif',
-  '.png',
-  '.pdf',
-  '.cue',
-  '.epub',
-  '.txt',
-  '.nfo',
-  '.mobi',
-  '.m3u',
-  '.rtf',
-]
+export const ignoredExtensions = ['.jpg', '.png', '.pdf', '.epub']
 export const ignoredFilenames = ['.DS_Store', 'MD5SUM']
 
 export function isAudioFile(fileInfo: FileInfo): boolean {
