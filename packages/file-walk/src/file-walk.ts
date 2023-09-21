@@ -70,3 +70,16 @@ export async function getFiles(
   await walk(rootPath, walker)
   return files
 }
+
+// Return a single FileInfo object for the directory at pathname
+export async function getDirectory(pathname: string): Promise<FileInfo> {
+  const { size, mtime } = await fs.stat(pathname)
+  const file: FileInfo = {
+    path: pathname,
+    basename: basename(pathname),
+    extension: extname(pathname),
+    size,
+    mtime,
+  }
+  return file
+}

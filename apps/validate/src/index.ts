@@ -53,7 +53,11 @@ async function main(): Promise<void> {
   if (mtimeMethod !== undefined) {
     console.log('=-=- Mtime:', mtimeMethod)
     const dryRun = mtimeMethod !== 'fix'
-    await fixModTimeHintPerDirectory(rootPath, dryRun)
+    await fixModTimeHintPerDirectory(rootPath, {
+      dryRun,
+      verbosity,
+      includeNonAudioFiles: false,
+    })
     // exit the program early
     return
   }

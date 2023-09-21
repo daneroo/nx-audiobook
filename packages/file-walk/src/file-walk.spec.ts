@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getDirectories, getFiles } from './file-walk'
+import { getDirectories, getFiles, getDirectory } from './file-walk'
 import { resolve } from 'node:path'
 
 describe('getDirectories smoke test', () => {
@@ -20,5 +20,13 @@ describe('getFiles smoke test', () => {
     const selfDir = resolve(__dirname, '.')
     const thisDirFiles = await getFiles(selfDir)
     expect(thisDirFiles.map((f) => f.path)).toContain(__filename)
+  })
+})
+
+describe('getDirectory smoke test', () => {
+  it('should read this directory and find this file', async () => {
+    const selfDir = resolve(__dirname, '.')
+    const thisDirFile = await getDirectory(selfDir)
+    expect(thisDirFile.path).toEqual(__dirname)
   })
 })

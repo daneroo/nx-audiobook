@@ -62,7 +62,7 @@ export const mtimes: Record<string, [string, string]> = {
   "Richard Dawkins - An Appetite for Wonder": ['2023-09-12T01:01:44Z', "MISSING LEGACY BOOK"],
   "Richard Dawkins - Flights of Fancy": ['2022-09-19T02:57:15Z', "MISSING LEGACY BOOK"],
   "Richard Dawkins - The Ancestor's Tale": ['2011-11-05T02:57:15Z', "MISSING LEGACY BOOK"],
-  "Richard Dawkins - The Blind Watchmaker": ['2023-09-27T02:57:15Z', "MISSING LEGACY BOOK"],
+  "Richard Dawkins - The Blind Watchmaker": ['2022-09-27T02:57:15Z', "MISSING LEGACY BOOK"],
   "Richard Dawkins - The God Delusion": ['2011-11-05T02:57:15Z', "MISSING LEGACY BOOK"],
   "Richard Dawkins - The Greatest Show on Earth": ['2023-09-12T01:23:35Z', "MISSING LEGACY BOOK"],
   "Richard Dawkins - The Magic of Reality": ['2023-09-12T01:07:00Z', "MISSING LEGACY BOOK"],

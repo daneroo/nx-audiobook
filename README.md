@@ -12,11 +12,15 @@ This repo consolidates audiobook management
 
 ## TODO
 
-- [x] integrate audiobookshelf into this repo, perhaps with/without plex-audiobook
-- [ ] Cleanup PROGRESS / MIGRATION / MODTIME / WORKFLOW (new) Justfile
 - [ ] validate
-  - [ ] add a --mtime write option
-  - [ ] add a fine naming validations - char sets, author - series - title...
+  - [ ] add a --mtime write option ( .json5 database, checked in `hints/mtimehints.json5`)
+  - [ ] add a validation (global) that the mtime hints are complete / and no hints are unused
+  - [x] mtime for parent dir
+  - [ ] mtime for grandparent dir(s)
+  - [ ] mtime for other files (.epub, cover.jpg)
+  - [ ] add a file naming validations - char sets, author - series - title...
+- [ ] Cleanup PROGRESS / MIGRATION / MODTIME
+- [ ] README.md ## Operations i.e. WORKFLOW (new) Justfile
 - [ ] minimal front-end for verifying chapters
   - [ ] t3-app <https://github.com/t3-oss/create-t3-app>
     - `pnpm create t3-app@latest`
