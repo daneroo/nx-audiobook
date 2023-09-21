@@ -6,22 +6,22 @@ default:
 
 # Status (docker compose)
 status:
-    docker-compose ps
-    
+    docker compose ps
+
 # Start in development mode
 dev:
-    AUDIOBOOKS_VOLUME=./data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw docker-compose up -d
+    AUDIOBOOKS_VOLUME=./data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw docker compose up -d
 # Start in production mode
 start:
-    docker-compose up -d
+    docker compose up -d
 
 # Stop the application
 stop:
-    docker-compose down
+    docker compose down
 
 # Exec into the container
 exec:
-    docker-compose exec audiobookshelf ash
+    docker compose exec audiobookshelf ash
 # Show logs
 logs:
-    docker-compose logs -f    
+    docker compose logs -f    
