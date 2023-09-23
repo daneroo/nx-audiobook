@@ -81,6 +81,7 @@ export async function fixModTimeHintBook(
   await fixModTimeFile(dirInfo, mtimeHintMS, { dryRun, verbosity })
 }
 
+// Fixes the modtime of a single file to match our hints/modTime
 export async function fixModTimeFile(
   fileInfo: FileInfo,
   mtimeHintMS: number,
@@ -163,58 +164,6 @@ export function validateModTimeHint(audiobook: AudioBook): Validation {
   return {
     ok,
     message: 'validateModTimeHint',
-    level: ok ? 'info' : 'warn',
-    extra,
-  }
-}
-
-// Validates that the modtime of the audio files are within a reasonable range (1 hour (prev 7 days))
-// This is in preparation for keeping the modTime (min) as an acquisition Date
-// which we would like to preserve.
-export function validateModTimeRange(audiobook: AudioBook): Validation {
-  const { audioFiles } = audiobook
-  const hasAudioFiles = audioFiles.length > 0
-
-  const mtimeRange = audioFiles.reduce(
-    (acc, file) => {
-      const mtime = file.fileInfo.mtime.getTime()
-      return {
-        minMtime: Math.min(acc.minMtime, mtime),
-        maxMtime: Math.max(acc.maxMtime, mtime),
-      }
-    },
-    { minMtime: Infinity, maxMtime: -Infinity }
-  )
-  // also add the directory mtime to the range
-  const includeDirMtime = false
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (includeDirMtime) {
-    const dirStat = statSync(audiobook.directoryPath)
-    // console.log('*****', audiobook.directoryPath, dirStat.mtime.getTime())
-    mtimeRange.minMtime = Math.min(mtimeRange.minMtime, dirStat.mtime.getTime())
-    mtimeRange.maxMtime = Math.max(mtimeRange.maxMtime, dirStat.mtime.getTime())
-  }
-  // ...
-  const rangeInHours =
-    (mtimeRange.maxMtime - mtimeRange.minMtime) / (3600 * 1000)
-  const ok = !hasAudioFiles || rangeInHours < 1 // 1 hour
-  const extra = {
-    ...(!hasAudioFiles ? { skip: 'no audio files' } : {}),
-    ...(!ok
-      ? {
-          warnings: [
-            `audioFiles mtime range too high ${rangeInHours.toFixed(1)}h`,
-            `range ${new Date(mtimeRange.minMtime).toISOString()} ${new Date(
-              mtimeRange.maxMtime
-            ).toISOString()}`,
-          ],
-        }
-      : {}),
-    // ...(!ok ? { error: 'no cover found' } : {}),
-  }
-  return {
-    ok,
-    message: 'validateModTimeRange',
     level: ok ? 'info' : 'warn',
     extra,
   }

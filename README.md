@@ -21,8 +21,10 @@ This repo consolidates audiobook management
   - [ ] add a validation (global) that the mtime hints are complete / and no hints are unused
   - [ ] add a file naming validations - char sets, author - series - title...
 - [ ] Cleanup PROGRESS / MIGRATION / MODTIME
+- [ ] Remove or Verify usage of convertDirectory
 - [ ] README.md ## Operations i.e. WORKFLOW (new) Justfile
 - [ ] minimal front-end for verifying chapters
+  - [ ] restart with Astro? if so remove view-t3
   - [ ] t3-app <https://github.com/t3-oss/create-t3-app>
     - `pnpm create t3-app@latest`
 - [ ] convert with ffmpeg

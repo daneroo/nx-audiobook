@@ -4,7 +4,7 @@ import {
 } from '@nx-audiobook/validators'
 import type { AudioBook } from '../types'
 import { dedupArray } from './dedupArray'
-import { validateModTimeRange, validateModTimeHint } from './validateModTime'
+import { validateModTimeHint } from './validateModTime'
 
 export function validateDirectory(
   // hint: Hint | undefined,
@@ -16,7 +16,6 @@ export function validateDirectory(
     validateUniqueAuthorTitle(audiobook),
     validateDuration(audiobook),
     validateCover(audiobook),
-    validateModTimeRange(audiobook),
     validateModTimeHint(audiobook),
   ]
   return validations
