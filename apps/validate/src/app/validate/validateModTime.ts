@@ -1,6 +1,5 @@
 import type { Validation } from '@nx-audiobook/validators'
 import type { AudioBook } from '../types'
-import { statSync } from 'node:fs'
 import { utimes } from 'node:fs/promises'
 import { modTimeHint } from '../hints/modTime'
 import {
