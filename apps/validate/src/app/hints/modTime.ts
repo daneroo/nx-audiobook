@@ -4,7 +4,7 @@ import type { AudioBook } from '../types'
 // Return the modtime hint for the audiobook (in ms since epoch)
 // If the lookup is not successful, throw an error with the appropriate message
 // - Could be because the AudioBook represents a parent directory (audioFiles.length === 0)
-// or because the lookup failed (missing key in our mtimes lookup)
+// or because the lookup failed (missing key in our modTimeDB lookup)
 export function modTimeHint(
   audiobook: AudioBook
 ): [string | undefined, number] {
@@ -19,7 +19,7 @@ export function modTimeHint(
       0,
     ]
   }
-  // if key is not in mtimes, then return 0
+  // if key is not in modTimeDB, then return 0
   if (!(key in modTimeDB)) {
     return [`missing entry for key:${key}`, 0]
   }
