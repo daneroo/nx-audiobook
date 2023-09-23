@@ -67,13 +67,13 @@ describe('show - happy path', () => {
     const verbosity = 2
     show('test-title', validations, verbosity)
     expect(logSpy).toHaveBeenCalledWith('✕ test-title')
-    expect(infoSpy).toHaveBeenCalledWith('  ✔: All accounted for', {
+    expect(infoSpy).toHaveBeenCalledWith('  ✔ All accounted for', {
       audio: 0,
       ignored: 0,
       total: 0,
       unaccounted: [],
     })
-    expect(warnSpy).toHaveBeenCalledWith('  ✕: Have unaccounted for files', {
+    expect(warnSpy).toHaveBeenCalledWith('  ✕ Have unaccounted for files', {
       audio: 0,
       ignored: 0,
       total: 0,
@@ -82,8 +82,8 @@ describe('show - happy path', () => {
     expect(output).toMatchInlineSnapshot(`
       [
         "✕ test-title",
-        "  ✔: All accounted for",
-        "  ✕: Have unaccounted for files",
+        "  ✔ All accounted for",
+        "  ✕ Have unaccounted for files",
       ]
     `)
     logSpy.mockRestore()

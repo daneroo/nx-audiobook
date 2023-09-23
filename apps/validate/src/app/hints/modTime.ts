@@ -1,15 +1,53 @@
 import type { AudioBook } from '../types'
 
+// Experiment in *go style* error handling
 // Return the modtime hint for the audiobook (in ms since epoch)
-// TODO:(daneroo) What should we do if there is no hint? return 0?
-export function modTimeHint(audiobook: AudioBook): number {
+// If the lookup is not successful, throw an error with the appropriate message
+// - Could be because the AudioBook represents a parent directory (audioFiles.length === 0)
+// or because the lookup failed (missing key in our mtimes lookup)
+export function modTimeHint(
+  audiobook: AudioBook
+): [string | undefined, number] {
+  // early return if no audioFiles (probably a parent directory)
+  if (audiobook.audioFiles.length === 0) {
+    return [`no audio files ${audiobook.directoryPath}`, 0]
+  }
   const key = bookKey(audiobook)
-  const mtimeStr = mtimes[key]?.[0] ?? 'YYYY-MM-DDThh:mm:ssZ'
+  if (key === '') {
+    return [
+      `empty key (missing metadata author or title) ${audiobook.directoryPath}`,
+      0,
+    ]
+  }
+  // if key is not in mtimes, then return 0
+  if (!(key in modTimeDB)) {
+    return [`missing entry for key:${key}`, 0]
+  }
+  const mtimeStr = modTimeDB[key]?.[0] ?? 'YYYY-MM-DDThh:mm:ssZ'
   const mtime = new Date(mtimeStr).getTime()
-  return mtime
+
+  // if mtime is Nan, then return 0 - this really should not happen
+  if (key !== '-' && isNaN(mtime)) {
+    return [`modTimeHint: key:|${key}|:  mtimeStr:|${mtimeStr}|`, 0]
+  }
+  // else return the mtime
+  return [undefined, mtime]
 }
 
+// Construct a key for the audiobook, based on metadata author and title
+// If there are more than 2 authors, replace with 'Multiple Authors'
+// If there are no audioFiles, return '' (falsy)
+// If there are no metadata author or title, return '' (falsy)
 function bookKey(book: AudioBook): string {
+  // early return if no audioFiles (probably a parent directory)
+  // or missing metadata author or title
+  if (
+    book.audioFiles.length === 0 ||
+    book.metadata.author.length === 0 ||
+    book.metadata.title.length === 0
+  ) {
+    return ''
+  }
   // replace author by 'multiple' if there are more than 2 authors (',' separated)
   const author =
     book.metadata.author.split(',').length > 2
@@ -29,7 +67,9 @@ get_utc_mod_time() {
 */
 
 // prettier-ignore
-export const mtimes: Record<string, [string, string]> = {
+export const modTimeDB: Record<string, [string, string]> = {
+  "Thomas Hughes - Tom Brown's Schooldays": ['2023-09-13T02:06:00Z', "NEW BOOK"],
+  "Mustafa Suleyman - The Coming Wave": ['2023-09-20T03:42:57Z', "NEW BOOK"],
   "Adam Savage - Every Tool's a Hammer": ['2021-01-17T20:59:45Z', "MISSING LEGACY BOOK"],
   "Alastair Reynolds - Diamond Dogs, Turquoise Days": ['2023-08-20T02:06:37Z', "MISSING LEGACY BOOK"],
   "Alastair Reynolds - Inhibitor Phase": ['2023-08-20T01:59:56Z', "MISSING LEGACY BOOK"],

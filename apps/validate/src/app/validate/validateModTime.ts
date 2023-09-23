@@ -54,7 +54,13 @@ export async function fixModTimeHintBook(
   options: { dryRun: boolean; verbosity: number; includeNonAudioFiles: boolean }
 ): Promise<void> {
   const { dryRun, verbosity, includeNonAudioFiles } = options
-  const mtimeHintMS = modTimeHint(audiobook)
+  const [error, mtimeHintMS] = modTimeHint(audiobook)
+  if (error !== undefined) {
+    console.error(
+      `fixModTimeHintBook:  ${error} path: ${audiobook.directoryPath}`
+    )
+    return
+  }
 
   // fix the mtime of either all files, or just the audio files
   if (includeNonAudioFiles) {
@@ -111,19 +117,39 @@ export async function fixModTimeFile(
 // This is in preparation for keeping the modTime (min) as an acquisition Date
 // which we would like to preserve.
 export function validateModTimeHint(audiobook: AudioBook): Validation {
-  const mtimeHintMS = modTimeHint(audiobook)
-
   const { audioFiles } = audiobook
   const hasAudioFiles = audioFiles.length > 0
+
+  // early return if we are in a parentDir (no audio files)
+  if (!hasAudioFiles) {
+    return {
+      ok: true,
+      message: 'validateModTimeHint',
+      level: 'info',
+      extra: { skip: 'no audio files' },
+    }
+  }
+
+  // hasAudioFiles is always true below
+  // Go-style error handling
+  const [error, mtimeHintMS] = modTimeHint(audiobook)
+  if (error !== undefined) {
+    return {
+      ok: false,
+      message: 'validateModTimeHint',
+      level: 'warn',
+      extra: { warnings: [error] },
+    }
+  }
 
   // every audioFile matches the hint modtime
   const everyOk = audioFiles.every(
     (file) => file.fileInfo.mtime.getTime() === mtimeHintMS
   )
-  const ok = !hasAudioFiles || everyOk
+  // ok also requires hasAudioFiles be true and everyOk be true
+  const ok = everyOk
 
   const extra = {
-    ...(!hasAudioFiles ? { skip: 'no audio files' } : {}),
     ...(!ok
       ? {
           warnings: [
@@ -131,20 +157,12 @@ export function validateModTimeHint(audiobook: AudioBook): Validation {
               mtimeHintMS
             ).toISOString()}`,
           ],
-          // fix: audioFiles.map((file) => {
-          //   // escape single quotes in path
-          //   const path = file.fileInfo.path.replace(/'/g, "'\\''")
-
-          //   return `touch -m -d '${new Date(
-          //     mtimeHintMS
-          //   ).toISOString()}' '${path}'`
-          // }),
         }
       : {}),
   }
   return {
     ok,
-    message: 'validateModTime',
+    message: 'validateModTimeHint',
     level: ok ? 'info' : 'warn',
     extra,
   }
@@ -196,7 +214,7 @@ export function validateModTimeRange(audiobook: AudioBook): Validation {
   }
   return {
     ok,
-    message: 'validateModTime',
+    message: 'validateModTimeRange',
     level: ok ? 'info' : 'warn',
     extra,
   }

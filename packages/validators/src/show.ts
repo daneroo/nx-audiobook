@@ -15,9 +15,19 @@ export function show(
   for (const v of validations) {
     const { ok, level, message, extra } = v
     if (!onlyFailures || !ok) {
-      console[level](`  ${checkMark(ok)}: ${message}`, extra)
+      if (isEmpty(extra)) {
+        console[level](`  ${checkMark(ok)} ${message}`)
+      } else {
+        console[level](`  ${checkMark(ok)} ${message}`, extra)
+      }
     }
   }
+}
+
+function isEmpty(
+  obj: Record<string, string | number | boolean | string[] | number[]>
+): boolean {
+  return Object.keys(obj).length === 0
 }
 
 export function checkMark(ok: boolean, withColor = true): string {

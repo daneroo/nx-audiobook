@@ -13,11 +13,12 @@ This repo consolidates audiobook management
 ## TODO
 
 - [ ] validate
+  - [ ] convert fixModTime.. into validations (with a fix param?)
+  - [x] mtime for parent dir
+  - [ ] mtime for other files (.epub, cover.jpg)
+  - [ ] mtime for grandparent dir(s)
   - [ ] add a --mtime write option ( .json5 database, checked in `hints/mtimehints.json5`)
   - [ ] add a validation (global) that the mtime hints are complete / and no hints are unused
-  - [x] mtime for parent dir
-  - [ ] mtime for grandparent dir(s)
-  - [ ] mtime for other files (.epub, cover.jpg)
   - [ ] add a file naming validations - char sets, author - series - title...
 - [ ] Cleanup PROGRESS / MIGRATION / MODTIME
 - [ ] README.md ## Operations i.e. WORKFLOW (new) Justfile

@@ -42,6 +42,10 @@ export async function fetchResult(args: FetchArgs): Promise<AudioBookMetadata> {
   const { fileInfo, options } = args
   try {
     // DO NOT REUSE options object; it gets polluted! {...options} is a workaround
+    // parseFile does not work with bun,
+    //   because "fs.promises.open incorrectly returns a file descriptor instead of a FileHandle"
+    // We could have a workaround using parseStream, but we can just wait 'till bun fixes this.
+    // I also replaced music-metadata's RandomFileReader.init() with a simple promisified fs.open that return a FileHandle like object and that worked...
     const metadata = await parseFile(fileInfo.path, { ...options })
 
     const { duration, warning: durationWarning } = await fixDuration(
@@ -63,6 +67,7 @@ export async function fetchResult(args: FetchArgs): Promise<AudioBookMetadata> {
       },
     }
   } catch (error) {
+    console.error('music-metadata error:', error)
     throw new Error(`music-metadata error: ${fileInfo.path}`)
   }
 }
