@@ -1,28 +1,38 @@
 # Install just on Ubuntu:
 # curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | sudo bash -s -- --to /usr/local/bin/
+
 # List available commands
 default:
     just -l
 
+alias ps := status
 # Status (docker compose)
 status:
     docker compose ps
 
 
-# The start target is a single line continued command, so that ENV_VARS can be set
+# Start in development mode
+start-dev:
+    @echo "Starting in development mode...";
+    AUDIOBOOKS_VOLUME={{justfile_directory()}}/data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw docker compose up -d
 
+# Start in production mode
+start-prod:
+    @echo "Starting in production mode...";
+    docker compose up -d
+
+# The start target is a single line continued command, so that ENV_VARS can be set
 # Start in production mode - or choose dev/prod when on galois
 start:
-    @ENV_VARS=""; \
-    if [ "$(hostname -s)" = "galois" ]; then \
+    @if [ "$(hostname -s)" = "galois" ]; then \
         echo "Running on galois, you probably want dev"; \
         TYPE=$(gum choose "dev" "prod"); \
         if [ "$TYPE" = "dev" ]; then \
-            ENV_VARS="AUDIOBOOKS_VOLUME=./data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw"; \
+            just start-dev; \
+            exit 0; \
         fi \
     fi; \
-    echo $ENV_VARS docker compose up -d; \
-    env $ENV_VARS docker compose up -d
+    just start-prod
 
 # Stop the application
 stop:
