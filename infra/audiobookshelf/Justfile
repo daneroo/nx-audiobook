@@ -9,9 +9,10 @@ status:
     docker compose ps
 
 
+# The start target is a single line continued command, so that ENV_VARS can be set
+
 # Start in production mode - or choose dev/prod when on galois
 start:
-    # This a single line continued command, so that ENV_VARS can be set
     @ENV_VARS=""; \
     if [ "$(hostname -s)" = "galois" ]; then \
         echo "Running on galois, you probably want dev"; \
