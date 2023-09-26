@@ -21,8 +21,8 @@ start:
             ENV_VARS="AUDIOBOOKS_VOLUME=./data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw"; \
         fi \
     fi; \
-    echo $ENV_VARS docker compose up -d \
-    $ENV_VARS docker compose up -d
+    echo $ENV_VARS docker compose up -d; \
+    env $ENV_VARS docker compose up -d
 
 # Stop the application
 stop:
