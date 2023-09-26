@@ -8,12 +8,20 @@ default:
 status:
     docker compose ps
 
-# Start in development mode
-dev:
-    AUDIOBOOKS_VOLUME=./data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw docker compose up -d
-# Start in production mode
+
+# Start in production mode - or choose dev/prod when on galois
 start:
-    docker compose up -d
+    # This a single line continued command, so that ENV_VARS can be set
+    @ENV_VARS=""; \
+    if [ "$(hostname -s)" = "galois" ]; then \
+        echo "Running on galois, you probably want dev"; \
+        TYPE=$(gum choose "dev" "prod"); \
+        if [ "$TYPE" = "dev" ]; then \
+            ENV_VARS="AUDIOBOOKS_VOLUME=./data/audiobooks AUDIOBOOKS_ACCESS_MODE=rw"; \
+        fi \
+    fi; \
+    echo $ENV_VARS docker compose up -d \
+    $ENV_VARS docker compose up -d
 
 # Stop the application
 stop:
