@@ -39,7 +39,6 @@ export async function fixModTimeHintPerDirectory(
     if (audiobook.audioFiles.length > 0) {
       const validation = await fixModTimeHintBook(audiobook, {
         dryRun,
-        verbosity,
         includeNonAudioFiles,
       })
       const validations = [validation]
@@ -61,9 +60,9 @@ export async function fixModTimeHintPerDirectory(
 // - optionally fix the directory as a whole, and *all* it's files
 export async function fixModTimeHintBook(
   audiobook: AudioBook,
-  options: { dryRun: boolean; verbosity: number; includeNonAudioFiles: boolean }
+  options: { dryRun: boolean; includeNonAudioFiles: boolean }
 ): Promise<Validation> {
-  const { dryRun, verbosity, includeNonAudioFiles } = options
+  const { dryRun, includeNonAudioFiles } = options
 
   // The error here is most likely a missing key in the mtime hint lookup
   const [error, mtimeHintMS] = modTimeHint(audiobook)
@@ -91,7 +90,7 @@ export async function fixModTimeHintBook(
   // now perform the check - and gather warnings
   const warnings: string[] = []
   for (const file of files) {
-    const ok = await fixModTimeFile(file, mtimeHintMS, { dryRun, verbosity })
+    const ok = await fixModTimeFile(file, mtimeHintMS, { dryRun })
     if (!ok) {
       // This is the current modtime as as ISO Formatted Str
       const mtimeStr = file.mtime.toISOString()
@@ -117,32 +116,20 @@ export async function fixModTimeHintBook(
 export async function fixModTimeFile(
   fileInfo: FileInfo,
   mtimeHintMS: number,
-  options: { dryRun: boolean; verbosity: number }
+  options: { dryRun: boolean }
 ): Promise<boolean> {
-  const { dryRun, verbosity } = options
+  const { dryRun } = options
 
-  // This is the desired modtime as as ISO Formatted Str
-  const mtimeHintStr = new Date(mtimeHintMS).toISOString()
   // This is the current modtime in ms
   const mtimeMS = fileInfo.mtime.getTime()
-  // This is the current modtime as as ISO Formatted Str
-  const mtimeStr = fileInfo.mtime.toISOString()
   // This is the path of the file
   const path = fileInfo.path
 
   // TODO(daneroo): clean this up once API for fixing is determined
   if (mtimeMS === mtimeHintMS) {
-    // mtime hint is satisfied
-    // if (verbosity > 0) {
-    //   console.log(`fixModTimeFile (OK) ${mtimeStr} == ${mtimeHintStr} ${path}`)
-    // }
     return true
   }
-  // ELSE mtime hint is not satisfied -  need to fix/check the modtime
-  if (dryRun) {
-    // console.log(`fixModTimeFile (check) ${mtimeStr} => ${mtimeHintStr} ${path}`)
-  } else {
-    // console.log(`fixModTimeFile (fix) ${mtimeStr} => ${mtimeHintStr} ${path}`)
+  if (!dryRun) {
     await utimes(path, new Date(mtimeHintMS), new Date(mtimeHintMS))
   }
   return false
@@ -170,7 +157,9 @@ export async function validateModTimeHint(
   // hasAudioFiles is always true below
 
   // Go-style error handling for modTimeHint
-  const [error, mtimeHintMS] = modTimeHint(audiobook)
+  // This is called again in fixModTimeHintBook
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [error, _] = modTimeHint(audiobook)
   if (error !== undefined) {
     return {
       ok: false,
@@ -182,7 +171,6 @@ export async function validateModTimeHint(
 
   const validations = await fixModTimeHintBook(audiobook, {
     dryRun: true,
-    verbosity: 0,
     includeNonAudioFiles: false,
   })
   return validations
