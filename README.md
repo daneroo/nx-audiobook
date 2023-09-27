@@ -13,7 +13,7 @@ This repo consolidates audiobook management
 ## TODO
 
 - [ ] validate
-  - [ ] convert fixModTime.. into validations (with a fix param?)
+  - [ ] convert fixModTime.. into validations (with a fix param?) - remove fixModTimeHintPerDirectory
   - [x] mtime for parent dir
   - [ ] mtime for other files (.epub, cover.jpg)
   - [ ] mtime for grandparent dir(s)

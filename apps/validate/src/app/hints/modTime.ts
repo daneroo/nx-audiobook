@@ -68,6 +68,9 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Tom Holland - Pax": ["2023-09-26T20:55:42Z","NEW BOOK"],
+  "M. L. Wang - The Sword of Kaigen":["2023-09-26T06:37:21Z","NEW BOOK"],
+  "Bent Flyvbjerg, Dan Gardner - How Big Things Get Done":["2023-09-26T06:38:26Z","NEW BOOK"],
   "Thomas Hughes - Tom Brown's Schooldays": ['2023-09-13T02:06:00Z', "NEW BOOK"],
   "Mustafa Suleyman - The Coming Wave": ['2023-09-20T03:42:57Z', "NEW BOOK"],
   "Adam Savage - Every Tool's a Hammer": ['2021-01-17T20:59:45Z', "MISSING LEGACY BOOK"],

@@ -6,17 +6,17 @@ import type { AudioBook } from '../types'
 import { dedupArray } from './dedupArray'
 import { validateModTimeHint } from './validateModTime'
 
-export function validateDirectory(
+export async function validateDirectory(
   // hint: Hint | undefined,
   audiobook: AudioBook
-): Validation[] {
+): Promise<Validation[]> {
   const { audioFiles } = audiobook
   const validations: Validation[] = [
     validateFilesAllAccountedFor(audioFiles.map((file) => file.fileInfo)),
     validateUniqueAuthorTitle(audiobook),
     validateDuration(audiobook),
     validateCover(audiobook),
-    validateModTimeHint(audiobook),
+    await validateModTimeHint(audiobook),
   ]
   return validations
 }

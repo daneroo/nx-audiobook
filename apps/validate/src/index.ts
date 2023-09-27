@@ -99,7 +99,8 @@ async function validatePerDirectory(
   let totalBooks = 0
   for (const directoryPath of directories) {
     const audiobook = await classifyDirectory(directoryPath)
-    const validations = validateDirectory(audiobook)
+    // some validations are now async (because of coming fix mode for validateModTimeHint)
+    const validations = await validateDirectory(audiobook)
     const shortPath = directoryPath.substring(rootPath.length)
     show(
       shortPath.length === 0 ? '/ (<root>)' : shortPath,

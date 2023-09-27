@@ -3,6 +3,7 @@ version: '3.7'
 services:
   audiobookshelf:
     # 2023-09-21 update from 2.3.3 to 2.4.3
+    # Could use edge tag to fix epub presence bug for client - or wait for >2.4.3
     image: ghcr.io/advplyr/audiobookshelf:2.4.3
     ports:
       - 13378:80
