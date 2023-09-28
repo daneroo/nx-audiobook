@@ -7,6 +7,8 @@ red := `printf "\033[31m"`
 reset := `printf "\033[0m"`
 green_check := green + "✓" + reset
 red_xmark := red + "✗" + reset
+# centralize the format command to style (theme=lignt?)
+gum_fmt_cmd := "gum format"
 
 # List available commands
 default:
@@ -26,7 +28,7 @@ checkfiles:
 [private]
 checkfiles-in-dir dir:
     #!/usr/bin/env bash
-    echo "# Validating {{ dir }}..." | gum format
+    echo "# Validating {{ dir }}..." | {{ gum_fmt_cmd }}
     just check-ds-store {{ dir }}
     just check-perms {{ dir }}
     just check-xattrs {{ dir }}
@@ -35,13 +37,13 @@ checkfiles-in-dir dir:
 [private]
 check-ds-store dir:
     #!/usr/bin/env bash
-    echo "## Checking .DS_Store files" | gum format
+    echo "## Checking .DS_Store files" | {{ gum_fmt_cmd }}
     found=$(find {{ dir }} -name .DS_Store)
     if [[ $found ]]; then
-        echo "{{ red_xmark }} - Found .DS_Store files:" | gum format
+        echo "{{ red_xmark }} - Found .DS_Store files:" | {{ gum_fmt_cmd }}
         echo "$found"
         if gum confirm "Do you want to remove them?"; then
-          echo "## Removing .DS_Store files in {{ dir }}..." | gum format
+          echo "## Removing .DS_Store files in {{ dir }}..." | {{ gum_fmt_cmd }}
           find {{ dir }} -name .DS_Store -delete
         fi
     else
@@ -52,13 +54,13 @@ check-ds-store dir:
 [private]
 check-perms dir:
     #!/usr/bin/env bash
-    echo "## Checking permissions files/dirs:755/644" | gum format
+    echo "## Checking permissions files/dirs:755/644" | {{ gum_fmt_cmd }}
 
     files_wrong_perms=$(find {{ dir }} -not -perm 644 -type f)
     dirs_wrong_perms=$(find {{ dir }} -not -perm 755 -type d)
 
     if [[ $files_wrong_perms ]] || [[ $dirs_wrong_perms ]]; then
-        echo "{{ red_xmark }} - Files/directories with incorrect permissions found:" | gum format
+        echo "{{ red_xmark }} - Files/directories with incorrect permissions found:" | {{ gum_fmt_cmd }}
         if [[ $files_wrong_perms ]]; then
             echo "Files not having 644 permissions:"
             echo "$files_wrong_perms"
@@ -68,7 +70,7 @@ check-perms dir:
             echo "$dirs_wrong_perms"
         fi
         if gum confirm "Do you want to fix the permissions?"; then
-            echo "## Fixing permissions in {{ dir }}..." | gum format
+            echo "## Fixing permissions in {{ dir }}..." | {{ gum_fmt_cmd }}
             find {{ dir }} -type d -exec chmod 755 {} \;
             find {{ dir }} -type f -exec chmod 644 {} \;
         fi
@@ -80,7 +82,7 @@ check-perms dir:
 [private]
 check-xattrs dir:
     #!/usr/bin/env bash
-    echo "## Checking extended attributes in {{ dir }}..." | gum format
+    echo "## Checking extended attributes in {{ dir }}..." | {{ gum_fmt_cmd }}
     ANY_XATTRS_FOUND="NONE"  # Initialize the variable outside the loop
 
     while read -r file; do
@@ -88,7 +90,7 @@ check-xattrs dir:
         attrs=$(xattr "$file")
         if [[ $attrs ]]; then
             ANY_XATTRS_FOUND="SOME"
-            echo "{{ red_xmark }} $file has xattrs:" | gum format
+            echo "{{ red_xmark }} $file has xattrs:" | {{ gum_fmt_cmd }}
             echo "$attrs"
             if gum confirm "Do you want to remove the xattrs from this file?"; then
                 echo "Removing xattrs from $file"
