@@ -68,6 +68,8 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Maurice Druon - Le Roi de fer": ["2023-10-19T13:06:37Z", "NEW BOOK"],
+  "Thomas Lin - The Prime Number Conspiracy": ["2023-10-11T05:48:21Z","NEW BOOK"],
   "Tom Holland - Pax": ["2023-09-26T20:55:42Z","NEW BOOK"],
   "M. L. Wang - The Sword of Kaigen":["2023-09-26T06:37:21Z","NEW BOOK"],
   "Bent Flyvbjerg, Dan Gardner - How Big Things Get Done":["2023-09-26T06:38:26Z","NEW BOOK"],
