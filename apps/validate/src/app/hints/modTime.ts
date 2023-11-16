@@ -68,6 +68,7 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Cory Doctorow - The Lost Cause": ["2023-11-14T00:22:27Z", "NEW BOOK"],
   "Walter Isaacson - Elon Musk": ["2023-10-19T14:41:10Z", "NEW BOOK"],
   "Bill Browder - Red Notice": ["2023-10-19T14:36:51Z", "NEW BOOK"],
   "Daniel Kahneman - Noise": ["2023-10-19T14:33:34Z", "NEW BOOK"],

@@ -16,7 +16,7 @@ _Note_: as of 2023-07-17 I uninstalled plexmediaserver on this host, and will re
 - Audiobookshelf
 
   - Local: <http://plex-audiobook.imetrical.com:13378/>
-  - Local: <http://192.168.2.112:13378/web>
+  - Local: <http://192.168.2.112:13378/>
 
 - Plex server: Running as a service on this VM
   - [ ] REMOVE: Remote: <https://audiobook.dl.imetrical.com:443/web>
