@@ -68,6 +68,9 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Mario Livio - The Equation That Couldn't Be Solved": ["2023-11-30T03:10:00Z", "NEW BOOK"],
+  "Patrick Rothfuss, Nate Taylor - illustrator - The Narrow Road Between Desires":["2023-11-30T02:56:16Z","NEW BOOK"],
+  "Maurice Druon - Les Poisons de la Couronne": ["2023-10-27T02:44:48Z", "NEW BOOK"],
   "Cory Doctorow - The Lost Cause": ["2023-11-14T00:22:27Z", "NEW BOOK"],
   "Walter Isaacson - Elon Musk": ["2023-10-19T14:41:10Z", "NEW BOOK"],
   "Bill Browder - Red Notice": ["2023-10-19T14:36:51Z", "NEW BOOK"],
