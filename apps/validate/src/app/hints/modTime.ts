@@ -68,6 +68,13 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  // 2023-12-01T23:36:26Z
+  "Stephen R. Donaldson - The Wounded Land": ["2023-12-01T23:36:26Z", "NEW BOOK"],
+  "Stephen R. Donaldson - The One Tree": ["2023-12-01T23:36:26Z", "NEW BOOK"],
+  "Stephen R. Donaldson - White Gold Wielder": ["2023-12-01T23:36:26Z", "NEW BOOK"],
+  "Stephen R. Donaldson - Lord Foul’s Bane": ["2023-12-01T22:14:54Z", "NEW BOOK"],
+  "Stephen R. Donaldson - The Illearth War": ["2023-12-01T22:14:54Z", "NEW BOOK"],
+  "Stephen R. Donaldson - The Power That Preserves": ["2023-12-01T22:14:54Z", "NEW BOOK"],
   "William Egginton - The Rigor of Angels": ["2023-12-01T20:38:11Z", "NEW BOOK"],
   "Ray Nayler - The Mountain in the Sea": ["2023-12-01T20:47:18Z", "NEW BOOK"],
   "Octavia E. Butler - Dawn": ["2023-12-01T20:41:25Z", "NEW BOOK"],
