@@ -69,6 +69,8 @@ get_utc_mod_time() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // 2023-12-01T23:36:26Z
+  "Kevin J. Anderson - Clockwork Lives": ["2023-12-20T21:57:03Z", "NEW BOOK"],
+  "Kevin J. Anderson - Clockwork Angels": ["2023-12-20T21:45:04Z", "NEW BOOK"],
   "Stephen R. Donaldson - The Wounded Land": ["2023-12-01T23:36:26Z", "NEW BOOK"],
   "Stephen R. Donaldson - The One Tree": ["2023-12-01T23:36:26Z", "NEW BOOK"],
   "Stephen R. Donaldson - White Gold Wielder": ["2023-12-01T23:36:26Z", "NEW BOOK"],
