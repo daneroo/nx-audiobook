@@ -2,11 +2,12 @@ version: '3.7'
 
 services:
   audiobookshelf:
+    # 2023-12-27 update from 2.6.0 to 2.7.0
     # 2023-12-01 update from 2.5.0 to 2.6.0
     # 2023-11-16 update from 2.4.4 to 2.5.0 (Epub ereader search)
     # 2023-10-19 update from 2.4.3 to 2.4.4 (epu on mobile fix)
     # 2023-09-21 update from 2.3.3 to 2.4.3
-    image: ghcr.io/advplyr/audiobookshelf:2.6.0
+    image: ghcr.io/advplyr/audiobookshelf:2.7.0
     ports:
       - 13378:80
     volumes:

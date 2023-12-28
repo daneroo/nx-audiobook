@@ -68,7 +68,9 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2023-12-01T23:36:26Z
+  "Immanuel Kant - The Critique of Pure Reason": ["2023-12-28T04:38:28Z", "NEW BOOK"],
+  "Immanuel Kant - Critique of Pure Reason": ["2023-12-28T04:35:36Z", "NEW BOOK"],
+  "Immanuel Kant - Prolegomena to Any Future Metaphysics that Will Be Able to Present Itself as a Science": ["2023-12-27T12:09:15Z", "NEW BOOK"],
   "Kevin J. Anderson - Clockwork Lives": ["2023-12-20T21:57:03Z", "NEW BOOK"],
   "Kevin J. Anderson - Clockwork Angels": ["2023-12-20T21:45:04Z", "NEW BOOK"],
   "Stephen R. Donaldson - The Wounded Land": ["2023-12-01T23:36:26Z", "NEW BOOK"],
