@@ -18,42 +18,9 @@ This repo consolidates audiobook management
 - validate locally
 - sync to staging (galois:/Volumes/Reading/audiobooks)
 - validate on staging
-- sync to prod (syno)
+- sync to prod (syno) - and mirrors
 
-```bash
-cd apps/validate
-time pnpm run dev --help
-time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/
-# add to modTime.ts
-time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/ --mtime check
-time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/ --mtime fix
-
-# convert to m4b - in local dev and watch in audiobookshelf docker container
-# apk add htop glances
-# watch 'find /metadata /audiobooks -mmin -30 -exec ls -lh {} \;'
-
-just checkfiles
-
-# Dev to Staging
-#  on galois, dev, sync to /Volumes/Reading/audiobooks
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Reading/audiobooks/
-
-# Validate again
-time pnpm run dev -r /Volumes/Reading/audiobooks/
-time pnpm run dev -r /Volumes/Reading/audiobooks/ --mtime check
-
-just checkfiles
-
-
-# Staging to Prod **FROM Syno**
-# on syno, pull from galois (Staging)
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /volume1/Reading/audiobooks/
-
-# Manual scan from audiobookshelf (prod)
-open https://audiobook.dl.imetrical.com/
-```
-
-Operate the local/staging audiobookshelf
+### Operate the local/staging audiobookshelf
 
 ```bash
 cd infra/audiobookshelf
@@ -65,6 +32,52 @@ open http://0.0.0.0:13378
 open data/audiobooks/
 # open the Staging directory
 open ~/Downloads/Staging/
+
+# watch in container
+just exec
+apk add htop glances
+watch 'find /metadata /audiobooks -mmin -30 -exec ls -lh {} \;'
+watch 'find /metadata -name \*m4b -mmin -30 -exec ls -lh {} \;'
+
+```
+
+### Validate locally
+
+```bash
+cd apps/validate
+time pnpm run dev --help
+time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/
+# add to modTime.ts
+time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/ --mtime check
+time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/ --mtime fix
+
+# convert to m4b - in local dev and watch in audiobookshelf docker container ^^
+just checkfiles
+```
+
+### Sync to Staging
+
+```bash
+# Dev to Staging
+#  on galois, dev, sync to /Volumes/Reading/audiobooks
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Reading/audiobooks/
+
+# Validate again
+time pnpm run dev -r /Volumes/Reading/audiobooks/
+time pnpm run dev -r /Volumes/Reading/audiobooks/ --mtime check
+
+just checkfiles
+```
+
+### Sync to Prod - and mirrors
+
+```bash
+# Staging to Prod **FROM Syno**
+# on syno, pull from galois (Staging)
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /volume1/Reading/audiobooks/
+
+# Manual scan from audiobookshelf (prod)
+open https://audiobook.dl.imetrical.com/
 ```
 
 ## TODO

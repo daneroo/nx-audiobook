@@ -68,6 +68,13 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Ali Abdaal - Feel-Good Productivity": ["2024-01-05T21:41:41Z", "NEW BOOK"],
+  "Christopher Ruocchio - Ashes of Man": ["2024-01-05T21:22:58Z", "NEW BOOK"],
+  "Christopher Ruocchio - Kingdoms of Death": ["2024-01-05T06:13:58Z", "NEW BOOK"],
+  "Christopher Ruocchio - Demon in White": ["2024-01-05T06:16:06Z", "NEW BOOK"],
+  "Christopher Ruocchio - Queen Amid Ashes": ["2024-01-05T05:57:01Z", "NEW BOOK"],
+  "Christopher Ruocchio - Howling Dark": ["2024-01-05T06:10:20Z", "NEW BOOK"],
+  "Christopher Ruocchio - The Lesser Devil": ["2024-01-05T06:01:33Z", "NEW BOOK"],
   "Immanuel Kant - The Critique of Pure Reason": ["2023-12-28T04:38:28Z", "NEW BOOK"],
   "Immanuel Kant - Critique of Pure Reason": ["2023-12-28T04:35:36Z", "NEW BOOK"],
   "Immanuel Kant - Prolegomena to Any Future Metaphysics that Will Be Able to Present Itself as a Science": ["2023-12-27T12:09:15Z", "NEW BOOK"],
