@@ -68,6 +68,19 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Tom Holland - Dynasty": ["2024-01-10T06:02:32Z", "NEW BOOK"],
+  "Sean Carroll - The Biggest Ideas in the Universe": ["2024-01-10T06:14:26Z", "NEW BOOK"],
+  "Pierce Brown - Red Rising": ["2024-01-10T05:31:16Z", "NEW BOOK"],
+  "Pierce Brown - Golden Son": ["2024-01-10T05:31:16Z", "NEW BOOK"],
+  "Pierce Brown - Morning Star": ["2024-01-10T05:31:16Z", "NEW BOOK"],
+  "Pierce Brown - Iron Gold": ["2024-01-10T05:31:16Z", "NEW BOOK"],
+  "Pierce Brown - Dark Age": ["2024-01-10T05:31:16Z", "NEW BOOK"],
+  "Pierce Brown - Light Bringer": ["2024-01-10T05:31:16Z", "NEW BOOK"],
+  "Fonda Lee - Jade Legacy": ["2024-01-10T05:10:33Z", "NEW BOOK"],
+  "Fonda Lee - Jade War": ["2024-01-10T05:10:33Z", "NEW BOOK"],
+  "Fonda Lee - Jade Shards": ["2024-01-10T05:10:33Z", "NEW BOOK"],
+  "Fonda Lee - The Jade Setter of Janloon": ["2024-01-10T05:10:33Z", "NEW BOOK"],
+  "Bertrand Russell - A History of Western Philosophy": ["2024-01-10T05:00:18Z", "NEW BOOK"],
   "Ali Abdaal - Feel-Good Productivity": ["2024-01-05T21:41:41Z", "NEW BOOK"],
   "Christopher Ruocchio - Ashes of Man": ["2024-01-05T21:22:58Z", "NEW BOOK"],
   "Christopher Ruocchio - Kingdoms of Death": ["2024-01-05T06:13:58Z", "NEW BOOK"],
