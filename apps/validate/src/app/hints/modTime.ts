@@ -59,7 +59,7 @@ function bookKey(book: AudioBook): string {
 /**
  * Get the UTC modification time of a file (bash function)
 
-get_utc_mod_time() {
+mod_time_utc() {
   local filename="$1"
   date -u -r $(stat -f "%m" "${filename}") +"%Y-%m-%dT%H:%M:%SZ"
 }
@@ -68,6 +68,10 @@ get_utc_mod_time() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Mark Galeotti - Putin's Wars": ["2024-01-21T01:12:14Z", "NEW BOOK"],
+  "Marie Favereau - The Horde": ["2024-01-21T00:53:33Z", "NEW BOOK"],
+  "Tom Holland - The Forge Of Christendom": ["2024-01-21T01:00:41Z", "NEW BOOK"],
+  "Tom Holland - In the Shadow Of The Sword": ["2024-01-21T00:59:24Z", "NEW BOOK"],
   "Tom Holland - Dynasty": ["2024-01-10T06:02:32Z", "NEW BOOK"],
   "Sean Carroll - The Biggest Ideas in the Universe": ["2024-01-10T06:14:26Z", "NEW BOOK"],
   "Pierce Brown - Red Rising": ["2024-01-10T05:31:16Z", "NEW BOOK"],

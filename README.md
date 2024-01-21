@@ -44,6 +44,23 @@ watch 'find /metadata -name \*m4b -mmin -30 -exec ls -lh {} \;'
 ### Validate locally
 
 ```bash
+alias tone=~/Downloads/tone-0.1.5-osx-arm64/tone
+
+bitrate() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: bitrate <filename>"
+        return 1
+    fi
+
+    echo "Bitrate for: $(basename "$1")"
+    echo "Tone: $(tone dump "$1" | grep 'bitrate')"
+    echo "FFprobe: $(ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate "$1" | grep 'rate')"
+}
+mod_time_utc() {
+  local filename="$1"
+  date -u -r $(stat -f "%m" "${filename}") +"%Y-%m-%dT%H:%M:%SZ"
+}
+
 cd apps/validate
 time pnpm run dev --help
 time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/
