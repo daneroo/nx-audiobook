@@ -68,6 +68,11 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Maurice Druon - Quand un roi perd la France": ["2024-01-23T04:02:39Z", "NEW BOOK"],
+  "Maurice Druon - Le Lis et le lion": ["2024-01-23T04:02:39Z", "NEW BOOK"],
+  "Maurice Druon - La Louve de France": ["2024-01-23T04:02:39Z", "NEW BOOK"],
+  "Maurice Druon - La Loi des mâles": ["2024-01-23T04:02:39Z", "NEW BOOK"],
+  "Maurice Druon - La Reine étranglée": ["2024-01-23T04:02:39Z", "NEW BOOK"],
   "Mark Galeotti - Putin's Wars": ["2024-01-21T01:12:14Z", "NEW BOOK"],
   "Marie Favereau - The Horde": ["2024-01-21T00:53:33Z", "NEW BOOK"],
   "Tom Holland - The Forge Of Christendom": ["2024-01-21T01:00:41Z", "NEW BOOK"],
