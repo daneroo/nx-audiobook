@@ -68,6 +68,15 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Voltaire - Candide ou L'optimisme": ["2024-02-11T07:37:39Z", "NEW BOOK"],
+  "R. F. Kuang - Babel": ["2024-02-11T07:37:39Z", "NEW BOOK"],
+  "Tracy Kidder - The Soul of a New Machine": ["2024-02-11T07:37:39Z", "NEW BOOK"],
+  "Italo Calvino - Invisible Cities": ["2024-02-11T07:37:39Z", "NEW BOOK"],
+  "Brent Weeks - The Black Prism": ["2024-02-11T05:00:27Z", "NEW BOOK"],
+  "Brent Weeks - The Blinding Knife": ["2024-02-11T05:00:27Z", "NEW BOOK"],
+  "Brent Weeks - The Blood Mirror": ["2024-02-11T05:00:27Z", "NEW BOOK"],
+  "Brent Weeks - The Burning White": ["2024-02-11T05:00:27Z", "NEW BOOK"],
+  "Brent Weeks - The Broken Eye": ["2024-02-11T05:00:27Z", "NEW BOOK"],
   "Maurice Druon - Quand un roi perd la France": ["2024-01-23T04:02:39Z", "NEW BOOK"],
   "Maurice Druon - Le Lis et le lion": ["2024-01-23T04:02:39Z", "NEW BOOK"],
   "Maurice Druon - La Louve de France": ["2024-01-23T04:02:39Z", "NEW BOOK"],
