@@ -1,14 +1,16 @@
 # Install just on Ubuntu:
 # curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | sudo bash -s -- --to /usr/local/bin/
+# Install just on macOS:
+# brew install just
 
 # weird escape for Just, could not get octal 33 any other way
 green := `printf "\033[32m"`
 red := `printf "\033[31m"`
 reset := `printf "\033[0m"`
-green_check := green + "✓" + reset
+green_check := green + "✔" + reset
 red_xmark := red + "✗" + reset
-# centralize the format command to style (theme=lignt?)
-gum_fmt_cmd := "gum format"
+# centralize the format command to style (theme=lignt)
+gum_fmt_cmd := "gum format --theme=light"
 
 # List available commands
 default:
