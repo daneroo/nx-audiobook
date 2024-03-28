@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Robert M. Sapolsky - Determined": ["2024-03-28T22:15:05Z", "NEW BOOK"],
+  "Robert M. Sapolsky - Behave": ["2024-03-28T21:53:22Z", "NEW BOOK"],
   "Yaroslav Trofimov - Our Enemies Will Vanish": ["2024-03-14T03:23:17Z", "NEW BOOK"],
   "Chris Dixon - Read Write Own": ["2024-03-14T03:23:17Z", "NEW BOOK"],
   "Voltaire - Candide ou L'optimisme": ["2024-02-11T07:37:39Z", "NEW BOOK"],
