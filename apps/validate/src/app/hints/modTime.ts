@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Stephen Kotkin - Stalin, Volume I": ["2024-04-03T22:07:27Z", "NEW BOOK"],
+  "Stephen Kotkin - Stalin, Volume II": ["2024-04-03T22:07:27Z", "NEW BOOK"],
+  "Stephen Kotkin - Armageddon Averted": ["2024-04-03T09:18:53Z", "NEW BOOK"],
   "Robert M. Sapolsky - Determined": ["2024-03-28T22:15:05Z", "NEW BOOK"],
   "Robert M. Sapolsky - Behave": ["2024-03-28T21:53:22Z", "NEW BOOK"],
   "Yaroslav Trofimov - Our Enemies Will Vanish": ["2024-03-14T03:23:17Z", "NEW BOOK"],
