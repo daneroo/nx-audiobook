@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  'Dmitri Alperovitch, Garrett M. Graff - contributor - World on the Brink': ["2024-05-05T03:34:49Z", "NEW BOOK"],
   "Stephen Kotkin - Stalin, Volume I": ["2024-04-03T22:07:27Z", "NEW BOOK"],
   "Stephen Kotkin - Stalin, Volume II": ["2024-04-03T22:07:27Z", "NEW BOOK"],
   "Stephen Kotkin - Armageddon Averted": ["2024-04-03T09:18:53Z", "NEW BOOK"],
