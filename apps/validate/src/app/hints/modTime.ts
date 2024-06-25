@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Steven Runciman - The Fall of Constantinople 1453": ["2024-06-25T04:07:26Z", "NEW BOOK"],
   "Sean Carroll - Quanta and Fields": ["2024-06-13T02:49:26Z", "NEW BOOK"],
   "Robert Frost - The Road not Taken": ["2024-06-13T02:56:07Z", "NEW BOOK"],
   "Éric-Emmanuel Schmitt - Paradis perdus": ["2024-06-13T02:53:07Z", "NEW BOOK"],
