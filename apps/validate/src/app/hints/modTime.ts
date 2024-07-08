@@ -68,6 +68,13 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "James Joyce - Dubliners": ["2024-07-08T06:03:40Z", "NEW BOOK"],
+  "James Clavell - Shōgun, Part One": ["2024-07-08T05:49:41Z", "NEW BOOK"],
+  "James Clavell - Shōgun, Part Two": ["2024-07-08T05:49:41Z", "NEW BOOK"],
+  "James Clavell - Tai-Pan: The Epic Novel of the Founding of Hong Kong": ["2024-07-08T05:49:41Z", "NEW BOOK"],
+  "James Clavell - Gai-Jin: The Epic Novel of the Birth of Modern Japan": ["2024-07-08T05:49:41Z", "NEW BOOK"],
+  "James Clavell - King Rat: The Epic Novel of War and Survival": ["2024-07-08T05:49:41Z", "NEW BOOK"],
+  "James Clavell - Noble House: The Epic Novel of Modern Hong Kong": ["2024-07-08T05:49:41Z", "NEW BOOK"],
   "Iain Banks - The Wasp Factory": ["2024-07-07T23:01:06Z", "NEW BOOK"],
   "Multiple Authors - The Age of AI": ["2024-07-07T23:23:26Z", "NEW BOOK"],
   "Carlo Rovelli - White Holes": ["2024-07-07T23:08:03Z", "NEW BOOK"],
