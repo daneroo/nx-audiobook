@@ -68,7 +68,7 @@ time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/
 time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/ --mtime check
 time pnpm run dev -r ../../infra/audiobookshelf/data/audiobooks/ --mtime fix
 
-# convert to m4b - in local dev and watch in audiobookshelf docker container ^^
+# convert to m4b - in local dev and watch in audiobookshelf docker container
 just checkfiles
 ```
 

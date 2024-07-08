@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Iain Banks - The Wasp Factory": ["2024-07-07T23:01:06Z", "NEW BOOK"],
+  "Multiple Authors - The Age of AI": ["2024-07-07T23:23:26Z", "NEW BOOK"],
+  "Carlo Rovelli - White Holes": ["2024-07-07T23:08:03Z", "NEW BOOK"],
   "Steven Runciman - The Fall of Constantinople 1453": ["2024-06-25T04:07:26Z", "NEW BOOK"],
   "Sean Carroll - Quanta and Fields": ["2024-06-13T02:49:26Z", "NEW BOOK"],
   "Robert Frost - The Road not Taken": ["2024-06-13T02:56:07Z", "NEW BOOK"],
