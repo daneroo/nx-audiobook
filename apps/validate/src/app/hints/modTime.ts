@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Evan Winter - The Fires of Vengeance": ["2024-07-22T22:00:19Z", "NEW BOOK"],
+  "Evan Winter - The Rage of Dragons": ["2024-07-22T22:00:19Z", "NEW BOOK"],
   "James Joyce - Dubliners": ["2024-07-08T06:03:40Z", "NEW BOOK"],
   "James Clavell - Shōgun, Part One": ["2024-07-08T05:49:41Z", "NEW BOOK"],
   "James Clavell - Shōgun, Part Two": ["2024-07-08T05:49:41Z", "NEW BOOK"],
