@@ -44,6 +44,7 @@ watch 'find /metadata -name \*m4b -mmin -30 -exec ls -lh {} \;'
 ### Validate locally
 
 ```bash
+# Tone has been removed: https://github.com/advplyr/audiobookshelf/pull/3111
 alias tone=~/Downloads/tone-0.1.5-osx-arm64/tone
 
 bitrate() {
