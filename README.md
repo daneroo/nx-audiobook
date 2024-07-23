@@ -105,7 +105,7 @@ rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical
 
 ## TODO
 
-- [ ] Upgrade to v2.5.0
+- [ ] consider moving to deno workspace - in a clone or branch - couple with audiobookshelf
 - [ ] validate
   - [ ] convert fixModTime.. into validations (with a fix param?) - remove fixModTimeHintPerDirectory
   - [x] mtime for parent dir
