@@ -61,6 +61,18 @@ mod_time_utc() {
   local filename="$1"
   date -u -r $(stat -f "%m" "${filename}") +"%Y-%m-%dT%H:%M:%SZ"
 }
+metadata() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: metadata <filename>"
+        return 1
+    fi
+
+    echo "Metadata for: $(basename "$1")"
+    echo "Tone Dump:"
+    tone dump "$1"
+    echo "FFprobe:"
+    ffprobe -v quiet -print_format json -show_format -show_streams "$1" | jq .
+}
 
 cd apps/validate
 time pnpm run dev --help

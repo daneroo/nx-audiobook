@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Daron Acemoglu, James A. Robinson - Why Nations Fail: The Origins of Power, Prosperity, and Poverty": ["2024-08-05T15:19:51Z", "NEW BOOK"],
+  "Daron Acemoglu, Simon Johnson - Power and Progress: Our Thousand-Year Struggle over Technology and Prosperity": ["2024-08-05T15:15:43Z", "NEW BOOK"],
   "Evan Winter - The Fires of Vengeance": ["2024-07-22T22:00:19Z", "NEW BOOK"],
   "Evan Winter - The Rage of Dragons": ["2024-07-22T22:00:19Z", "NEW BOOK"],
   "James Joyce - Dubliners": ["2024-07-08T06:03:40Z", "NEW BOOK"],
