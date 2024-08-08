@@ -68,6 +68,14 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Robin Hobb - Assassin's Quest": ["2024-08-08T19:25:06Z", "NEW BOOK"],
+  "Robin Hobb - Royal Assassin": ["2024-08-08T19:25:06Z", "NEW BOOK"],
+  "Robin Hobb - Assassin's Apprentice":["2024-08-08T19:25:06Z","NEW BOOK"],
+  "John Gwynne - The Hunger of the Gods":["2024-08-08T06:35:30Z","NEW BOOK"],
+  "John Gwynne - The Shadow of the Gods":["2024-08-08T06:35:30Z","NEW BOOK"],
+  "John Gwynne - A Time of Courage":["2024-08-08T06:28:35Z","NEW BOOK"],
+  "John Gwynne - A Time of Blood":["2024-08-08T06:28:35Z","NEW BOOK"],
+  "John Gwynne - A Time of Dread":["2024-08-08T06:28:35Z","NEW BOOK"],
   "Daron Acemoglu, James A. Robinson - Why Nations Fail: The Origins of Power, Prosperity, and Poverty": ["2024-08-05T15:19:51Z", "NEW BOOK"],
   "Daron Acemoglu, Simon Johnson - Power and Progress: Our Thousand-Year Struggle over Technology and Prosperity": ["2024-08-05T15:15:43Z", "NEW BOOK"],
   "Evan Winter - The Fires of Vengeance": ["2024-07-22T22:00:19Z", "NEW BOOK"],
