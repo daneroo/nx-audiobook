@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Jonathan Rauch - The Constitution of Knowledge: A Defense of Truth": ["2024-08-17T00:45:25Z","NEW BOOK"],
   "Robin Hobb - Assassin's Quest": ["2024-08-08T19:25:06Z", "NEW BOOK"],
   "Robin Hobb - Royal Assassin": ["2024-08-08T19:25:06Z", "NEW BOOK"],
   "Robin Hobb - Assassin's Apprentice":["2024-08-08T19:25:06Z","NEW BOOK"],
