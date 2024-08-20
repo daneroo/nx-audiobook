@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Sara Imari Walker - Life as No One Knows It: The Physics of Life's Emergence": ["2024-08-19T23:41:57Z","NEW BOOK"],
   "Jonathan Rauch - The Constitution of Knowledge: A Defense of Truth": ["2024-08-17T00:45:25Z","NEW BOOK"],
   "Robin Hobb - Assassin's Quest": ["2024-08-08T19:25:06Z", "NEW BOOK"],
   "Robin Hobb - Royal Assassin": ["2024-08-08T19:25:06Z", "NEW BOOK"],
