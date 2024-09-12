@@ -68,6 +68,13 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Robin Hobb - Ship of Magic": ["2024-09-07T20:15:32Z","NEW BOOK"],
+  "Robin Hobb - The Mad Ship": ["2024-09-07T20:15:32Z","NEW BOOK"],
+  "Robin Hobb - Ship of Destiny": ["2024-09-07T20:15:32Z","NEW BOOK"],
+  "Rick Atkinson - An Army at Dawn [Abridged]: The War in North Africa, 1942-1943":["2024-09-07T18:46:41Z","NEW BOOK"],
+  "Rick Atkinson - An Army at Dawn: The War in North Africa, 1942-1943":["2024-09-07T18:46:41Z","NEW BOOK"],
+  "Rick Atkinson - The Day of Battle: The War in Sicily and Italy, 1943-1944":["2024-09-07T18:46:41Z","NEW BOOK"],
+  "Rick Atkinson - The Guns at Last Light: The War in Western Europe, 1944-1945":["2024-09-07T18:46:41Z","NEW BOOK"],
   "Sara Imari Walker - Life as No One Knows It: The Physics of Life's Emergence": ["2024-08-19T23:41:57Z","NEW BOOK"],
   "Jonathan Rauch - The Constitution of Knowledge: A Defense of Truth": ["2024-08-17T00:45:25Z","NEW BOOK"],
   "Robin Hobb - Assassin's Quest": ["2024-08-08T19:25:06Z", "NEW BOOK"],
