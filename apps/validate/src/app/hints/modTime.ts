@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Jo Walton - Among Others": ["2024-09-13T15:02:50Z","NEW BOOK"],
   "Robin Hobb - Ship of Magic": ["2024-09-07T20:15:32Z","NEW BOOK"],
   "Robin Hobb - The Mad Ship": ["2024-09-07T20:15:32Z","NEW BOOK"],
   "Robin Hobb - Ship of Destiny": ["2024-09-07T20:15:32Z","NEW BOOK"],
