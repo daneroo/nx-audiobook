@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Antonio Padilla - Fantastic Numbers and Where to Find Them: A Cosmic Quest from Zero to Infinity": ["2024-09-30T05:22:07Z","NEW BOOK"],
   "Kurt Vonnegut - Breakfast of Champions": ["2024-09-18T02:09:23Z","NEW BOOK"],
   "Kurt Vonnegut - Cat's Cradle": ["2024-09-18T02:09:23Z","NEW BOOK"],
   "Kurt Vonnegut - Hocus Pocus": ["2024-09-18T02:09:23Z","NEW BOOK"],
