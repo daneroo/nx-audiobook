@@ -68,6 +68,11 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Oliver Sacks - An Anthropologist on Mars: Seven Paradoxical Tales": ["2024-10-15T08:50:35Z","NEW BOOK"],
+  "Oliver Sacks - On the Move: A Life": ["2024-10-04T19:46:25Z","NEW BOOK"],
+  "Oliver Sacks - The Man Who Mistook His Wife for a Hat: and Other Clinical Tales": ["2024-10-04T19:46:25Z","NEW BOOK"],
+  "Oliver Sacks - Uncle Tungsten: Memories of a Chemical Boyhood": ["2024-10-04T19:46:25Z","NEW BOOK"],
+  "Philip Chase - The Way of Edan": ["2024-10-04T18:39:44Z","NEW BOOK"],
   "Antonio Padilla - Fantastic Numbers and Where to Find Them: A Cosmic Quest from Zero to Infinity": ["2024-09-30T05:22:07Z","NEW BOOK"],
   "Kurt Vonnegut - Breakfast of Champions": ["2024-09-18T02:09:23Z","NEW BOOK"],
   "Kurt Vonnegut - Cat's Cradle": ["2024-09-18T02:09:23Z","NEW BOOK"],
