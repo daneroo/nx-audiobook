@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Yuval Noah Harari - Nexus: A Brief History of Information Networks from the Stone Age to AI": ["2024-10-16T00:34:45Z","NEW BOOK"],
+  "William Dalrymple - The Golden Road: How Ancient India Transformed the World": ["2024-10-15T17:31:14Z","NEW BOOK"],
   "Oliver Sacks - An Anthropologist on Mars: Seven Paradoxical Tales": ["2024-10-15T08:50:35Z","NEW BOOK"],
   "Oliver Sacks - On the Move: A Life": ["2024-10-04T19:46:25Z","NEW BOOK"],
   "Oliver Sacks - The Man Who Mistook His Wife for a Hat: and Other Clinical Tales": ["2024-10-04T19:46:25Z","NEW BOOK"],
