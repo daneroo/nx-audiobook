@@ -6,7 +6,7 @@ _Progress:_ 532 of 532 100.0% (0 remaining)
 
 - TOTAL - 532 - Staging + Actually Remaining:
 - SOURCE - 489 `/Volumes/Space/archive/media/audiobooks` - Legacy books
-- DONE - 532 `/Volumes/Reading/audiobooks` - Staging books
+- DONE - 532 `/Volumes/Space/Reading/audiobooks` - Staging books
 - Staging books not in Legacy - 73
   - ADDED - 46 - Staging books not in Legacy (actually added)
   - SPLIT - 27 - Staging books not in Legacy but split into 1+
@@ -131,7 +131,6 @@ _Progress:_ 532 of 532 100.0% (0 remaining)
 - Jim Butcher - Cold Case (consolidated into Jim Butcher - Brief Cases)
 
 ## REMAIN - Legacy books not in Staging (0)
-
 
 ## Books already Migrated (459)
 
@@ -597,7 +596,7 @@ _Progress:_ 532 of 532 100.0% (0 remaining)
 
 ## Staging Books with bitrate issues
 
-- Joe Abercrombie - A Little Hatred dur: 1s size: 1161634873b kbps: 9293078.98 path: /Volumes/Reading/audiobooks/Joe Abercrombie - The Age of Madness/Joe Abercrombie - The Age of Madness 01 - A Little Hatred
+- Joe Abercrombie - A Little Hatred dur: 1s size: 1161634873b kbps: 9293078.98 path: /Volumes/Space/Reading/audiobooks/Joe Abercrombie - The Age of Madness/Joe Abercrombie - The Age of Madness 01 - A Little Hatred
 
 ## Mtime estimates for Staging
 

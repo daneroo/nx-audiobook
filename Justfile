@@ -23,7 +23,7 @@ ci:
 
 # Main target to check files in given directories
 checkfiles:
-    just checkfiles-in-dir /Volumes/Reading/audiobooks
+    just checkfiles-in-dir /Volumes/Space/Reading/audiobooks
     just checkfiles-in-dir {{justfile_directory()}}/infra/audiobookshelf/data/audiobooks
 
 # Run checks for a given directory, and if issues are found, ask for confirmation to fix

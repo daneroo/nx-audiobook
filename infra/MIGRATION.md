@@ -22,15 +22,13 @@ Current [PROGRESS.md](./PROGRESS.md) - (generated)
   - `tone` has a NixPkgs package (fleek/home-manager?)
   - Perhaps as with directory-digests on multiple machines
   - See [Tone Dump](#tone-dump) below
-- Syncthing for `/Volumes/Reading/` on galois and davinci, at least
-  - Move back to `/Volumes/Space/Reading/audiobooks`
 - Rsync back to syno, from [galois|davinci] (syncthing on Synology doesn't look like a good idea)
 - Borgbackup: from ?
 
 ## Iteration
 
 - Fine-tune audiobook in this audiobookshelf dev env (galois)
-- Sync to /Volumes/Reading/audiobooks on galois (syncthing to davinci,..)
+- Sync to /Volumes/Space/Reading/audiobooks on galois (syncthing to davinci,..)
 - Sync to syno:/Reading/audiobooks on davinci
 
 ```bash
@@ -61,33 +59,33 @@ done
 find audiobooks/ -type f -not -name \*m4b -not -name cover.jpg -not -name \*.epub -not -name .DS_Store | wc -l
 
 # Dev to Staging
-#  on galois, dev, sync to /Volumes/Reading/audiobooks
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Reading/audiobooks/
+#  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
 
 cd apps/validate
 # clean output into PROGRESS.md
-pnpm vite-node src/index.ts --  --progressDir /Volumes/Reading/audiobooks | tee ../../infra/PROGRESS.md
+pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks | tee ../../infra/PROGRESS.md
 
 
 # Staging to Prod
 # on syno, pull from galois (Staging)
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /volume1/Reading/audiobooks/
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
 
 # Make a copy on shannon,davinci (till syncthing is setup)
 # on shannon,davinci pull from galois (Staging)
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /Volumes/Reading/audiobooks/
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
 ```
 
 ## Current State
 
-| Name                             | Description                                                       |
-| -------------------------------- | ----------------------------------------------------------------- |
-| Legacy                           | Source for migration                                              |
-| `$ARCHIVE_HOME/media/audiobooks` | on syno,galois,davinci,dirac,shannon                              |
-| Canonical New                    |                                                                   |
-| `/Volumes/Reading/audiobooks`    | Source of truth, [Syncthing on galois, [davinci, dirac, shannon]] |
-| `syno:Reading/audiobooks`        | Source for Audiobookshelf and Plex on audiobook VM                |
-| `./data/audiobooks`              | Developer view in this repo                                       |
+| Name                                | Description                                                       |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| Legacy                              | Source for migration                                              |
+| `$ARCHIVE_HOME/media/audiobooks`    | on syno,galois,davinci,dirac,shannon                              |
+| Canonical New                       |                                                                   |
+| `/Volumes/Space/Reading/audiobooks` | Source of truth, [Syncthing on galois, [davinci, dirac, shannon]] |
+| `syno:Reading/audiobooks`           | Source for Audiobookshelf and Plex on audiobook VM                |
+| `./data/audiobooks`                 | Developer view in this repo                                       |
 
 ## Normalization
 
@@ -95,7 +93,7 @@ Normalization of audiobook files implies:
 
 - Normalizing all content
   - from `/Volumes/Space/archive/media/audiobooks/`
-  - to `/Volumes/Reading/audiobooks/`
+  - to `/Volumes/Space/Reading/audiobooks/`
 - Standard tags for author,title, but also narrator, translator,series, seriesIndex, etc.
 - Should be compatible with Audiobookshelf as well as Plex Audiobook agent
 - Should preserve modification times of legacy directories and files, to reflect acquisition date, as a proxy for reading date.

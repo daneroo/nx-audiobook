@@ -68,6 +68,12 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Andrzej Sapkowski - Blood of Elves": ["2024-11-02T22:40:57Z","NEW BOOK"],
+  "Robin Hobb - Fool's Fate": ["2024-11-02T22:20:52Z","NEW BOOK"],
+  "Robin Hobb - Golden Fool": ["2024-11-02T22:18:56Z","NEW BOOK"],
+  "Robin Hobb - Fool's Errand": ["2024-11-02T22:15:59Z","NEW BOOK"],
+  "Addy Pross - What Is Life?: How Chemistry Becomes Biology":["2024-11-02T21:49:08Z","NEW BOOK"],
+  "M. L. Wang - Blood over Bright Haven: A Novel": ["2024-11-02T21:46:59Z","NEW BOOK"],
   "Yuval Noah Harari - Nexus: A Brief History of Information Networks from the Stone Age to AI": ["2024-10-16T00:34:45Z","NEW BOOK"],
   "William Dalrymple - The Golden Road: How Ancient India Transformed the World": ["2024-10-15T17:31:14Z","NEW BOOK"],
   "Oliver Sacks - An Anthropologist on Mars: Seven Paradoxical Tales": ["2024-10-15T08:50:35Z","NEW BOOK"],

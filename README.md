@@ -16,7 +16,7 @@ This repo consolidates audiobook management
 
 - start dev server
 - validate locally
-- sync to staging (galois:/Volumes/Reading/audiobooks)
+- sync to staging (galois:/Volumes/Space/Reading/audiobooks)
 - validate on staging
 - sync to prod (syno) - and mirrors
 
@@ -89,12 +89,12 @@ just checkfiles
 
 ```bash
 # Dev to Staging
-#  on galois, dev, sync to /Volumes/Reading/audiobooks
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Reading/audiobooks/
+#  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
+rsync -n -avi --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
 
 # Validate again
-time pnpm run dev -r /Volumes/Reading/audiobooks/
-time pnpm run dev -r /Volumes/Reading/audiobooks/ --mtime check
+time pnpm run dev -r /Volumes/Space/Reading/audiobooks/
+time pnpm run dev -r /Volumes/Space/Reading/audiobooks/ --mtime check
 
 just checkfiles
 ```
@@ -104,14 +104,14 @@ just checkfiles
 ```bash
 # Staging to Prod **FROM Syno**
 # on syno, pull from galois (Staging)
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /volume1/Reading/audiobooks/
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
 
 # Manual scan from audiobookshelf (prod)
 open https://audiobook.dl.imetrical.com/
 
 # Pull a copy from mirrors (till syncthing is setup)
 # on shannon,davinci (NOT yet/or ever dirac,feynman) pull from galois (Staging)
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Reading/audiobooks/ /Volumes/Reading/audiobooks/
+rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
 
 ```
 
@@ -183,8 +183,8 @@ time pnpm run dev --mtime write ; pnpm exec prettier --write src/app/hints/mtime
 # progress
 cd apps/validate
 # clean output into PROGRESS.md
-pnpm vite-node src/index.ts --  --progressDir /Volumes/Reading/audiobooks | tee ../../infra/PROGRESS.md
-time pnpm run dev --progressDir /Volumes/Reading/audiobooks
+pnpm vite-node src/index.ts --  --progressDir /Volumes/Space/Reading/audiobooks | tee ../../infra/PROGRESS.md
+time pnpm run dev --progressDir /Volumes/Space/Reading/audiobooks
 
 # convert
 time pnpm run dev -r '/Volumes/Space/archive/media/audiobooks/Steven Brust - Khaavren Romances/' --convertDir /Volumes/Space/Scratch/convert

@@ -16,7 +16,7 @@ services:
     ports:
       - 13378:80
     volumes:
-      - ${AUDIOBOOKS_VOLUME:-/Volumes/Reading/audiobooks}:/audiobooks:${AUDIOBOOKS_ACCESS_MODE:-ro}
+      - ${AUDIOBOOKS_VOLUME:-/Volumes/Space/Reading/audiobooks}:/audiobooks:${AUDIOBOOKS_ACCESS_MODE:-ro}
       - ./data/metadata:/metadata
       - ./data/config:/config
     restart: unless-stopped

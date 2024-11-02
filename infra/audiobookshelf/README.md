@@ -18,7 +18,7 @@ docker compose up -d
 
 Mounting these 3 directories:
 
-- /Volumes/Reading/audiobooks/:/audiobooks:ro (SMB share from syno)
+- /Volumes/Space/Reading/audiobooks/:/audiobooks:ro (SMB share from syno)
 - ./data/metadata:/metadata
   - ./data/metadata/backups/YYYY_MM_DDTHHMM.audiobookshelf (zip files - keep 2)
 - ./data/config:/config

@@ -7,7 +7,7 @@
 
 ```bash
 # MacOS with gls - gnu ls
-find /Volumes/Reading/audiobooks -name "*m4b" -print0 | xargs -0 gls -l --time-style=full-iso | sort -r -k6,7
+find /Volumes/Space/Reading/audiobooks -name "*m4b" -print0 | xargs -0 gls -l --time-style=full-iso | sort -r -k6,7
 # in audiobookshelf ash shell
 find /audiobooks -name "*m4b" -print0 | xargs -0 ls -lt --full-time | sort -r -k6,7
 ```

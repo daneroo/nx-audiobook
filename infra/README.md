@@ -8,7 +8,7 @@ _Note_: as of 2023-07-17 I uninstalled plexmediaserver on this host, and will re
 - `plex-audiobook` VM on proxmox@hilbert: is running both these services
 
   - This VM has daily snapshots on proxmox@hilbert
-  - This VM mounts remote SMB: `//syno.imetrical.com/Reading to/Volumes/Reading`
+  - This VM mounts remote SMB: `//syno.imetrical.com/Reading to/Volumes/Space/Reading`
   - plex-audiobook.imetrical.com -> 192.168.2.112
     - link/ether 82:a1:71:54:20:4c brd ff:ff:ff:ff:ff:ff
     - ubuntu 22.04 / 4 cores/8G/256G
@@ -48,14 +48,16 @@ sudo nano /etc/synology-cifs-credentials
 # password=a1b9892611956aa13a5ab9ccf01f49662583f2d2
 sudo chmod 400 /etc/synology-cifs-credentials
 
-sudo mkdir -p /Volumes/Reading
+sudo mkdir -p /Volumes/Space/Reading
 #  to test
-sudo mount -t cifs -o ro,vers=3.0,credentials=/etc/synology-cifs-credentials //syno.imetrical.com/Reading /Volumes/Reading
-sudo umount /Volumes/Reading
+sudo mount -t cifs -o ro,vers=3.0,credentials=/etc/synology-cifs-credentials //syno.imetrical.com/Reading /Volumes/Space/Reading
+sudo umount /Volumes/Space/Reading
 
 # to make permanent and append:
 sudo nano /etc/fstab
-# //syno.imetrical.com/Reading /Volumes/Reading cifs ro,vers=3.0,credentials=/etc/synology-cifs-credentials
+## Keep the same structure /Volumes/Space/Reading
+//syno.imetrical.com/Reading /Volumes/Space/Reading cifs ro,vers=3.0,credentials=/etc/synology-cifs-credentials
+
 sudo mount -a
 
 # Draw the rest of the Owl: set paths inside plex, and audiobookshelf
