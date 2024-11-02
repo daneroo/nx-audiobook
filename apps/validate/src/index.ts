@@ -2,12 +2,13 @@ import yargs from 'yargs/yargs'
 
 import { getDirectories, getFiles } from '@nx-audiobook/file-walk'
 import { show, validateFilesAllAccountedFor } from '@nx-audiobook/validators'
-import { validateDirectory } from './app/validate/validateDirectory'
+
 import { classifyDirectory } from './app/validate/classifyDirectory'
 import { convertDirectory } from './app/validate/convertDirectory'
+import { validateDirectory } from './app/validate/validateDirectory'
 import { fixModTimeHintPerDirectory } from './app/validate/validateModTime'
 
-const defaultRootPath = '/Volumes/Reading/audiobooks'
+const defaultRootPath = '/Volumes/Space/Reading/audiobooks'
 
 main().catch((error) => {
   console.error(error)
