@@ -110,7 +110,7 @@ rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical
 open https://audiobook.dl.imetrical.com/
 
 # Pull a copy from mirrors (till syncthing is setup)
-# on shannon,davinci (NOT yet/or ever dirac,feynman) pull from galois (Staging)
+# on davinci (NO longer on shannon, dirac,feynman) pull from galois (Staging)
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
 
 ```
