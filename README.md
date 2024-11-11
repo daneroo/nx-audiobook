@@ -25,13 +25,16 @@ This repo consolidates audiobook management
 ```bash
 cd infra/audiobookshelf
 just start
-# open audiobookshelf in browser
-open http://localhost:13378
-open http://0.0.0.0:13378
-# open the content directory
+# open audiobookshelf in new browser window
+open -a "Brave Browser" --new --args --new-window http://0.0.0.0:13378
+
+# open the content directory in a new window
+osascript -e 'tell application "Finder" to make new Finder window to folder (POSIX file "'"$(pwd)/data/audiobooks"'")'
 open data/audiobooks/
-# open the Staging directory
-open ~/Downloads/Staging/
+
+# open the Staging directory and force a new window
+osascript -e 'tell application "Finder" to make new Finder window to folder (POSIX file "'$HOME'/Downloads/Staging")'
+open -R ~/Downloads/Staging/
 
 # watch in container
 just exec
