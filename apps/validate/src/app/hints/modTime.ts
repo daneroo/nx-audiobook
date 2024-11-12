@@ -68,7 +68,15 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  "Andrzej Sapkowski - Blood of Elves": ["2024-11-02T22:40:57Z","NEW BOOK"],
+  "Andrzej Sapkowski - Season of Storms":["2024-11-12T00:59:07Z","NEW BOOK"],
+  "Andrzej Sapkowski - Lady of the Lake":["2024-11-12T00:58:53Z","NEW BOOK"],
+  "Andrzej Sapkowski - The Tower of Swallows":["2024-11-12T00:58:27Z","NEW BOOK"],
+  "Andrzej Sapkowski - Baptism of Fire":["2024-11-12T00:58:01Z","NEW BOOK"],
+  "Andrzej Sapkowski - The Time of Contempt":["2024-11-12T00:57:35Z","NEW BOOK"],
+  "Andrzej Sapkowski - Blood of Elves": ["2024-11-11T23:40:42Z","NEW BOOK"],
+  "Andrzej Sapkowski - Sword of Destiny":["2024-11-11T23:40:29Z","NEW BOOK"],
+  "Andrzej Sapkowski - The Last Wish":["2024-11-11T23:40:16Z","NEW BOOK"],
+  "Richard Dawkins - The Genetic Book of the Dead": ["2024-11-11T21:57:59Z","NEW BOOK"],
   "Robin Hobb - Fool's Fate": ["2024-11-02T22:20:52Z","NEW BOOK"],
   "Robin Hobb - Golden Fool": ["2024-11-02T22:18:56Z","NEW BOOK"],
   "Robin Hobb - Fool's Errand": ["2024-11-02T22:15:59Z","NEW BOOK"],
