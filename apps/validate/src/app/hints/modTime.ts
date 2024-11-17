@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Travis Baldree - Bookshops & Bonedust":["2024-11-17T06:10:53Z","NEW BOOK"],
+  "Travis Baldree - Legends & Lattes":["2024-11-17T06:09:08Z","NEW BOOK"],
+  "Neal Stephenson - Polostan":["2024-11-17T06:05:17Z","NEW BOOK"],
   "Andrzej Sapkowski - Season of Storms":["2024-11-12T00:59:07Z","NEW BOOK"],
   "Andrzej Sapkowski - Lady of the Lake":["2024-11-12T00:58:53Z","NEW BOOK"],
   "Andrzej Sapkowski - The Tower of Swallows":["2024-11-12T00:58:27Z","NEW BOOK"],
