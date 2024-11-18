@@ -68,6 +68,16 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  // 
+  "Charan Ranganath - Why We Remember: Unlocking Memory's Power to Hold on to What Matters":["2024-11-18T03:28:34Z","NEW BOOK"],
+  "Ben Buchanan - The Hacker and the State: Cyber Attacks and the New Normal of Geopolitics":["2024-11-18T02:49:55Z","NEW BOOK"],
+  "Michael Lewis - Going Infinite: The Rise and Fall of a New Tycoon":["2024-11-18T02:47:48Z","NEW BOOK"],
+  "Robin Wall Kimmerer - Braiding Sweetgrass: Indigenous Wisdom, Scientific Knowledge and the Teachings of Plants":["2024-11-18T02:38:45Z","NEW BOOK"],
+  "Daniel Kahneman - Noise: A Flaw in Human Judgment":["2024-11-18T02:36:31Z","NEW BOOK"],
+  "Nick Lane - Transformer: The Deep Chemistry of Life and Death":["2024-11-18T02:24:13Z","NEW BOOK"],
+  "Naomi Klein - Doppelganger: A Trip into the Mirror World":["2024-11-18T02:12:03Z","NEW BOOK"],
+  "Annaka Harris - Conscious: A Brief Guide to the Fundamental Mystery of the Mind":["2024-11-18T02:02:58Z","NEW BOOK"],
+  "James Hoffmann - The World Atlas of Coffee: From Beans to Brewing - Coffees Explored, Explained and Enjoyed":["2024-11-18T02:04:44Z","NEW BOOK"],
   "Travis Baldree - Bookshops & Bonedust":["2024-11-17T06:10:53Z","NEW BOOK"],
   "Travis Baldree - Legends & Lattes":["2024-11-17T06:09:08Z","NEW BOOK"],
   "Neal Stephenson - Polostan":["2024-11-17T06:05:17Z","NEW BOOK"],
