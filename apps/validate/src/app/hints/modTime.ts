@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // 
+  "Zachary D. Carter - The Price of Peace: Money, Democracy, and the Life of John Maynard Keynes": ["2024-11-19T10:32:14Z", "NEW BOOK"],
   "Charan Ranganath - Why We Remember: Unlocking Memory's Power to Hold on to What Matters":["2024-11-18T03:28:34Z","NEW BOOK"],
   "Ben Buchanan - The Hacker and the State: Cyber Attacks and the New Normal of Geopolitics":["2024-11-18T02:49:55Z","NEW BOOK"],
   "Michael Lewis - Going Infinite: The Rise and Fall of a New Tycoon":["2024-11-18T02:47:48Z","NEW BOOK"],
