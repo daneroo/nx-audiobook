@@ -68,7 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // new books
+  // 2024-11-25T02:33:37Z
+  "Steven Brust - Lyorn: Vlad Taltos, Book 17": ["2024-11-25T02:33:37Z", "NEW BOOK"],
+  "Steven Brust - Tsalmoth: Vlad Taltos, Book 16": ["2024-11-25T02:32:34Z", "NEW BOOK"],
   "Kim Zetter - Countdown to Zero Day: Stuxnet and the Launch of the World's First Digital Weapon": ["2024-11-22T04:30:10Z", "NEW BOOK"],
   "Zachary D. Carter - The Price of Peace: Money, Democracy, and the Life of John Maynard Keynes": ["2024-11-19T10:32:14Z", "NEW BOOK"],
   "Charan Ranganath - Why We Remember: Unlocking Memory's Power to Hold on to What Matters":["2024-11-18T03:28:34Z","NEW BOOK"],
