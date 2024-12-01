@@ -68,7 +68,13 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2024-11-25T02:33:37Z
+  // 2024-12-01T19:38:06Z
+  "Homer - The Odyssey: t. Emily Wilson": ["2024-12-01T19:43:01Z", "NEW BOOK"],
+  "Homer - The Iliad: t. Emily Wilson": ["2024-12-01T19:42:01Z", "NEW BOOK"],
+  "Homer - The Iliad: BBC Radio": ["2024-12-01T19:41:01Z", "NEW BOOK"],
+  "Homer - The Odyssey: t. Robert Fagles": ["2024-12-01T19:40:01Z", "NEW BOOK"],
+  "Stephen Fry - Odyssey": ["2024-12-01T19:39:01Z", "NEW BOOK"],
+  "Stephen Fry - Troy": ["2024-12-01T19:38:01Z", "NEW BOOK"],
   "Steven Brust - Lyorn: Vlad Taltos, Book 17": ["2024-11-25T02:33:37Z", "NEW BOOK"],
   "Steven Brust - Tsalmoth: Vlad Taltos, Book 16": ["2024-11-25T02:32:34Z", "NEW BOOK"],
   "Kim Zetter - Countdown to Zero Day: Stuxnet and the Launch of the World's First Digital Weapon": ["2024-11-22T04:30:10Z", "NEW BOOK"],
@@ -480,7 +486,7 @@ export const modTimeDB: Record<string, [string, string]> = {
   "Henry David Thoreau - Walden": ['2006-07-19T22:56:34.000Z', "1:1"],
   "Herodotus - Histories": ['2021-09-25T22:15:37.000Z', "1:1"],
   "Herodotus - The Persian Wars": ['2021-09-26T22:10:17.000Z', "1:1"],
-  "Homer - The Iliad": ['2021-05-01T07:44:35.000Z', "1:1"],
+  "Homer - The Iliad: t. Stephen Mitchell": ['2021-05-01T07:44:35.000Z', "1:1"],
   "Iain M. Banks - Consider Phlebas": ['2014-08-14T05:51:25.000Z', "1:1"],
   "Iain M. Banks - The Player of Games": ['2021-07-07T07:42:05.000Z', "1:1"],
   "Iain M. Banks - Use of Weapons": ['2020-04-28T21:51:55.000Z', "1:1"],
