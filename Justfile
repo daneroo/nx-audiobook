@@ -23,6 +23,7 @@ ci:
 
 # Main target to check files in given directories
 checkfiles:
+    just checkfiles-in-dir ~/Downloads/Staging
     just checkfiles-in-dir /Volumes/Space/Reading/audiobooks
     just checkfiles-in-dir {{justfile_directory()}}/infra/audiobookshelf/data/audiobooks
 
@@ -42,7 +43,7 @@ check-ds-store dir:
     echo "## Checking .DS_Store files" | {{ gum_fmt_cmd }}
     found=$(find {{ dir }} -name .DS_Store)
     if [[ $found ]]; then
-        echo "{{ red_xmark }} - Found .DS_Store files:" | {{ gum_fmt_cmd }}
+        echo "{{ red_xmark }} - Found .DS_Store files:"
         echo "$found"
         if gum confirm "Do you want to remove them?"; then
           echo "## Removing .DS_Store files in {{ dir }}..." | {{ gum_fmt_cmd }}
@@ -62,7 +63,7 @@ check-perms dir:
     dirs_wrong_perms=$(find {{ dir }} -not -perm 755 -type d)
 
     if [[ $files_wrong_perms ]] || [[ $dirs_wrong_perms ]]; then
-        echo "{{ red_xmark }} - Files/directories with incorrect permissions found:" | {{ gum_fmt_cmd }}
+        echo "{{ red_xmark }} - Files/directories with incorrect permissions found:"
         if [[ $files_wrong_perms ]]; then
             echo "Files not having 644 permissions:"
             echo "$files_wrong_perms"
@@ -92,7 +93,7 @@ check-xattrs dir:
         attrs=$(xattr "$file")
         if [[ $attrs ]]; then
             ANY_XATTRS_FOUND="SOME"
-            echo "{{ red_xmark }} $file has xattrs:" | {{ gum_fmt_cmd }}
+            echo "{{ red_xmark }} $file has xattrs:"
             echo "$attrs"
             if gum confirm "Do you want to remove the xattrs from this file?"; then
                 echo "Removing xattrs from $file"
