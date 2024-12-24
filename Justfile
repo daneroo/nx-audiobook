@@ -21,9 +21,17 @@ ci:
     pnpm run lint
     pnpm run test
 
+# Open my working directories
+open-working-dirs:
+    #!/usr/bin/env bash
+    # open the content directory in a new window
+    osascript -e 'tell application "Finder" to make new Finder window to folder (POSIX file "'"{{justfile_directory()}}/infra/audiobookshelf/data/audiobooks"'")'
+    # open the Staging directory and force a new window
+    osascript -e 'tell application "Finder" to make new Finder window to folder (POSIX file "/Volumes/Space/Staging")'
+
 # Main target to check files in given directories
 checkfiles:
-    just checkfiles-in-dir ~/Downloads/Staging
+    just checkfiles-in-dir /Volumes/Space/Staging
     just checkfiles-in-dir /Volumes/Space/Reading/audiobooks
     just checkfiles-in-dir {{justfile_directory()}}/infra/audiobookshelf/data/audiobooks
 
@@ -86,6 +94,7 @@ check-perms dir:
 check-xattrs dir:
     #!/usr/bin/env bash
     echo "## Checking extended attributes in {{ dir }}..." | {{ gum_fmt_cmd }}
+    
     ANY_XATTRS_FOUND="NONE"  # Initialize the variable outside the loop
 
     while read -r file; do
@@ -98,6 +107,20 @@ check-xattrs dir:
             if gum confirm "Do you want to remove the xattrs from this file?"; then
                 echo "Removing xattrs from $file"
                 xattr -c "$file"
+                
+                # Check if removal was successful
+                remaining_attrs=$(xattr "$file")
+                if [[ $remaining_attrs ]]; then
+                    echo "{{ red_xmark }} Failed to remove xattrs"
+                    echo "Remaining attrs:"
+                    echo "xattr output: '$remaining_attrs'"
+                    echo "xattr -l output:"
+                    xattr -l "$file"
+                    echo "Try performing it from the shell"
+                    echo "xattr -c \"$file\""
+                else
+                    echo "{{ green_check }} Successfully removed xattrs"
+                fi
             fi
         fi
     done < <(find {{ dir }} -type f)
