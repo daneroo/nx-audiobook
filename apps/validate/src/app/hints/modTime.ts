@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2024-12-01T19:38:06Z
+  "Matt Strassler - Waves in an Impossible Sea": ["2024-12-24T09:26:25Z", "NEW BOOK"],
+  "Wolfgang Münchau - Kaput": ["2024-12-24T09:25:34Z", "NEW BOOK"],
   "Homer - The Odyssey: t. Emily Wilson": ["2024-12-01T19:43:01Z", "NEW BOOK"],
   "Homer - The Iliad: t. Emily Wilson": ["2024-12-01T19:42:01Z", "NEW BOOK"],
   "Homer - The Iliad: BBC Radio": ["2024-12-01T19:41:01Z", "NEW BOOK"],
