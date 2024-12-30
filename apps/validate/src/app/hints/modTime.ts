@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Margaret Atwood - The Penelopiad":["2024-12-30T06:35:08Z","NEW BOOK"],
   "Neal Stephenson - Cryptonomicon": ["2024-12-24T10:52:03Z", "NEW BOOK"],
   "Matt Strassler - Waves in an Impossible Sea": ["2024-12-24T09:26:25Z", "NEW BOOK"],
   "Wolfgang Münchau - Kaput": ["2024-12-24T09:25:34Z", "NEW BOOK"],
