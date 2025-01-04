@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Dennis E. Taylor - We Are Legion (We Are Bob)": ["2025-01-04T07:10:50Z", "NEW BOOK"],
+  "Amal El-Mohtar, Max Gladstone - This Is How You Lose the Time War": ["2025-01-04T07:02:34Z", "NEW BOOK"],
   "Margaret Atwood - The Penelopiad":["2024-12-30T06:35:08Z","NEW BOOK"],
   "Neal Stephenson - Cryptonomicon": ["2024-12-24T10:52:03Z", "NEW BOOK"],
   "Matt Strassler - Waves in an Impossible Sea": ["2024-12-24T09:26:25Z", "NEW BOOK"],
