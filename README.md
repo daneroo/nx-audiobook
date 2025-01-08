@@ -104,6 +104,9 @@ just checkfiles
 # on syno, pull from galois (Staging)
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /volume1/Reading/audiobooks/
 
+# NOW SYNC BACK  - to rid of xattrs
+rsync -n -av -i --no-g --progress --exclude .DS_Store --exclude @eaDir /volume1/Reading/audiobooks/ galois.imetrical.com:/Volumes/Space/Reading/audiobooks/
+
 # Manual scan from audiobookshelf (prod)
 open https://audiobook.dl.imetrical.com/
 

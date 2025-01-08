@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Max S. Bennett - A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains": ["2025-01-06T07:18:02Z", "NEW BOOK"],
   "Dennis E. Taylor - We Are Legion (We Are Bob)": ["2025-01-04T07:10:50Z", "NEW BOOK"],
   "Amal El-Mohtar, Max Gladstone - This Is How You Lose the Time War": ["2025-01-04T07:02:34Z", "NEW BOOK"],
   "Margaret Atwood - The Penelopiad":["2024-12-30T06:35:08Z","NEW BOOK"],
