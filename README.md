@@ -89,6 +89,7 @@ just checkfiles
 ```bash
 # Dev to Staging
 #  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
+# *** TRY no-xattrs ***
 rsync -n -avi --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
 
 # Validate again
@@ -113,8 +114,8 @@ open https://audiobook.dl.imetrical.com/
 
 # Pull a copy from mirrors (till syncthing is setup)
 # on davinci (NO longer on shannon, dirac,feynman) pull from galois (Staging)
+# *** TRY no-xattrs ***
 rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
-
 ```
 
 ## TODO
