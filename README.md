@@ -33,9 +33,10 @@ open -a "Brave Browser" --new --args --new-window http://0.0.0.0:13378
 
 # watch in container
 just exec
-apk add htop glances
-watch 'find /metadata /audiobooks -mmin -30 -exec ls -lh {} \;'
+apk add btop
+btop --utf-force
 watch 'find /metadata -name \*m4b -mmin -30 -exec ls -lh {} \;'
+watch 'find /metadata /audiobooks -mmin -30 -exec ls -lh {} \;'
 
 ```
 
