@@ -310,7 +310,7 @@ export const modTimeDB: Record<string, [string, string]> = {
   "Frank Dikotter - The Tragedy of Liberation": ['2023-01-12T04:59:42Z', "MISSING LEGACY BOOK"],
   "Iain M. Banks - Feersum Endjinn": ['2022-12-13T23:03:35Z', "MISSING LEGACY BOOK"],
   "Ian Mortimer - Medieval Horizons": ['2023-06-19T23:48:37Z', "MISSING LEGACY BOOK"],
-  "Jack Vance - Suldrun's Garden": ['2022-10-28T17:55:47Z', "MISSING LEGACY BOOK"],
+  "Jack Vance - Suldrun's Garden: Lyonesse: Book 1": ['2022-10-28T17:55:47Z', "MISSING LEGACY BOOK"],
   "Jack Vance - The Dying Earth": ['2022-11-04T18:34:37Z', "MISSING LEGACY BOOK"],
   "Jack Vance - The Eyes of the Overworld": ['2022-11-04T18:34:37Z', "MISSING LEGACY BOOK"],
   "Joe Abercrombie - Half a King": ['2023-02-17T08:50:35Z', "MISSING LEGACY BOOK"],
