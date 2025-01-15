@@ -94,7 +94,7 @@ check-perms dir:
 check-xattrs dir:
     #!/usr/bin/env bash
     echo "## Checking extended attributes in {{ dir }}..." | {{ gum_fmt_cmd }}
-    
+
     ANY_XATTRS_FOUND="NONE"  # Initialize the variable outside the loop
 
     while read -r file; do
@@ -104,24 +104,24 @@ check-xattrs dir:
             ANY_XATTRS_FOUND="SOME"
             echo "{{ red_xmark }} $file has xattrs:"
             echo "$attrs"
-            if gum confirm "Do you want to remove the xattrs from this file?"; then
-                echo "Removing xattrs from $file"
-                xattr -c "$file"
-                
-                # Check if removal was successful
-                remaining_attrs=$(xattr "$file")
-                if [[ $remaining_attrs ]]; then
-                    echo "{{ red_xmark }} Failed to remove xattrs"
-                    echo "Remaining attrs:"
-                    echo "xattr output: '$remaining_attrs'"
-                    echo "xattr -l output:"
-                    xattr -l "$file"
-                    echo "Try performing it from the shell"
-                    echo "xattr -c \"$file\""
-                else
-                    echo "{{ green_check }} Successfully removed xattrs"
-                fi
-            fi
+            # if gum confirm "Do you want to remove the xattrs from this file?"; then
+            #     echo "Removing xattrs from $file"
+            #     xattr -c "$file"
+
+            #     # Check if removal was successful
+            #     remaining_attrs=$(xattr "$file")
+            #     if [[ $remaining_attrs ]]; then
+            #         echo "{{ red_xmark }} Failed to remove xattrs"
+            #         echo "Remaining attrs:"
+            #         echo "xattr output: '$remaining_attrs'"
+            #         echo "xattr -l output:"
+            #         xattr -l "$file"
+            #         echo "Try performing it from the shell"
+            #         echo "xattr -c \"$file\""
+            #     else
+            #         echo "{{ green_check }} Successfully removed xattrs"
+            #     fi
+            # fi
         fi
     done < <(find {{ dir }} -type f)
     if [ "$ANY_XATTRS_FOUND" == "NONE" ]; then
