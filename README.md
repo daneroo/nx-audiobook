@@ -117,7 +117,7 @@ open https://audiobook.dl.imetrical.com/
 # on davinci (NO longer on shannon, dirac,feynman) pull from galois (Staging)
 # *** TRY no-xattrs ***
 xattr -lr /Volumes/Space/Reading/audiobooks/
-rsync -n -av -i --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
+rsync -n -av -i --no-xattrs --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
 ```
 
 ## TODO

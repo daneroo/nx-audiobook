@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Dava Sobel - Longitude": ["2025-01-26T18:36:36Z","NEW BOOK"],
+  "Dava Sobel - The Elements of Marie Curie: How the Glow of Radium Lit a Path for Women in Science": ["2025-01-26T18:28:14Z","NEW BOOK"],
+  "Stephen Jay Gould - Wonderful Life: The Burgess Shale and the Nature of History": ["2025-01-26T18:12:54Z","NEW BOOK"],
   "Warwick F. Vincent - Lakes: A Very Short Introduction": ["2025-01-26T17:43:01Z","NEW BOOK"],
   "Lee Smolin - Einstein's Unfinished Revolution: The Search for What Lies Beyond the Quantum": ["2025-01-26T17:40:11Z","NEW BOOK"],
   "Burton G. Malkiel, Charles D. Ellis - The Elements of Investing": ["2025-01-15T04:17:47Z","NEW BOOK"],
