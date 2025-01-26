@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Warwick F. Vincent - Lakes: A Very Short Introduction": ["2025-01-26T17:43:01Z","NEW BOOK"],
+  "Lee Smolin - Einstein's Unfinished Revolution: The Search for What Lies Beyond the Quantum": ["2025-01-26T17:40:11Z","NEW BOOK"],
   "Burton G. Malkiel, Charles D. Ellis - The Elements of Investing": ["2025-01-15T04:17:47Z","NEW BOOK"],
   "Charles D. Ellis - Winning the Loser's Game: Timeless Strategies for Successful Investing, Eighth Edition": ["2025-01-15T04:16:47Z","NEW BOOK"],
   "Karl Popper - The Logic of Scientific Discovery": ["2025-01-15T04:15:47Z","NEW BOOK"],
