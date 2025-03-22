@@ -68,6 +68,11 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Tom Holland - The Wolf-Girl, the Greeks, and the Gods: A Tale of the Persian Wars": ["2025-03-22T19:02:28Z","NEW BOOK"],
+  "Rush Doshi - The Long Game: China's Grand Strategy to Displace American Order": ["2025-03-22T19:01:30Z","NEW BOOK"],
+  "Ray Kurzweil - The Singularity Is Nearer: When We Merge with AI": ["2025-03-22T19:00:21Z","NEW BOOK"],
+  "Malcolm Gladwell - Revenge of the Tipping Point: Overstories, Superspreaders, and the Rise of Social Engineering": ["2025-03-22T18:59:22Z","NEW BOOK"],
+  "John Maynard Keynes - The General Theory of Employment, Interest, and Money": ["2025-03-22T18:55:50Z","NEW BOOK"],
   "Cory Doctorow - Picks and Shovels": ["2025-02-24T20:38:31Z","NEW BOOK"],
   "Terry Pratchett - Dodger": ["2025-02-24T20:28:31Z","NEW BOOK"],
   "Cory Doctorow - The Bezzle": ["2025-02-24T20:27:41Z","NEW BOOK"],
