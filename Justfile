@@ -96,37 +96,42 @@ check-xattrs dir:
     #!/usr/bin/env bash
     echo "## Checking extended attributes in {{ dir }}..." | {{ gum_fmt_cmd }}
 
-    ANY_XATTRS_FOUND="NONE"  # Initialize the variable outside the loop
+    ANY_REMOVEABLE_XATTRS_FOUND="NONE"  # Initialize the variable outside the loop
 
     while read -r file; do
         # echo "ANY_XATTRS_FOUND: $ANY_XATTRS_FOUND"
         attrs=$(xattr "$file")
         if [[ $attrs ]]; then
-            ANY_XATTRS_FOUND="SOME"
-            echo "{{ red_xmark }} $file has xattrs:"
-            echo "$attrs"
-            # if gum confirm "Do you want to remove the xattrs from this file?"; then
-            #     echo "Removing xattrs from $file"
-            #     xattr -c "$file"
+            # Special case for com.apple.provenance
+            if [[ "$attrs" == "com.apple.provenance" ]]; then
+                echo "{{ red_xmark }} $(basename "$file") has com.apple.provenance xattr (cannot be removed on newer macOS)"
+                continue
+            fi
 
-            #     # Check if removal was successful
-            #     remaining_attrs=$(xattr "$file")
-            #     if [[ $remaining_attrs ]]; then
-            #         echo "{{ red_xmark }} Failed to remove xattrs"
-            #         echo "Remaining attrs:"
-            #         echo "xattr output: '$remaining_attrs'"
-            #         echo "xattr -l output:"
-            #         xattr -l "$file"
-            #         echo "Try performing it from the shell"
-            #         echo "xattr -c \"$file\""
-            #     else
-            #         echo "{{ green_check }} Successfully removed xattrs"
-            #     fi
-            # fi
+            ANY_REMOVEABLE_XATTRS_FOUND="SOME"
+            echo "===== Removing xattrs from $file ======"
+            echo "{{ red_xmark }} $(basename "$file") has xattrs:"
+            echo "$attrs"
+            xattr -c "$file"
+
+            # Check if removal was successful
+            remaining_attrs=$(xattr "$file")
+            if [[ $remaining_attrs ]]; then
+                echo "{{ red_xmark }} Failed to remove xattrs"
+                echo "Remaining attrs:"
+                echo "xattr output: '$remaining_attrs'"
+                # echo "xattr -l output:"
+                # xattr -l "$file"
+                # echo "Try performing it from the shell"
+                # echo "xattr -c \"$file\""
+            else
+                echo "{{ green_check }} Successfully removed xattrs"
+            fi
         fi
     done < <(find {{ dir }} -type f)
-    if [ "$ANY_XATTRS_FOUND" == "NONE" ]; then
-        echo "{{ green_check }} No files with extended attributes found in {{ dir }}."
+    echo "" # new line
+    if [ "$ANY_REMOVEABLE_XATTRS_FOUND" == "NONE" ]; then
+        echo "{{ green_check }} No files with removable extended attributes found in {{ dir }}."
     else
-        echo "{{ red_xmark }} Some files with extended attributes were found in {{ dir }}."
+        echo "{{ red_xmark }} Some files with removable extended attributes were found in {{ dir }}."
     fi
