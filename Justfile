@@ -9,8 +9,9 @@ red := `printf "\033[31m"`
 reset := `printf "\033[0m"`
 green_check := green + "✔" + reset
 red_xmark := red + "✗" + reset
-# centralize the format command to style (theme=lignt)
-gum_fmt_cmd := "gum format --theme=light"
+# centralize the format command to style (theme=light)
+# theme is managed in ~/.bashrc as dark, unless $TERM_PROGRAM=Apple_Terminal
+gum_fmt_cmd := "gum format"
 
 # List available commands
 default:
