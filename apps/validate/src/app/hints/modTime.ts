@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Charles Van Doren, Mortimer J. Adler - How to Read a Book: The Classic Guide to Intelligent Reading": ["2025-05-02T05:09:13Z", "NEW BOOK"],
+  "Robert Forrest - The Pillow Book: Series 1-11: A Full-Cast Historical Crime Drama": ["2025-05-02T05:21:34Z", "NEW BOOK"],
+  "Helen Czerski - The Blue Machine: How the Ocean Works": ["2025-05-02T05:09:13Z", "NEW BOOK"],
   "Thomas Hertog - On the Origin of Time: Stephen Hawking's Final Theory": ["2023-05-30T02:50:59Z", "NEW BOOK"],
   "Murasaki Shikibu, Suematsu Kencho - translator - The Tale of Genji": ["2025-05-01T00:00:00Z", "NEW BOOK"],
   "Tom Holland - Millennium: The End of the World and the Forging of Christendom": ["2025-04-28T08:03:50Z", "NEW BOOK"],
