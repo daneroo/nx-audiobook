@@ -68,6 +68,11 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Tom Holland - Millennium: The End of the World and the Forging of Christendom": ["2025-04-28T08:03:50Z", "NEW BOOK"],
+  "Katherine Addison - The Grief of Stones: Book Two of the Cemeteries of Amalo Trilogy": ["2025-04-21T02:23:36Z", "NEW BOOK"],
+  "Katherine Addison - The Witness for the Dead: Book One of the Cemeteries of Amalo Trilogy": ["2025-04-28T08:03:45Z", "NEW BOOK"],
+  "Katherine Addison - The Angel of the Crows": ["2025-04-21T02:12:48Z", "NEW BOOK"],
+  "Carlo Rovelli - Anaximander: And the Birth of Science": ["2023-04-02T01:20:36Z", "NEW BOOK"],
   "Tom Holland - The Wolf-Girl, the Greeks, and the Gods: A Tale of the Persian Wars": ["2025-03-22T19:02:28Z","NEW BOOK"],
   "Rush Doshi - The Long Game: China's Grand Strategy to Displace American Order": ["2025-03-22T19:01:30Z","NEW BOOK"],
   "Ray Kurzweil - The Singularity Is Nearer: When We Merge with AI": ["2025-03-22T19:00:21Z","NEW BOOK"],
