@@ -4,10 +4,10 @@
 
 - `cd /Users/daniel/Libation/Books; ls -t` - most recent first
 
-- [x] Tom Holland - Millennium [B07QK1JHZS]/
-- [x] Katherine Addison - The Chronicles of Osreth 1 - The Witness for the Dead [1250807891]/
-- [x] Murasaki Shikibu - The Tale of Genji [B07HPFFHGP]/
-- [x] Carlo Rovelli - Anaximander [B0B6222WBC]/
+- [✓] Tom Holland - Millennium [B07QK1JHZS]/
+- [✓] Katherine Addison - The Chronicles of Osreth 1 - The Witness for the Dead [1250807891]/
+- [✓] Murasaki Shikibu - The Tale of Genji [B07HPFFHGP]/
+- [✓] Carlo Rovelli - Anaximander [B0B6222WBC]/
 - [✓] Warwick F. Vincent - Lakes [B07L19MFJ3]/
 - [✓] Max S. Bennett - A Brief History of Intelligence [B0BCCB8C33]/
 - [✓] Wolfgang Münchau - Kaput [B0DLX3YLJG]/
@@ -30,7 +30,7 @@
 - [✓] M. L. Wang - The Sword of Kaigen: A Theonite War Story [B08GGFD9ZN]/
 - [✓] Mustafa Suleyman - The Coming Wave [B0BVT5Q9MF]/
 - [✓] Ian Mortimer - Medieval Horizons [B0B7KDDLWK]/
-- [x] Thomas Hertog - On the Origin of Time [B09NQKZ3BC]/
+- [✓] Thomas Hertog - On the Origin of Time [B09NQKZ3BC]/
 - [x] Greg McKeown - Essentialism [B072591XFD]/
 - [IGNORE] Robin Morgan-Bentley - Carlo Rovelli [B0722R2DXP]/
 - [x] Edward Chancellor - The Price of Time [B0B9FR2C4C]/

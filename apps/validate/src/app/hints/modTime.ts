@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Thomas Hertog - On the Origin of Time: Stephen Hawking's Final Theory": ["2023-05-30T02:50:59Z", "NEW BOOK"],
+  "Murasaki Shikibu, Suematsu Kencho - translator - The Tale of Genji": ["2025-05-01T00:00:00Z", "NEW BOOK"],
   "Tom Holland - Millennium: The End of the World and the Forging of Christendom": ["2025-04-28T08:03:50Z", "NEW BOOK"],
   "Katherine Addison - The Grief of Stones: Book Two of the Cemeteries of Amalo Trilogy": ["2025-04-21T02:23:36Z", "NEW BOOK"],
   "Katherine Addison - The Witness for the Dead: Book One of the Cemeteries of Amalo Trilogy": ["2025-04-28T08:03:45Z", "NEW BOOK"],
