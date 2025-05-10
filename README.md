@@ -57,6 +57,7 @@ bitrate() {
     echo "FFprobe: $(ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate "$1" | grep 'rate')"
 }
 mod_time_utc() {
+  # TODO(daneroo):  `TZ=UTC gls -l --time-style=+%Y-%m-%dT%H:%M:%SZ`
   local filename="$1"
   date -u -r $(stat -f "%m" "${filename}") +"%Y-%m-%dT%H:%M:%SZ"
 }

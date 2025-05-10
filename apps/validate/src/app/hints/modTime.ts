@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Eric Topol - Deep Medicine: How Artificial Intelligence Can Make Healthcare Human Again": ["2025-05-10T03:20:06Z", "NEW BOOK"],
+  "Katherine Addison - The Tomb of Dragons: Book Three of the Cemeteries of Amalo Trilogy": ["2025-05-10T03:11:04Z", "NEW BOOK"],
   "Charles Van Doren, Mortimer J. Adler - How to Read a Book: The Classic Guide to Intelligent Reading": ["2025-05-02T05:09:13Z", "NEW BOOK"],
   "Robert Forrest - The Pillow Book: Series 1-11: A Full-Cast Historical Crime Drama": ["2025-05-02T05:21:34Z", "NEW BOOK"],
   "Helen Czerski - The Blue Machine: How the Ocean Works": ["2025-05-02T05:09:13Z", "NEW BOOK"],
