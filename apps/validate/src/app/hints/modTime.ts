@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Patrick McGee - Apple in China: The Capture of the World's Greatest Company": ["2025-05-13T19:52:03Z", "NEW BOOK"],
+  "Joe Abercrombie - The Devils: The Devils, Book 1": ["2025-05-13T19:50:34Z", "NEW BOOK"],
   "Eric Topol - Deep Medicine: How Artificial Intelligence Can Make Healthcare Human Again": ["2025-05-10T03:20:06Z", "NEW BOOK"],
   "Katherine Addison - The Tomb of Dragons: Book Three of the Cemeteries of Amalo Trilogy": ["2025-05-10T03:11:04Z", "NEW BOOK"],
   "Charles Van Doren, Mortimer J. Adler - How to Read a Book: The Classic Guide to Intelligent Reading": ["2025-05-02T05:09:13Z", "NEW BOOK"],
