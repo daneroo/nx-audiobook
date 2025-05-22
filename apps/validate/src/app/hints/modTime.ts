@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Shelby Van Pelt - Remarkably Bright Creatures: A Novel": ["2025-05-22T02:25:07Z", "NEW BOOK"],
+  "Murasaki Shikibu - The Tale of Genji: Dennis Washburn - translator": ["2025-05-22T03:20:33Z", "NEW BOOK"],
+  "Murasaki Shikibu - The Tale of Genji: Kencho Suematsu - translator": ["2025-05-21T00:00:00Z", "NEW BOOK"],
   "Patrick McGee - Apple in China: The Capture of the World's Greatest Company": ["2025-05-13T19:52:03Z", "NEW BOOK"],
   "Joe Abercrombie - The Devils: The Devils, Book 1": ["2025-05-13T19:50:34Z", "NEW BOOK"],
   "Eric Topol - Deep Medicine: How Artificial Intelligence Can Make Healthcare Human Again": ["2025-05-10T03:20:06Z", "NEW BOOK"],
@@ -76,7 +79,6 @@ export const modTimeDB: Record<string, [string, string]> = {
   "Robert Forrest - The Pillow Book: Series 1-11: A Full-Cast Historical Crime Drama": ["2025-05-02T05:21:34Z", "NEW BOOK"],
   "Helen Czerski - The Blue Machine: How the Ocean Works": ["2025-05-02T05:09:13Z", "NEW BOOK"],
   "Thomas Hertog - On the Origin of Time: Stephen Hawking's Final Theory": ["2023-05-30T02:50:59Z", "NEW BOOK"],
-  "Murasaki Shikibu, Suematsu Kencho - translator - The Tale of Genji": ["2025-05-01T00:00:00Z", "NEW BOOK"],
   "Tom Holland - Millennium: The End of the World and the Forging of Christendom": ["2025-04-28T08:03:50Z", "NEW BOOK"],
   "Katherine Addison - The Grief of Stones: Book Two of the Cemeteries of Amalo Trilogy": ["2025-04-21T02:23:36Z", "NEW BOOK"],
   "Katherine Addison - The Witness for the Dead: Book One of the Cemeteries of Amalo Trilogy": ["2025-04-28T08:03:45Z", "NEW BOOK"],
