@@ -91,7 +91,7 @@ just checkfiles
 # Dev to Staging
 #  on galois, dev, sync to /Volumes/Space/Reading/audiobooks
 # *** TRY no-xattrs ***
-rsync -n -avi --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
+rsync -n -avi --no-xattrs --progress --exclude .DS_Store --exclude @eaDir ~/Code/iMetrical/nx-audiobook/infra/audiobookshelf/data/audiobooks/ /Volumes/Space/Reading/audiobooks/
 
 # Validate again
 time pnpm run dev -r /Volumes/Space/Reading/audiobooks/

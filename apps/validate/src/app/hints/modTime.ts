@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Adam Becker - More Everything Forever: AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity": ["2025-07-05T08:11:51Z", "NEW BOOK"],
+  "Admiral James Stavridis USN, Elliot Ackerman - 2054: A Novel": ["2025-07-05T08:10:27Z", "NEW BOOK"],
+  "Joshua Hammer - The Mesopotamian Riddle: An Archaeologist, a Soldier, a Clergyman and the Race to Decipher the World's Oldest Writing": ["2025-07-05T08:16:02Z", "NEW BOOK"],
   "Shelby Van Pelt - Remarkably Bright Creatures: A Novel": ["2025-05-22T02:25:07Z", "NEW BOOK"],
   "Murasaki Shikibu - The Tale of Genji: Dennis Washburn - translator": ["2025-05-22T03:20:33Z", "NEW BOOK"],
   "Murasaki Shikibu - The Tale of Genji: Kencho Suematsu - translator": ["2025-05-21T00:00:00Z", "NEW BOOK"],
