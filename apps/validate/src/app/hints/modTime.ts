@@ -68,6 +68,12 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  // 2025-07-07T12:10:26Z
+  "Ann Leckie - Ancillary Mercy": ["2025-07-07T12:10:26Z", "NEW BOOK"],
+  "Ann Leckie - Ancillary Sword": ["2025-07-07T12:07:23Z", "NEW BOOK"],
+  "Ann Leckie - Ancillary Justice": ["2025-07-07T12:05:23Z", "NEW BOOK"],
+  "Iain M. Banks - The Algebraist: Culture": ["2025-07-07T12:03:06Z", "NEW BOOK"],
+  "Robert Sheckley - Dimension of Miracles": ["2025-07-07T11:48:02Z", "NEW BOOK"],
   "Adam Becker - More Everything Forever: AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity": ["2025-07-05T08:11:51Z", "NEW BOOK"],
   "Admiral James Stavridis USN, Elliot Ackerman - 2054: A Novel": ["2025-07-05T08:10:27Z", "NEW BOOK"],
   "Joshua Hammer - The Mesopotamian Riddle: An Archaeologist, a Soldier, a Clergyman and the Race to Decipher the World's Oldest Writing": ["2025-07-05T08:16:02Z", "NEW BOOK"],
