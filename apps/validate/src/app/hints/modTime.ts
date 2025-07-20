@@ -68,7 +68,15 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-07-07T12:10:26Z
+  // 2025-07-20T15:37:18Z
+  "Peter McLean - Priest of Crowns": ["2025-07-20T15:37:18Z", "NEW BOOK"],
+  "Peter McLean - Priest of Gallows": ["2025-07-20T04:42:13Z", "NEW BOOK"],
+  "Peter McLean - Priest of Lies": ["2025-07-20T15:36:46Z", "NEW BOOK"],
+  "Peter McLean - Priest of Bones": ["2025-07-20T15:36:26Z", "NEW BOOK"],
+  "Octavia E. Butler - Parable of the Sower": ["2025-07-20T04:30:10Z", "NEW BOOK"],
+  "Ken Liu - The Veiled Throne": ["2025-07-20T15:35:22Z", "NEW BOOK"],
+  "Ken Liu - The Wall of Storms": ["2025-07-20T15:34:47Z", "NEW BOOK"],
+  "Ken Liu - The Grace of Kings": ["2025-07-20T15:34:21Z", "NEW BOOK"],
   "Ann Leckie - Ancillary Mercy": ["2025-07-07T12:10:26Z", "NEW BOOK"],
   "Ann Leckie - Ancillary Sword": ["2025-07-07T12:07:23Z", "NEW BOOK"],
   "Ann Leckie - Ancillary Justice": ["2025-07-07T12:05:23Z", "NEW BOOK"],
