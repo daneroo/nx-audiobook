@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-07-20T15:37:18Z
+  "Ed Yong - An Immense World: How Animal Senses Reveal the Hidden Realms Around Us": ["2025-08-01T21:38:52Z", "NEW BOOK"],
+  "Robin Hobb - The Wilful Princess and the Piebald Prince": ["2025-07-29T01:13:02Z", "NEW BOOK"],
   "Peter McLean - Priest of Crowns": ["2025-07-20T15:37:18Z", "NEW BOOK"],
   "Peter McLean - Priest of Gallows": ["2025-07-20T04:42:13Z", "NEW BOOK"],
   "Peter McLean - Priest of Lies": ["2025-07-20T15:36:46Z", "NEW BOOK"],
