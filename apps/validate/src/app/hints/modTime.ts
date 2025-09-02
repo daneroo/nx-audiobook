@@ -68,6 +68,10 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Mark Lawrence - Holy Sister": ["2025-09-02T00:56:21Z", "NEW BOOK"],
+  "Mark Lawrence - Grey Sister": ["2025-09-02T00:55:21Z", "NEW BOOK"],
+  "Mark Lawrence - Red Sister": ["2025-09-02T00:54:21Z", "NEW BOOK"],
+  "Charles Stross - Accelerando": ["2025-08-28T04:14:39Z", "NEW BOOK"],
   "Ed Yong - An Immense World: How Animal Senses Reveal the Hidden Realms Around Us": ["2025-08-01T21:38:52Z", "NEW BOOK"],
   "Robin Hobb - The Wilful Princess and the Piebald Prince": ["2025-07-29T01:13:02Z", "NEW BOOK"],
   "Peter McLean - Priest of Crowns": ["2025-07-20T15:37:18Z", "NEW BOOK"],
