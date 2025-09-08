@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Irvin D. Yalom - The Gift of Therapy: An Open Letter to a New Generation of Therapists and Their Patients": ["2025-09-08T04:17:55Z", "NEW BOOK"],
   "Mark Lawrence - Holy Sister": ["2025-09-02T00:56:21Z", "NEW BOOK"],
   "Mark Lawrence - Grey Sister": ["2025-09-02T00:55:21Z", "NEW BOOK"],
   "Mark Lawrence - Red Sister": ["2025-09-02T00:54:21Z", "NEW BOOK"],
