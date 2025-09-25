@@ -1,5 +1,18 @@
 # Libation
 
+## Purchase Date
+
+```bash
+cd ~/Libation;
+sqlite3 -cmd ".headers on" -cmd ".mode list" -cmd ".separator ' | '" LibationContext.db "SELECT b.Title, strftime('%Y-%m-%dT%H:%M:%SZ', MIN(lb.\"$purchaseCol\"), 'utc') FROM LibraryBooks lb JOIN Books b ON b.rowid = lb.\"$bookIdCol\" GROUP BY lb.\"$bookIdCol\", b.Title ORDER BY MIN(lb.\"$purchaseCol\");" | sed 's/ | / | /' | column -t -s '|'
+
+Title                                                                        strftime('%Y-%m-%dT%H:%M:%SZ', MIN(lb."DateAdded"), 'utc')
+Fundamentals                                                                 2021-01-27T08:02:01Z
+Extraterrestrial                                                             2021-02-13T14:30:55Z
+...
+
+```
+
 ## List
 
 - `cd /Users/daniel/Libation/Books; ls -t` - most recent first
@@ -37,27 +50,25 @@
 - [✓] Mustafa Suleyman - The Coming Wave [B0BVT5Q9MF]/
 - [✓] Ian Mortimer - Medieval Horizons [B0B7KDDLWK]/
 - [✓] Thomas Hertog - On the Origin of Time [B09NQKZ3BC]/
-- [x] Greg McKeown - Essentialism [B072591XFD]/
-- [IGNORE] Robin Morgan-Bentley - Carlo Rovelli [B0722R2DXP]/
-- [x] Edward Chancellor - The Price of Time [B0B9FR2C4C]/
-- [x] Frank Dikötter - China After Mao [B0BFK1RC95]/
+- [✓] Greg McKeown - Essentialism [B072591XFD]/
+- [✓] Edward Chancellor - The Price of Time [B0B9FR2C4C]/
+- [✓] Frank Dikötter - China After Mao [B0BFK1RC95]/
 - [✓] Chris Miller - Chip War [B09TX1FPL2]/
-- [x] J. Bradford DeLong - Slouching Towards Utopia [B0B2F2FJ19]/
+- [✓] J. Bradford DeLong - Slouching Towards Utopia [B0B2F2FJ19]/
 - [✓] Richard Dawkins - The Blind Watchmaker [B072BSYZ88]/
 - [✓] Richard Dawkins - Flights of Fancy [B09MR5ZXHK]/
-- [x] Peter Zeihan - The End of the World Is Just the Beginning [B09CS9N48N]/
-- [x] Ian Bremmer - The Power of Crisis [1797135422]/
-- [x] Nicole Yunger Halpern - Quantum Steampunk [B09VMYTCWB]/
-- [x] Daniel Shapiro - Negotiating the Nonnegotiable [B07259M16J]/
-- [x] Dan Jones - Powers and Thrones [1800248733]/
-- [x] Matthew Walker - Why We Sleep [B075ZZ4PX4]/
-- [x] Rob Manning - Mars Rover Curiosity [B071HJW2S6]/
-- [x] Nicole Forsgren PhD - Accelerate: Building and Scaling High Performing Technology Organizations [B07BMBYHWS]/
-- [x] Leonard Susskind - The Black Hole War [B0711NMZ7D]/
-- [x] Mike Duncan - Hero of Two Worlds [B08TKLZXLB]/
-- [x] Chiara Marletto - The Science of Can and Can't [0593395166]/
-- [x] Frank Wilczek - The Lightness of Being [B071L5G613]/
-- [x] Carlo Rovelli - Helgoland [0593412435]/
-- [x] Avi Loeb - Extraterrestrial [0358393787]/
-- [x] Frank Wilczek - Fundamentals [B088C3TYJ2]/
-
+- [✓] Peter Zeihan - The End of the World Is Just the Beginning [B09CS9N48N]/
+- [✓] Ian Bremmer - The Power of Crisis [1797135422]/
+- [✓] Nicole Yunger Halpern - Quantum Steampunk [B09VMYTCWB]/
+- [✓] Daniel Shapiro - Negotiating the Nonnegotiable [B07259M16J]/
+- [✓] Dan Jones - Powers and Thrones [1800248733]/
+- [✓] Matthew Walker - Why We Sleep [B075ZZ4PX4]/
+- [✓] Rob Manning - Mars Rover Curiosity [B071HJW2S6]/
+- [✓] Nicole Forsgren PhD - Accelerate: Building and Scaling High Performing Technology Organizations [B07BMBYHWS]/
+- [✓] Leonard Susskind - The Black Hole War [B0711NMZ7D]/
+- [✓] Mike Duncan - Hero of Two Worlds [B08TKLZXLB]/
+- [✓] Chiara Marletto - The Science of Can and Can't [0593395166]/
+- [✓] Frank Wilczek - The Lightness of Being [B071L5G613]/
+- [✓] Carlo Rovelli - Helgoland [0593412435]/
+- [✓] Avi Loeb - Extraterrestrial [0358393787]/
+- [✓] Frank Wilczek - Fundamentals [B088C3TYJ2]/
