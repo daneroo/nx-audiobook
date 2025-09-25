@@ -4,6 +4,12 @@
 
 - `cd /Users/daniel/Libation/Books; ls -t` - most recent first
 
+- [✓] Steven Pinker - When Everyone Knows That Everyone Knows . . . [B0DVH4YNWN]/
+- [✓] Eliezer Yudkowsky - If Anyone Builds It, Everyone Dies [B0F2B8SPMJ]/
+- [✓] Charles Stross - Accelerando [B071HRGV18]/
+- [✓] Ed Yong - An Immense World [B09LF8VH1S]/
+- [✓] Patrick McGee - Apple in China [B0DPJHCHSG]/
+- [✓] Katherine Addison - The Chronicles of Osreth 3 - The Tomb of Dragons [B0D3QQP8RL]/
 - [✓] Tom Holland - Millennium [B07QK1JHZS]/
 - [✓] Katherine Addison - The Chronicles of Osreth 1 - The Witness for the Dead [1250807891]/
 - [✓] Murasaki Shikibu - The Tale of Genji [B07HPFFHGP]/

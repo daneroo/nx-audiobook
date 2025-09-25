@@ -68,6 +68,19 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  // 2025-09-24T22:38:13Z
+  "Irvin D. Yalom - When Nietzsche Wept": ["2025-09-25T00:12:00Z", "NEW BOOK"],
+  "Ken Liu - Speaking Bones": ["2025-09-24T23:06:32Z", "NEW BOOK"],
+  "Irvin D. Yalom - Hour of the Heart: Connecting in the Here and Now": ["2025-09-24T22:23:04Z", "NEW BOOK"],
+  "Mark Lawrence - The Book That Held Her Heart": ["2025-09-24T22:39:13Z", "NEW BOOK"],
+  "Mark Lawrence - The Book That Broke the World": ["2025-09-24T22:38:13Z", "NEW BOOK"],
+  "Mark Lawrence - The Book That Wouldn't Burn": ["2025-09-24T22:37:13Z", "NEW BOOK"],
+  "R. F. Kuang - Katabasis": ["2025-09-24T23:57:58Z", "NEW BOOK"],
+  "Italo Calvino - The Baron in the Trees": ["2025-09-24T22:02:13Z", "NEW BOOK"],
+  "Irvin D. Yalom - Staring at the Sun: Overcoming the Terror of Death": ["2025-09-24T21:59:27Z", "NEW BOOK"],
+  "Irvin D. Yalom - Existential Psychotherapy": ["2025-09-24T21:56:19Z", "NEW BOOK"],
+  "Steven Pinker - When Everyone Knows That Everyone Knows . . .: Common Knowledge and the Mysteries of Money, Power, and Everyday Life": ["2025-09-24T21:34:30Z", "NEW BOOK"],
+  "Eliezer Yudkowsky, Nate Soares - If Anyone Builds It, Everyone Dies": ["2025-09-16T07:04:06Z", "NEW BOOK"],
   "Dk - The Psychology Book: Big Ideas Simply Explained": ["2025-09-09T03:18:21Z", "NEW BOOK"],
   "Irvin D. Yalom - The Gift of Therapy: An Open Letter to a New Generation of Therapists and Their Patients": ["2025-09-08T04:17:55Z", "NEW BOOK"],
   "Mark Lawrence - Holy Sister": ["2025-09-02T00:56:21Z", "NEW BOOK"],
