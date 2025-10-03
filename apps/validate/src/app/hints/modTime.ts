@@ -69,6 +69,16 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // 2025-09-24T22:38:13Z
+
+//   ✕ fixModTimeHintBook { warnings: [ 'Madeline Miller - Circe' ] }
+// ✕ /Madeline Miller - The Song of Achilles
+//   ✕ fixModTimeHintBook { warnings: [ 'Madeline Miller - The Song of Achilles: A Novel' ] }
+// ✕ /Yoko Ogawa - The Housekeeper and the Professor
+//   ✕ fixModTimeHintBook { warnings: [ 'Yoko Ogawa - The Housekeeper and the Professor' ] }
+// 2025-10-03T06:17:44Z
+  "Madeline Miller - Circe": ["2025-10-03T06:17:44Z", "NEW BOOK"],
+  "Madeline Miller - The Song of Achilles": ["2025-10-03T06:14:26Z", "NEW BOOK"],
+  "Yoko Ogawa - The Housekeeper and the Professor": ["2025-10-03T06:00:23Z", "NEW BOOK"],
   "Cory Doctorow, Charles Stross - The Rapture of the Nerds": ["2025-09-25T19:38:39Z", "NEW BOOK"],
   "Avi Loeb - Extraterrestrial": ["2021-02-13T14:30:55Z", "NEW BOOK"],
   "Carlo Rovelli - Helgoland: Making Sense of the Quantum Revolution": ["2021-06-16T09:58:09Z", "NEW BOOK"],
