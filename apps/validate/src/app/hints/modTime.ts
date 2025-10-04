@@ -68,14 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-09-24T22:38:13Z
-
-//   ✕ fixModTimeHintBook { warnings: [ 'Madeline Miller - Circe' ] }
-// ✕ /Madeline Miller - The Song of Achilles
-//   ✕ fixModTimeHintBook { warnings: [ 'Madeline Miller - The Song of Achilles: A Novel' ] }
-// ✕ /Yoko Ogawa - The Housekeeper and the Professor
-//   ✕ fixModTimeHintBook { warnings: [ 'Yoko Ogawa - The Housekeeper and the Professor' ] }
-// 2025-10-03T06:17:44Z
+  "Nikola Tesla - My Inventions and Other Works": ["2025-10-04T03:41:23Z", "NEW BOOK"],
   "Madeline Miller - Circe": ["2025-10-03T06:17:44Z", "NEW BOOK"],
   "Madeline Miller - The Song of Achilles": ["2025-10-03T06:14:26Z", "NEW BOOK"],
   "Yoko Ogawa - The Housekeeper and the Professor": ["2025-10-03T06:00:23Z", "NEW BOOK"],
