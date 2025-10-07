@@ -68,6 +68,10 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Tim Harford - The Undercover Economist": ["2025-10-07T20:54:51Z", "NEW BOOK"],
+  "Tim Harford - The Undercover Economist Strikes Back: How to Run - or Ruin - an Economy": ["2025-10-07T20:53:14Z", "NEW BOOK"],
+  "Tim Harford - The Data Detective: Ten Easy Rules to Make Sense of Statistics": ["2025-10-07T20:43:31Z", "NEW BOOK"],
+  "Cory Doctorow - Enshittification": ["2025-10-07T20:40:31Z", "NEW BOOK"],
   "Matthew D. LaPlante, David A. Sinclair PhD - Lifespan: Why We Age - and Why We Don't Have To": ["2025-10-05T01:31:38Z", "NEW BOOK"],
   "Nikola Tesla - My Inventions and Other Works": ["2025-10-04T03:41:23Z", "NEW BOOK"],
   "Madeline Miller - Circe": ["2025-10-03T06:17:44Z", "NEW BOOK"],
