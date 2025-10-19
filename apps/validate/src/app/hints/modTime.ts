@@ -68,6 +68,7 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Ken Liu - All That We See or Seem: A Julia Z Novel": ["2025-10-19T21:44:08Z", "NEW BOOK"],
   "Tim Harford - The Undercover Economist": ["2025-10-07T20:54:51Z", "NEW BOOK"],
   "Tim Harford - The Undercover Economist Strikes Back: How to Run - or Ruin - an Economy": ["2025-10-07T20:53:14Z", "NEW BOOK"],
   "Tim Harford - The Data Detective: Ten Easy Rules to Make Sense of Statistics": ["2025-10-07T20:43:31Z", "NEW BOOK"],
