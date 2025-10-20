@@ -68,6 +68,9 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Stephen Budiansky - Journey to the Edge of Reason: The Life of Kurt Gödel": ["2025-10-20T05:25:13Z", "NEW BOOK"],
+  "Rebecca Goldstein - Incompleteness: The Proof and Paradox of Kurt Gödel": ["2025-10-20T05:22:58Z", "NEW BOOK"],
+  "Elisabeth Tova Bailey - The Sound of a Wild Snail Eating": ["2025-10-20T05:03:18Z", "NEW BOOK"],
   "Ken Liu - All That We See or Seem: A Julia Z Novel": ["2025-10-19T21:44:08Z", "NEW BOOK"],
   "Tim Harford - The Undercover Economist": ["2025-10-07T20:54:51Z", "NEW BOOK"],
   "Tim Harford - The Undercover Economist Strikes Back: How to Run - or Ruin - an Economy": ["2025-10-07T20:53:14Z", "NEW BOOK"],
