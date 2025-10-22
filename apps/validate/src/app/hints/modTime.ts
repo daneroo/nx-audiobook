@@ -68,6 +68,11 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Dan Jones - Lion Hearts": ["2025-10-21T00:33:11Z", "NEW BOOK"],
+  "Dan Jones - Wolves of Winter": ["2025-10-21T00:31:24Z", "NEW BOOK"],
+  "Dan Jones - Essex Dogs": ["2025-10-21T00:32:12Z", "NEW BOOK"],
+  "Greg Egan - Diaspora": ["2025-10-20T23:14:37Z", "NEW BOOK"],
+  "Rob Reid - After On: A Novel of Silicon Valley": ["2025-10-20T22:51:42Z", "NEW BOOK"],
   "Stephen Budiansky - Journey to the Edge of Reason: The Life of Kurt Gödel": ["2025-10-20T05:25:13Z", "NEW BOOK"],
   "Rebecca Goldstein - Incompleteness: The Proof and Paradox of Kurt Gödel": ["2025-10-20T05:22:58Z", "NEW BOOK"],
   "Elisabeth Tova Bailey - The Sound of a Wild Snail Eating": ["2025-10-20T05:03:18Z", "NEW BOOK"],
