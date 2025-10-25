@@ -68,6 +68,10 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Fredrik Backman - The Winners": ["2025-10-22T06:00:42Z", "NEW BOOK"],
+  "Fredrik Backman - Us Against You": ["2025-10-22T05:47:45Z", "NEW BOOK"],
+  "Fredrik Backman - Beartown": ["2025-10-22T05:33:52Z", "NEW BOOK"],
+  "Dan Wang - Breakneck: China's Quest to Engineer the Future": ["2025-10-22T05:14:44Z", "NEW BOOK"],
   "Dan Jones - Lion Hearts": ["2025-10-21T00:33:11Z", "NEW BOOK"],
   "Dan Jones - Wolves of Winter": ["2025-10-21T00:31:24Z", "NEW BOOK"],
   "Dan Jones - Essex Dogs": ["2025-10-21T00:32:12Z", "NEW BOOK"],
