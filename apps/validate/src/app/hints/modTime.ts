@@ -68,6 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  "Scott Anderson - King of Kings: The Iranian Revolution: A Story of Hubris, Delusion and Catastrophic Miscalculation": ["2025-11-07T03:03:56Z", "NEW BOOK"],
+  "Fredrik Backman - And Every Morning the Way Home Gets Longer and Longer: A Novella": ["2025-11-07T02:49:30Z", "NEW BOOK"],
   "Fredrik Backman - A Man Called Ove": ["2025-11-06T20:58:41Z", "NEW BOOK"],
   "Fredrik Backman - The Winners": ["2025-10-22T06:00:42Z", "NEW BOOK"],
   "Fredrik Backman - Us Against You": ["2025-10-22T05:47:45Z", "NEW BOOK"],
