@@ -68,6 +68,10 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
+  // 2025-11-22T02:58:46Z
+  "Simon Winchester - The Breath of the Gods: The History and Future of the Wind": ["2025-11-22T03:00:08Z", "NEW BOOK"],
+  "Neil Gaiman - American Gods": ["2025-11-22T02:58:46Z", "NEW BOOK"],
+  "Travis Baldree - Brigands & Breadknives": ["2025-11-22T00:38:43Z", "NEW BOOK"],
   "Scott Anderson - King of Kings: The Iranian Revolution: A Story of Hubris, Delusion and Catastrophic Miscalculation": ["2025-11-07T03:03:56Z", "NEW BOOK"],
   "Fredrik Backman - And Every Morning the Way Home Gets Longer and Longer: A Novella": ["2025-11-07T02:49:30Z", "NEW BOOK"],
   "Fredrik Backman - A Man Called Ove": ["2025-11-06T20:58:41Z", "NEW BOOK"],
