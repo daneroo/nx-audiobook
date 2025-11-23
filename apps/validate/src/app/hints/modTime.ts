@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // 2025-11-22T02:58:46Z
+  "Tim Butcher - The Trigger: Hunting the Assassin Who Brought the World to War": ["2025-11-23T04:23:04Z", "NEW BOOK"],
   "Simon Winchester - The Breath of the Gods: The History and Future of the Wind": ["2025-11-22T03:00:08Z", "NEW BOOK"],
   "Neil Gaiman - American Gods": ["2025-11-22T02:58:46Z", "NEW BOOK"],
   "Travis Baldree - Brigands & Breadknives": ["2025-11-22T00:38:43Z", "NEW BOOK"],
