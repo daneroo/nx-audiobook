@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-11-22T02:58:46Z
+  // 2025-11-24T22:20:58Z
+  "Calder Walton - Spies: The Epic Intelligence War Between East and West": ["2025-11-24T22:20:58Z", "NEW BOOK"],
   "Helen Castor - The Eagle and the Hart: The Tragedy of Richard II and Henry IV": ["2025-11-23T23:09:14Z", "NEW BOOK"],
   "Tim Butcher - The Trigger: Hunting the Assassin Who Brought the World to War": ["2025-11-23T04:23:04Z", "NEW BOOK"],
   "Simon Winchester - The Breath of the Gods: The History and Future of the Wind": ["2025-11-22T03:00:08Z", "NEW BOOK"],
