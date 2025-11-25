@@ -28,3 +28,10 @@ services:
       - ./data/metadata:/metadata
       - ./data/config:/config
     restart: unless-stopped
+    logging:
+      driver: json-file
+      # Cap logs at 2*MB total.
+      # At ~0.33MB/day, this preserves ~12 days of history.
+      options:
+        max-size: '2m'
+        max-file: '2'
