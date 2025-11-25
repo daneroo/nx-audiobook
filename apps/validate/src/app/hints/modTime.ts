@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-11-24T22:20:58Z
+  // 2025-11-25T20:08:11Z
+  "Jacob Mikanowski - Goodbye, Eastern Europe: An Intimate History of a Divided Land": ["2025-11-25T20:08:11Z", "NEW BOOK"],
   "Calder Walton - Spies: The Epic Intelligence War Between East and West": ["2025-11-24T22:20:58Z", "NEW BOOK"],
   "Helen Castor - The Eagle and the Hart: The Tragedy of Richard II and Henry IV": ["2025-11-23T23:09:14Z", "NEW BOOK"],
   "Tim Butcher - The Trigger: Hunting the Assassin Who Brought the World to War": ["2025-11-23T04:23:04Z", "NEW BOOK"],
