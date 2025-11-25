@@ -30,7 +30,7 @@ services:
     restart: unless-stopped
     logging:
       driver: json-file
-      # Cap logs at 2*MB total.
+      # Cap logs at 2*2MB total.
       # At ~0.33MB/day, this preserves ~12 days of history.
       options:
         max-size: '2m'
