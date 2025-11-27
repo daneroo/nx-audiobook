@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-11-25T20:08:11Z
+  // 2025-11-27T05:16:04Z
+  "George F. Will - American Happiness and Discontents: The Unruly Torrent, 2008-2020": ["2025-11-27T05:16:04Z", "NEW BOOK"],
   "Jacob Mikanowski - Goodbye, Eastern Europe: An Intimate History of a Divided Land": ["2025-11-25T20:08:11Z", "NEW BOOK"],
   "Calder Walton - Spies: The Epic Intelligence War Between East and West": ["2025-11-24T22:20:58Z", "NEW BOOK"],
   "Helen Castor - The Eagle and the Hart: The Tragedy of Richard II and Henry IV": ["2025-11-23T23:09:14Z", "NEW BOOK"],
