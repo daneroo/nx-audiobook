@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-11-27T05:16:04Z
+  // 2025-11-28T19:12:06Z
+  "Moudhy Al-Rashid - Between Two Rivers: Ancient Mesopotamia and the Birth of History": ["2025-11-28T19:12:06Z", "NEW BOOK"],
   "George F. Will - American Happiness and Discontents: The Unruly Torrent, 2008-2020": ["2025-11-27T05:16:04Z", "NEW BOOK"],
   "Jacob Mikanowski - Goodbye, Eastern Europe: An Intimate History of a Divided Land": ["2025-11-25T20:08:11Z", "NEW BOOK"],
   "Calder Walton - Spies: The Epic Intelligence War Between East and West": ["2025-11-24T22:20:58Z", "NEW BOOK"],
