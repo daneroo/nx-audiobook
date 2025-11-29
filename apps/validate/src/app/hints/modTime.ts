@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-11-28T19:12:06Z
+  // 2025-11-29T11:00:52Z
+  "Rosemary Kirstein - The Steerswoman": ["2025-11-29T11:00:52Z", "NEW BOOK"],
   "Moudhy Al-Rashid - Between Two Rivers: Ancient Mesopotamia and the Birth of History": ["2025-11-28T19:12:06Z", "NEW BOOK"],
   "George F. Will - American Happiness and Discontents: The Unruly Torrent, 2008-2020": ["2025-11-27T05:16:04Z", "NEW BOOK"],
   "Jacob Mikanowski - Goodbye, Eastern Europe: An Intimate History of a Divided Land": ["2025-11-25T20:08:11Z", "NEW BOOK"],
