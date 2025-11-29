@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // 2025-11-29T11:00:52Z
+  // 2025-11-29T11:57:45Z
+  "Emad Mostaque - The Last Economy: A Guide to the Age of Intelligent Economics": ["2025-11-29T11:57:45Z", "NEW BOOK"],
   "Rosemary Kirstein - The Steerswoman": ["2025-11-29T11:00:52Z", "NEW BOOK"],
   "Moudhy Al-Rashid - Between Two Rivers: Ancient Mesopotamia and the Birth of History": ["2025-11-28T19:12:06Z", "NEW BOOK"],
   "George F. Will - American Happiness and Discontents: The Unruly Torrent, 2008-2020": ["2025-11-27T05:16:04Z", "NEW BOOK"],
