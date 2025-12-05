@@ -97,6 +97,7 @@ check-xattrs dir:
     echo "## Checking extended attributes in {{ dir }}..." | {{ gum_fmt_cmd }}
 
     ANY_REMOVEABLE_XATTRS_FOUND="NONE"  # Initialize the variable outside the loop
+    PROVENANCE_COUNT=0
 
     while read -r file; do
         # echo "ANY_XATTRS_FOUND: $ANY_XATTRS_FOUND"
@@ -104,7 +105,8 @@ check-xattrs dir:
         if [[ $attrs ]]; then
             # Special case for com.apple.provenance
             if [[ "$attrs" == "com.apple.provenance" ]]; then
-                echo "{{ red_xmark }} $(basename "$file") has com.apple.provenance xattr (cannot be removed on newer macOS)"
+                # echo "{{ red_xmark }} $(basename "$file") has com.apple.provenance xattr (cannot be removed on newer macOS)"
+                PROVENANCE_COUNT=$((PROVENANCE_COUNT+1))
                 continue
             fi
 
@@ -130,6 +132,10 @@ check-xattrs dir:
         fi
     done < <(find {{ dir }} -type f)
     echo "" # new line
+    if [ "$PROVENANCE_COUNT" -gt 0 ]; then
+        echo "{{ red_xmark }} $PROVENANCE_COUNT files have com.apple.provenance xattr (cannot be removed on newer macOS)"
+    fi
+
     if [ "$ANY_REMOVEABLE_XATTRS_FOUND" == "NONE" ]; then
         echo "{{ green_check }} No files with removable extended attributes found in {{ dir }}."
     else
