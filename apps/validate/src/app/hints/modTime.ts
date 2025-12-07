@@ -68,7 +68,8 @@ mod_time_utc() {
 
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
-  // current time
+  // current time in UTC (Z)
+  "Aldous Huxley - Brave New World": ["2025-12-07T19:34:32Z", "NEW BOOK"],
   "Helen Thompson - Disorder: Hard Times in the 21st Century": ["2025-12-06T19:29:15Z", "NEW BOOK"],
   "Leslie Valiant - The Importance of Being Educable: A New Theory of Human Uniqueness": ["2025-12-06T05:51:48Z", "NEW BOOK"],
   "Rosemary Kirstein - The Outskirter's Secret": ["2025-12-05T17:51:10Z", "NEW BOOK"],
