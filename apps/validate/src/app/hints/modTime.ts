@@ -69,13 +69,14 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Rosemary Kirstein - The Lost Steersman": ["2025-12-08T18:36:50Z", "NEW BOOK"],
   "Orville Schell - My Old Home: A Novel of Exile": ["2025-12-07T22:27:40Z", "NEW BOOK"],
   "Aldous Huxley - Brave New World": ["2025-12-07T19:34:32Z", "NEW BOOK"],
   "Helen Thompson - Disorder: Hard Times in the 21st Century": ["2025-12-06T19:29:15Z", "NEW BOOK"],
   "Leslie Valiant - The Importance of Being Educable: A New Theory of Human Uniqueness": ["2025-12-06T05:51:48Z", "NEW BOOK"],
-  "Rosemary Kirstein - The Outskirter's Secret": ["2025-12-05T17:51:10Z", "NEW BOOK"],
+  "Rosemary Kirstein - The Outskirter's Secret": ["2025-12-05T17:51:11Z", "NEW BOOK"],
   "Emad Mostaque - The Last Economy: A Guide to the Age of Intelligent Economics": ["2025-11-29T11:57:45Z", "NEW BOOK"],
-  "Rosemary Kirstein - The Steerswoman": ["2025-11-29T11:00:52Z", "NEW BOOK"],
+  "Rosemary Kirstein - The Steerswoman": ["2025-11-29T11:00:53Z", "NEW BOOK"],
   "Moudhy Al-Rashid - Between Two Rivers: Ancient Mesopotamia and the Birth of History": ["2025-11-28T19:12:06Z", "NEW BOOK"],
   "George F. Will - American Happiness and Discontents: The Unruly Torrent, 2008-2020": ["2025-11-27T05:16:04Z", "NEW BOOK"],
   "Jacob Mikanowski - Goodbye, Eastern Europe: An Intimate History of a Divided Land": ["2025-11-25T20:08:11Z", "NEW BOOK"],
