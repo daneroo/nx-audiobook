@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Orville Schell - My Old Home: A Novel of Exile": ["2025-12-07T22:27:40Z", "NEW BOOK"],
   "Aldous Huxley - Brave New World": ["2025-12-07T19:34:32Z", "NEW BOOK"],
   "Helen Thompson - Disorder: Hard Times in the 21st Century": ["2025-12-06T19:29:15Z", "NEW BOOK"],
   "Leslie Valiant - The Importance of Being Educable: A New Theory of Human Uniqueness": ["2025-12-06T05:51:48Z", "NEW BOOK"],
