@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Rosemary Kirstein - The Language of Power": ["2025-12-09T04:47:12Z", "NEW BOOK"],
   "Rosemary Kirstein - The Lost Steersman": ["2025-12-08T18:36:50Z", "NEW BOOK"],
   "Orville Schell - My Old Home: A Novel of Exile": ["2025-12-07T22:27:40Z", "NEW BOOK"],
   "Aldous Huxley - Brave New World": ["2025-12-07T19:34:32Z", "NEW BOOK"],
