@@ -69,6 +69,9 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Peter Matthiessen - The Snow Leopard": ["2025-12-25T23:24:08Z", "NEW BOOK"],
+  "Dr Irving Finkel - The Ark Before Noah: Decoding the Story of the Flood": ["2025-12-25T22:38:55Z", "NEW BOOK"],
+  "Margaret Atwood - Book of Lives: A Memoir of Sorts": ["2025-12-25T22:28:25Z", "NEW BOOK"],
   "Rosemary Kirstein - The Language of Power": ["2025-12-09T04:47:12Z", "NEW BOOK"],
   "Rosemary Kirstein - The Lost Steersman": ["2025-12-08T18:36:50Z", "NEW BOOK"],
   "Orville Schell - My Old Home: A Novel of Exile": ["2025-12-07T22:27:40Z", "NEW BOOK"],
