@@ -69,6 +69,10 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Jack Kerouac - The Dharma Bums": ["2026-01-10T08:22:41Z", "NEW BOOK"],
+  "Jack Kerouac - On the Road: 50th Anniversary Edition": ["2026-01-10T08:19:43Z", "NEW BOOK"],
+  "Haruki Murakami - Kafka on the Shore": ["2026-01-10T08:17:48Z", "NEW BOOK"],
+  "Haruki Murakami - Norwegian Wood": ["2026-01-10T08:06:33Z", "NEW BOOK"],
   "Peter Matthiessen - The Snow Leopard": ["2025-12-25T23:24:08Z", "NEW BOOK"],
   "Dr Irving Finkel - The Ark Before Noah: Decoding the Story of the Flood": ["2025-12-25T22:38:55Z", "NEW BOOK"],
   "Margaret Atwood - Book of Lives: A Memoir of Sorts": ["2025-12-25T22:28:25Z", "NEW BOOK"],
