@@ -1,5 +1,11 @@
 # `com.apple.provenance` — Problem, Analysis, and Fix
 
+## TODO
+
+- [ ] docker exec instead of multiple docker run???
+- [ ] use xattr -r instead of individual xattr commands
+- [ ] Include directories: Justfile:133 done < <(find {{ dir }} -type f) : not just -f!
+
 ## Directory layout
 
 ```bash
@@ -186,17 +192,19 @@ that was never registered with macOS's provenance system. The fix is permanent.
 ### API (`xattr.ts`)
 
 ```typescript
-import { fixTree } from "./xattr.ts";
+import { fixTree } from './xattr.ts'
 
 // Scan only (dry run)
-const { tokens, clean } = await fixTree("/Volumes/Space/Staging/Author", { dryRun: true });
+const { tokens, clean } = await fixTree('/Volumes/Space/Staging/Author', {
+  dryRun: true,
+})
 
 // Scan and fix with progress callback
-await fixTree("/Volumes/Space/Staging/Author", {
+await fixTree('/Volumes/Space/Staging/Author', {
   onProgress(phase, kind, path) {
-    console.log(phase, kind, path);
+    console.log(phase, kind, path)
   },
-});
+})
 ```
 
 ### `fixFile`
