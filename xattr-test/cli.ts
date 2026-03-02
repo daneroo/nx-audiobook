@@ -1,109 +1,91 @@
-import {
-  byDepthDesc,
-  fixDir,
-  fixFile,
-  fixTree,
-  sessionToken,
-  toHex,
-  type TokenGroup,
-} from "./xattr.ts";
+import { byDepthDesc, fixDir, fixFile, fixTree } from "./xattr.ts";
+import { relative } from "@std/path";
 
 const enc = new TextEncoder();
 
+type Entry = { path: string; token: string };
+
 // ENTRY POINT
+// usage: cli.ts [--fix] <path>
 if (import.meta.main) {
   await main();
 }
 
 // MAIN
 async function main(): Promise<void> {
-  const [cmd, root] = Deno.args;
-  if (!cmd || !root) {
-    console.error("usage: cli.ts <show|fix|dryrun> <path>");
+  const doFix = Deno.args.includes("--fix");
+  const root = Deno.args.find((a) => !a.startsWith("--"));
+  if (!root) {
+    console.error("usage: cli.ts [--fix] <path>");
     Deno.exit(1);
   }
 
   const { tokens, clean } = await fixTree(root, { dryRun: true });
-  const session = await sessionToken();
-  const sessionKey = session ? toHex(session) : null;
 
-  printHeader(cmd, root, tokens.size, clean.length, totalTainted(tokens));
+  const files = toEntries(tokens, "files").sort(byPath);
+  const dirs = toEntries(tokens, "dirs").sort(byPathDepthDesc);
+  const tainted = files.length + dirs.length;
+  printHeader(root, tainted + clean.length, files.length, dirs.length, clean.length);
+  printSection("files", files, root);
+  printSection("dirs", dirs, root);
+  if (clean.length > 0) console.log(`\n   ${clean.length} clean`);
 
-  if (cmd === "show") await cmdShow(tokens, clean, sessionKey);
-  else if (cmd === "dryrun") cmdDryrun(tokens, clean);
-  else if (cmd === "fix") await cmdFix(tokens);
-  else {
-    console.error(`unknown command: ${cmd}`);
-    Deno.exit(1);
-  }
+  if (doFix && tainted > 0) await applyFix(files, dirs);
+
+  printHeader(root, tainted + clean.length, files.length, dirs.length, clean.length);
 }
 
 function printHeader(
-  cmd: string,
   root: string,
-  tokenCount: number,
-  cleanCount: number,
-  taintedCount: number,
+  total: number,
+  files: number,
+  dirs: number,
+  clean: number,
 ): void {
-  const total = taintedCount + cleanCount;
-  const s = tokenCount === 1 ? "" : "s";
-  console.log(`\n── ${cmd}  ${root}`);
-  console.log(
-    `   ${total} total · ${taintedCount} tainted · ${cleanCount} clean · ${tokenCount} session token${s}`,
-  );
+  console.log(`\n── ${root}`);
+  console.log(`   ${total} total · ${files} files · ${dirs} dirs · ${clean} clean`);
 }
 
-async function cmdShow(
-  tokens: Map<string, TokenGroup>,
-  clean: string[],
-  sessionKey: string | null,
-): Promise<void> {
-  for (const [key, g] of tokens) {
-    const marker = key === sessionKey ? "   ← this session" : "";
-    console.log(`\n   ${key}${marker}`);
-    console.log(
-      `   local-user · ${g.files.length} files · ${g.dirs.length} dirs`,
-    );
-  }
-  if (clean.length > 0) {
-    console.log(
-      `\n   ${clean.length} clean  (no xattr — pre-2022 or already fixed)`,
-    );
+function printSection(label: string, entries: Entry[], root: string): void {
+  if (entries.length === 0) return;
+  const note = label === "dirs" ? "  (deepest first)" : "";
+  console.log(`\n   ${label}  (${entries.length})${note}`);
+  for (const { path, token } of entries) {
+    console.log(`   ${compactToken(token)} - /${relative(root, path)}`);
   }
 }
 
-function cmdDryrun(tokens: Map<string, TokenGroup>, clean: string[]): void {
-  const files = [...tokens.values()].reduce((n, g) => n + g.files.length, 0);
-  const dirs = [...tokens.values()].reduce((n, g) => n + g.dirs.length, 0);
-  console.log(`\n   would fix  ${String(files).padStart(3)} files`);
-  console.log(`   would fix  ${String(dirs).padStart(3)} dirs`);
-  console.log(
-    `   skip       ${String(clean.length).padStart(3)} clean entries`,
-  );
-}
-
-async function cmdFix(tokens: Map<string, TokenGroup>): Promise<void> {
-  const files = [...tokens.values()].flatMap((g) => g.files);
-  const dirs = [...tokens.values()]
-    .flatMap((g) => g.dirs)
-    .sort(byDepthDesc);
-
-  writeSync(`\n   fixing ${files.length} files... `);
-  for (const f of files) await fixFile(f);
+async function applyFix(files: Entry[], dirs: Entry[]): Promise<void> {
+  console.log();
+  writeSync(`   fixing ${files.length} files... `);
+  for (const { path } of files) await fixFile(path);
   writeSync("✓\n");
 
   writeSync(`   fixing  ${dirs.length} dirs...  `);
-  for (const dir of dirs) await fixDir(dir);
+  for (const { path } of dirs) await fixDir(path);
   writeSync("✓\n");
 
   console.log(`\n   ${files.length + dirs.length} entries cleaned`);
 }
 
-function totalTainted(tokens: Map<string, TokenGroup>): number {
-  return [...tokens.values()].reduce(
-    (n, g) => n + g.files.length + g.dirs.length,
-    0,
-  );
+function toEntries(tokens: Map<string, TokenGroup>, kind: "files" | "dirs"): Entry[] {
+  const result: Entry[] = [];
+  for (const [token, g] of tokens) {
+    for (const path of g[kind]) result.push({ path, token });
+  }
+  return result;
+}
+
+function byPath(a: Entry, b: Entry): number {
+  return a.path.localeCompare(b.path);
+}
+
+function byPathDepthDesc(a: Entry, b: Entry): number {
+  return byDepthDesc(a.path, b.path);
+}
+
+function compactToken(token: string): string {
+  return `<${token.replace(/ /g, "")}>`;
 }
 
 function writeSync(s: string): void {

@@ -6,8 +6,6 @@
   },
   "tasks": {
     "test": "deno test -A",
-    "show": "deno run -A cli.ts show",
-    "fix": "deno run -A cli.ts fix",
-    "dryrun": "deno run -A cli.ts dryrun"
+    "start": "deno run -A cli.ts"
   }
 }
