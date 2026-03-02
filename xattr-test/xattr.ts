@@ -7,18 +7,30 @@ const d = new TextDecoder();
 
 export type TokenGroup = { bytes: Uint8Array; files: string[]; dirs: string[] };
 
+export type ProgressFn = (
+  phase: "scan" | "fix",
+  kind: "file" | "dir" | "clean",
+  path: string,
+) => void;
+
 export async function fixTree(
   root: string,
-  opts: { dryRun?: boolean } = {},
+  opts: { dryRun?: boolean; onProgress?: ProgressFn } = {},
 ): Promise<{ tokens: Map<string, TokenGroup>; clean: string[] }> {
-  const result = await scan(root);
+  const result = await scan(root, opts.onProgress);
 
   if (!opts.dryRun) {
     const groups = [...result.tokens.values()];
     const files = groups.flatMap((g) => g.files).sort();
     const dirs = groups.flatMap((g) => g.dirs).sort(byDepthDesc);
-    for (const path of files) await fixFile(path);
-    for (const path of dirs) await fixDir(path);
+    for (const path of files) {
+      await fixFile(path);
+      opts.onProgress?.("fix", "file", path);
+    }
+    for (const path of dirs) {
+      await fixDir(path);
+      opts.onProgress?.("fix", "dir", path);
+    }
   }
 
   return result;
@@ -31,7 +43,7 @@ export async function fixFile(filePath: string): Promise<void> {
   const r = await new Deno.Command("docker", {
     args: [
       "run", "--rm", "-v", `${dir}:/work`, "-w", "/work",
-      IMAGE, "sh", "-c", `cp -p "${base}" "${tmp}" && mv "${tmp}" "${base}"`,
+      IMAGE, "sh", "-c", `cp -p -- "${base}" "${tmp}" && mv -- "${tmp}" "${base}"`,
     ],
     stdout: "null", stderr: "null",
   }).output();
@@ -46,11 +58,11 @@ export async function fixDir(dirPath: string): Promise<void> {
   const epoch = Math.floor(mtime!.getTime() / 1000); // for touch -d @
   // deno-fmt-ignore
   const script = [
-    `mv "${base}" "${tmp}"`,
-    `mkdir -m ${octal} "${base}"`,
+    `mv -- "${base}" "${tmp}"`,
+    `mkdir -m ${octal} -- "${base}"`,
     `find "${tmp}" -maxdepth 1 -mindepth 1 -print0 | xargs -0r mv -t "${base}/"`, // mv tmp/* base — glob misses dotfiles and fails on empty dir
-    `touch -d @${epoch} "${base}"`,
-    `rmdir "${tmp}"`,
+    `touch -d @${epoch} -- "${base}"`,
+    `rmdir -- "${tmp}"`,
   ].join(" && ");
   // deno-fmt-ignore
   const r = await new Deno.Command("docker", {
@@ -103,7 +115,7 @@ export function byDepthDesc(a: string, b: string): number {
   return b.split("/").length - a.split("/").length;
 }
 
-async function scan(root: string): Promise<{
+async function scan(root: string, onProgress?: ProgressFn): Promise<{
   tokens: Map<string, TokenGroup>;
   clean: string[];
 }> {
@@ -113,13 +125,19 @@ async function scan(root: string): Promise<{
     const attr = await getAttr(path);
     if (!attr) {
       clean.push(path);
+      onProgress?.("scan", "clean", path);
       continue;
     }
     const key = toHex(attr);
     if (!tokens.has(key)) tokens.set(key, { bytes: attr, files: [], dirs: [] });
     const g = tokens.get(key)!;
-    if (isFile) g.files.push(path);
-    else if (isDirectory) g.dirs.push(path);
+    if (isFile) {
+      g.files.push(path);
+      onProgress?.("scan", "file", path);
+    } else if (isDirectory) {
+      g.dirs.push(path);
+      onProgress?.("scan", "dir", path);
+    }
   }
   return { tokens, clean };
 }

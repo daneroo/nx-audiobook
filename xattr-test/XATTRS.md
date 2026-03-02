@@ -5,8 +5,8 @@
 ```bash
 xattr-test/
   XATTRS.md      ← this file
-  xattr.ts       ← library: getAttr, toHex, scan, sessionToken, fixFile, fixDir, fixTree
-  cli.ts         ← CLI entry point: show / fix / dryrun
+  xattr.ts       ← library: fixTree, fixFile, fixDir, getAttr, toHex, fromHex, byDepthDesc
+  cli.ts         ← CLI entry point
   xattr_test.ts  ← integration tests
   deno.json      ← Deno project root + task definitions
   data/          ← gitignored; created and torn down by the test suite
@@ -20,54 +20,41 @@ cd xattr-test
 # Run integration tests
 deno task test
 
-# Show scan result for a directory
-deno task show xattr-test/data
+# Scan a directory (live progress, then summary)
+deno task start /Volumes/Space/Staging/Author
 
-# Show what would be fixed (no changes made)
-deno task dryrun /Volumes/Space/Staging/Author
-
-# Fix all tainted entries
-deno task fix /Volumes/Space/Staging/Author
+# Scan and fix all tainted entries
+deno task start --fix /Volumes/Space/Staging/Author
 ```
 
 ### CLI output
 
-**show**:
+**scan** (default):
 
-```bash
-── show  /Volumes/Space/Staging/Author
-   216 total · 160 tainted · 56 clean · 2 session tokens
+```
+── /Volumes/Space/Staging/Author
+   scanning  142 files · 18 dirs · 56 clean    ← live counter, single line
+   scanned  216 entries
 
-   01 02 00 9d 30 d4 44 3f f4 e9 d5   ← this session
-   local-user · 142 files · 18 dirs
-
-   01 02 00 ab cd ef 12 34 56 78 90
-   local-user · 23 files · 4 dirs
-
-   56 clean  (no xattr — pre-2022 or already fixed)
+── /Volumes/Space/Staging/Author
+   216 total · 142 files · 18 dirs · 56 clean
 ```
 
-**dryrun**:
+**fix** (`--fix`):
 
-```bash
-── dryrun  /Volumes/Space/Staging/Author
-   216 total · 160 tainted · 56 clean · 2 session tokens
-
-   would fix  165 files
-   would fix   22 dirs
-   skip        56 clean entries
 ```
+── /Volumes/Space/Staging/Author
+   scanning  142 files · 18 dirs · 56 clean
+   scanned  216 entries
+   fixing files  142/142...
+   fixed  142 files ✓
+   fixing dirs  18/18...
+   fixed  18 dirs ✓
 
-**fix**:
+   160 entries cleaned
 
-```bash
-── fix  /Volumes/Space/Staging/Author
-   216 total · 160 tainted · 56 clean · 2 session tokens
-
-   fixing 165 files... ✓
-   fixing  22 dirs...  ✓
-
-   187 entries cleaned
+── /Volumes/Space/Staging/Author
+   216 total · 142 files · 18 dirs · 56 clean
 ```
 
 ---
@@ -199,11 +186,17 @@ that was never registered with macOS's provenance system. The fix is permanent.
 ### API (`xattr.ts`)
 
 ```typescript
-import { fixDir, fixFile, fixTree } from "./xattr.ts";
+import { fixTree } from "./xattr.ts";
 
-await fixFile("/Volumes/Space/Staging/Author/book.epub");
-await fixDir("/Volumes/Space/Staging/Author/Series");
-await fixTree("/Volumes/Space/Staging/Author");
+// Scan only (dry run)
+const { tokens, clean } = await fixTree("/Volumes/Space/Staging/Author", { dryRun: true });
+
+// Scan and fix with progress callback
+await fixTree("/Volumes/Space/Staging/Author", {
+  onProgress(phase, kind, path) {
+    console.log(phase, kind, path);
+  },
+});
 ```
 
 ### `fixFile`
@@ -235,11 +228,27 @@ on empty directories.
 
 ### `fixTree`
 
-Walks the tree, collects all tainted entries, then:
+Walks the tree via `scan`, collects all tainted entries, then:
 
-1. Fixes all files (any order, one Docker call each)
+1. Fixes all files (lexicographic order, one Docker call each)
 2. Fixes all directories sorted **deepest-first** (by path depth descending) so
    children are always rebuilt before their parent
+
+Returns `{ tokens, clean }` — the full scan result regardless of `dryRun`.
+Accepts an optional `onProgress(phase, kind, path)` callback fired for each
+entry during scan and after each fix.
+
+### Bulk restore via Docker
+
+If you have a tar archive of the entire tree, extracting it inside a Docker
+container produces clean inodes for everything — no per-file fixing needed:
+
+```bash
+docker run --rm -it -v /Volumes/Space:/data ubuntu tar xzvf /data/Staging.tgz -C /data
+```
+
+The Linux kernel inside the container has no macOS VFS hooks, so every file and
+directory extracted gets a fresh inode with no `com.apple.provenance`.
 
 ### Temp markers
 
