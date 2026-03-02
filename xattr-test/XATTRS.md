@@ -4,21 +4,70 @@
 
 ```bash
 xattr-test/
-  XATTRS.md          ← this file
-  xattr.ts           ← library: getAttr, walk, showTree, fixFile, fixDir, fixTree
-  xattr_test.ts      ← integration tests
-  deno.json          ← Deno project root + task definitions
-  xattr-fix-demo.sh  ← original standalone proof-of-concept (bash)
-  fix_attrs.sh       ← bulk fix script
-  show_xattr.py      ← diagnostic helper
-  data/              ← gitignored; created and torn down by the test suite
+  XATTRS.md      ← this file
+  xattr.ts       ← library: getAttr, toHex, scan, sessionToken, fixFile, fixDir, fixTree
+  cli.ts         ← CLI entry point: show / fix / dryrun
+  xattr_test.ts  ← integration tests
+  deno.json      ← Deno project root + task definitions
+  data/          ← gitignored; created and torn down by the test suite
 ```
 
 ## Usage
 
 ```bash
 cd xattr-test
+
+# Run integration tests
 deno task test
+
+# Show scan result for a directory
+deno task show xattr-test/data
+
+# Show what would be fixed (no changes made)
+deno task dryrun /Volumes/Space/Staging/Author
+
+# Fix all tainted entries
+deno task fix /Volumes/Space/Staging/Author
+```
+
+### CLI output
+
+**show**:
+
+```bash
+── show  /Volumes/Space/Staging/Author
+   216 total · 160 tainted · 56 clean · 2 session tokens
+
+   01 02 00 9d 30 d4 44 3f f4 e9 d5   ← this session
+   local-user · 142 files · 18 dirs
+
+   01 02 00 ab cd ef 12 34 56 78 90
+   local-user · 23 files · 4 dirs
+
+   56 clean  (no xattr — pre-2022 or already fixed)
+```
+
+**dryrun**:
+
+```bash
+── dryrun  /Volumes/Space/Staging/Author
+   216 total · 160 tainted · 56 clean · 2 session tokens
+
+   would fix  165 files
+   would fix   22 dirs
+   skip        56 clean entries
+```
+
+**fix**:
+
+```bash
+── fix  /Volumes/Space/Staging/Author
+   216 total · 160 tainted · 56 clean · 2 session tokens
+
+   fixing 165 files... ✓
+   fixing  22 dirs...  ✓
+
+   187 entries cleaned
 ```
 
 ---
@@ -68,11 +117,13 @@ Apple has progressively expanded what triggers this xattr across every release.
     across all volume types, confirming protection is kernel-level not SIP-based
 
 - macOS 26 Tahoe (2025–, confirmed 2026-03-01 on 26.1)
+
   - **Applied to everything.** Every `touch`, `mkdir`, `open()` from any user
     process in any context — terminal, Python, AppleScript — gets tagged
     instantly
   - Confirmed live: same session token on files created by completely unrelated
     processes (Terminal.app, Python, osascript, Claude Code subprocess)
+
 - Files from before ~2022 on archival volumes are untouched (xattr applied at
   write time, never retroactively)
 - The value is a **per-login-session token** — identical for all files written
@@ -139,84 +190,65 @@ xattr -lvx <file>
 
 ---
 
-## Solution: Docker VirtioFS + cp/mv
+## Solution: Docker + alpine:3.23
 
 Docker container operations run under the **Linux kernel**, which has no macOS
 VFS hooks. Files and directories created inside the container get a new inode
 that was never registered with macOS's provenance system. The fix is permanent.
 
-### Fix a single file
+### API (`xattr.ts`)
 
-```bash
-docker run --rm -v ./path:/work ubuntu:22.04 bash -c \
-  'cp -p /work/file.ext /work/file.ext.tmp && mv /work/file.ext.tmp /work/file.ext'
+```typescript
+import { fixDir, fixFile, fixTree } from "./xattr.ts";
+
+await fixFile("/Volumes/Space/Staging/Author/book.epub");
+await fixDir("/Volumes/Space/Staging/Author/Series");
+await fixTree("/Volumes/Space/Staging/Author");
 ```
 
-- `cp -p` preserves `mtime`, permissions, ownership
-- `mv` is atomic on the same filesystem
+### `fixFile`
 
-### Fix files in bulk (one container invocation)
+One Docker call per file. Mounts the parent directory.
 
-Pre-generate the list on macOS (where `-xattrname` is available), write it as a
-hidden file inside the mounted volume, then read it from within Docker:
-
-```bash
-TARGET="/Volumes/Space/Staging"
-
-find "${TARGET}" -type f -xattrname "com.apple.provenance" \
-    > "${TARGET}/.prov_fix_filelist"
-
-docker run --rm \
-    -e "HOST_PREFIX=${TARGET}" \
-    -v "${TARGET}:/work" \
-    ubuntu:22.04 bash << 'DOCKER_FILES'
-while IFS= read -r macpath; do
-    f="/work${macpath#$HOST_PREFIX}"
-    cp -p "$f" "$f.prov_fix.tmp" && mv "$f.prov_fix.tmp" "$f"
-done < /work/.prov_fix_filelist
-DOCKER_FILES
-
-rm -f "${TARGET}/.prov_fix_filelist"
+```
+cp -p file file.tmp && mv file.tmp file
 ```
 
-### Fix directories (deepest-first)
+`cp -p` preserves mtime, permissions, and ownership. `mv` is atomic on the same
+filesystem.
 
-Directories require a different technique — `cp` cannot replace a directory
-atomically. Instead, for each directory inside Docker:
+### `fixDir`
 
-1. `mv dir dir.prov_fix_dir.tmp` — rename (preserves contents, old inode)
-2. `mkdir dir` — new Linux inode, no macOS provenance hook
-3. Restore permissions and mtime from the `.tmp` copy
-4. Move all contents from `.tmp` back into `dir`
-5. `rmdir .tmp` — now empty
+One Docker call per directory. Mounts the parent directory. Permissions and
+mtime are read by Deno on the macOS side before the container runs.
 
-**Must process deepest-first** (sort by slash count descending) so children are
-always replaced before their parent.
+```bash
+mv dir dir.tmp
+mkdir -m <perms> dir
+find dir.tmp -maxdepth 1 -mindepth 1 -print0 | xargs -0r mv -t dir/
+touch -d @<epoch> dir
+rmdir dir.tmp
+```
 
-**Limitation:** the directory mounted as `/work` (the mount root) cannot be
-renamed. Fix the mount root by mounting its _parent_ and operating from there.
+`find | xargs` instead of `mv dir.tmp/* dir/` — glob misses dotfiles and fails
+on empty directories.
+
+### `fixTree`
+
+Walks the tree, collects all tainted entries, then:
+
+1. Fixes all files (any order, one Docker call each)
+2. Fixes all directories sorted **deepest-first** (by path depth descending) so
+   children are always rebuilt before their parent
 
 ### Temp markers
 
-| Type | Pattern              | Find leftovers                                  |
-| ---- | -------------------- | ----------------------------------------------- |
-| File | `*.prov_fix.tmp`     | `find <dir> -name "*.prov_fix.tmp" -type f`     |
-| Dir  | `*.prov_fix_dir.tmp` | `find <dir> -name "*.prov_fix_dir.tmp" -type d` |
-
-Cleanup after an interrupted run:
+Interrupted runs leave `*.tmp` entries. Clean up with:
 
 ```bash
-find <dir> -name "*.prov_fix.tmp"     -type f -delete
-find <dir> -name "*.prov_fix_dir.tmp" -type d -empty -delete
+find <dir> -name "*.tmp" -type f -delete
+find <dir> -name "*.tmp" -type d -empty -delete
 ```
-
----
-
-## Justfile integration
-
-`just fix-provenance` and `just fix-provenance-in-dir <dir>` — planned addition
-to the root `Justfile` after `xattr-fix-demo.sh` has been validated on the
-target directory.
 
 ---
 

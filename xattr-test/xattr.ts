@@ -1,37 +1,27 @@
-import { walk, type WalkEntry } from "@std/fs/walk";
+import { walk } from "@std/fs/walk";
 import { parse } from "@std/path";
 
 const ATTR = "com.apple.provenance";
 const IMAGE = "alpine:3.23";
+const d = new TextDecoder();
 
-export async function getAttr(path: string): Promise<Uint8Array | null> {
-  const r = await new Deno.Command("xattr", {
-    args: ["-px", ATTR, path],
-    stderr: "null",
-  }).output();
-  if (r.code !== 0) return null;
-  const hex = new TextDecoder().decode(r.stdout).trim().replace(/\s+/g, "");
-  return Uint8Array.from(
-    { length: hex.length / 2 },
-    (_, i) => parseInt(hex.slice(i * 2, i * 2 + 2), 16),
-  );
-}
+export type TokenGroup = { bytes: Uint8Array; files: string[]; dirs: string[] };
 
-const toHex = (b: Uint8Array) =>
-  Array.from(b).map((x) => x.toString(16).padStart(2, "0")).join(" ");
+export async function fixTree(
+  root: string,
+  opts: { dryRun?: boolean } = {},
+): Promise<{ tokens: Map<string, TokenGroup>; clean: string[] }> {
+  const result = await scan(root);
 
-export async function showTree(root: string, label: string): Promise<void> {
-  console.log(`\n── ${label}`);
-  for await (const { path, isDirectory } of walk(root)) {
-    const rel = (path === root ? "." : path.slice(root.length + 1)) +
-      (isDirectory ? "/" : "");
-    const attr = await getAttr(path);
-    console.log(
-      `  ${attr ? "TAINTED" : "clean  "} ${rel.padEnd(22)} ${
-        attr ? toHex(attr) : "(none)"
-      }`,
-    );
+  if (!opts.dryRun) {
+    const groups = [...result.tokens.values()];
+    const files = groups.flatMap((g) => g.files).sort();
+    const dirs = groups.flatMap((g) => g.dirs).sort(byDepthDesc);
+    for (const path of files) await fixFile(path);
+    for (const path of dirs) await fixDir(path);
   }
+
+  return result;
 }
 
 export async function fixFile(filePath: string): Promise<void> {
@@ -70,13 +60,66 @@ export async function fixDir(dirPath: string): Promise<void> {
   if (r.code !== 0) throw new Error(`fixDir failed: ${dirPath}`);
 }
 
-export async function fixTree(root: string): Promise<void> {
-  const tainted: WalkEntry[] = [];
-  for await (const e of walk(root)) {
-    if (await getAttr(e.path) !== null) tainted.push(e);
+export async function sessionToken(): Promise<Uint8Array | null> {
+  const tmp = await Deno.makeTempFile();
+  try {
+    return await getAttr(tmp);
+  } finally {
+    await Deno.remove(tmp);
   }
-  for (const { path } of tainted.filter((e) => e.isFile)) await fixFile(path);
-  const dirs = tainted.filter((e) => e.isDirectory)
-    .sort((a, b) => b.path.split("/").length - a.path.split("/").length);
-  for (const { path } of dirs) await fixDir(path);
+}
+
+export async function showTree(root: string, label: string): Promise<void> {
+  console.log(`\n── ${label}`);
+  for await (const { path, isDirectory } of walk(root)) {
+    const rel = (path === root ? "." : path.slice(root.length + 1)) +
+      (isDirectory ? "/" : "");
+    const attr = await getAttr(path);
+    console.log(
+      `  ${attr ? "TAINTED" : "clean  "} ${rel.padEnd(22)} ${
+        attr ? toHex(attr) : "(none)"
+      }`,
+    );
+  }
+}
+
+export async function getAttr(path: string): Promise<Uint8Array | null> {
+  const r = await new Deno.Command("xattr", {
+    args: ["-px", ATTR, path],
+    stderr: "null",
+  }).output();
+  return r.code === 0 ? fromHex(d.decode(r.stdout)) : null;
+}
+
+export function toHex(b: Uint8Array): string {
+  return Array.from(b).map((x) => x.toString(16).padStart(2, "0")).join(" ");
+}
+
+export function fromHex(s: string): Uint8Array {
+  return Uint8Array.from(s.trim().split(/\s+/), (x) => parseInt(x, 16));
+}
+
+export function byDepthDesc(a: string, b: string): number {
+  return b.split("/").length - a.split("/").length;
+}
+
+async function scan(root: string): Promise<{
+  tokens: Map<string, TokenGroup>;
+  clean: string[];
+}> {
+  const tokens = new Map<string, TokenGroup>();
+  const clean: string[] = [];
+  for await (const { path, isFile, isDirectory } of walk(root)) {
+    const attr = await getAttr(path);
+    if (!attr) {
+      clean.push(path);
+      continue;
+    }
+    const key = toHex(attr);
+    if (!tokens.has(key)) tokens.set(key, { bytes: attr, files: [], dirs: [] });
+    const g = tokens.get(key)!;
+    if (isFile) g.files.push(path);
+    else if (isDirectory) g.dirs.push(path);
+  }
+  return { tokens, clean };
 }
