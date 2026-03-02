@@ -116,7 +116,7 @@ open https://audiobook.dl.imetrical.com/
 
 # Pull a copy from mirrors (till syncthing is setup)
 # on davinci (NO longer on shannon, dirac,feynman) pull from galois (Staging)
-# *** TRY no-xattrs ***
+# *** USE no-xattrs ***
 xattr -lr /Volumes/Space/Reading/audiobooks/
 rsync -n -av -i --no-xattrs --progress --exclude .DS_Store --exclude @eaDir galois.imetrical.com:/Volumes/Space/Reading/audiobooks/ /Volumes/Space/Reading/audiobooks/
 ```
