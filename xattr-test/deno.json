@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@std/assert": "jsr:@std/assert",
+    "@std/fs": "jsr:@std/fs",
+    "@std/path": "jsr:@std/path"
+  },
+  "tasks": {
+    "test": "deno test -A"
+  }
+}
