@@ -130,7 +130,8 @@ check-xattrs dir:
                 echo "{{ green_check }} Successfully removed xattrs"
             fi
         fi
-    done < <(find {{ dir }} -type f)
+    # removed -type f -> both dirs and files
+    done < <(find {{ dir }})
     echo "" # new line
     if [ "$PROVENANCE_COUNT" -gt 0 ]; then
         echo "{{ red_xmark }} $PROVENANCE_COUNT files have com.apple.provenance xattr (cannot be removed on newer macOS)"
