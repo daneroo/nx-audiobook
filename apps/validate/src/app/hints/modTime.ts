@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "George R. R. Martin - A Knight of the Seven Kingdoms: A Song of Ice and Fire": ["2026-03-04T02:45:38Z", "NEW BOOK"],
   "Jack Kerouac - The Dharma Bums": ["2026-01-10T08:22:41Z", "NEW BOOK"],
   "Jack Kerouac - On the Road: 50th Anniversary Edition": ["2026-01-10T08:19:43Z", "NEW BOOK"],
   "Haruki Murakami - Kafka on the Shore": ["2026-01-10T08:17:48Z", "NEW BOOK"],
