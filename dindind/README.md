@@ -2,7 +2,7 @@
 
 This is a test of invoking a deno runtime inside a docker container, which is itself invoked by a deno runtime.
 
-What kinkds of interprocess communications can we have:
+What kinds of interprocess communications can we have:
 
 - is stdio workable
 - is http better

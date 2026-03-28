@@ -69,6 +69,23 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Craig Alanson - Freefall": ["2026-03-27T23:00:03Z", "NEW BOOK"],
+  "Craig Alanson - Deathtrap": ["2026-03-27T22:59:17Z", "NEW BOOK"],
+  "Craig Alanson - Fallout": ["2026-03-27T22:57:55Z", "NEW BOOK"],
+  "Craig Alanson - Breakaway": ["2026-03-28T00:34:49Z", "NEW BOOK"],
+  "Craig Alanson - Brushfire": ["2026-03-27T22:56:00Z", "NEW BOOK"],
+  "Craig Alanson - Critical Mass": ["2026-03-27T22:54:13Z", "NEW BOOK"],
+  "Craig Alanson - Valkyrie": ["2026-03-27T23:10:50Z", "NEW BOOK"],
+  "Craig Alanson - Armageddon": ["2026-03-28T00:32:00Z", "NEW BOOK"],
+  "Craig Alanson - Homefront: An Expeditionary Force Audio Drama Special": ["2026-03-27T22:50:26Z", "NEW BOOK"],
+  "Craig Alanson - Renegades": ["2026-03-27T22:48:31Z", "NEW BOOK"],
+  "Craig Alanson - Mavericks": ["2026-03-27T22:54:53Z", "NEW BOOK"],
+  "Craig Alanson - Zero Hour": ["2026-03-27T22:45:12Z", "NEW BOOK"],
+  "Craig Alanson - Black Ops": ["2026-03-27T22:44:22Z", "NEW BOOK"],
+  "Craig Alanson - Trouble on Paradise": ["2026-03-27T22:43:34Z", "NEW BOOK"],
+  "Craig Alanson - Paradise": ["2026-03-27T22:42:04Z", "NEW BOOK"],
+  "Craig Alanson - SpecOps": ["2026-03-27T22:41:09Z", "NEW BOOK"],
+  "Craig Alanson - Columbus Day": ["2026-03-27T20:41:52Z", "NEW BOOK"],
   "George R. R. Martin - A Knight of the Seven Kingdoms: A Song of Ice and Fire": ["2026-03-04T02:45:38Z", "NEW BOOK"],
   "Jack Kerouac - The Dharma Bums": ["2026-01-10T08:22:41Z", "NEW BOOK"],
   "Jack Kerouac - On the Road: 50th Anniversary Edition": ["2026-01-10T08:19:43Z", "NEW BOOK"],
