@@ -69,6 +69,10 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Robin Hobb - Blood of Dragons": ["2026-03-28T04:17:52Z", "NEW BOOK"],
+  "Robin Hobb - City of Dragons": ["2026-03-28T04:16:47Z", "NEW BOOK"],
+  "Robin Hobb - Dragon Haven": ["2026-03-28T04:15:13Z", "NEW BOOK"],
+  "Robin Hobb - Dragon Keeper": ["2026-03-28T04:13:45Z", "NEW BOOK"],
   "Craig Alanson - Freefall": ["2026-03-27T23:00:03Z", "NEW BOOK"],
   "Craig Alanson - Deathtrap": ["2026-03-27T22:59:17Z", "NEW BOOK"],
   "Craig Alanson - Fallout": ["2026-03-27T22:57:55Z", "NEW BOOK"],
