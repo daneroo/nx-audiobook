@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Sebastian Mallaby - The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence": ["2026-03-31T18:22:40Z", "NEW BOOK"],
   "Qntm - There Is No Antimemetics Division": ["2026-03-30T02:38:11Z", "NEW BOOK"],
   "Eric Hoffer - The True Believer: Thoughts on the Nature of Mass Movements": ["2026-03-30T02:36:26Z", "NEW BOOK"],
   "Robin Hobb - Assassin's Fate": ["2026-03-28T04:41:47Z", "NEW BOOK"],
