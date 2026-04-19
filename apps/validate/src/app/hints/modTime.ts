@@ -69,6 +69,9 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Olly Richards - Short Stories in Italian for Beginners": ["2026-04-19T02:57:13Z", "NEW BOOK"],
+  "Keith Hopkins, Mary Beard - The Colosseum": ["2026-04-19T03:14:05Z", "NEW BOOK"],
+  "Philip Matyszak - A Walk Through Ancient Rome: A Tour of the Historical Sites That Shaped the City": ["2026-04-11T20:50:24Z", "NEW BOOK"],
   "Sebastian Mallaby - The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence": ["2026-03-31T18:22:40Z", "NEW BOOK"],
   "Qntm - There Is No Antimemetics Division": ["2026-03-30T02:38:11Z", "NEW BOOK"],
   "Eric Hoffer - The True Believer: Thoughts on the Nature of Mass Movements": ["2026-03-30T02:36:26Z", "NEW BOOK"],
