@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Christopher Hibbert - Rome: The Biography of a City": ["2026-04-30T21:15:38Z", "NEW BOOK"],
   "Ferdinand Addis - The Eternal City: A History of Rome": ["2026-04-19T06:23:31Z", "NEW BOOK"],
   "Olly Richards - Short Stories in Italian for Beginners": ["2026-04-19T02:57:13Z", "NEW BOOK"],
   "Keith Hopkins, Mary Beard - The Colosseum": ["2026-04-19T03:14:05Z", "NEW BOOK"],

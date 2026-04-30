@@ -34,7 +34,7 @@ open -a "Brave Browser" --new --args --new-window http://0.0.0.0:13378
 # watch in container
 just exec
 apk add btop
-btop --utf-force
+btop --force-utf
 watch 'find /metadata -name \*m4b -mmin -30 -exec ls -lh {} \;'
 watch 'find /metadata /audiobooks -mmin -30 -exec ls -lh {} \;'
 
