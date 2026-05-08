@@ -69,7 +69,12 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Ursula K. Le Guin - The Other Wind: The Earthsea Cycle, Book 6": ["2026-05-08T21:49:09Z", "NEW BOOK"],
+  "Ursula K. Le Guin - Tales from Earthsea": ["2026-05-08T21:30:42Z", "NEW BOOK"],
+  "Ursula K. Le Guin - Tehanu: The Earthsea Cycle, Book Four": ["2026-05-08T21:16:56Z", "NEW BOOK"],
+  "Ursula K. Le Guin - The Farthest Shore: The Earthsea Cycle, Book 3": ["2026-05-08T20:15:34Z", "NEW BOOK"],
   "Ursula K. Le Guin - The Tombs of Atuan: The Earthsea Cycle, Book 2": ["2026-05-08T03:35:45Z", "NEW BOOK"],
+  "Ursula K. Le Guin - A Wizard of Earthsea: The Earthsea Cycle, Book 1": ["2026-05-08T03:32:16Z", "NEW BOOK"],
   "Ada Palmer - Inventing the Renaissance: The Myth of a Golden Age": ["2026-05-02T19:42:40Z", "NEW BOOK"],
   "Christopher Hibbert - Rome: The Biography of a City": ["2026-04-30T21:15:38Z", "NEW BOOK"],
   "Ferdinand Addis - The Eternal City: A History of Rome": ["2026-04-19T06:23:31Z", "NEW BOOK"],
@@ -985,7 +990,7 @@ export const modTimeDB: Record<string, [string, string]> = {
   "Tom Holland - Persian Fire": ['2021-03-21T06:05:50.000Z', "1:1"],
   "Tom Holland - Rubicon": ['2022-07-10T10:54:02.000Z', "1:1"],
   "Tony Fadell - Build": ['2023-06-24T16:16:47.000Z', "1:1"],
-  "Ursula K. Le Guin - A Wizard of Earthsea: BBC Radio Collection": ['2021-01-17T23:07:10.000Z', "1:1"],
+  "Ursula K. Le Guin - A Wizard of Earthsea: BBC Radio Collection": ['2021-01-17T23:07:11.000Z', "1:1"],
   "Ursula K. Le Guin - The Left Hand of Darkness": ['2020-09-13T00:23:50.000Z', "1:1"],
   "Vernor Vinge - A Fire Upon the Deep": ['2011-10-19T01:44:34.000Z', "1:1"],
   "Vernor Vinge - A Deepness in the Sky": ['2015-04-27T04:47:30.000Z', "1:1"],
