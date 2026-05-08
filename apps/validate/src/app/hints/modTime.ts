@@ -984,7 +984,7 @@ export const modTimeDB: Record<string, [string, string]> = {
   "Tom Holland - Persian Fire": ['2021-03-21T06:05:50.000Z', "1:1"],
   "Tom Holland - Rubicon": ['2022-07-10T10:54:02.000Z', "1:1"],
   "Tony Fadell - Build": ['2023-06-24T16:16:47.000Z', "1:1"],
-  "Ursula K. Le Guin - A Wizard of Earthsea": ['2021-01-17T23:07:10.000Z', "1:1"],
+  "Ursula K. Le Guin - A Wizard of Earthsea: BBC Radio Collection": ['2021-01-17T23:07:10.000Z', "1:1"],
   "Ursula K. Le Guin - The Left Hand of Darkness": ['2020-09-13T00:23:50.000Z', "1:1"],
   "Vernor Vinge - A Fire Upon the Deep": ['2011-10-19T01:44:34.000Z', "1:1"],
   "Vernor Vinge - A Deepness in the Sky": ['2015-04-27T04:47:30.000Z', "1:1"],
