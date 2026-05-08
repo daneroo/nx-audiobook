@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Ursula K. Le Guin - The Tombs of Atuan: The Earthsea Cycle, Book 2": ["2026-05-08T03:35:45Z", "NEW BOOK"],
   "Ada Palmer - Inventing the Renaissance: The Myth of a Golden Age": ["2026-05-02T19:42:40Z", "NEW BOOK"],
   "Christopher Hibbert - Rome: The Biography of a City": ["2026-04-30T21:15:38Z", "NEW BOOK"],
   "Ferdinand Addis - The Eternal City: A History of Rome": ["2026-04-19T06:23:31Z", "NEW BOOK"],
