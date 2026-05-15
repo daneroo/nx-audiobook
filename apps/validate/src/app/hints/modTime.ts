@@ -69,6 +69,14 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Ursula K. Le Guin - Five Ways to Forgiveness": ["2026-05-15T03:43:00Z", "NEW BOOK"],
+  "Ursula K. Le Guin - The Telling": ["2026-05-15T03:42:00Z", "NEW BOOK"],
+  "Ursula K. Le Guin - Four Ways to Forgiveness": ["2026-05-15T03:41:00Z", "NEW BOOK"],
+  "Ursula K. Le Guin - The Word for World Is Forest": ["2026-05-15T03:40:00Z", "NEW BOOK"],
+  "Ursula K. Le Guin - City of Illusions": ["2026-05-15T03:39:00Z", "NEW BOOK"],
+  "Ursula K. Le Guin - Planet of Exile": ["2026-05-15T03:38:00Z", "NEW BOOK"],
+  "Ursula K. Le Guin - Rocannon's World": ["2026-05-15T03:37:00Z", "NEW BOOK"],
+  "Isaac Asimov - The Last Question": ["2026-05-11T23:24:41Z", "NEW BOOK"],
   "Ursula K. Le Guin - The Other Wind: The Earthsea Cycle, Book 6": ["2026-05-08T21:49:09Z", "NEW BOOK"],
   "Ursula K. Le Guin - Tales from Earthsea": ["2026-05-08T21:30:42Z", "NEW BOOK"],
   "Ursula K. Le Guin - Tehanu: The Earthsea Cycle, Book Four": ["2026-05-08T21:16:56Z", "NEW BOOK"],
