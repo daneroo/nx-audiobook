@@ -6,7 +6,8 @@ The "Days in a Row" number is calculated client-side in [`DailyListeningChart.vu
 
 To run the queries below, you first need to open an interactive SQLite shell with formatting enabled (`-header -column`).
 
-**Option 1: In the prod container (UTC)**
+### Option 1: In the prod container (UTC)
+
 ```bash
 # Install sqlite if missing
 docker compose exec audiobookshelf ash -c "apk add sqlite"
@@ -15,13 +16,15 @@ docker compose exec audiobookshelf ash -c "apk add sqlite"
 docker compose exec -it audiobookshelf sqlite3 -header -column /config/absdatabase.sqlite
 ```
 
-**Option 2: On a local Mac snapshot (Local time)**
+### Option 2: On a local Mac snapshot (Local time)
+
 ```bash
 # Open interactive shell
 sqlite3 -header -column absdatabase.sqlite
 ```
 
 > **Timezone Warning**: The client algorithm uses browser local time for "today"/"yesterday".
+>
 > - In the prod container (UTC), `date('now')` works fine.
 > - On a local Mac (e.g. EDT), you **must** change `date('now')` to `date('now', 'localtime')` in the queries below.
 
