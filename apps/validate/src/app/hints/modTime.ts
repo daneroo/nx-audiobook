@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Cory Doctorow - The Reverse Centaur's Guide to Life After AI": ["2026-05-30T13:58:11Z", "NEW BOOK"],
   "Ursula K. Le Guin - Five Ways to Forgiveness": ["2026-05-15T03:43:00Z", "NEW BOOK"],
   "Ursula K. Le Guin - The Telling": ["2026-05-15T03:42:00Z", "NEW BOOK"],
   "Ursula K. Le Guin - Four Ways to Forgiveness": ["2026-05-15T03:41:00Z", "NEW BOOK"],
