@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Kevin Hartnett - The Proof in the Code: How a Truth Machine Is Transforming Math and AI": ["2026-06-09T20:30:09Z", "NEW BOOK"],
   "Cory Doctorow - The Reverse Centaur's Guide to Life After AI": ["2026-05-30T13:58:11Z", "NEW BOOK"],
   "Ursula K. Le Guin - Five Ways to Forgiveness": ["2026-05-15T03:43:00Z", "NEW BOOK"],
   "Ursula K. Le Guin - The Telling": ["2026-05-15T03:42:00Z", "NEW BOOK"],
