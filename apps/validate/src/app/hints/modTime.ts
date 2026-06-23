@@ -69,6 +69,16 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Roger Zelazny - Prince of Chaos: The Chronicles of Amber, Book 10": ["2026-06-22T16:09:00Z", "NEW BOOK"],
+  "Roger Zelazny - Knight of Shadows: The Chronicles of Amber, Book 9": ["2026-06-22T16:08:00Z", "NEW BOOK"],
+  "Roger Zelazny - Sign of Chaos: The Chronicles of Amber, Book 8": ["2026-06-22T16:07:00Z", "NEW BOOK"],
+  "Roger Zelazny - Blood of Amber: The Chronicles of Amber, Book 7": ["2026-06-22T16:06:00Z", "NEW BOOK"],
+  "Roger Zelazny - Trumps of Doom: The Chronicles of Amber, Book 6": ["2026-06-22T16:05:00Z", "NEW BOOK"],
+  "Roger Zelazny - The Courts of Chaos: The Chronicles of Amber, Book 5": ["2026-06-22T16:04:00Z", "NEW BOOK"],
+  "Roger Zelazny - The Hand of Oberon: The Chronicles of Amber, Book 4": ["2026-06-22T16:03:00Z", "NEW BOOK"],
+  "Roger Zelazny - Sign of the Unicorn: The Chronicles of Amber, Book 3": ["2026-06-22T16:02:00Z", "NEW BOOK"],
+  "Roger Zelazny - The Guns of Avalon: The Chronicles of Amber, Book 2": ["2026-06-22T16:01:00Z", "NEW BOOK"],
+  "Roger Zelazny - Nine Princes in Amber: The Chronicles of Amber, Book 1": ["2026-06-22T16:00:00Z", "NEW BOOK"],
   "Fonda Lee - The Last Contract of Isako": ["2026-06-13T21:42:02Z", "NEW BOOK"],
   "Kevin Hartnett - The Proof in the Code: How a Truth Machine Is Transforming Math and AI": ["2026-06-09T20:30:09Z", "NEW BOOK"],
   "Cory Doctorow - The Reverse Centaur's Guide to Life After AI": ["2026-05-30T13:58:11Z", "NEW BOOK"],
