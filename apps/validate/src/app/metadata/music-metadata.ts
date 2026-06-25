@@ -121,9 +121,9 @@ async function fixDuration(
   duration: number | undefined,
   fileInfo: FileInfo
 ): Promise<{ duration: number; warning?: string }> {
-  // if !ok override with ffprobe, and add warning
-  if (duration === undefined || duration === 0 || isNaN(duration)) {
-    // resolve duration===0 with ffprobe
+  // Note: isNaN(Infinity) === false, so isNaN is the wrong tool here — use Number.isFinite instead.
+  // Fallback to ffprobe when duration is: undefined, NaN, Infinity/-Infinity (music-metadata bug on some m4b files), or 0.
+  if (duration === undefined || !Number.isFinite(duration) || duration === 0) {
     const ffMetadata = await ffprobe(fileInfo)
     return {
       duration: ffMetadata.duration,

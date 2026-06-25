@@ -32,14 +32,32 @@ export async function fetchResult(
       author: metadata.format?.tags?.artist ?? '',
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
       title: metadata.format?.tags?.album ?? '',
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-      duration: Number(metadata.format.duration), // duration is a string, but is it always present?
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      duration: parseDuration(metadata.format?.duration as string | undefined | null, fileInfo.path),
       warning: {},
     }
   } catch (error) {
     console.error({ error })
     throw new Error(`ffprobe error: ${fileInfo.path}`)
   }
+}
+
+// Parses the duration field from ffprobe's JSON format output (metadata.format?.duration).
+// That field is a decimal string (e.g. "53620.861678") when present, undefined when the
+// format key is absent, and null when JSON explicitly carries null — so all three are valid inputs.
+//
+// Number() conversions: Number("53620.86") → 53620.86, Number(undefined) → NaN, Number(null) → 0.
+// Note: isNaN(Infinity) === false, so isNaN is the wrong guard — Number.isFinite catches
+// NaN, Infinity, and -Infinity in one check; || duration === 0 catches the null and "0" cases.
+//
+// Throws rather than returning a bad value so that cachedFetchResult never writes it to disk —
+// JSON.stringify would silently coerce NaN/Infinity to null, poisoning the cache permanently.
+function parseDuration(raw: string | undefined | null, path: string): number {
+  const duration = Number(raw)
+  if (!Number.isFinite(duration) || duration === 0) {
+    throw new Error(`ffprobe returned unusable duration (${String(raw)}) for ${path}`)
+  }
+  return duration
 }
 
 // Execute a command in a shell
