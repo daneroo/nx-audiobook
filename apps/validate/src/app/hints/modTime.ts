@@ -69,6 +69,13 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "John Gwynne - The Fury of the Gods": ["2026-07-18T05:01:06Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Shards of Honor": ["2026-07-18T04:51:25Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Falling Free": ["2026-07-18T04:51:17Z", "NEW BOOK"],
+  "Gregory Benford - Timescape": ["2026-07-18T04:39:50Z", "NEW BOOK"],
+  "Ken Follett - Circle of Days": ["2026-07-18T04:32:31Z", "NEW BOOK"],
+  "Peter H. Diamandis, Steven Kotler - We Are as Gods: A Survival Guide for the Age of Abundance": ["2026-07-17T04:56:58Z", "NEW BOOK"],
+  "Gareth Brown - The Book of Doors: A Novel": ["2026-07-17T04:54:46Z", "NEW BOOK"],
   "Jack Vance - Madouc: Lyonesse, Book 3": ["2026-07-12T13:20:39Z", "NEW BOOK"],
   "Jack Vance - The Green Pearl: Lyonesse, Book 2": ["2026-07-12T13:19:08Z", "NEW BOOK"],
   "Roger Zelazny - Prince of Chaos: The Chronicles of Amber, Book 10": ["2026-06-22T16:09:00Z", "NEW BOOK"],
