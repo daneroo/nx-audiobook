@@ -69,6 +69,9 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Beatrix Potter - The Tale of the Flopsy Bunnies": ["2026-07-19T19:22:59Z", "NEW BOOK"],
+  "Beatrix Potter - The Tale of Benjamin Bunny": ["2026-07-19T19:21:59Z", "NEW BOOK"],
+  "Beatrix Potter - The Tale of Peter Rabbit": ["2026-07-19T19:20:59Z", "NEW BOOK"],
   "John Gwynne - The Fury of the Gods": ["2026-07-18T05:01:06Z", "NEW BOOK"],
   "Lois McMaster Bujold - Shards of Honor": ["2026-07-18T04:51:25Z", "NEW BOOK"],
   "Lois McMaster Bujold - Falling Free": ["2026-07-18T04:51:17Z", "NEW BOOK"],
