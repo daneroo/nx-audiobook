@@ -1,4 +1,6 @@
 import type { AudioBook } from '../types'
+import { basename } from 'node:path'
+import { writeFileSync } from 'node:fs'
 
 // Experiment in *go style* error handling
 // Return the modtime hint for the audiobook (in ms since epoch)
@@ -69,6 +71,25 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Lois McMaster Bujold - Gentleman Jole and the Red Queen": ["2026-08-12T04:11:18Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Cryoburn": ["2026-08-12T04:07:32Z", "NEW BOOK"],
+  "Lois McMaster Bujold - The Flowers of Vashnoi": ["2026-08-12T04:03:41Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Captain Vorpatril's Alliance": ["2026-08-12T04:00:10Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Diplomatic Immunity": ["2026-08-12T03:58:03Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Winterfair Gifts": ["2026-08-12T03:55:01Z", "NEW BOOK"],
+  "Lois McMaster Bujold - A Civil Campaign": ["2026-08-12T03:51:46Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Komarr": ["2026-08-12T03:49:14Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Memory": ["2026-08-12T03:46:16Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Mirror Dance": ["2026-08-12T03:43:08Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Brothers in Arms": ["2026-08-12T03:39:43Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Borders of Infinity": ["2026-08-12T03:12:16Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Ethan of Athos": ["2026-08-12T03:08:03Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Cetaganda": ["2026-08-12T03:01:21Z", "NEW BOOK"],
+  "Lois McMaster Bujold - The Vor Game": ["2026-08-12T02:56:16Z", "NEW BOOK"],
+  "Lois McMaster Bujold - The Warrior's Apprentice": ["2026-08-12T02:52:45Z", "NEW BOOK"],
+  "Lois McMaster Bujold - Barrayar": ["2026-08-12T02:44:59Z", 'NEW BOOK'],
+  "James Gleick - The Information: A History, a Theory, a Flood": ["2026-08-12T02:11:27Z", "NEW BOOK"],
+  "James Gleick - Time Travel: A History": ["2026-08-12T02:09:23Z", "NEW BOOK"],
   "Beatrix Potter - The Tale of the Flopsy Bunnies": ["2026-07-19T19:22:59Z", "NEW BOOK"],
   "Beatrix Potter - The Tale of Benjamin Bunny": ["2026-07-19T19:21:59Z", "NEW BOOK"],
   "Beatrix Potter - The Tale of Peter Rabbit": ["2026-07-19T19:20:59Z", "NEW BOOK"],
@@ -1042,4 +1063,57 @@ export const modTimeDB: Record<string, [string, string]> = {
   "William Gibson - Mona Lisa Overdrive": ['2021-04-05T23:17:53.000Z', "1:1"],
   "William MacAskill - What We Owe the Future": ['2022-10-27T05:27:24.000Z', "1:1"],
   "Wu Ch'êng-ên - Monkey": ['2021-07-07T06:10:01.000Z', "1:1"],
+}
+
+export function analyzeModTimeDB(audiobooks: AudioBook[]) {
+  const dbKeys = new Set(Object.keys(modTimeDB))
+  const usedKeys = new Set<string>()
+
+  for (const book of audiobooks) {
+    const key = bookKey(book)
+    if (key) {
+      usedKeys.add(key)
+    }
+  }
+
+  const unusedKeys = [...dbKeys].filter((key) => !usedKeys.has(key))
+  const missingKeys = [...usedKeys].filter((key) => !dbKeys.has(key))
+
+  const allDates = Object.values(modTimeDB).map((v) => v[0])
+  const distinctDates = new Set(allDates)
+
+  const mtimeHints: Record<string, string> = {}
+  const keyToBase: Record<string, string> = {}
+
+  for (const book of audiobooks) {
+    const key = bookKey(book)
+    if (key) {
+      keyToBase[key] = basename(book.directoryPath)
+    }
+  }
+
+  // Iterate over modTimeDB to preserve its original key insertion order
+  for (const [key, value] of Object.entries(modTimeDB)) {
+    const base = keyToBase[key]
+    if (base) {
+      mtimeHints[base] = value[0]
+    }
+  }
+
+  writeFileSync('private.mtime-hints.json', JSON.stringify(mtimeHints, null, 2))
+
+  console.log('')
+  console.log('=-=- ModTimeDB Analysis =-=-')
+  console.log(`Total DB Keys: ${dbKeys.size}`)
+  console.log(`Used Keys: ${usedKeys.size}`)
+  console.log(`Unused Keys: ${unusedKeys.length}`)
+  console.log(`Missing Keys (in books but not in DB): ${missingKeys.length}`)
+  console.log(
+    `Distinct Dates: ${distinctDates.size} (out of ${allDates.length} entries)`
+  )
+  if (unusedKeys.length > 0) {
+    console.log(`All unused keys:`, unusedKeys)
+  }
+  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+  console.log('')
 }
