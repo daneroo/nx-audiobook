@@ -71,6 +71,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Lois McMaster Bujold - Proto Zoa: Five Early Short Stories": ["2026-08-12T04:16:03Z", "NEW BOOK"],
   "Lois McMaster Bujold - Gentleman Jole and the Red Queen": ["2026-08-12T04:11:18Z", "NEW BOOK"],
   "Lois McMaster Bujold - Cryoburn": ["2026-08-12T04:07:32Z", "NEW BOOK"],
   "Lois McMaster Bujold - The Flowers of Vashnoi": ["2026-08-12T04:03:41Z", "NEW BOOK"],
