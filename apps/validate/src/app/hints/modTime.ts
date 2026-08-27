@@ -71,6 +71,10 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  //
+  "Daron Acemoglu - What Happened to Liberal Democracy?: Remaking a Politics of Shared Prosperity": ["2026-08-27T02:08:34Z", "NEW BOOK"],
+  "Lloyd Llewellyn-Jones - Babylon: The Biography of a Metropolis": ["2026-08-27T01:41:14Z", "NEW BOOK"],
+  "Gordon Noble, Nicholas Evans - Picts: Scourge of Rome, Rulers of the North": ["2026-08-27T01:34:28Z", "NEW BOOK"],
   "Lois McMaster Bujold - Proto Zoa: Five Early Short Stories": ["2026-08-12T04:16:03Z", "NEW BOOK"],
   "Lois McMaster Bujold - Gentleman Jole and the Red Queen": ["2026-08-12T04:11:18Z", "NEW BOOK"],
   "Lois McMaster Bujold - Cryoburn": ["2026-08-12T04:07:32Z", "NEW BOOK"],
