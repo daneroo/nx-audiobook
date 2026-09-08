@@ -1,6 +1,6 @@
-import type { AudioBook } from '../types'
-import { basename } from 'node:path'
 import { writeFileSync } from 'node:fs'
+import { basename } from 'node:path'
+import type { AudioBook } from '../types'
 
 // Experiment in *go style* error handling
 // Return the modtime hint for the audiobook (in ms since epoch)
@@ -72,6 +72,7 @@ mod_time_utc() {
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
   //
+  "Barry Eichengreen - Money Beyond Borders: Global Currencies from Croesus to Crypto": ["2026-09-08T08:42:55Z", "NEW BOOK"],
   "Daron Acemoglu - What Happened to Liberal Democracy?: Remaking a Politics of Shared Prosperity": ["2026-08-27T02:08:34Z", "NEW BOOK"],
   "Lloyd Llewellyn-Jones - Babylon: The Biography of a Metropolis": ["2026-08-27T01:41:14Z", "NEW BOOK"],
   "Gordon Noble, Nicholas Evans - Picts: Scourge of Rome, Rulers of the North": ["2026-08-27T01:34:28Z", "NEW BOOK"],
