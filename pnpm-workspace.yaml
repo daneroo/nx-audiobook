@@ -7,3 +7,13 @@ packages:
   # - "components/**"
   # exclude packages that are inside test directories
   # - "!**/test/**"
+# Required by pnpm >= 10: dependency build (install) scripts are blocked
+# unless explicitly allowed (true) or denied (false) here.
+allowBuilds:
+  '@parcel/watcher': true
+  '@prisma/client': true
+  '@prisma/engines': true
+  esbuild: true
+  nx: true
+  prisma: true
+  unrs-resolver: true
