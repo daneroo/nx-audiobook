@@ -1,14 +1,14 @@
-import type { Validation } from '@nx-audiobook/validators'
-import type { AudioBook } from '../types'
-import { utimes } from 'node:fs/promises'
-import { modTimeHint } from '../hints/modTime'
 import {
   type FileInfo,
   getDirectories,
   getDirectory,
   getFiles,
 } from '@nx-audiobook/file-walk'
+import type { Validation } from '@nx-audiobook/validators'
 import { show } from '@nx-audiobook/validators'
+import { utimes } from 'node:fs/promises'
+import { modTimeHint } from '../hints/modTime'
+import type { AudioBook } from '../types'
 
 import { classifyDirectory } from './classifyDirectory'
 

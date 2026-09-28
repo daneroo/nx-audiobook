@@ -1,5 +1,3 @@
-import { writeFileSync } from 'node:fs'
-import { basename } from 'node:path'
 import type { AudioBook } from '../types'
 
 // Experiment in *go style* error handling
@@ -1069,57 +1067,4 @@ export const modTimeDB: Record<string, [string, string]> = {
   "William Gibson - Mona Lisa Overdrive": ['2021-04-05T23:17:53.000Z', "1:1"],
   "William MacAskill - What We Owe the Future": ['2022-10-27T05:27:24.000Z', "1:1"],
   "Wu Ch'êng-ên - Monkey": ['2021-07-07T06:10:01.000Z', "1:1"],
-}
-
-export function analyzeModTimeDB(audiobooks: AudioBook[]) {
-  const dbKeys = new Set(Object.keys(modTimeDB))
-  const usedKeys = new Set<string>()
-
-  for (const book of audiobooks) {
-    const key = bookKey(book)
-    if (key) {
-      usedKeys.add(key)
-    }
-  }
-
-  const unusedKeys = [...dbKeys].filter((key) => !usedKeys.has(key))
-  const missingKeys = [...usedKeys].filter((key) => !dbKeys.has(key))
-
-  const allDates = Object.values(modTimeDB).map((v) => v[0])
-  const distinctDates = new Set(allDates)
-
-  const mtimeHints: Record<string, string> = {}
-  const keyToBase: Record<string, string> = {}
-
-  for (const book of audiobooks) {
-    const key = bookKey(book)
-    if (key) {
-      keyToBase[key] = basename(book.directoryPath)
-    }
-  }
-
-  // Iterate over modTimeDB to preserve its original key insertion order
-  for (const [key, value] of Object.entries(modTimeDB)) {
-    const base = keyToBase[key]
-    if (base) {
-      mtimeHints[base] = value[0]
-    }
-  }
-
-  writeFileSync('private.mtime-hints.json', JSON.stringify(mtimeHints, null, 2))
-
-  console.log('')
-  console.log('=-=- ModTimeDB Analysis =-=-')
-  console.log(`Total DB Keys: ${dbKeys.size}`)
-  console.log(`Used Keys: ${usedKeys.size}`)
-  console.log(`Unused Keys: ${unusedKeys.length}`)
-  console.log(`Missing Keys (in books but not in DB): ${missingKeys.length}`)
-  console.log(
-    `Distinct Dates: ${distinctDates.size} (out of ${allDates.length} entries)`
-  )
-  if (unusedKeys.length > 0) {
-    console.log(`All unused keys:`, unusedKeys)
-  }
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-  console.log('')
 }
