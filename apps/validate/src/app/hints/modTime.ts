@@ -70,6 +70,9 @@ mod_time_utc() {
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
   //
+  "Carlo Rovelli - On the Equality of All Things: Lessons on Physics and Philosophy": ["2026-09-30T04:44:38Z", "NEW BOOK"],
+  "Paul Blustein - King Dollar: The Past and Future of the World's Dominant Currency": ["2026-09-30T04:41:36Z", "NEW BOOK"],
+  "Elliot Ackerman, James Stavridis USN - 2084": ["2026-09-30T04:40:06Z", "NEW BOOK"],
   "Barry Eichengreen - Money Beyond Borders: Global Currencies from Croesus to Crypto": ["2026-09-08T08:42:55Z", "NEW BOOK"],
   "Daron Acemoglu - What Happened to Liberal Democracy?: Remaking a Politics of Shared Prosperity": ["2026-08-27T02:08:34Z", "NEW BOOK"],
   "Lloyd Llewellyn-Jones - Babylon: The Biography of a Metropolis": ["2026-08-27T01:41:14Z", "NEW BOOK"],
