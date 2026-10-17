@@ -69,7 +69,12 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
-  //
+  "Liaquat Ahamed - 1873: The Rothschilds, the First Great Depression, and the Making of the Modern World": ["2026-10-17T03:00:33Z", "NEW BOOK"],
+  "Liaquat Ahamed - Lords of Finance: The Bankers Who Broke the World": ["2026-10-17T03:14:08Z", "NEW BOOK"],
+  "Robert Kanigel - The Man Who Knew Infinity: A Life of the Genius Ramanujan": ["2026-10-17T03:10:13Z", "NEW BOOK"],
+  "Kevin Roose - The AGI Chronicles: The Inside Story of the Race to Create an Artificial Superintelligence": ["2026-10-09T22:37:38Z", "NEW BOOK"],
+  "Anne Carson - Autobiography of Red: Vintage Contemporaries Series": ["2026-10-09T22:24:04Z", "NEW BOOK"],
+  "Gil Durán - The Nerd Reich: Silicon Valley Fascism and the War on Democracy": ["2026-10-07T03:28:59Z", "NEW BOOK"],
   "Carlo Rovelli - On the Equality of All Things: Lessons on Physics and Philosophy": ["2026-09-30T04:44:38Z", "NEW BOOK"],
   "Paul Blustein - King Dollar: The Past and Future of the World's Dominant Currency": ["2026-09-30T04:41:36Z", "NEW BOOK"],
   "Elliot Ackerman, James Stavridis USN - 2084": ["2026-09-30T04:40:06Z", "NEW BOOK"],
