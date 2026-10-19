@@ -69,6 +69,11 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Mark Lawrence - The Secret: A Broken Empire Tale": ["2026-10-19T15:46:03Z", "NEW BOOK"],
+  "Mark Lawrence - Emperor of Thorns": ["2026-10-19T15:42:13Z", "NEW BOOK"],
+  "Mark Lawrence - King of Thorns": ["2026-10-19T15:40:11Z", "NEW BOOK"],
+  "Mark Lawrence - Prince of Thorns": ["2026-10-19T15:37:58Z", "NEW BOOK"],
+  "Claudia de Rham - The Beauty of Falling: A Life in Pursuit of Gravity": ["2026-10-19T15:34:35Z", "NEW BOOK"],
   "Liaquat Ahamed - 1873: The Rothschilds, the First Great Depression, and the Making of the Modern World": ["2026-10-17T03:00:33Z", "NEW BOOK"],
   "Liaquat Ahamed - Lords of Finance: The Bankers Who Broke the World": ["2026-10-17T03:14:08Z", "NEW BOOK"],
   "Robert Kanigel - The Man Who Knew Infinity: A Life of the Genius Ramanujan": ["2026-10-17T03:10:13Z", "NEW BOOK"],
