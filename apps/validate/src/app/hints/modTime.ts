@@ -69,6 +69,8 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "David Graeber - Bullshit Jobs: A Theory": ["2026-10-23T04:00:41Z", "NEW BOOK"],
+  "David Graeber - Debt - Updated and Expanded: The First 5,000 Years": ["2026-10-23T03:59:53Z", "NEW BOOK"],
   "Mark Lawrence - The Secret: A Broken Empire Tale": ["2026-10-19T15:46:03Z", "NEW BOOK"],
   "Mark Lawrence - Emperor of Thorns": ["2026-10-19T15:42:13Z", "NEW BOOK"],
   "Mark Lawrence - King of Thorns": ["2026-10-19T15:40:11Z", "NEW BOOK"],
