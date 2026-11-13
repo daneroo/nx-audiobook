@@ -69,6 +69,7 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Terence Tao - Six Math Essentials": ["2026-11-13T04:41:31Z", "NEW BOOK"],
   "Robert Jackson Bennett - A Trade of Blood": ["2026-10-27T05:01:15Z", "NEW BOOK"],
   "Robert Jackson Bennett - A Drop of Corruption": ["2026-10-27T05:00:06Z", "NEW BOOK"],
   "Robert Jackson Bennett - The Tainted Cup": ["2026-10-27T04:59:11Z", "NEW BOOK"],
