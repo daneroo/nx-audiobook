@@ -69,6 +69,8 @@ mod_time_utc() {
 // prettier-ignore
 export const modTimeDB: Record<string, [string, string]> = {
   // current time in UTC (Z)
+  "Neal Stephenson - D: Heavy Water": ["2026-11-18T05:00:33Z", "NEW BOOK"],
+  "Aya Koda - Tree: My Encounters with Trees": ["2026-11-18T04:59:03Z", "NEW BOOK"],
   "Terence Tao - Six Math Essentials": ["2026-11-13T04:41:31Z", "NEW BOOK"],
   "Robert Jackson Bennett - A Trade of Blood": ["2026-10-27T05:01:15Z", "NEW BOOK"],
   "Robert Jackson Bennett - A Drop of Corruption": ["2026-10-27T05:00:06Z", "NEW BOOK"],
